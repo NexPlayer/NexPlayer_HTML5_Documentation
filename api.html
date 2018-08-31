@@ -787,8 +787,7 @@
 <li><a href="#Player_Init">.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog)</a> &#x21D2; <code>Promise</code></li>
 <li><a href="#Player_getTracks">.getTracks()</a> &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></li>
 <li><a href="#Player_getCurrentTrack">.getCurrentTrack()</a> &#x21D2; <a href="#Track"><code>Track</code></a></li>
-<li><a href="#Player_setCurrentTrack">.setCurrentTrack(trackID)</a></li>
-<li><a href="#Player_enableABR">.enableABR()</a></li>
+<li><a href="#Player_setCurrentTrack">.setTrack(trackID)</a></li>
 <li><a href="#Player_getAudioStreams">.getAudioStreams()</a> &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></li>
 <li><a href="#Player_getCurrentAudioStream">.getCurrentAudioStream()</a> &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></li>
 <li><a href="#Player_setAudioStream">.setAudioStream(streamID)</a></li>
@@ -807,6 +806,7 @@
 <li><a href="#Player_getThumbnailController">.getThumbnailController()</a> &#x21D2; <code>ThumbController</code></li>
 <li><a href="#Player_setThumbnailStep">.setThumbnailStep(step)</a></li>
 <li><a href="#Player_enablePreviewThumbnails">.enablePreviewThumbnails(option)</a></li>
+<li><a href="#Player_setSpeed">.setSpeed(value)</a></li>
 </ul>
 </li>
 <li><em>static</em><ul>
@@ -883,9 +883,10 @@
 <h3 id="playergetcurrenttrack-&#x21D2;-track">player.getCurrentTrack() &#x21D2; <a href="#Track"><code>Track</code></a></h3>
 <p>Get the current track information.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Track</code></a> - the current track.<br><strong>Export</strong>:<br><a id="Player_setCurrentTrack"></a></p>
-<h3 id="playersetcurrenttracktrackid">player.setCurrentTrack(trackID)</h3>
-<p>Set the current tack.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><a id="Player_setTrack"></a></p>
+<h3 id="playersetqualitylevelsoptions">player.setTrack(trackID)</h3>
+<p>Sets ABR or static quality of a specific multitrack stream.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>
 <table>
 <thead>
 <tr>
@@ -898,14 +899,11 @@
 <tr>
 <td>trackID</td>
 <td><code>number</code></td>
-<td>ID of the track to be used.</td>
+<td>id of a specific track (same as the id from <a href="#Track"><code>Track</code></a>). -1 to enable ABR (set by default).</td>
 </tr>
 </tbody>
 </table>
-<p><a id="Player_enableABR"></a></p>
-<h3 id="playerenableabr">player.enableABR()</h3>
-<p>Enable the ABR to change automatically between tracks.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:<br><a id="Player_getAudioStreams"></a></p>
+<a id="Player_getAudioStreams"></a></p>
 <h3 id="playergetaudiostreams-&#x21D2;-arrayaudiostream">player.getAudioStreams() &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></h3>
 <p>Get the available audio streams.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a> - the list of the available audio streams.<br><strong>Export</strong>:<br><a id="Player_getCurrentAudioStream"></a></p>
@@ -1133,6 +1131,27 @@ applies for live streams.</p>
 </tr>
 </tbody>
 </table>
+<p><a id="Player_setSpeed"></a></p>
+<h3 id="playersetqualitylevelsoptions">player.setSpeed(value)</h3>
+<p>Sets speed of the current video.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td><code>number</code></td>
+<td>multiplies the original speed of the video by x value (2x, 0.5x...)</td>
+</tr>
+</tbody>
+</table>
+
 <p><a id="Player_NexProtocol"></a></p>
 <h3 id="playernexprotocol--enum">Player.NexProtocol : <code>enum</code></h3>
 <p><strong>Kind</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
