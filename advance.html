@@ -1015,12 +1015,9 @@ nexplayer.Setup({
 <p>All the available tracks can be obtained with the method <a href="api.html#Player_getTracks"><code>getTracks</code></a> of NexPlayer&#x2122;.</p>
 <pre><code class="lang-javascript">nexplayerInstance.getTracks();
 </code></pre>
-<p>Setting a fixed track can be achieved calling the method <a href="api.html#Player_setAudioStream"><code>setCurrentTrack</code></a> of NexPlayer&#x2122;.</p>
+<p>Setting a fixed track can be achieved calling the method <a href="api.html#Player_setTrack"><code>setTrack</code></a> of NexPlayer&#x2122;.</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// Sets the first track as the used one</span>
-nexplayerInstance.setCurrentTrack(nexplayerInstance.getTracks()[<span class="hljs-number">0</span>].id);
-</code></pre>
-<p>ABR can be enabled again calling the method <a href="api.html#Player_enableABR"><code>enableABR</code></a> of NexPlayer&#x2122;.</p>
-<pre><code class="lang-javascript">nexplayerInstance.enableABR();
+nexplayerInstance.setTrack(nexplayerInstance.getTracks()[<span class="hljs-number">0</span>].id);
 </code></pre>
 <p>A change in the currently used track can be detected with the NexPlayer&#x2122; <a href="#events_neplayer">callbacks</a>.</p>
 <h4 id="subtitle_selection">Subtitles </h4>
