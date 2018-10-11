@@ -782,9 +782,7 @@
 <p><strong>Kind</strong>: global class<br><strong>Struct</strong>:<br><strong>Export</strong>:   </p>
 <ul>
 <li><a href="#Player">Player</a><ul>
-<li><a href="#new_Player_new">new Player()</a></li>
 <li><em>instance</em><ul>
-<li><a href="#Player_Init">.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog)</a> &#x21D2; <code>Promise</code></li>
 <li><a href="#Player_getTracks">.getTracks()</a> &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></li>
 <li><a href="#Player_getCurrentTrack">.getCurrentTrack()</a> &#x21D2; <a href="#Track"><code>Track</code></a></li>
 <li><a href="#Player_setCurrentTrack">.setTrack(trackID)</a></li>
@@ -818,64 +816,6 @@
 </ul>
 </li>
 </ul>
-<p><a id="new_Player_new"></a></p>
-<h3 id="new-player">new Player()</h3>
-<p>Constructs a NexPlayer.</p>
-<p><a id="Player_Init"></a></p>
-<h3 id="playerinitkey-div-videoelement-url-nexdrminformation-displayableincanvas-protocoltype-debuglog-&#x21D2;-promise">player.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog) &#x21D2; <code>Promise</code></h3>
-<p>Initializes the player.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>Promise</code> - that will be resolved when its successfully initializes.<br><strong>Export</strong>:   </p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>key</td>
-<td><code>string</code></td>
-<td>that validets the playback.</td>
-</tr>
-<tr>
-<td>div</td>
-<td><code>HTMLDivElement</code></td>
-<td></td>
-</tr>
-<tr>
-<td>videoElement</td>
-<td><code>HTMLVideoElement</code></td>
-<td>that will output the video.</td>
-</tr>
-<tr>
-<td>URL</td>
-<td><code>string</code></td>
-<td>of the video to be played.</td>
-</tr>
-<tr>
-<td>nexDRMInformation</td>
-<td><a href="#NexDRMInformation"><code>Array.&lt;NexDRMInformation&gt;</code></a></td>
-<td>that contains an array of DRM information. By default it is null.</td>
-</tr>
-<tr>
-<td>displayableinCanvas</td>
-<td><code>boolean</code></td>
-<td>that will inform if the videoElement will be used to generate external textures to be displayed in a canvas. By default it is false.</td>
-</tr>
-<tr>
-<td>protocolType</td>
-<td><code>NexProtocol</code></td>
-<td>that will define the protocol type.  By default it is UNKNOWN and it will be obtained from the URL.</td>
-</tr>
-<tr>
-<td>debugLog</td>
-<td><code>boolean</code></td>
-<td>that will set the output of extra logs. By default it is false.</td>
-</tr>
-</tbody>
-</table>
 <p><a id="Player_getTracks"></a></p>
 <h3 id="playergettracks-&#x21D2;-arraytrack">player.getTracks() &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></h3>
 <p>Get all the video tracks.</p>
