@@ -384,6 +384,19 @@
 
             
         </li>
+
+        <li class="chapter " data-level="1.6.4" data-path="advance.html">
+            
+            <a href="advance.html#lowLatency">
+        
+                
+                Low Latency
+        
+            </a>
+        
+
+        
+        </li>
     
         <li class="chapter " data-level="1.6.5" data-path="advance.html">
             
@@ -416,6 +429,19 @@
             </ul>
             
         </li>
+
+        <li class="chapter " data-level="1.6.7" data-path="advance.html">
+            
+            <a href="advance.html#timed_metadata">
+        
+                
+                ID3 Tags
+        
+            </a>
+        
+
+        
+        </li>
     
         <li class="chapter " data-level="1.6.6" data-path="advance.html">
             
@@ -423,19 +449,6 @@
             
                     
                     Access to the Player Instances
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.7" data-path="advance.html">
-            
-                <a href="advance.html#timed_metadata">
-            
-                    
-                    ID3 Tags
             
                 </a>
             
@@ -951,6 +964,16 @@ nexplayer.Setup({
 </code></pre>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>mutedAtStart</em> parameter is false, so the player will start unmuted if <em>mutedAtStart</em> is not set to true.</p>
 </div></div></p>
+<h2 id="lowLatency">Low Latency </h2>
+<p>This feature enables low latency for live streams. This can be configured in the player by adding the <em>lowLatency</em> option:</p>
+<pre><code class="lang-javascript">{
+  div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
+  src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
+  lowLatency: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>lowLatency</em> parameter is false, so the player will start without low latency if <em>lowLatency</em> is not set to true.</p>
+</div></div></p>
 <h2 id="cast">Cast </h2>
 <p>Cast technology allows you to stream your media to the compatible receiver devices.</p>
 <h3 id="airplay">AirPlay </h3>
@@ -964,24 +987,6 @@ nexplayer.Setup({
 </code></pre>
 <p>AirPlay cast option doesn&apos;t need input parameters, remove the cast option to disable this feature. </p>
 <p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Notice that AirPlay only works on Safari.</p>
-</div></div></p>
-<h2 id="instances">Access to the Player Instances </h2>
-<p>An instance of the <a href="api.html#Player">player</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" target="_blank">video element</a> will be accesible once NexPlayer&#x2122; is configured and loaded.
-The &apos;callbacksForPlayer&apos; option should be set. The defined function will be called when the player is considered ready.
-Once the callback is received, the playback can be controlled with the NexPlayer&#x2122; instance and the associated video element.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> callBackWithPlayers = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">nexplayerInstance, videoElement</span>) </span>{
-  <span class="hljs-comment">// Eg. seeking to 30 sec from outside the predefined UI could be done like this</span>
-  nexplayerInstance.seek(<span class="hljs-number">30</span>);
-}
-
-nexplayer.Setup({
-  key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
-  div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
-  src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
-  callbacksForPlayer: callBackWithPlayers
-});
-</code></pre>
-<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>We strongly recommend to call the APIs after the player is ready.</p>
 </div></div></p>
 <h2 id="timed_metadata">ID3 Tags </h2>
 <p>NexPlayer&#x2122; supports timed metadata on HLS contents. The information is made available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack</a> array of the video element.</p>
@@ -1005,8 +1010,26 @@ nexplayer.Setup({
   });
 };
 </code></pre>
+<h2 id="instances">Access to the Player Instances </h2>
+<p>An instance of the <a href="api.html#Player">player</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" target="_blank">video element</a> will be accesible once NexPlayer&#x2122; is configured and loaded.
+The &apos;callbacksForPlayer&apos; option should be set. The defined function will be called when the player is considered ready.
+Once the callback is received, the playback can be controlled with the NexPlayer&#x2122; instance and the associated video element.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> callBackWithPlayers = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">nexplayerInstance, videoElement</span>) </span>{
+  <span class="hljs-comment">// Eg. seeking to 30 sec from outside the predefined UI could be done like this</span>
+  nexplayerInstance.seek(<span class="hljs-number">30</span>);
+}
+
+nexplayer.Setup({
+  key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+  div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+  src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+  callbacksForPlayer: callBackWithPlayers
+});
+</code></pre>
+<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>We strongly recommend to call the APIs after the player is ready.</p>
+</div></div></p>
 <h2 id="custom_selection">Custom Actions </h2>
-<p>Advanced actions can be perform with a player instance.</p>
+<p>Advanced actions can be perform with a player instance. For the full action list, check <a href="api.html">NexPlayer API</a>.</p>
 <h3 id="track_selection">Track </h3>
 <p>HLS and DASH have several video bitrates to properly adapt the best quality track depending on the network conditions. The changes in the current bitrates are done automatically when ABR (Adaptive Bitrate) is enabled (default behaviour).</p>
 <p>The currently selected track can be obtained with the method <a href="api.html#Player_getCurrentTrack"><code>getCurrentTrack</code></a> of NexPlayer&#x2122;. It returns all the <a href="api.html#Track">track information</a>.</p>
