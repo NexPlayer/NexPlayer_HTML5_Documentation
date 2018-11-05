@@ -782,10 +782,13 @@
 <p><strong>Kind</strong>: global class<br><strong>Struct</strong>:<br><strong>Export</strong>:   </p>
 <ul>
 <li><a href="#Player">Player</a><ul>
+<li><a href="#new_Player_new">new Player()</a></li>
 <li><em>instance</em><ul>
+<li><a href="#Player_Init">.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog)</a> &#x21D2; <code>Promise</code></li>
 <li><a href="#Player_getTracks">.getTracks()</a> &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></li>
 <li><a href="#Player_getCurrentTrack">.getCurrentTrack()</a> &#x21D2; <a href="#Track"><code>Track</code></a></li>
-<li><a href="#Player_setCurrentTrack">.setTrack(trackID)</a></li>
+<li><a href="#Player_setCurrentTrack">.setCurrentTrack(trackID)</a></li>
+<li><a href="#Player_enableABR">.enableABR()</a></li>
 <li><a href="#Player_getAudioStreams">.getAudioStreams()</a> &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></li>
 <li><a href="#Player_getCurrentAudioStream">.getCurrentAudioStream()</a> &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></li>
 <li><a href="#Player_setAudioStream">.setAudioStream(streamID)</a></li>
@@ -800,11 +803,17 @@
 <li><a href="#Player_getCurrentTime">.getCurrentTime()</a> &#x21D2; <code>number</code></li>
 <li><a href="#Player_getDuration">.getDuration()</a> &#x21D2; <code>number</code></li>
 <li><a href="#Player_seek">.seek(value)</a></li>
+<li><a href="#Player_sendImpression">.sendImpression()</a></li>
 <li><a href="#Player_getProtocol">.getProtocol()</a> &#x21D2; <code>number</code></li>
 <li><a href="#Player_getThumbnailController">.getThumbnailController()</a> &#x21D2; <code>ThumbController</code></li>
 <li><a href="#Player_setThumbnailStep">.setThumbnailStep(step)</a></li>
 <li><a href="#Player_enablePreviewThumbnails">.enablePreviewThumbnails(option)</a></li>
-<li><a href="#Player_setSpeed">.setSpeed(value)</a></li>
+<li><a href="#Player_setSpeed">.setSpeed(speed)</a></li>
+<li><a href="#Player_getQualityLevels">.getQualityLevels()</a> &#x21D2; <code>array</code></li>
+<li><a href="#Player_setTrack">.setTrack(qualityLevel)</a></li>
+<li><a href="#Player_togglePlayPause">.togglePlayPause()</a></li>
+<li><a href="#Player_setSubtitle">.setSubtitle(index)</a></li>
+<li><a href="#Player_toggleFullScreen">.toggleFullScreen()</a></li>
 </ul>
 </li>
 <li><em>static</em><ul>
@@ -816,6 +825,64 @@
 </ul>
 </li>
 </ul>
+<p><a id="new_Player_new"></a></p>
+<h3 id="new-player">new Player()</h3>
+<p>Constructs a NexPlayer.</p>
+<p><a id="Player_Init"></a></p>
+<h3 id="playerinitkey-div-videoelement-url-nexdrminformation-displayableincanvas-protocoltype-debuglog-&#x21D2;-promise">player.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog) &#x21D2; <code>Promise</code></h3>
+<p>Initializes the player.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>Promise</code> - that will be resolved when its successfully initializes.<br><strong>Export</strong>:   </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><code>string</code></td>
+<td>that validets the playback.</td>
+</tr>
+<tr>
+<td>div</td>
+<td><code>HTMLDivElement</code></td>
+<td></td>
+</tr>
+<tr>
+<td>videoElement</td>
+<td><code>HTMLVideoElement</code></td>
+<td>that will output the video.</td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>string</code></td>
+<td>of the video to be played.</td>
+</tr>
+<tr>
+<td>nexDRMInformation</td>
+<td><a href="#NexDRMInformation"><code>Array.&lt;NexDRMInformation&gt;</code></a></td>
+<td>that contains an array of DRM information. By default it is null.</td>
+</tr>
+<tr>
+<td>displayableinCanvas</td>
+<td><code>boolean</code></td>
+<td>that will inform if the videoElement will be used to generate external textures to be displayed in a canvas. By default it is false.</td>
+</tr>
+<tr>
+<td>protocolType</td>
+<td><code>NexProtocol</code></td>
+<td>that will define the protocol type.  By default it is UNKNOWN and it will be obtained from the URL.</td>
+</tr>
+<tr>
+<td>debugLog</td>
+<td><code>boolean</code></td>
+<td>that will set the output of extra logs. By default it is false.</td>
+</tr>
+</tbody>
+</table>
 <p><a id="Player_getTracks"></a></p>
 <h3 id="playergettracks-&#x21D2;-arraytrack">player.getTracks() &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></h3>
 <p>Get all the video tracks.</p>
@@ -823,10 +890,9 @@
 <h3 id="playergetcurrenttrack-&#x21D2;-track">player.getCurrentTrack() &#x21D2; <a href="#Track"><code>Track</code></a></h3>
 <p>Get the current track information.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Track</code></a> - the current track.<br><strong>Export</strong>:<br><a id="Player_setCurrentTrack"></a></p>
-<p><a id="Player_setTrack"></a></p>
-<h3 id="playersetqualitylevelsoptions">player.setTrack(trackID)</h3>
-<p>Sets ABR or static quality of a specific multitrack stream.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>
+<h3 id="playersetcurrenttracktrackid">player.setCurrentTrack(trackID)</h3>
+<p>Set the current tack.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -839,11 +905,14 @@
 <tr>
 <td>trackID</td>
 <td><code>number</code></td>
-<td>id of a specific track (same as the id from <a href="#Track"><code>Track</code></a>). -1 to enable ABR (set by default).</td>
+<td>ID of the track to be used.</td>
 </tr>
 </tbody>
 </table>
-<a id="Player_getAudioStreams"></a></p>
+<p><a id="Player_enableABR"></a></p>
+<h3 id="playerenableabr">player.enableABR()</h3>
+<p>Enable the ABR to change automatically between tracks.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:<br><a id="Player_getAudioStreams"></a></p>
 <h3 id="playergetaudiostreams-&#x21D2;-arrayaudiostream">player.getAudioStreams() &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></h3>
 <p>Get the available audio streams.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a> - the list of the available audio streams.<br><strong>Export</strong>:<br><a id="Player_getCurrentAudioStream"></a></p>
@@ -1025,7 +1094,10 @@ applies for live streams.</p>
 </tr>
 </tbody>
 </table>
-<p><a id="Player_getProtocol"></a></p>
+<p><a id="Player_sendImpression"></a></p>
+<h3 id="playersendimpression">player.sendImpression()</h3>
+<p>Send the impression details to the server, only for internal management.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><a id="Player_getProtocol"></a></p>
 <h3 id="playergetprotocol-&#x21D2;-number">player.getProtocol() &#x21D2; <code>number</code></h3>
 <p>Returns the protocol type</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_getThumbnailController"></a></p>
@@ -1072,9 +1144,9 @@ applies for live streams.</p>
 </tbody>
 </table>
 <p><a id="Player_setSpeed"></a></p>
-<h3 id="playersetqualitylevelsoptions">player.setSpeed(value)</h3>
-<p>Sets speed of the current video.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>
+<h3 id="playersetspeedspeed">player.setSpeed(speed)</h3>
+<p>Set the video playback speed.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
 <thead>
 <tr>
@@ -1085,14 +1157,62 @@ applies for live streams.</p>
 </thead>
 <tbody>
 <tr>
-<td>value</td>
+<td>speed</td>
 <td><code>number</code></td>
-<td>multiplies the original speed of the video by x value (2x, 0.5x...)</td>
+<td>the value of the speed</td>
 </tr>
 </tbody>
 </table>
-
-<p><a id="Player_NexProtocol"></a></p>
+<p><a id="Player_getQualityLevels"></a></p>
+<h3 id="playergetqualitylevels-&#x21D2;-array">player.getQualityLevels() &#x21D2; <code>array</code></h3>
+<p>Get the video quality levels array</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>array</code> - quality levels array info<br><a id="Player_setTrack"></a></p>
+<h3 id="playersettrackqualitylevel">player.setTrack(qualityLevel)</h3>
+<p>Set the video quality level</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>qualityLevel</td>
+<td><code>number</code></td>
+<td>index of the quality level</td>
+</tr>
+</tbody>
+</table>
+<p><a id="Player_togglePlayPause"></a></p>
+<h3 id="playertoggleplaypause">player.togglePlayPause()</h3>
+<p>Toggle between play and pause.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:<br><a id="Player_setSubtitle"></a></p>
+<h3 id="playersetsubtitleindex">player.setSubtitle(index)</h3>
+<p>Set the video subtitle</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td><code>number</code></td>
+<td>index of the subtitles list</td>
+</tr>
+</tbody>
+</table>
+<p><a id="Player_toggleFullScreen"></a></p>
+<h3 id="playertogglefullscreen">player.toggleFullScreen()</h3>
+<p>Toogle between full screen and not full screen</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:<br><a id="Player_NexProtocol"></a></p>
 <h3 id="playernexprotocol--enum">Player.NexProtocol : <code>enum</code></h3>
 <p><strong>Kind</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
 <table>
@@ -1123,6 +1243,11 @@ applies for live streams.</p>
 <td>UNKNOWN</td>
 <td><code>number</code></td>
 <td><code>3</code></td>
+</tr>
+<tr>
+<td>SHAKA</td>
+<td><code>number</code></td>
+<td><code>4</code></td>
 </tr>
 </tbody>
 </table>
@@ -1359,7 +1484,7 @@ applies for live streams.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"NexPlayer API","level":"1.7","depth":1,"next":{"title":"Third Party Licenses","level":"1.8","depth":1,"path":"licenses.md","ref":"licenses.md","articles":[]},"previous":{"title":"Upgrading to a New Version","level":"1.6.15","depth":2,"anchor":"#upgrading","path":"advance.md","ref":"advance.md#upgrading","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hints","copy-code-button"],"root":"./book","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NexPlayer HTML5","gitbook":"3.2.3"},"file":{"path":"api.md","mtime":"2018-06-20T09:55:26.377Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-20T09:55:27.853Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"NexPlayer API","level":"1.7","depth":1,"next":{"title":"Third Party Licenses","level":"1.8","depth":1,"path":"licenses.md","ref":"licenses.md","articles":[]},"previous":{"title":"Upgrading to a New Version","level":"1.6.15","depth":2,"anchor":"#upgrading","path":"advance.md","ref":"advance.md#upgrading","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hints","copy-code-button"],"root":"./book","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NexPlayer HTML5","gitbook":"3.2.3"},"file":{"path":"api.md","mtime":"2018-11-05T11:36:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-05T11:36:05.769Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
