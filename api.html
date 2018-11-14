@@ -384,6 +384,20 @@
 
             
         </li>
+
+        <li class="chapter " data-level="1.6.4" data-path="advance.html">
+            
+            <a href="advance.html#lowLatency">
+        
+                
+                
+                Low Latency
+        
+            </a>
+        
+
+        
+        </li>
     
         <li class="chapter " data-level="1.6.5" data-path="advance.html">
             
@@ -814,6 +828,36 @@
 <li><a href="#Player_togglePlayPause">.togglePlayPause()</a></li>
 <li><a href="#Player_setSubtitle">.setSubtitle(index)</a></li>
 <li><a href="#Player_toggleFullScreen">.toggleFullScreen()</a></li>
+<li><a href="#Player_adManager">.adManager()</a></li>
+<ul>
+<li><a href="#Player_adManager1">.getAdObject()</a></li>
+<li><a href="#Player_adManager2">.getId()</a></li>
+<li><a href="#Player_adManager3">.getTitle()</a></li>
+<li><a href="#Player_adManager4">.getDescription()</a></li>
+<li><a href="#Player_adManager5">.getMediaURL()</a></li>
+<li><a href="#Player_adManager6">.getSurveyURL()</a></li>
+<li><a href="#Player_adManager7">.getDuration()</a></li>
+<li><a href="#Player_adManager8">.getSkipTime()</a></li>
+<li><a href="#Player_adManager9">.getCurrentTime()</a></li>
+<li><a href="#Player_adManager10">.getContentType()</a></li>
+<li><a href="#Player_adManager11">.isSkippable()</a></li>
+<li><a href="#Player_adManager12">.isLinear()</a></li>
+<li><a href="#Player_adManager13">.isVpaid()</a></li>
+<li><a href="#Player_adManager14">.pause()</a></li>
+<li><a href="#Player_adManager15">.play()</a></li>
+<li><a href="#Player_adManager16">.skip()</a></li>
+<li><a href="#Player_adManager17">.abort()</a></li>
+<li><a href="#Player_adManager18">.addClickListener(func)</a></li>
+<li><a href="#Player_adManager19">.addVolumeMutedListener(func)</a></li>
+<li><a href="#Player_adManager20">.addVolumeChangedListener(func)</a></li>
+<li><a href="#Player_adManager21">.addSkippedListener(func)</a></li>
+<li><a href="#Player_adManager22">.addPausedListener(func)</a></li>
+<li><a href="#Player_adManager23">.addResumedListener(func)</a></li>
+<li><a href="#Player_adManager24">.addStartedListener(func)</a></li>
+<li><a href="#Player_adManager25">.addFirstQuartileListener(func)</a></li>
+<li><a href="#Player_adManager26">.addMidpointListener(func)</a></li>
+<li><a href="#Player_adManager27">.addThirdQuartileListener(func)</a></li>
+<li><a href="#Player_adManager28">.addCompleteListener(func)</a></li>
 </ul>
 </li>
 <li><em>static</em><ul>
@@ -1212,7 +1256,343 @@ applies for live streams.</p>
 <p><a id="Player_toggleFullScreen"></a></p>
 <h3 id="playertogglefullscreen">player.toggleFullScreen()</h3>
 <p>Toogle between full screen and not full screen</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:<br><a id="Player_NexProtocol"></a></p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:<br></p>
+
+<p><a id="Player_adManager"></a></p>
+<h3 id="playeradmanager">player.adManager()</h3>
+<p>Returns the AdManager instance in order to perform actions on Ads through IMA SDK</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: AdManager object<br></p>
+
+<p><a id="Player_adManager1"></a></p>
+<h3 id="playeradmanager">player.adManager().getAdObject()</h3>
+<p>Returns the IMA SDK manager object</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: IMAs AdManager object<br></p>
+
+<p><a id="Player_adManager2"></a></p>
+<h3 id="playeradmanager">player.adManager().getId()</h3>
+<p>Returns the id of the current Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+
+<p><a id="Player_adManager3"></a></p>
+<h3 id="playeradmanager">player.adManager().getTitle()</h3>
+<p>Returns the title of the current Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+
+<p><a id="Player_adManager4"></a></p>
+<h3 id="playeradmanager">player.adManager().getDescription()</h3>
+<p>Returns the description of the current Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+
+<p><a id="Player_adManager5"></a></p>
+<h3 id="playeradmanager">player.adManager().getMediaURL()</h3>
+<p>Returns the video Ad URL</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+
+<p><a id="Player_adManager6"></a></p>
+<h3 id="playeradmanager">player.adManager().getSurveyURL()</h3>
+<p>Returns the Ad survey URL</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+
+<p><a id="Player_adManager7"></a></p>
+<h3 id="playeradmanager">player.adManager().getDuration()</h3>
+<p>Returns the total duration of the current Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: number<br></p>
+
+<p><a id="Player_adManager8"></a></p>
+<h3 id="playeradmanager">player.adManager().getSkipTime()</h3>
+<p>Returns how much time lefts until the user can skip the Ad (only if it is skippable)</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: number<br></p>
+
+<p><a id="Player_adManager9"></a></p>
+<h3 id="playeradmanager">player.adManager().getCurrentTime()</h3>
+<p>Returns the current time position of the Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: number<br></p>
+
+<p><a id="Player_adManager10"></a></p>
+<h3 id="playeradmanager">player.adManager().getContentType()</h3>
+<p>Returns the Ad video type (ex. "video/mp4")</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+
+<p><a id="Player_adManager11"></a></p>
+<h3 id="playeradmanager">player.adManager().isSkippable()</h3>
+<p>Returns if the Ad is skippable or not</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: boolean<br></p>
+
+<p><a id="Player_adManager12"></a></p>
+<h3 id="playeradmanager">player.adManager().isLinear()</h3>
+<p>Returns if the ad is linear or not</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: boolean<br></p>
+
+<p><a id="Player_adManager13"></a></p>
+<h3 id="playeradmanager">player.adManager().isVpaid()</h3>
+<p>Returns if the ad is vpaid or not</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: boolean<br></p>
+
+<p><a id="Player_adManager14"></a></p>
+<h3 id="playeradmanager">player.adManager().pause()</h3>
+<p>Pauses the Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
+<p><a id="Player_adManager15"></a></p>
+<h3 id="playeradmanager">player.adManager().play()</h3>
+<p>Plays the Ad when it is paused</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
+<p><a id="Player_adManager16"></a></p>
+<h3 id="playeradmanager">player.adManager().skip()</h3>
+<p>Skips the Ad if possible</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
+<p><a id="Player_adManager17"></a></p>
+<h3 id="playeradmanager">player.adManager().abort()</h3>
+<p>Closes the Ad and starts the video</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
+<p><a id="Player_adManager18"></a></p>
+<h3 id="playeradmanager">player.adManager().addClickListener(func)</h3>
+<p>Sets a listener function called each time the user clicks on the Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when user clicks</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+
+
+<p><a id="Player_adManager19"></a></p>
+<h3 id="playeradmanager">player.adManager().addVolumeMutedListener(func)</h3>
+<p>Sets a listener function called each time the user mutes the Ad volume</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when user mutes the Ad</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+<p><a id="Player_adManager20"></a></p>
+<h3 id="playeradmanager">player.adManager().addVolumeChangedListener(func)</h3>
+<p>Sets a listener function called each time the user changes the Ad volume</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when user changes the Ad volume</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+<p><a id="Player_adManager21"></a></p>
+<h3 id="playeradmanager">player.adManager().addSkippedListener(func)</h3>
+<p>Sets a listener function called each time the user skips the Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when user skips the Ad</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+<p><a id="Player_adManager22"></a></p>
+<h3 id="playeradmanager">player.adManager().addPausedListener(func)</h3>
+<p>Sets a listener function called each time user pauses the Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when user pauses the Ad</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+<p><a id="Player_adManager23"></a></p>
+<h3 id="playeradmanager">player.adManager().addResumedListener(func)</h3>
+<p>Sets a listener function called each time user resumes the Ad</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when user resumes the Ad</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+<p><a id="Player_adManager24"></a></p>
+<h3 id="playeradmanager">player.adManager().addStartedListener(func)</h3>
+<p>Sets a listener function called when Ad starts</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when Ad starts</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+<p><a id="Player_adManager25"></a></p>
+<h3 id="playeradmanager">player.adManager().addFirstQuartileListener(func)</h3>
+<p>Sets a listener function called when Ad reaches the first quartile of the video duration</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when Ad reaches the first quartile of the video duration</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+<p><a id="Player_adManager26"></a></p>
+<h3 id="playeradmanager">player.adManager().addMidpointListener(func)</h3>
+<p>Sets a listener function called when Ad reaches the middle of the video duration</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when Ad reaches the middle of the video duration</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+<p><a id="Player_adManager27"></a></p>
+<h3 id="playeradmanager">player.adManager().addThirdQuartileListener(func)</h3>
+<p>Sets a listener function called when Ad reaches the third quartile of the video duration</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when Ad reaches the third quartile of the video duration</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+<p><a id="Player_adManager28"></a></p>
+<h3 id="playeradmanager">player.adManager().addCompleteListener(func)</h3>
+<p>Sets a listener function called when Ad finishes</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+    <table>
+    <thead>
+    <tr>
+    <th>Param</th>
+    <th>Type</th>
+    <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>func</td>
+    <td><code>function</code></td>
+    <td>the function called when Ad finishes</td>
+    </tr>
+    </tbody>
+    </table>
+</p>
+
+
 <h3 id="playernexprotocol--enum">Player.NexProtocol : <code>enum</code></h3>
 <p><strong>Kind</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
 <table>
