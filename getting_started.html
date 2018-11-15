@@ -847,7 +847,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://nexplayer.nexplayersdk.com/latest/nexplayer.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript">
         nexplayer.Setup({
-            key: <span class="hljs-string">&quot;REPLACE THIS WITH YOUR CUSTOMER KEY&quot;</span>,
+            key: <span class="hljs-string">&quot;REPLACE THIS WITH YOUR PLAYER KEY&quot;</span>,
             div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
             src: <span class="hljs-string">&apos;https://d7wce5shv28x4.cloudfront.net/nexplayer/master.m3u8&apos;</span>,
             poster: <span class="hljs-string">&apos;https://d7wce5shv28x4.cloudfront.net/HTML5/8.jpg&apos;</span>,
@@ -864,7 +864,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the key is mandatory.</p>
+<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the player key is mandatory. You can find the player key in the license section of your dashboard at <a href="https://www.nexplayersdk.com/portal/portal-hub">https://www.nexplayersdk.com/portal/portal-hub</a>.</p>
 </div></div></p>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that we have built a specific library for Samsung Smart TVs. To enable Tizen support, please change the current library to our Tizen library: </p>
 </div></div></p>
@@ -892,7 +892,7 @@
 <li>The player should be initialized by entering the previous div to the <em>Setup</em> method:</li>
 </ul>
 <pre><code class="lang-javascript">nexplayer.Setup({
-    key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+    key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR PLAYER KEY&apos;</span>,
     div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
     src: <span class="hljs-string">&apos;https://d7wce5shv28x4.cloudfront.net/nexplayer/master.m3u8&apos;</span>
 });
@@ -902,7 +902,7 @@
 <h2 id="configuring">NexPlayer&#x2122; Configuration </h2>
 <p>There are a substantial number of customizable options for NexPlayer&#x2122;, such as the name and subtitle of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview:</p>
 <pre><code class="lang-javascript">{
-    key: <span class="hljs-string">&apos;Customer identifier to validate the playback&apos;</span>, <span class="hljs-comment">// Mandatory</span>
+    key: <span class="hljs-string">&apos;Player key to validate the playback&apos;</span>, <span class="hljs-comment">// Mandatory</span>
     div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
     src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
     poster: <span class="hljs-string">&apos;URL poster&apos;</span>, <span class="hljs-comment">// Optional</span>
@@ -926,9 +926,9 @@
 <ul>
 <li>Basic errors:</li>
 </ul>
-<pre><code class="lang-javascript"><span class="hljs-string">&apos;[NexPlayer] Error code 101: License key not valid. Please contact for support.&apos;</span>
+<pre><code class="lang-javascript"><span class="hljs-string">&apos;[NexPlayer] Error code 101: Player key not valid. Please contact for support.&apos;</span>
 </code></pre>
-<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>This error may appear because the key that you are using is expired or the domain is not valid for that key.</p>
+<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>This error may appear because the player key that you are using is expired or the domain is not valid for that player key.</p>
 </div></div></p>
 <ul>
 <li>DRM errors:</li>
