@@ -397,6 +397,19 @@
 
         
         </li>
+
+        <li class="chapter " data-level="1.6.4" data-path="advance.html">
+            
+            <a href="advance.html#autoPlay">
+        
+                
+                Auto Play
+        
+            </a>
+        
+
+        
+        </li>
     
         <li class="chapter " data-level="1.6.5" data-path="advance.html">
             
@@ -974,6 +987,18 @@ nexplayer.Setup({
 </code></pre>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>lowLatency</em> parameter is false, so the player will start without low latency if <em>lowLatency</em> is not set to true.</p>
 </div></div></p>
+
+<h2 id="lowLatency">Auto Play </h2>
+<p>This feature enables/disables autoplay. This can be configured in the player by adding the <em>autoplay</em> option:</p>
+<pre><code class="lang-javascript">{
+  div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
+  src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
+  autoplay: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>autoplay</em> parameter is true, so the player will start without user action.</p>
+</div></div></p>
+
 <h2 id="cast">Cast </h2>
 <p>Cast technology allows you to stream your media to the compatible receiver devices.</p>
 <h3 id="airplay">AirPlay </h3>
