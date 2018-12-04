@@ -33,24 +33,6 @@
                 
             
         
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-        
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -978,14 +960,17 @@ nexplayer.Setup({
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>mutedAtStart</em> parameter is false, so the player will start unmuted if <em>mutedAtStart</em> is not set to true.</p>
 </div></div></p>
 <h2 id="lowLatency">Low Latency </h2>
-<p>This feature enables low latency for live streams. This can be configured in the player by adding the <em>lowLatency</em> option:</p>
+<p>This feature enables low latency for live streams. This can be configured in the player by adding the <em>lowLatency</em> option. You can also choose the desired latency:</p>
 <pre><code class="lang-javascript">{
   div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
   src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
-  lowLatency: <span class="hljs-literal">true</span>
+  lowLatency: <span class="hljs-literal">true</span>,
+  lowLatencyLiveDelay: <span class="hljs-literal">3.2 </span><span class="hljs-comment">// The desired latency to mantain</span>
 }
 </code></pre>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>lowLatency</em> parameter is false, so the player will start without low latency if <em>lowLatency</em> is not set to true.</p>
+</div></div></p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>lowLatencyLiveDelay</em> parameter will adjust the latency depending on the network conditions.</p>
 </div></div></p>
 
 <h2 id="autoPlay">Auto Play </h2>
