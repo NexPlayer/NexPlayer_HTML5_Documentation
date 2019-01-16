@@ -415,11 +415,23 @@
                     AirPlay
             
                 </a>
-            
 
+        </li>
+
+        <li class="chapter " data-level="1.6.5.2" data-path="advance.html">
+            
+                <a href="advance.html#ChromeCast">
+            
+                    
+                    ChromeCast
+            
+                </a>
+        </li>
+
+
+            </ul>
             
         </li>
-    
 
             </ul>
             
@@ -470,7 +482,7 @@
                 <a href="advance.html#track_selection">
             
                     
-                    Track
+                    ABR
             
                 </a>
             
@@ -793,12 +805,12 @@
 </div></div></p>
 <p>NexPlayer&#x2122; supports several DRM technologies:</p>
 <h4 id="widevine">Widevine </h4>
-<p>A DRM powered by <a href="https://www.widevine.com" target="_blank">Google</a>, available on Chrome (on Android and desktop), Firefox (on desktop) and Opera (on desktop). It can be used by entering the information into the drm array as below:</p>
+<p>A DRM powered by <a href="https://www.widevine.com" target="_blank">Google</a>, available on Chrome and Firefox (on Android and desktop), Opera, MS Edge and Internet Explorer (on desktop). It can be set by entering the information into the drm array as below:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationWidevine = {
   NexDRMType:<span class="hljs-string">&apos;com.widevine.alpha&apos;</span>,
   NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>,
-  NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>,
-               FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]
+  NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>,<span class="hljs-comment"> //Optional</span>
+               FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]<span class="hljs-comment"> //Optional</span>
 };
 nexplayer.Setup({
   key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
@@ -808,11 +820,14 @@ nexplayer.Setup({
 });
 </code></pre>
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the Widevine server used.</p>
-<p>Widevine is supported on both DASH and HLS.</p>
+<p>Widevine is supported on DASH only. </p>
 <h4 id="playready">PlayReady </h4>
 <p>A DRM powered by <a href="https://www.microsoft.com/playready/" target="_blank">PlayReady</a>, available on Edge (on Windows) and Internet Explorer (on Windows). It can be used by entering the information into the drm array:</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationPlayReady = {NexDRMType:<span class="hljs-string">&apos;com.microsoft.playready&apos;</span>, NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
-NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationPlayReady = {
+NexDRMType:<span class="hljs-string">&apos;com.microsoft.playready&apos;</span>,
+ NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
+NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, <span class="hljs-comment"> //Optional</span>
+            FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};<span class="hljs-comment"> //Optional</span>
 
 nexplayer.Setup({
   key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
@@ -828,12 +843,16 @@ nexplayer.Setup({
 It allows the same CENC-encrypted content to be decrypted and played by any client device that interfaces with a DRM system that can serve the associated CENC key information.</p>
 <p>For example, Widevine and PlayReady can be used with the same DASH manifest and chunk files:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// Widevine</span>
-<span class="hljs-keyword">var</span> nexDRMInformationWidevine = {NexDRMType:<span class="hljs-string">&apos;com.widevine.alpha&apos;</span>, NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
-NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
+<span class="hljs-keyword">var</span> nexDRMInformationWidevine = {NexDRMType:<span class="hljs-string">&apos;com.widevine.alpha&apos;</span>,
+ NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
+            NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, <span class="hljs-comment"> //Optional</span>
+            FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};<span class="hljs-comment"> //Optional</span>
 
 <span class="hljs-comment">// PlayReady</span>
-<span class="hljs-keyword">var</span> nexDRMInformationPlayReady = {NexDRMType:<span class="hljs-string">&apos;com.microsoft.playready&apos;</span>, NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
-NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
+<span class="hljs-keyword">var</span> nexDRMInformationPlayReady = {NexDRMType:<span class="hljs-string">&apos;com.microsoft.playready&apos;</span>,
+ NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
+            NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>,<span class="hljs-comment"> //Optional</span>
+            FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};<span class="hljs-comment"> //Optional</span>
 
 nexplayer.Setup({
   key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
@@ -844,9 +863,10 @@ nexplayer.Setup({
 </code></pre>
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the DRM used.</p>
 <p>CENC is supported on DASH.</p>
+
 <h4 id="fairplay">FairPlay </h4>
-<p>A DRM powered by <a href="https://developer.apple.com/streaming/fps/" target="_blank">Apple</a>, available on Safari (on macOS). While using FairPlay, the license must be manually requested, adapting it to the specified FairPlay server implementation. It can be used by entering the information into the drm array:</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// We need to obtain the player instance to call some method when the licese is requested</span>
+<p>FairPlay is a DRM system powered by <a href="https://developer.apple.com/streaming/fps/" target="_blank">Apple</a>, available on Safari (on macOS). While using FairPlay, the license must be manually requested, adapting it to the specified FairPlay server implementation. It can be used by entering the information into the drm array:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// First get the player instance to call the necessary methods when the license is requested</span>
 <span class="hljs-keyword">var</span> player = <span class="hljs-literal">null</span>;
 
 <span class="hljs-comment">// FairPlay Utility</span>
@@ -909,7 +929,7 @@ nexplayer.Setup({
 });
 </code></pre>
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the FairPlay server used.</p>
-<p>FairPlay is supported on HLS.</p>
+<p>FairPlay is supported on HLS </p>
 <h4 id="aes">AES </h4>
 <p>NexPlayer&#x2122; supports HLS content encrypted with the AES-128 algorithm. If the key is trasported inside the HLS manifest itself, it will automatically work, without any modification on the developer&apos;s side.</p>
 <p>Please note that this method is not as secure as other DRMs.</p>
@@ -928,18 +948,18 @@ nexplayer.Setup({
 </code></pre>
 <p>Please note that this method is not as secure as other DRMs.</p>
 <p>Custom headers are supported on HLS and DASH.</p>
-<h2 id="ads">VAST / VPAID </h2>
-<p>VAST (Video Ad Serving Template) is a specification that sets a standard for communication requirements between advertisement servers and video players.</p>
-<p>Any VAST or VPAID link works out of the box:</p>
+<h2 id="ads">Ads</h2>
+<p>NexPlayer supports VAST, VMAP, and VPAID ad format.</p>
+<p>You can insert any pre/mid/post roll ads by setting up the ad links as bellow:</p>
 <pre><code class="lang-javascript">nexplayer.Setup({
   key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
     div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
     src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
-    vast: <span class="hljs-string">&apos;VAST / VPAID link&apos;</span>
+    vast: <span class="hljs-string">&apos;VAST / VPAID / VMAP link&apos;</span>
 });
 </code></pre>
 <p>Sample VAST links can be found on the <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags" target="_blank">Google website</a>.</p>
-<h2 id="360">360 Player </h2>
+<h2 id="360">360 Player and VR Mode</h2>
 <p>This feature permits the player to reproduce videos with equirectangular or cubemap format. The 360 feature can be activated by adding the <em>360_type</em> option:</p>
 <pre><code class="lang-javascript">{
   div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
@@ -964,7 +984,7 @@ nexplayer.Setup({
 <pre><code class="lang-javascript">{
   div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
   src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
-  lowLatency: <span class="hljs-literal">true</span>,
+  lowLatency: <span class="hljs-literal">true</span>,<span class="hljs-comment">// toggle on/off low latency apis</span>
   lowLatencyLiveDelay: <span class="hljs-literal">3.2 </span><span class="hljs-comment">// The desired latency to maintain</span>
 }
 </code></pre>
@@ -995,7 +1015,16 @@ nexplayer.Setup({
     cast: {}
 });
 </code></pre>
-<p>AirPlay cast option doesn&apos;t need input parameters, remove the cast option to disable this feature. </p>
+<h3 id="ChromeCast">ChromeCast </h3>
+<p>ChromeCast displays your video and audio streams directly to any TV connected to you ChromeCast receptor. You can enable ChromeCast option as shown below:</p>
+<pre><code class="lang-javascript">nexplayer.Setup({
+  key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+    div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+    src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+    cast: {}
+});
+</code></pre>
+<p>AirPlay and ChromeCast cast option don&apos;t need input parameters, remove the cast option to disable these features. </p>
 <p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Notice that AirPlay only works on Safari.</p>
 </div></div></p>
 <h2 id="timed_metadata">ID3 Tags </h2>
@@ -1040,7 +1069,7 @@ nexplayer.Setup({
 </div></div></p>
 <h2 id="custom_selection">Custom Actions </h2>
 <p>Advanced actions can be perform with a player instance. For the full action list, check <a href="api.html">NexPlayer API</a>.</p>
-<h3 id="track_selection">Track </h3>
+<h3 id="track_selection">Adaptive Bit Rate (ABR) </h3>
 <p>HLS and DASH have several video bitrates to properly adapt the best quality track depending on the network conditions. The changes in the current bitrates are done automatically when ABR (Adaptive Bitrate) is enabled (default behaviour).</p>
 <p>The currently selected track can be obtained with the method <a href="api.html#Player_getCurrentTrack"><code>getCurrentTrack</code></a> of NexPlayer&#x2122;. It returns all the <a href="api.html#Track">track information</a>.</p>
 <pre><code class="lang-javascript">nexplayerInstance.getCurrentTrack();
@@ -1053,6 +1082,7 @@ nexplayer.Setup({
 nexplayerInstance.setTrack(nexplayerInstance.getTracks()[<span class="hljs-number">0</span>].id);
 </code></pre>
 <p>A change in the currently used track can be detected with the NexPlayer&#x2122; <a href="#events_neplayer">callbacks</a>.</p>
+<h3 id="A/V tracks"> Tracks </h3>
 <h4 id="subtitle_selection">Subtitles </h4>
 <p>Information about the available subtitles can be retrieved with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank"><code>textTracks</code></a> attribute of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" target="_blank">video element</a>.</p>
 <pre><code class="lang-javascript">videoElement.textTracks;
@@ -1151,7 +1181,7 @@ video.</p>
 <tbody>
 <tr>
 <td>Chrome</td>
-<td>Windows, macOS, Android</td>
+<td>Windows, Linux, macOS, Android</td>
 <td>Widevine, Custom Headers</td>
 </tr>
 <tr>
@@ -1161,8 +1191,13 @@ video.</p>
 </tr>
 <tr>
 <td>Firefox</td>
-<td>Windows, macOS, Android</td>
+<td>Windows, Linux, macOS, Android</td>
 <td>Widevine<sup><a href="#fn_1" id="reffn_1">1</a></sup>, Custom Headers</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>Windows, Linux, macOS</td>
+<td>Widevine, Custom Headers</td>
 </tr>
 <tr>
 <td>Edge</td>
@@ -1204,8 +1239,13 @@ video.</p>
 </tr>
 <tr>
 <td>Firefox</td>
-<td>Windows, macOS, Android</td>
+<td>Windows, Linux, macOS, Android</td>
 <td>Widevine<sup><a href="#fn_3" id="reffn_3">3</a></sup>, AES, Custom Headers</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>Windows, Linux, macOS</td>
+<td>Widevine, AES, Custom Headers</td>
 </tr>
 <tr>
 <td>Edge</td>
