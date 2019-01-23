@@ -165,7 +165,7 @@
                 <a href="getting_started.html#explanation">
             
                     
-                    Explanation
+                    Step-by-Step
             
                 </a>
             
@@ -389,18 +389,18 @@
     
         <li class="chapter " data-level="1.6.5" data-path="advance.html">
             
-                <a href="advance.html#cast">
-            
-                    
-                    Cast
-            
-                </a>
+            <a href="advance.html#cast">
+        
+                
+                Cast
+        
+            </a>
+        
+
+        
+        <ul class="articles">
             
 
-            
-            <ul class="articles">
-                
-    
         <li class="chapter " data-level="1.6.5.1" data-path="advance.html">
             
                 <a href="advance.html#airplay">
@@ -409,35 +409,47 @@
                     AirPlay
             
                 </a>
-            
 
-            
         </li>
-    
+
+
+        <li class="chapter " data-level="1.6.5.2" data-path="advance.html">
+            
+                <a href="advance.html#ChromeCast">
+            
+                    
+                    ChromeCast
+            
+                </a>
+
+
+        </li>
+
 
             </ul>
             
         </li>
-    
+
+
+        <li class="chapter " data-level="1.6.7" data-path="advance.html">
+            
+            <a href="advance.html#timed_metadata">
+        
+                
+                ID3 Tags
+        
+            </a>
+        
+
+        
+        </li>
+
         <li class="chapter " data-level="1.6.6" data-path="advance.html">
             
                 <a href="advance.html#instances">
             
                     
                     Access to the Player Instances
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.7" data-path="advance.html">
-            
-                <a href="advance.html#timed_metadata">
-            
-                    
-                    ID3 Tags
             
                 </a>
             
@@ -887,7 +899,7 @@
 <tr>
 <td>key</td>
 <td><code>string</code></td>
-<td>that validates the playback.</td>
+<td>that validates the playback</td>
 </tr>
 <tr>
 <td>div</td>
@@ -897,32 +909,32 @@
 <tr>
 <td>videoElement</td>
 <td><code>HTMLVideoElement</code></td>
-<td>that will output the video.</td>
+<td>that will output the video</td>
 </tr>
 <tr>
 <td>URL</td>
 <td><code>string</code></td>
-<td>of the video to be played.</td>
+<td>of the video to be played</td>
 </tr>
 <tr>
 <td>nexDRMInformation</td>
 <td><a href="#NexDRMInformation"><code>Array.&lt;NexDRMInformation&gt;</code></a></td>
-<td>that contains an array of DRM information. By default it is null.</td>
+<td>that contains an array of DRM information (by default it is null)</td>
 </tr>
 <tr>
 <td>displayableinCanvas</td>
 <td><code>boolean</code></td>
-<td>that will inform if the videoElement will be used to generate external textures to be displayed in a canvas. By default it is false.</td>
+<td>that will inform if the videoElement will be used to generate external textures to be displayed in a canvas (by default it is false)</td>
 </tr>
 <tr>
 <td>protocolType</td>
 <td><code>NexProtocol</code></td>
-<td>that will define the protocol type.  By default it is UNKNOWN and it will be obtained from the URL.</td>
+<td>that will define the protocol type (by default it is UNKNOWN and it will be obtained from the URL)</td>
 </tr>
 <tr>
 <td>debugLog</td>
 <td><code>boolean</code></td>
-<td>that will set the output of extra logs. By default it is false.</td>
+<td>that will set the output of extra logs (by default it is false)</td>
 </tr>
 </tbody>
 </table>
@@ -948,7 +960,7 @@
 <tr>
 <td>trackID</td>
 <td><code>number</code></td>
-<td>ID of the track to be used.</td>
+<td>ID of the track to be used</td>
 </tr>
 </tbody>
 </table>
@@ -977,7 +989,7 @@
 <tr>
 <td>streamID</td>
 <td><code>number</code></td>
-<td>ID of the audio stream to be used.</td>
+<td>ID of the audio stream to be used</td>
 </tr>
 </tbody>
 </table>
@@ -1000,18 +1012,18 @@
 <tr>
 <td>callbackType</td>
 <td><code>NexEvent</code></td>
-<td>Event to listen for.</td>
+<td>Event to listen for</td>
 </tr>
 <tr>
 <td>functionToBeCalled</td>
 <td><a href="#NexCallbackEvent"><code>NexCallbackEvent</code></a></td>
-<td>Function called on each event.</td>
+<td>Function called on each event</td>
 </tr>
 </tbody>
 </table>
 <p><a id="Player_attachSubtitleRendererDiv"></a></p>
 <h3 id="playerattachsubtitlerendererdivsubtitlerendererdiv">player.attachSubtitleRendererDiv(subtitleRendererDiv)</h3>
-<p>Adds a DIV to render certain subtitles in a more exact way.
+<p>Adds a DIV to render certain subtitles in a more precise way.
 This is optional and the native subtitles of the video element will be used if this is not set.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
@@ -1026,7 +1038,7 @@ This is optional and the native subtitles of the video element will be used if t
 <tr>
 <td>subtitleRendererDiv</td>
 <td><code>subtitleRendererDiv</code></td>
-<td>DIV to render some advance subtitles.</td>
+<td>DIV to render some advanced subtitles</td>
 </tr>
 </tbody>
 </table>
@@ -1035,7 +1047,7 @@ This is optional and the native subtitles of the video element will be used if t
 <p>Creates the 360 view.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_FairPlayNexLicenseRequestLoaded"></a></p>
 <h3 id="playerfairplaynexlicenserequestloadedevent">player.FairPlayNexLicenseRequestLoaded(event)</h3>
-<p>Called this when the FairPlay request is done</p>
+<p>Called when the FairPlay request is done.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
@@ -1053,7 +1065,7 @@ This is optional and the native subtitles of the video element will be used if t
 </table>
 <p><a id="Player_FairPlayNexLicenseRequestFailed"></a></p>
 <h3 id="playerfairplaynexlicenserequestfailedevent">player.FairPlayNexLicenseRequestFailed(event)</h3>
-<p>Called if the  FairPlay request fails</p>
+<p>Called if the  FairPlay request fails.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
@@ -1071,7 +1083,7 @@ This is optional and the native subtitles of the video element will be used if t
 </table>
 <p><a id="Player_setThumbnailResources"></a></p>
 <h3 id="playersetthumbnailresourcescallback-vtturl-imageurl">player.setThumbnailResources(callback, vttURl, imageURL)</h3>
-<p>Set thumbnails resources. This method should be called before Init().</p>
+<p>Sets thumbnail resources. This method should be called before Init().</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
@@ -1085,25 +1097,25 @@ This is optional and the native subtitles of the video element will be used if t
 <tr>
 <td>callback</td>
 <td><a href="#NexCallbackEvent"><code>NexCallbackEvent</code></a></td>
-<td>functionToBeCalled Function when thumbnails are loaded.</td>
+<td>functionToBeCalled Function when thumbnails are loaded</td>
 </tr>
 <tr>
 <td>vttURl</td>
 <td><code>String</code></td>
-<td>path to vtt thumbnails file.</td>
+<td>path to .vtt thumbnails file</td>
 </tr>
 <tr>
 <td>imageURL</td>
 <td><code>String</code></td>
-<td>path to the thumbnails image file.</td>
+<td>path to the thumbnails image file</td>
 </tr>
 </tbody>
 </table>
 <p><a id="Player_isUTC"></a></p>
 <h3 id="playerisutc-&#x21D2;-boolean">player.isUTC() &#x21D2; <code>boolean</code></h3>
 <p>Indicates whether the video information (currentTime, duration, seekable range, etc.) of the video element is based on the present or on an absolute value that
-starts at midnight UTC, Jan 1, 1970. It is neccessary to take this into acccount when seeking through the video.
-Some useful methods, like getCurrentTime, getDuration and seek, are
+starts at midnight UTC, Jan 1, 1970. If this is true, you will need to take this into acccount when seeking through the currentTime of the video element.
+Some useful methods (like getCurrentTime, getDuration and seek) are
 available to reduce the complexity in these cases. Note that this property only
 applies to live streams.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - true if the video information is using UTC, false otherwise.<br><a id="Player_getCurrentTime"></a></p>
@@ -1113,10 +1125,10 @@ applies to live streams.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the current time of the video.<br><a id="Player_getDuration"></a></p>
 <h3 id="playergetduration-&#x21D2;-number">player.getDuration() &#x21D2; <code>number</code></h3>
 <p>Returns the duration taking into account isUTC 
-(if <i>isUTC</i> is <b>true,</b> getDuration's returned value will be different from the duration of the video element)</p>
+(if <i>isUTC</i> is <b>true,</b> getDuration's returned value will be different from the duration of the video element).</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_seek"></a></p>
 <h3 id="playerseekvalue">player.seek(value)</h3>
-<p>Sets the position of the playback.
+<p>Sets the position of the playback taking into account isUTC
 (if <i>isUTC</i> is <b>true,</b> the seek value will be in a different format than the currentTime of the video element).</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
