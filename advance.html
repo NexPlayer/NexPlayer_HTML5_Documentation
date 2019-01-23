@@ -794,7 +794,7 @@
 </div></div></p>
 <p>NexPlayer&#x2122; supports several DRM technologies:</p>
 <h4 id="widevine">Widevine </h4>
-<p>A DRM powered by <a href="https://www.widevine.com" target="_blank">Google</a>, available on Chrome and Firefox (on Android and desktop), Opera, MS Edge and IE(on desktop). It can be set by entering the information into the DRM array as below:</p>
+<p>A DRM powered by <a href="https://www.widevine.com" target="_blank">Google</a>, available on Chrome and Firefox (on Android and desktop), Opera, MS Edge and IE (on desktop). It can be set by entering the information into the DRM array:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationWidevine = {
   NexDRMType:<span class="hljs-string">&apos;com.widevine.alpha&apos;</span>,
   NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>,
@@ -811,7 +811,7 @@ nexplayer.Setup({
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the Widevine server used.</p>
 <p>Widevine is supported with DASH. </p>
 <h4 id="playready">PlayReady </h4>
-<p>A DRM powered by <a href="https://www.microsoft.com/playready/" target="_blank">PlayReady</a>, available on Edge (on Windows) and Internet Explorer (on Windows). It can be used by entering the information into the DRM array:</p>
+<p>A DRM powered by <a href="https://www.microsoft.com/playready/" target="_blank">Microsoft</a>, available on Edge (on Windows) and Internet Explorer (on Windows). It can be used by entering the information into the DRM array:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationPlayReady = {
 NexDRMType:<span class="hljs-string">&apos;com.microsoft.playready&apos;</span>,
  NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
@@ -854,7 +854,7 @@ nexplayer.Setup({
 <p>CENC is supported with DASH.</p>
 
 <h4 id="fairplay">FairPlay </h4>
-<p>FairPlay is a DRM system powered by <a href="https://developer.apple.com/streaming/fps/" target="_blank">Apple</a>, available on Safari (on macOSand iOS). When using FairPlay, the license must be manually requested, adapting it to the specified FairPlay server implementation. It can be used by entering the information into the DRM array:</p>
+<p>A DRM powered by <a href="https://developer.apple.com/streaming/fps/" target="_blank">Apple</a>, available on Safari (on macOS and iOS). When using FairPlay the license must be manually requested, adapting it to the specified FairPlay server implementation. It can be used by entering the information into the DRM array:</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// First get the player instance to call the necessary methods when the license is requested</span>
 <span class="hljs-keyword">var</span> player = <span class="hljs-literal">null</span>;
 
@@ -918,14 +918,14 @@ nexplayer.Setup({
 });
 </code></pre>
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the FairPlay server used.</p>
-<p>FairPlay is supported with HLS </p>
+<p>FairPlay is supported with HLS. </p>
 <h4 id="aes">AES </h4>
-<p>NexPlayer&#x2122; supports HLS content encrypted with the AES-128 algorithm. If the key is trasported inside the HLS manifest itself, it will automatically work, without any modification on the developer&apos;s side.</p>
+<p>NexPlayer&#x2122; supports HLS content encrypted with the AES-128 algorithm. If the key is transported inside the HLS manifest itself, it will automatically work without any modification on the developer&apos;s side.</p>
 <p>Please note that this method is not as secure as other DRMs.</p>
 <p>AES is supported with HLS.</p>
 <h4 id="custom_headers">Custom Headers </h4>
-<p>Custom headers can be included in each HTTP petition, even without using any DRM, to include extra information for the server.</p>
-<p>This information can be passed in the drm array:</p>
+<p>Custom headers can be included in each HTTP petition, even without the use of DRM, to include extra information for the server.</p>
+<p>This information can be passed in the DRM array:</p>
 <pre><code class="lang-javascript">drmCustomHeaders = {NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
 
 nexplayer.Setup({
@@ -938,8 +938,8 @@ nexplayer.Setup({
 <p>Please note that this method is not as secure as other DRMs.</p>
 <p>Custom headers are supported with HLS and DASH.</p>
 <h2 id="ads">Ads</h2>
-<p>NexPlayer supports the VAST, VMAP, and VPAID ad formats.</p>
-<p>You can insert any pre/mid/post roll ad by setting up the ad links as bellow:</p>
+<p>NexPlayer supports the VAST, VPAID, and VMAP ad formats.</p>
+<p>You can insert any pre/mid/post roll ad by setting up the ad links as shown below:</p>
 <pre><code class="lang-javascript">nexplayer.Setup({
   key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
     div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
@@ -949,7 +949,7 @@ nexplayer.Setup({
 </code></pre>
 <p>Sample VAST links can be found on the <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags" target="_blank">Google website</a>.</p>
 <h2 id="360">360 Player and VR Mode</h2>
-<p>This feature allows the player to reproduce videos with equirectangular or cubemap format. The 360 feature can be activated by adding the <em>360_type</em> option:</p>
+<p>This feature allows the player to play videos with equirectangular or cubemap format. The 360 feature can be activated by adding the <em>360_type</em> option:</p>
 <pre><code class="lang-javascript">{
   div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
   src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
@@ -993,10 +993,10 @@ nexplayer.Setup({
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>autoplay</em> parameter is true, so the player will start without any user action.</p>
 </div></div></p>
 
-<h2 id="cast">Cast </h2>
-<p>Cast technology allows you to stream your media to the compatible receiver devices.</p>
+<h2 id="cast">Casting </h2>
+<p>Cast technology allows you to stream your media to any compatible receiver devices.</p>
 <h3 id="airplay">AirPlay </h3>
-<p>AirPlay displays your video and audio streams directly to your Apple TV. You can enable AirPlay option as shown below:</p>
+<p>AirPlay displays your video and audio streams directly to your Apple TV. You can enable the AirPlay option as shown below:</p>
 <pre><code class="lang-javascript">nexplayer.Setup({
   key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
     div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
@@ -1004,8 +1004,8 @@ nexplayer.Setup({
     cast: {}
 });
 </code></pre>
-<h3 id="ChromeCast">ChromeCast </h3>
-<p>ChromeCast displays your video and audio streams directly to any TV connected to you ChromeCast receptor. You can enable ChromeCast option as shown below:</p>
+<h3 id="ChromeCast">Chromecast </h3>
+<p>Chromecast displays your video and audio streams directly onto any TV connected to you Chromecast receptor. You can enable the Chromecast option as shown below:</p>
 <pre><code class="lang-javascript">nexplayer.Setup({
   key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
     div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
@@ -1013,8 +1013,8 @@ nexplayer.Setup({
     cast: {}
 });
 </code></pre>
-<p>AirPlay and ChromeCast cast option don&apos;t need input parameters, remove the cast option to disable these features. </p>
-<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>please note that AirPlay only works on Safari.</p>
+<p>The AirPlay and Chromecast cast options don&apos;t need input parameters. Just remove the cast option to disable these features. </p>
+<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that AirPlay only works on Safari.</p>
 </div></div></p>
 <h2 id="timed_metadata">ID3 Tags </h2>
 <p>NexPlayer&#x2122; supports timed metadata for HLS and DASH content. The information is made available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack</a> array of the video element.</p>
@@ -1066,7 +1066,7 @@ nexplayer.Setup({
 <p>All the available tracks can be obtained with the method <a href="api.html#Player_getTracks"><code>getTracks</code></a> of NexPlayer&#x2122;.</p>
 <pre><code class="lang-javascript">nexplayerInstance.getTracks();
 </code></pre>
-<p>Setting a fixed track can be achieved calling the method <a href="api.html#Player_setTrack"><code>setTrack</code></a> of NexPlayer&#x2122;.</p>
+<p>Setting a fixed track can be achieved by calling the method <a href="api.html#Player_setTrack"><code>setTrack</code></a> of NexPlayer&#x2122;.</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// Sets the first track as the used one</span>
 nexplayerInstance.setTrack(nexplayerInstance.getTracks()[<span class="hljs-number">0</span>].id);
 </code></pre>
@@ -1076,7 +1076,7 @@ nexplayerInstance.setTrack(nexplayerInstance.getTracks()[<span class="hljs-numbe
 <p>Information about the available subtitles can be retrieved with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank"><code>textTracks</code></a> attribute of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" target="_blank">video element</a>.</p>
 <pre><code class="lang-javascript">videoElement.textTracks;
 </code></pre>
-<p>The active subtitles have the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack/mode" target="_blank">mode</a> set to <code>showing</code>. The currently selected subtitle can also be selected setting the mode to <code>showing</code>. A subtitle can be deselected by setting the mode to <code>hidden</code>.</p>
+<p>The active subtitles have the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack/mode" target="_blank">mode</a> set to <code>showing</code>. The currently selected subtitle can also be selected by setting the mode to <code>showing</code>. A subtitle can be deselected by setting the mode to <code>hidden</code>.</p>
 <pre><code class="lang-javascript">videoElement.textTracks[<span class="hljs-number">0</span>].mode = <span class="hljs-string">&quot;showing&quot;</span>;
 </code></pre>
 <h4 id="audio_selection">Audio </h4>
@@ -1091,11 +1091,11 @@ nexplayerInstance.setTrack(nexplayerInstance.getTracks()[<span class="hljs-numbe
 nexplayerInstance.setAudioStream(nexplayerInstance.getAudioStreams()[<span class="hljs-number">0</span>].id);
 </code></pre>
 <h4 id="seek">Seek </h4>
-<p>Seeking to a certain time can be achieved by calling the method <a href="api.html#Player_seek"><code>seek</code></a> of the NexPlayer&#x2122;, and passing the desired number of seconds.</p>
+<p>Seeking to a certain time can be achieved by calling the method <a href="api.html#Player_seek"><code>seek</code></a> of the NexPlayer&#x2122; and passing the desired number of seconds.</p>
 <pre><code class="lang-javascript">nexplayerInstance.seek(<span class="hljs-number">30</span>);
 </code></pre>
 <h2 id="thumbnails">Thumbnails </h2>
-<p>NexPlayer&#x2122; supports the loading of a preview thumbnails feature. Thumbnails are individual frame images of the video that are loaded when a viewer hovers over the seekbar. It permits a quick snapshot of the video. 
+<p>NexPlayer&#x2122; supports thumbnail previews. Thumbnails are individual frame images of the video that are loaded when a viewer hovers over the seekbar. It permits a quick snapshot of the video. 
 The thumbnails can be loaded in a static or dynamic way.</p>
 <h1 id=""><img src="thumb_player.png" alt="Customization Image"></h1>
 <h4 id="thumbnails_static">Static Thumbnails </h4>
@@ -1103,13 +1103,13 @@ The thumbnails can be loaded in a static or dynamic way.</p>
 <ul>
 <li>the Thumbnail Sprite, which contains multiple thumbnails stitched together into a single image<h1 id=""><img src="thumbnails_sprite.png" alt="Customization Image"></h1>
 </li>
-<li>a VTT file that specifies:<ul>
+<li>a .vtt file that specifies:<ul>
 <li>the range that the thumbnail represents</li>
 <li>the coordinates and size (both in pixels) corresponding to the position in the previous image file</li>
 </ul>
 </li>
 </ul>
-<p>An example of the VTT file could be:</p>
+<p>An example of the .vtt file could be:</p>
 <pre><code class="lang-code">WEBVTT
 
 00:00:00.000 --&gt; 00:00:03.000
@@ -1132,7 +1132,7 @@ The thumbnails can be loaded in a static or dynamic way.</p>
 <h4 id="thumbnails_dynamic">Dynamic Thumbnails </h4>
 <p>This feature permits the player to dynamically download the frames from the lowest track of the
 video.</p>
-<p>The configuration of the player can be done by adding the <em>useDynamicThumbnails</em> option:</p>
+<p>The player can be configured by adding the <em>useDynamicThumbnails</em> option:</p>
 <pre><code class="lang-javascript">{
   div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
   src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
@@ -1143,7 +1143,7 @@ video.</p>
 <p>References to the <a href="#instances">player instances</a> are needed to register callbacks.</p>
 <p>There are two types of emitted events that can be listened to.</p>
 <h4 id="events_native">Video Element Events </h4>
-<p>The video element emits the basic event, such as a change of the state of the video, (pause/play/buffering), or informs that the current time of the video has changed.</p>
+<p>The video element emits the basic event, such as a change of the state of the video (pause/play/buffering), or informs that the current time of the video has changed.</p>
 <p>The method <code>addEventListener</code> of the video element needs to be called with any of the available <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events" target="_blank">media events</a>.</p>
 <p>Some of the most important events are &quot;playing&quot;, &quot;pause&quot;, &quot;waiting&quot;, and &quot;timeupdate&quot;.</p>
 <pre><code class="lang-javascript">videoElement.addEventListener(<span class="hljs-string">&quot;timeupdate&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The video playback has advanced to: &quot;</span>+videoElement.currentTime+<span class="hljs-string">&quot;, with the duration: &quot;</span>+videoElement.duration) }, <span class="hljs-literal">true</span>);
@@ -1157,7 +1157,7 @@ video.</p>
 <pre><code class="lang-javascript">nexplayer.UnMount(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>);
 </code></pre>
 <h2 id="platforms">Supported Platforms </h2>
-<p>Online Progressive download (MP4) is supported on any platform. The support for DASH and HLS, and the associated DRMs, varies depending on each browser and platform. The platforms listed below have been and are still being actively tested.</p>
+<p>Online progressive download (MP4) is supported on any platform. The support for DASH and HLS, and the associated DRMs, varies depending on each browser and platform. The platforms listed below have been and are still being actively tested.</p>
 <h4 id="dash">DASH </h4>
 <table>
 <thead>
