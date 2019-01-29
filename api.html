@@ -326,7 +326,7 @@
                 <a href="advance.html#ads">
             
                     
-                    VAST / VPAID
+                    Ads
             
                 </a>
             
@@ -418,7 +418,7 @@
                 <a href="advance.html#ChromeCast">
             
                     
-                    ChromeCast
+                    Chromecast
             
                 </a>
 
@@ -806,7 +806,7 @@
                                 
                                 <p><a id="Player"></a></p>
 <h2 id="player">Player</h2>
-<p><strong>Kind</strong>: global class<br><strong>Struct</strong>:<br><strong>Export</strong>:   </p>
+<p><strong>Kind</strong>: global class </p>
 <ul>
 <li><a href="#Player">Player</a><ul>
 <li><a href="#new_Player_new">new Player()</a></li>
@@ -818,7 +818,8 @@
 <li><a href="#Player_enableABR">.enableABR()</a></li>
 <li><a href="#Player_getAudioStreams">.getAudioStreams()</a> &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></li>
 <li><a href="#Player_getCurrentAudioStream">.getCurrentAudioStream()</a> &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></li>
-<li><a href="#Player_setAudioStream">.setAudioStream(streamID)</a></li>
+<li><a href="#Player_setAudioStream">.setAudioStream(streamID) <strong>deprecated</strong></a></li>
+<li><a href="#Player_setAudio">.setAudio(streamID)</a></li>
 <li><a href="#Player_isLive">.isLive()</a> &#x21D2; <code>boolean</code></li>
 <li><a href="#Player_on">.on(callbackType, functionToBeCalled)</a></li>
 <li><a href="#Player_attachSubtitleRendererDiv">.attachSubtitleRendererDiv(subtitleRendererDiv)</a></li>
@@ -944,7 +945,7 @@
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Array.&lt;Track&gt;</code></a> - all the tracks available.<a id="Player_getCurrentTrack"></a></p>
 <h3 id="playergetcurrenttrack-&#x21D2;-track">player.getCurrentTrack() &#x21D2; <a href="#Track"><code>Track</code></a></h3>
 <p>Get the current track information.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Track</code></a> - the current track.<br><strong>Export</strong>:<br><a id="Player_setCurrentTrack"></a></p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Track</code></a> - the current track.<a id="Player_setCurrentTrack"></a></p>
 <h3 id="playersetcurrenttracktrackid">player.setCurrentTrack(trackID)</h3>
 <p>Set the current tack.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
@@ -973,8 +974,27 @@
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a> - the list of the available audio streams.<a id="Player_getCurrentAudioStream"></a></p>
 <h3 id="playergetcurrentaudiostream-&#x21D2;-audiostream">player.getCurrentAudioStream() &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></h3>
 <p>Get the audio stream currently in use.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>AudioStream</code></a> - the current audio track.<br><strong>Export</strong>:<br><a id="Player_setAudioStream"></a></p>
-<h3 id="playersetaudiostreamstreamid">player.setAudioStream(streamID)</h3>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>AudioStream</code></a> - the current audio track.<a id="Player_setAudioStream"></a></p>
+<h3 id="playersetaudiostreamstreamid">player.setAudioStream(streamID) <strong>deprecated</strong></h3>
+<p>Set the current audio stream.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>streamID</td>
+<td><code>number</code></td>
+<td>ID of the audio stream to be used</td>
+</tr>
+</tbody>
+</table>
+<h3 id="playersetaudio">player.setAudio(streamID)</h3>
 <p>Set the current audio stream.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
@@ -1097,12 +1117,12 @@ This is optional and the native subtitles of the video element will be used if t
 <tr>
 <td>callback</td>
 <td><a href="#NexCallbackEvent"><code>NexCallbackEvent</code></a></td>
-<td>functionToBeCalled Function when thumbnails are loaded</td>
+<td>functionToBeCalled function called when the thumbnails are loaded</td>
 </tr>
 <tr>
 <td>vttURl</td>
 <td><code>String</code></td>
-<td>path to .vtt thumbnails file</td>
+<td>path to the .vtt thumbnails file</td>
 </tr>
 <tr>
 <td>imageURL</td>
@@ -1115,7 +1135,7 @@ This is optional and the native subtitles of the video element will be used if t
 <h3 id="playerisutc-&#x21D2;-boolean">player.isUTC() &#x21D2; <code>boolean</code></h3>
 <p>Indicates whether the video information (currentTime, duration, seekable range, etc.) of the video element is based on the present or on an absolute value that
 starts at midnight UTC, Jan 1, 1970. If this is true, you will need to take this into acccount when seeking through the currentTime of the video element.
-Some useful methods (like getCurrentTime, getDuration and seek) are
+Some useful methods (like getCurrentTime, getDuration, and seek) are
 available to reduce the complexity in these cases. Note that this property only
 applies to live streams.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - true if the video information is using UTC, false otherwise.<br><a id="Player_getCurrentTime"></a></p>
@@ -1155,10 +1175,10 @@ applies to live streams.</p>
 <p>Returns the protocol type.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_getThumbnailController"></a></p>
 <h3 id="playergetthumbnailcontroller-&#x21D2;-thumbcontroller">player.getThumbnailController() &#x21D2; <code>ThumbController</code></h3>
-<p>Returns the preview thumbnail controller</p>
+<p>Returns the preview thumbnail controller.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>ThumbController</code> - Thumbnail controller<br><a id="Player_setThumbnailStep"></a></p>
 <h3 id="playersetthumbnailstepstep">player.setThumbnailStep(step)</h3>
-<p>Set step for dynamic thumbnails.</p>
+<p>Set the time interval between frames for dynamic thumbnails.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
 <thead>
@@ -1244,7 +1264,7 @@ applies to live streams.</p>
 <p>Toggle between play and pause.</p>
 <p><a id="Player_toggleFullScreen"></a></p>
 <h3 id="playertogglefullscreen">player.toggleFullScreen()</h3>
-<p>Toggle between full screen and not full screen</p>
+<p>Toggle between full screen and windowed.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
 
 <p><a id="Player_adManager"></a></p>
@@ -1329,7 +1349,7 @@ applies to live streams.</p>
 
 <p><a id="Player_adManager16"></a></p>
 <h3 id="playeradmanager">player.adManager().skip()</h3>
-<p>Skips the ad if possible.</p>
+<p>Skips the ad (if possible).</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
 
 <p><a id="Player_adManager17"></a></p>
@@ -1353,7 +1373,7 @@ applies to live streams.</p>
     <tr>
     <td>func</td>
     <td><code>function</code></td>
-    <td>the function called when the user clicks</td>
+    <td>the function called when the user clicks on the ad</td>
     </tr>
     </tbody>
     </table>
@@ -1385,7 +1405,7 @@ applies to live streams.</p>
 
 <p><a id="Player_adManager20"></a></p>
 <h3 id="playeradmanager">player.adManager().addVolumeChangedListener(func)</h3>
-<p>Sets a listener function called each time the user changes the ad volume.</p>
+<p>Sets a listener function called each time the user changes the ad's volume.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
@@ -1399,7 +1419,7 @@ applies to live streams.</p>
     <tr>
     <td>func</td>
     <td><code>function</code></td>
-    <td>the function called when the user changes the ad volume</td>
+    <td>the function called when the user changes the ad's volume</td>
     </tr>
     </tbody>
     </table>
@@ -1673,7 +1693,7 @@ applies to live streams.</p>
 <p>Called when a NexEvent happens.</p>
 <p><strong>Kind</strong>: global typedef<br><a id="NexCallback"></a></p>
 <h2 id="nexcallback--function">NexCallback : <code>function</code></h2>
-<p>Called when a FairPlay content needs to request the license.</p>
+<p>Called when FairPlay content needs to request the license.</p>
 <p><strong>Kind</strong>: global typedef  </p>
 <table>
 <thead>
@@ -1685,7 +1705,7 @@ applies to live streams.</p>
 <tbody>
 <tr>
 <td>event</td>
-<td>when the webkitkeymessage event from FairPlay is called.</td>
+<td>when the webkitkeymessage event from FairPlay is called</td>
 </tr>
 </tbody>
 </table>
@@ -1704,12 +1724,12 @@ applies to live streams.</p>
 <tr>
 <td>FieldName</td>
 <td><code>string</code></td>
-<td>of the HTTPHeaders.</td>
+<td>of the HTTPHeaders</td>
 </tr>
 <tr>
 <td>FiledValue</td>
 <td><code>string</code></td>
-<td>of the HTTPHeaders.</td>
+<td>of the HTTPHeaders</td>
 </tr>
 </tbody>
 </table>
@@ -1728,22 +1748,22 @@ applies to live streams.</p>
 <tr>
 <td>NexDRMType</td>
 <td><code>string</code></td>
-<td>NexDRMType of the video.</td>
+<td>NexDRMType of the video</td>
 </tr>
 <tr>
 <td>NexDRMKey</td>
 <td><code>string</code></td>
-<td>NexDRMKey of the video.</td>
+<td>NexDRMKey of the video</td>
 </tr>
 <tr>
 <td>NexHeaders</td>
 <td><a href="#NexHeaders"><code>Array.&lt;NexHeaders&gt;</code></a></td>
-<td>NexHeaders of the video.</td>
+<td>NexHeaders of the video</td>
 </tr>
 <tr>
 <td>NexCallback</td>
 <td><a href="#NexCallback"><code>NexCallback</code></a></td>
-<td>NexCallback for FairPlay content.</td>
+<td>NexCallback for FairPlay content</td>
 </tr>
 </tbody>
 </table>
@@ -1762,22 +1782,22 @@ applies to live streams.</p>
 <tr>
 <td>width</td>
 <td><code>number</code></td>
-<td>width of the video.</td>
+<td>width of the video</td>
 </tr>
 <tr>
 <td>height</td>
 <td><code>number</code></td>
-<td>height of the video.</td>
+<td>height of the video</td>
 </tr>
 <tr>
 <td>bitrate</td>
 <td><code>number</code></td>
-<td>bitrate of the video.</td>
+<td>bitrate of the video</td>
 </tr>
 <tr>
 <td>id</td>
 <td><code>number</code></td>
-<td>id of the video.</td>
+<td>id of the video</td>
 </tr>
 </tbody>
 </table>
@@ -1796,17 +1816,17 @@ applies to live streams.</p>
 <tr>
 <td>id</td>
 <td><code>number</code></td>
-<td>id of the stream.</td>
+<td>id of the stream</td>
 </tr>
 <tr>
 <td>language</td>
 <td><code>number</code></td>
-<td>language of the stream.</td>
+<td>language of the stream</td>
 </tr>
 <tr>
 <td>name</td>
 <td><code>number</code></td>
-<td>name of the stream.</td>
+<td>name of the stream</td>
 </tr>
 </tbody>
 </table>
