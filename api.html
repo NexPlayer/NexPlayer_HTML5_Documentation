@@ -830,6 +830,7 @@
 <li><a href="#Player_isUTC">.isUTC()</a> &#x21D2; <code>boolean</code></li>
 <li><a href="#Player_getCurrentTime">.getCurrentTime()</a> &#x21D2; <code>number</code></li>
 <li><a href="#Player_getDuration">.getDuration()</a> &#x21D2; <code>number</code></li>
+<li><a href="#Player_checkFrameDrop">.checkFrameDrop()</a> &#x21D2; <code>number</code></li>
 <li><a href="#Player_seek">.seek(value)</a></li>
 <li><a href="#Player_sendImpression">.sendImpression()</a></li>
 <li><a href="#Player_getProtocol">.getProtocol()</a> &#x21D2; <code>number</code></li>
@@ -1147,6 +1148,9 @@ applies to live streams.</p>
 <p>Returns the duration taking into account isUTC 
 (if <i>isUTC</i> is <b>true,</b> getDuration's returned value will be different from the duration of the video element).</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_seek"></a></p>
+<h3 id="playercheckFrameDrop-&#x21D2;-number">player.checkFrameDrop() &#x21D2; <code>number</code></h3>
+<p>Returns the number of dropped frames as proxy for CPU load</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - number of dropped frames.<br><a id="Player_seek"></a></p>
 <h3 id="playerseekvalue">player.seek(value)</h3>
 <p>Sets the position of the playback taking into account isUTC
 (if <i>isUTC</i> is <b>true,</b> the seek value will be in a different format than the currentTime of the video element).</p>
