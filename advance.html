@@ -594,6 +594,18 @@
 
             
         </li>
+        <li class="chapter " data-level="1.6.10.3" data-path="advance.html">
+            
+                <a href="advance.html#fsios">
+            
+                    
+                    Fullscreen IOS
+            
+                </a>
+            
+
+            
+        </li>
     
 
             </ul>
@@ -949,14 +961,14 @@ nexplayer.Setup({
 </code></pre>
 <p>Sample VAST links can be found on the <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags" target="_blank">Google website</a>.</p>
 <h2 id="360">360 Player and VR Mode</h2>
-<p>This feature allows the player to play videos with equirectangular or cubemap format. The 360 feature can be activated by adding the <em>360_type</em> option:</p>
+<p>This feature allows the player to play videos with equirectangular,cubemap or topdown format. The 360 feature can be activated by adding the <em>360_type</em> option:</p>
 <pre><code class="lang-javascript">{
   div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
   src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
   type_360: <span class="hljs-string">&apos;equirectangular&apos;</span>
 }
 </code></pre>
-<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default format is &apos;equirectangular&apos;. To switch to &apos;cubemap&apos; format, simply change the value of <em>360_type</em> to &apos;cubemap&apos;.</p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default format is &apos;equirectangular&apos;. To switch the format, simply change the value of <em>360_type</em> to &apos;cubemap&apos; or &apos;topdown&apos;.</p>
 </div></div></p>
 <h2 id="mute">Mute </h2>
 <p>This feature tells the player whether to start playback with the volume muted or not. This can be configured in the player by adding the <em>mutedAtStart</em> option:</p>
@@ -1152,10 +1164,32 @@ video.</p>
 <p><a href="api.html#Player_NexEvent">Advanced events</a> such as a track change are available using the <code>on</code> method of NexPlayer.</p>
 <pre><code class="lang-javascript">nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The current track has changed&quot;</span>) });
 </code></pre>
+</code></pre>
+<h4 id="fsios">Fullscreen IOS </h4>
+<p>If you want to avoid the fullscreen native player in IOS, you should define this 2 callbacks on the setup &apos;callbackFullscreenIn&apos; and &apos;callbackFullscreenOut&apos;</p>
+<pre><code class="lang-javascript">
+        const callbackwithFullscreenIn = function(){
+		<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player_container&apos;</span>).className = 'player_containerfs';
+		}
+	const callbackwithFullscreenOut = function(){
+                <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player_container&apos;</span>).className = 'player_container';
+		}
+        nexplayer.Setup({
+            key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+            div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+            src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+            callbackFullscreenIn: callbackwithFullscreenIn,
+            callbackFullscreenOut: callbackwithFullscreenOut
+          });
+
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the code inside the callbacks its a sample, it can change depending the implementation.
+</p>
+</div></div></p>
+</code></pre>
 <h4 id="closing">Closing Container </h4>
 <p>If you want to reuse the same div for different videos, the container div must be unmounted properly.</p>
 <pre><code class="lang-javascript">nexplayer.UnMount(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>);
-</code></pre>
+
 <h2 id="platforms">Supported Platforms </h2>
 <p>Online progressive download (MP4) is supported on any platform. The support for DASH and HLS, and associated DRMs, varies depending on each browser and platform. The platforms listed below are being continuously tested.</p>
 <h4 id="dash">DASH </h4>
