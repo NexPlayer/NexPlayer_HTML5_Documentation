@@ -1160,6 +1160,12 @@ video.</p>
 <p>Some of the most important events are &quot;playing&quot;, &quot;pause&quot;, &quot;waiting&quot;, and &quot;timeupdate&quot;.</p>
 <pre><code class="lang-javascript">videoElement.addEventListener(<span class="hljs-string">&quot;timeupdate&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The video playback has advanced to: &quot;</span>+videoElement.currentTime+<span class="hljs-string">&quot;, with the duration: &quot;</span>+videoElement.duration) }, <span class="hljs-literal">true</span>);
 </code></pre>
+<h5 id="customEvents_player">Custom Events </h5>
+<p>We also have custom events to handle some different kind of events.
+<pre><code class="lang-javascript">videoElement.addEventListener(<span class="hljs-string">&quot;customEvent&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Custom Event&quot;</span>) });
+</code></pre>
+<h6 id="customEvents_fakeFS">fakeFSend: </h6> <p>Sent when the video exits the fake full screen (useful in case of not using native fs).</p>
+
 <h4 id="events_neplayer">NexPlayer&#x2122; Events </h4>
 <p><a href="api.html#Player_NexEvent">Advanced events</a> such as a track change are available using the <code>on</code> method of NexPlayer.</p>
 <pre><code class="lang-javascript">nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The current track has changed&quot;</span>) });

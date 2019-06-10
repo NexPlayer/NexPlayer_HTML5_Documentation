@@ -806,7 +806,7 @@
                                 
                                 <p><a id="Player"></a></p>
 <h2 id="player">Player</h2>
-<p><strong>Kind</strong>: global class </p>
+<p><strong>Type</strong>: global class </p>
 <ul>
 <li><a href="#Player">Player</a><ul>
 <li><a href="#new_Player_new">new Player()</a></li>
@@ -830,6 +830,7 @@
 <li><a href="#Player_isUTC">.isUTC()</a> &#x21D2; <code>boolean</code></li>
 <li><a href="#Player_getCurrentTime">.getCurrentTime()</a> &#x21D2; <code>number</code></li>
 <li><a href="#Player_getDuration">.getDuration()</a> &#x21D2; <code>number</code></li>
+<li><a href="#playergetURL">.getURL()</a></li>
 <li><a href="#Player_checkFrameDrop">.checkFrameDrop()</a> &#x21D2; <code>number</code></li>
 <li><a href="#Player_seek">.seek(value)</a></li>
 <li><a href="#Player_sendImpression">.sendImpression()</a></li>
@@ -888,7 +889,7 @@
 <p><a id="Player_Init"></a></p>
 <h3 id="playerinitkey-div-videoelement-url-nexdrminformation-displayableincanvas-protocoltype-debuglog-&#x21D2;-promise">player.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog) &#x21D2; <code>Promise</code></h3>
 <p>Initializes the player.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>Promise</code> - that will be resolved when it successfully initializes.<br><strong>Export</strong>:   </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>Promise</code> - that will be resolved when it successfully initializes.<br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -943,13 +944,13 @@
 <p><a id="Player_getTracks"></a></p>
 <h3 id="playergettracks-&#x21D2;-arraytrack">player.getTracks() &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></h3>
 <p>Get all the video tracks.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Array.&lt;Track&gt;</code></a> - all the tracks available.<a id="Player_getCurrentTrack"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Array.&lt;Track&gt;</code></a> - all the tracks available.<a id="Player_getCurrentTrack"></a></p>
 <h3 id="playergetcurrenttrack-&#x21D2;-track">player.getCurrentTrack() &#x21D2; <a href="#Track"><code>Track</code></a></h3>
 <p>Get the current track information.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Track</code></a> - the current track.<a id="Player_setCurrentTrack"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Track</code></a> - the current track.<a id="Player_setCurrentTrack"></a></p>
 <h3 id="playersetcurrenttracktrackid">player.setCurrentTrack(trackID)</h3>
 <p>Set the current tack.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -969,16 +970,16 @@
 <p><a id="Player_enableABR"></a></p>
 <h3 id="playerenableabr">player.enableABR()</h3>
 <p>Enable the ABR to change automatically between tracks.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_getAudioStreams"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_getAudioStreams"></a></p>
 <h3 id="playergetaudiostreams-&#x21D2;-arrayaudiostream">player.getAudioStreams() &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></h3>
 <p>Get the available audio streams.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a> - the list of the available audio streams.<a id="Player_getCurrentAudioStream"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a> - the list of the available audio streams.<a id="Player_getCurrentAudioStream"></a></p>
 <h3 id="playergetcurrentaudiostream-&#x21D2;-audiostream">player.getCurrentAudioStream() &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></h3>
 <p>Get the audio stream currently in use.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>AudioStream</code></a> - the current audio track.<a id="Player_setAudioStream"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>AudioStream</code></a> - the current audio track.<a id="Player_setAudioStream"></a></p>
 <h3 id="playersetaudiostreamstreamid">player.setAudioStream(streamID) <strong>deprecated</strong></h3>
 <p>Set the current audio stream.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -997,7 +998,7 @@
 </table>
 <h3 id="playersetaudio">player.setAudio(streamID)</h3>
 <p>Set the current audio stream.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -1017,10 +1018,10 @@
 <p><a id="Player_isLive"></a></p>
 <h3 id="playerislive-&#x21D2;-boolean">player.isLive() &#x21D2; <code>boolean</code></h3>
 <p>Informs whether the video is live or on demand (VOD).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - true if the video is live, false otherwise.<br><a id="Player_on"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - true if the video is live, false otherwise.<br><a id="Player_on"></a></p>
 <h3 id="playeroncallbacktype-functiontobecalled">player.on(callbackType, functionToBeCalled)</h3>
 <p>Adds a listener for  Events.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -1046,7 +1047,7 @@
 <h3 id="playerattachsubtitlerendererdivsubtitlerendererdiv">player.attachSubtitleRendererDiv(subtitleRendererDiv)</h3>
 <p>Adds a DIV to render certain subtitles in a more precise way.
 This is optional and the native subtitles of the video element will be used if this is not set.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -1066,10 +1067,10 @@ This is optional and the native subtitles of the video element will be used if t
 <p><a id="Player_create360View"></a></p>
 <h3 id="playercreate360view">player.create360View()</h3>
 <p>Creates the 360 view.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_FairPlayNexLicenseRequestLoaded"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_FairPlayNexLicenseRequestLoaded"></a></p>
 <h3 id="playerfairplaynexlicenserequestloadedevent">player.FairPlayNexLicenseRequestLoaded(event)</h3>
 <p>Called when the FairPlay request is done.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -1087,7 +1088,7 @@ This is optional and the native subtitles of the video element will be used if t
 <p><a id="Player_FairPlayNexLicenseRequestFailed"></a></p>
 <h3 id="playerfairplaynexlicenserequestfailedevent">player.FairPlayNexLicenseRequestFailed(event)</h3>
 <p>Called if the  FairPlay request fails.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -1105,7 +1106,7 @@ This is optional and the native subtitles of the video element will be used if t
 <p><a id="Player_setThumbnailResources"></a></p>
 <h3 id="playersetthumbnailresourcescallback-vtturl-imageurl">player.setThumbnailResources(callback, vttURl, imageURL)</h3>
 <p>Sets thumbnail resources. This method should be called before Init().</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -1139,22 +1140,28 @@ starts at midnight UTC, Jan 1, 1970. If this is true, you will need to take this
 Some useful methods (like getCurrentTime, getDuration, and seek) are
 available to reduce the complexity in these cases. Note that this property only
 applies to live streams.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - true if the video information is using UTC, false otherwise.<br><a id="Player_getCurrentTime"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - true if the video information is using UTC, false otherwise.<br><a id="Player_getCurrentTime"></a></p>
 <h3 id="playergetcurrenttime-&#x21D2;-number">player.getCurrentTime() &#x21D2; <code>number</code></h3>
 <p>Returns the currentTime taking into account isUTC 
 (if <i>isUTC</i> is <b>true,</b> getCurrentTime's returned value will be different from the time of the video element).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the current time of the video.<br><a id="Player_getDuration"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the current time of the video.<br><a id="Player_getDuration"></a></p>
 <h3 id="playergetduration-&#x21D2;-number">player.getDuration() &#x21D2; <code>number</code></h3>
 <p>Returns the duration taking into account isUTC 
 (if <i>isUTC</i> is <b>true,</b> getDuration's returned value will be different from the duration of the video element).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_seek"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_seek"></a></p>
+<h3 id="playergetURL">player.getURL()</h3>
+<p>Returns the current video URL. </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>String</code><br><a id="Player_getURL"></a></p>
+
+
+
 <h3 id="playercheckFrameDrop-&#x21D2;-number">player.checkFrameDrop() &#x21D2; <code>number</code></h3>
 <p>Returns the number of dropped frames as proxy for CPU load</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - number of dropped frames.<br><a id="Player_seek"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - number of dropped frames.<br><a id="Player_seek"></a></p>
 <h3 id="playerseekvalue">player.seek(value)</h3>
 <p>Sets the position of the playback taking into account isUTC
 (if <i>isUTC</i> is <b>true,</b> the seek value will be in a different format than the currentTime of the video element).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
 <thead>
 <tr>
@@ -1174,16 +1181,16 @@ applies to live streams.</p>
 <p><a id="Player_sendImpression"></a></p>
 <h3 id="playersendimpression">player.sendImpression()</h3>
 <p>Send the impression details to the server (only for internal management).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><a id="Player_getProtocol"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><a id="Player_getProtocol"></a></p>
 <h3 id="playergetprotocol-&#x21D2;-number">player.getProtocol() &#x21D2; <code>number</code></h3>
 <p>Returns the protocol type.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_getThumbnailController"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_getThumbnailController"></a></p>
 <h3 id="playergetthumbnailcontroller-&#x21D2;-thumbcontroller">player.getThumbnailController() &#x21D2; <code>ThumbController</code></h3>
 <p>Returns the preview thumbnail controller.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>ThumbController</code> - Thumbnail controller<br><a id="Player_setThumbnailStep"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>ThumbController</code> - Thumbnail controller<br><a id="Player_setThumbnailStep"></a></p>
 <h3 id="playersetthumbnailstepstep">player.setThumbnailStep(step)</h3>
 <p>Set the time interval between frames for dynamic thumbnails.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
 <thead>
 <tr>
@@ -1203,7 +1210,7 @@ applies to live streams.</p>
 <p><a id="Player_enablePreviewThumbnails"></a></p>
 <h3 id="playerenablepreviewthumbnailsoption">player.enablePreviewThumbnails(option)</h3>
 <p>Enable thumbnails preview. This method must be called before Init().</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
 <thead>
 <tr>
@@ -1223,7 +1230,7 @@ applies to live streams.</p>
 <p><a id="Player_setSpeed"></a></p>
 <h3 id="playersetspeedspeed">player.setSpeed(speed)</h3>
 <p>Set the video playback speed.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
 <thead>
 <tr>
@@ -1243,10 +1250,10 @@ applies to live streams.</p>
 <p><a id="Player_getQualityLevels"></a></p>
 <h3 id="playergetqualitylevels-&#x21D2;-array">player.getQualityLevels() &#x21D2; <code>array</code></h3>
 <p>Get the video quality levels array.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>array</code> - quality levels array info<br><a id="Player_setTrack"></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>array</code> - quality levels array info<br><a id="Player_setTrack"></a></p>
 <h3 id="playersettrackqualitylevel">player.setTrack(qualityLevel)</h3>
 <p>Set the video quality level.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
 <thead>
 <tr>
@@ -1269,102 +1276,102 @@ applies to live streams.</p>
 <p><a id="Player_toggleFullScreen"></a></p>
 <h3 id="playertogglefullscreen">player.toggleFullScreen()</h3>
 <p>Toggle between full screen and windowed.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
 
 <p><a id="Player_adManager"></a></p>
 <h3 id="playeradmanager">player.adManager()</h3>
 <p>Returns the AdManager instance in order to perform actions on ads through the IMA SDK.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: AdManager object<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: AdManager object<br></p>
 
 <p><a id="Player_adManager1"></a></p>
 <h3 id="playeradmanager">player.adManager().getAdObject()</h3>
 <p>Returns the IMA SDK manager object.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: IMAs AdManager object<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: IMAs AdManager object<br></p>
 
 <p><a id="Player_adManager2"></a></p>
 <h3 id="playeradmanager">player.adManager().getId()</h3>
 <p>Returns the ID of the current ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
 
 <p><a id="Player_adManager3"></a></p>
 <h3 id="playeradmanager">player.adManager().getTitle()</h3>
 <p>Returns the title of the current ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
 
 <p><a id="Player_adManager4"></a></p>
 <h3 id="playeradmanager">player.adManager().getDescription()</h3>
 <p>Returns the description of the current ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
 
 <p><a id="Player_adManager5"></a></p>
 <h3 id="playeradmanager">player.adManager().getMediaURL()</h3>
 <p>Returns the video ad URL.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
 
 <p><a id="Player_adManager6"></a></p>
 <h3 id="playeradmanager">player.adManager().getSurveyURL()</h3>
 <p>Returns the ad survey URL.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
 
 <p><a id="Player_adManager7"></a></p>
 <h3 id="playeradmanager">player.adManager().getDuration()</h3>
 <p>Returns the total duration of the current ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: number<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: number<br></p>
 
 <p><a id="Player_adManager8"></a></p>
 <h3 id="playeradmanager">player.adManager().getSkipTime()</h3>
 <p>Returns how much time is left until the user can skip the ad (only if it is skippable).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: number<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: number<br></p>
 
 <p><a id="Player_adManager9"></a></p>
 <h3 id="playeradmanager">player.adManager().getCurrentTime()</h3>
 <p>Returns the current time position of the ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: number<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: number<br></p>
 
 <p><a id="Player_adManager10"></a></p>
 <h3 id="playeradmanager">player.adManager().getContentType()</h3>
 <p>Returns the ad video type (e.g. "video/mp4").</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: String<br></p>
 
 <p><a id="Player_adManager11"></a></p>
 <h3 id="playeradmanager">player.adManager().isSkippable()</h3>
 <p>Returns whether the ad is skippable or not.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: boolean<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: boolean<br></p>
 
 <p><a id="Player_adManager12"></a></p>
 <h3 id="playeradmanager">player.adManager().isLinear()</h3>
 <p>Returns whether the ad is linear or not.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: boolean<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: boolean<br></p>
 
 <p><a id="Player_adManager13"></a></p>
 <h3 id="playeradmanager">player.adManager().isVpaid()</h3>
 <p>Returns whether the ad is in the VPAID format or not.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: boolean<br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: boolean<br></p>
 
 <p><a id="Player_adManager14"></a></p>
 <h3 id="playeradmanager">player.adManager().pause()</h3>
 <p>Pauses the ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
 
 <p><a id="Player_adManager15"></a></p>
 <h3 id="playeradmanager">player.adManager().play()</h3>
 <p>Plays the ad when it is paused.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
 
 <p><a id="Player_adManager16"></a></p>
 <h3 id="playeradmanager">player.adManager().skip()</h3>
 <p>Skips the ad (if possible).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
 
 <p><a id="Player_adManager17"></a></p>
 <h3 id="playeradmanager">player.adManager().abort()</h3>
 <p>Closes the ad and starts the video.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
 
 <p><a id="Player_adManager18"></a></p>
 <h3 id="playeradmanager">player.adManager().addClickListener(func)</h3>
 <p>Sets a listener function called each time the user clicks on the ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1388,7 +1395,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager19"></a></p>
 <h3 id="playeradmanager">player.adManager().addVolumeMutedListener(func)</h3>
 <p>Sets a listener function called each time the user mutes the ad's volume.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1410,7 +1417,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager20"></a></p>
 <h3 id="playeradmanager">player.adManager().addVolumeChangedListener(func)</h3>
 <p>Sets a listener function called each time the user changes the ad's volume.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1432,7 +1439,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager21"></a></p>
 <h3 id="playeradmanager">player.adManager().addSkippedListener(func)</h3>
 <p>Sets a listener function called each time the user skips the ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1454,7 +1461,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager22"></a></p>
 <h3 id="playeradmanager">player.adManager().addPausedListener(func)</h3>
 <p>Sets a listener function called each time the user pauses the ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1476,7 +1483,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager23"></a></p>
 <h3 id="playeradmanager">player.adManager().addResumedListener(func)</h3>
 <p>Sets a listener function called each time the user resumes the ad.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1498,7 +1505,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager24"></a></p>
 <h3 id="playeradmanager">player.adManager().addStartedListener(func)</h3>
 <p>Sets a listener function called when the ad starts.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1520,7 +1527,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager25"></a></p>
 <h3 id="playeradmanager">player.adManager().addFirstQuartileListener(func)</h3>
 <p>Sets a listener function called when the ad reaches the first quartile of the video duration.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1542,7 +1549,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager26"></a></p>
 <h3 id="playeradmanager">player.adManager().addMidpointListener(func)</h3>
 <p>Sets a listener function called when the ad reaches the middle of the video duration.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1564,7 +1571,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager27"></a></p>
 <h3 id="playeradmanager">player.adManager().addThirdQuartileListener(func)</h3>
 <p>Sets a listener function called when the ad reaches the third quartile of the video duration.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1586,7 +1593,7 @@ applies to live streams.</p>
 <p><a id="Player_adManager28"></a></p>
 <h3 id="playeradmanager">player.adManager().addCompleteListener(func)</h3>
 <p>Sets a listener function called when the ad finishes.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br>
     <table>
     <thead>
     <tr>
@@ -1607,7 +1614,7 @@ applies to live streams.</p>
 
 
 <h3 id="playernexprotocol--enum">Player.NexProtocol : <code>enum</code></h3>
-<p><strong>Kind</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
+<p><strong>Type</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
 <table>
 <thead>
 <tr>
@@ -1646,7 +1653,7 @@ applies to live streams.</p>
 </table>
 <p><a id="Player_NexEvent"></a></p>
 <h3 id="playernexevent--enum">Player.NexEvent : <code>enum</code></h3>
-<p><strong>Kind</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
+<p><strong>Type</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
 <table>
 <thead>
 <tr>
@@ -1670,7 +1677,7 @@ applies to live streams.</p>
 </table>
 <p><a id="Player_THUMB_TYPE"></a></p>
 <h3 id="playerthumbtype--enum">Player.THUMB_TYPE : <code>enum</code></h3>
-<p><strong>Kind</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
+<p><strong>Type</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
 <table>
 <thead>
 <tr>
@@ -1695,10 +1702,10 @@ applies to live streams.</p>
 <p><a id="NexCallbackEvent"></a></p>
 <h2 id="nexcallbackevent--function">NexCallbackEvent : <code>function</code></h2>
 <p>Called when a NexEvent happens.</p>
-<p><strong>Kind</strong>: global typedef<br><a id="NexCallback"></a></p>
+<p><strong>Type</strong>: global typedef<br><a id="NexCallback"></a></p>
 <h2 id="nexcallback--function">NexCallback : <code>function</code></h2>
 <p>Called when FairPlay content needs to request the license.</p>
-<p><strong>Kind</strong>: global typedef  </p>
+<p><strong>Type</strong>: global typedef  </p>
 <table>
 <thead>
 <tr>
@@ -1715,7 +1722,7 @@ applies to live streams.</p>
 </table>
 <p><a id="NexHeaders"></a></p>
 <h2 id="nexheaders--object">NexHeaders : <code>Object</code></h2>
-<p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
+<p><strong>Type</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
 <thead>
 <tr>
@@ -1739,7 +1746,7 @@ applies to live streams.</p>
 </table>
 <p><a id="NexDRMInformation"></a></p>
 <h2 id="nexdrminformation--object">NexDRMInformation : <code>Object</code></h2>
-<p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
+<p><strong>Type</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
 <thead>
 <tr>
@@ -1773,7 +1780,7 @@ applies to live streams.</p>
 </table>
 <p><a id="Track"></a></p>
 <h2 id="track--object">Track : <code>Object</code></h2>
-<p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
+<p><strong>Type</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
 <thead>
 <tr>
@@ -1807,7 +1814,7 @@ applies to live streams.</p>
 </table>
 <p><a id="AudioStream"></a></p>
 <h2 id="audiostream--object">AudioStream : <code>Object</code></h2>
-<p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
+<p><strong>Type</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
 <thead>
 <tr>
