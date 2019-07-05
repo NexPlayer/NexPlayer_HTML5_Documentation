@@ -821,7 +821,6 @@ nexplayer.Setup({
 });
 </code></pre>
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the Widevine server used.</p>
-<p>Widevine is supported with DASH. </p>
 <h4 id="playready">PlayReady </h4>
 <p>A DRM powered by <a href="https://www.microsoft.com/playready/" target="_blank">Microsoft</a>, available on Edge and Internet Explorer (on Windows). It can be used by entering the information into the DRM array:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationPlayReady = {
@@ -838,7 +837,6 @@ nexplayer.Setup({
 });
 </code></pre>
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the PlayReady server used.</p>
-<p>PlayReady is supported with DASH.</p>
 <h4 id="cenc">CENC </h4>
 <p>The Common Encryption Scheme (CENC) specifies the standard to enable decryption of the same file using different DRM systems.
 It allows the same CENC-encrypted content to be decrypted and played by any client device that interfaces with a DRM system that can serve the associated CENC key information.</p>
@@ -863,7 +861,7 @@ nexplayer.Setup({
 });
 </code></pre>
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the DRM used.</p>
-<p>CENC is supported with DASH.</p>
+
 
 <h4 id="fairplay">FairPlay </h4>
 <p>A DRM powered by <a href="https://developer.apple.com/streaming/fps/" target="_blank">Apple</a>, available on Safari (on macOS and iOS). When using FairPlay the license must be manually requested, adapting it to the specified FairPlay server implementation. It can be used by entering the information into the DRM array:</p>
@@ -961,14 +959,14 @@ nexplayer.Setup({
 </code></pre>
 <p>Sample VAST links can be found on the <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags" target="_blank">Google website</a>.</p>
 <h2 id="360">360 Player and VR Mode</h2>
-<p>This feature allows the player to play videos with equirectangular, cubemap or topdown format. The 360 feature can be activated by adding the <em>360_type</em> option:</p>
+<p>This feature allows the player to play videos with equirectangular, cubemap or topdown format. The 360 feature can be activated by adding the <em>type_360</em> option:</p>
 <pre><code class="lang-javascript">{
   div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
   src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
   type_360: <span class="hljs-string">&apos;equirectangular&apos;</span>
 }
 </code></pre>
-<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default format is &apos;equirectangular&apos;. To switch the format, simply change the value of <em>360_type</em> to &apos;cubemap&apos; or &apos;topdown&apos;.</p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default format is &apos;equirectangular&apos;. To switch the format, simply change the value of <em>type_360</em> to &apos;cubemap&apos; or &apos;topdown&apos;.</p>
 </div></div></p>
 <h2 id="mute">Mute </h2>
 <p>This feature tells the player whether to start playback with the volume muted or not. This can be configured in the player by adding the <em>mutedAtStart</em> option:</p>
@@ -1029,7 +1027,7 @@ nexplayer.Setup({
 <p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that AirPlay only works on Safari.</p>
 </div></div></p>
 <h2 id="timed_metadata">ID3 Tags </h2>
-<p>NexPlayer&#x2122; supports timed metadata for HLS and DASH content. The information is made available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack</a> array of the video element.</p>
+<p>NexPlayer&#x2122; supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack</a> array of the video element.</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> callBackWithPlayers = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">nexplayerInstance, videoElement</span>) </span>{
   videoElement.addEventListener(<span class="hljs-string">&apos;loadedmetadata&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
     <span class="hljs-keyword">if</span> (videoElement.textTracks) showTimedMetadata(videoElement);
@@ -1069,7 +1067,7 @@ nexplayer.Setup({
 <p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>We strongly recommend calling the APIs after the player is ready.</p>
 </div></div></p>
 <h2 id="custom_selection">Custom Actions </h2>
-<p>Advanced actions can be perform with a player instance. For the full action list, check <a href="api.html">NexPlayer API</a>.</p>
+<p>Advanced actions can be performed with a player instance. For the full action list, check <a href="api.html">NexPlayer API</a>.</p>
 <h3 id="track_selection">Adaptive Bitrate (ABR) </h3>
 <p>HLS and DASH streams contain several video bitrates in order to adjust the quality based on the network conditions. Changes in bitrate are done automatically when ABR (Adaptive Bitrate) is enabled (default behavior).</p>
 <p>The currently selected track can be obtained with the method <a href="api.html#Player_getCurrentTrack"><code>getCurrentTrack</code></a> of NexPlayer&#x2122;. It returns all the <a href="api.html#Track">track information</a>.</p>
@@ -1088,14 +1086,14 @@ nexplayerInstance.setTrack(nexplayerInstance.getTracks()[<span class="hljs-numbe
 <p>Information about the available subtitles can be retrieved with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank"><code>textTracks</code></a> attribute of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" target="_blank">video element</a>.</p>
 <pre><code class="lang-javascript">videoElement.textTracks;
 </code></pre>
-<p>The active subtitles have the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack/mode" target="_blank">mode</a> set to <code>showing</code>. The currently selected subtitle can also be selected by setting the mode to <code>showing</code>. A subtitle can be deselected by setting the mode to <code>hidden</code>.</p>
+<p>The active subtitles <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack/mode" target="_blank">mode</a> is set to <code>showing</code>. The currently selected subtitle can also be selected by setting the mode to <code>showing</code>. A subtitle can be deselected by setting the mode to <code>hidden</code>.</p>
 <pre><code class="lang-javascript">videoElement.textTracks[<span class="hljs-number">0</span>].mode = <span class="hljs-string">&quot;showing&quot;</span>;
 </code></pre>
 <h4 id="audio_selection">Audio </h4>
 <p>Information about the current audio can be retrieved with the method <a href="api.html#Player_getCurrentAudioStream"><code>getCurrentAudioStream</code></a> of NexPlayer&#x2122;. It returns all the <a href="api.html#AudioStream">audio information</a> for that stream.</p>
 <pre><code class="lang-javascript">nexplayerInstance.getCurrentAudioStream();
 </code></pre>
-<p>All the available tracks can be retrieved with the method <a href="api.html#Player_getAudioStreams"><code>getAudioStreams</code></a> of NexPlayer&#x2122;.</p>
+<p>All the available audio tracks can be retrieved with the method <a href="api.html#Player_getAudioStreams"><code>getAudioStreams</code></a> of NexPlayer&#x2122;.</p>
 <pre><code class="lang-javascript">nexplayerInstance.getAudioStreams();
 </code></pre>
 <p>The currently used audio stream can be set with the method <a href="api.html#Player_setAudioStream"><code>setAudioStream</code></a> of NexPlayer&#x2122;, passing one of the IDs of <code>getAudioStreams</code>.</p>
@@ -1161,10 +1159,13 @@ video.</p>
 <pre><code class="lang-javascript">videoElement.addEventListener(<span class="hljs-string">&quot;timeupdate&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;The video playback has advanced to: &quot;</span>+videoElement.currentTime+<span class="hljs-string">&quot;, with the duration: &quot;</span>+videoElement.duration) }, <span class="hljs-literal">true</span>);
 </code></pre>
 <h5 id="customEvents_player">Custom Events </h5>
-<p>We also have custom events to handle some different kind of events.
+<p>We also have custom events to handle some different kind of video events.
 <pre><code class="lang-javascript">videoElement.addEventListener(<span class="hljs-string">&quot;customEvent&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Custom Event&quot;</span>) });
 </code></pre>
 <h6 id="customEvents_fakeFS">fakeFSend: </h6> <p>Sent when the video exits the fake full screen (useful in case of not using native fs).</p>
+<h6 id="customEvents_audioChange">audioChange: </h6> <p>Sent when the audio of the video changes (language change).</p>
+<h6 id="customEvents_subChange">subChange: </h6> <p>Sent when the subtitles of the video changes (language change).</p>
+
 
 <h4 id="events_neplayer">NexPlayer&#x2122; Events </h4>
 <p><a href="api.html#Player_NexEvent">Advanced events</a> such as a track change are available using the <code>on</code> method of NexPlayer.</p>
@@ -1197,7 +1198,8 @@ video.</p>
 <pre><code class="lang-javascript">nexplayer.UnMount(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>);
 
 <h2 id="platforms">Supported Platforms </h2>
-<p>Online progressive download (MP4) is supported on any platform. The support for DASH and HLS, and associated DRMs, varies depending on each browser and platform. The platforms listed below are being continuously tested.</p>
+<p>Online progressive download (MP4) is supported on any platform. The support for DASH and HLS, and associated DRMs, changes depending
+on each browser and platform. The platforms listed below are being continuously tested.</p>
 <h4 id="dash">DASH </h4>
 <table>
 <thead>
@@ -1289,14 +1291,19 @@ video.</p>
 <sup>2</sup>. IE 11+ is required<a href="#reffn_5" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
 </blockquote>
 <h2 id="size">Decreasing the Size of the Build </h2>
-<p>The nexplayer.js library is already minified, but to utilize even less space it&apos;s recommended to use <em>gzip</em> on the server where the library will be hosted. <em>gzip</em> is supported on the vast majority of servers.</p>
+<p>The nexplayer.js library is already minified, but to use even less space it&apos;s recommended to use <em>gzip</em> 
+on the server where the library will be hosted. <em>gzip</em> is supported on the vast majority of servers.</p>
 <p>The <a href="release_notes.html">hosted versions</a> in our CDN use <em>gzip</em>.</p>
 <h2 id="cors">Cross-Origin Resource Sharing (CORS) </h2>
-<p>Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to let a user agent gain permission to access selected resources from a server on a different origin (domain) than the site currently in use.</p>
-<p>This means that if a video is hosted in a different domain than the player, a header like <code>Access-Control-Allow-Origin: https://foo.mycompany.com</code> should be included in the response in order for it not to be blocked by the browser for security reasons. To allow all domains, set the header to <code>Access-Control-Allow-Origin: *</code>.</p>
+<p>Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to let a user agent gain permission to access
+selected resources from a server on a different origin (domain) than the site currently in use.</p>
+<p>This means that if a video is hosted in a different domain than the player, a header like <code>Access-Control-Allow-Origin:
+https://foo.mycompany.com</code> should be included in the response in order for it not to be blocked by the browser for security reasons.
+To allow all domains, set the header to <code>Access-Control-Allow-Origin: *</code>.</p>
 <p>More information is available at <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">MDN Web Docs</a>.</p>
 <h2 id="upgrading">Upgrading to a New Version </h2>
-<p>When using the <a href="release_notes.html">latest release</a>, upgrades will be applied automatically. When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. </p>
+<p>When using the <a href="release_notes.html">latest release</a>, upgrades will be applied automatically. When a specific version of the library is used, the URL 
+of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. </p>
 <p>Every new release of NexPlayer&#x2122; is backwards compatible. </p>
           
 
