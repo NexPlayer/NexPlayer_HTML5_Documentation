@@ -822,22 +822,18 @@
 <p><strong>Type</strong>: global class </p>
 <ul>
 <li><a href="#Player">Player</a><ul>
-<li><a href="#new_Player_new">new Player()</a></li>
 <li><em>instance</em><ul>
-<li><a href="#Player_Init">.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog)</a> &#x21D2; <code>Promise</code></li>
+<li><a href="#Player_Setup">.Setup(info)</a></li>
 <li><a href="#Player_getTracks">.getTracks()</a> &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></li>
 <li><a href="#Player_getCurrentTrack">.getCurrentTrack()</a> &#x21D2; <a href="#Track"><code>Track</code></a></li>
 <li><a href="#Player_setCurrentTrack">.setCurrentTrack(trackID)</a></li>
 <li><a href="#Player_enableABR">.enableABR()</a></li>
 <li><a href="#Player_getAudioStreams">.getAudioStreams()</a> &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></li>
 <li><a href="#Player_getCurrentAudioStream">.getCurrentAudioStream()</a> &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></li>
-<li><a href="#Player_setAudioStream">.setAudioStream(streamID) <strong>deprecated</strong></a></li>
-<li><a href="#Player_setAudio">.setAudio(streamID)</a></li>
+<li><a href="#Player_setAudioStream">.setAudioStream(streamID)</a></li>
 <li><a href="#Player_getCurrentSubtitle">.getCurrentSubtitle()</a></li>
 <li><a href="#Player_getSubtitles">.getSubtitles()</a></li>
 <li><a href="#Player_getCurrentSubtitle">.setSubtitle(subID)</a></li>
-
-
 <li><a href="#Player_isLive">.isLive()</a> &#x21D2; <code>boolean</code></li>
 <li><a href="#Player_on">.on(callbackType, functionToBeCalled)</a></li>
 <li><a href="#Player_attachSubtitleRendererDiv">.attachSubtitleRendererDiv(subtitleRendererDiv)</a></li>
@@ -861,6 +857,18 @@
 <li><a href="#Player_setTrack">.setTrack(qualityLevel)</a></li>
 <li><a href="#Player_togglePlayPause">.togglePlayPause()</a></li>
 <li><a href="#Player_toggleFullScreen">.toggleFullScreen()</a></li>
+<li><a href="#Player_showStats">.showStats()</a></li>
+<li><a href="#Player_jumpForward">.jumpForward(value)</a></li>
+<li><a href="#Player_jumpBackward">.jumpBackward(value)</a></li>
+<li><a href="#Player_setThumbnailStep">.setThumbnailStep(step)</a></li>
+<li><a href="#Player_getCurrentLiveLatency">.getCurrentLiveLatency()</a></li>
+<li><a href="#Player_getCurrentBuffer">.getCurrentBuffer()</a></li>
+<li><a href="#Player_toogleControlBar">.toggleControlBar()</a></li>
+<li><a href="#Player_isControlBarOpen">.isControlBarOpen()</a></li>
+<li><a href="#Player_toogleLanguagesMenu">.toggleLanguagesMenu()</a></li>
+<li><a href="#Player_nextFocus">.nextFocus()</a></li>
+<li><a href="#Player_previousFocus">.previousFocus()</a></li>
+<li><a href="#Player_clickFocus">.clickFocus()</a></li>
 <li><a href="#Player_adManager">.adManager()</a></li>
 <li><a href="#Player_adManager1">.getAdObject()</a></li>
 <li><a href="#Player_adManager2">.getId()</a></li>
@@ -901,13 +909,10 @@
 </ul>
 </li>
 </ul>
-<p><a id="new_Player_new"></a></p>
-<h3 id="new-player">new Player()</h3>
-<p>Constructs a NexPlayer.</p>
-<p><a id="Player_Init"></a></p>
-<h3 id="playerinitkey-div-videoelement-url-nexdrminformation-displayableincanvas-protocoltype-debuglog-&#x21D2;-promise">player.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog) &#x21D2; <code>Promise</code></h3>
-<p>Initializes the player.</p>
-<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>Promise</code> - that will be resolved when it successfully initializes.<br><strong>Export</strong>:   </p>
+<p><a id="Player_Setup"></a></p>
+<h3 id="playersetup">player.Setup(info)</h3>
+<p>Creates and initializes the player.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Param</strong>: <strong>info</strong> is an object which its values could be:</p>
 <table>
 <thead>
 <tr>
@@ -920,42 +925,77 @@
 <tr>
 <td>key</td>
 <td><code>string</code></td>
-<td>that validates the playback</td>
+<td>that validates the playback.</td>
 </tr>
 <tr>
 <td>div</td>
 <td><code>HTMLDivElement</code></td>
-<td>the div container of the player</td>
+<td>the div container of the player.</td>
 </tr>
 <tr>
-<td>videoElement</td>
-<td><code>HTMLVideoElement</code></td>
-<td>that will output the video</td>
-</tr>
-<tr>
-<td>URL</td>
+<td>src</td>
 <td><code>string</code></td>
-<td>of the video to be played</td>
+<td>of the video to be played.</td>
 </tr>
 <tr>
-<td>nexDRMInformation</td>
+<td>autoplay</td>
+<td><code>boolean</code></td>
+<td>determine if the video must start playing or paused. By default it's set to true.</td>
+</tr>
+<tr>
+<td>drm</td>
 <td><a href="#NexDRMInformation"><code>Array.&lt;NexDRMInformation&gt;</code></a></td>
-<td>that contains an array of DRM information (by default it is null)</td>
+<td>contains an array of DRM information. By default it's set to null.</td>
 </tr>
 <tr>
-<td>displayableinCanvas</td>
+<td>seekUI</td>
+<td><code>number</code></td>
+<td>establish the number of seconds the UI buttons will seek forwards or backwards. By default is set to 10s.</td>
+</tr>
+<tr>
+<td>mutedAtStart</td>
 <td><code>boolean</code></td>
-<td>that will inform if the videoElement will be used to generate external textures to be displayed in a canvas (by default it is false)</td>
+<td>determine if the video will start playing muted or not. By default this value is set to false.</td>
 </tr>
 <tr>
-<td>protocolType</td>
-<td><code>NexProtocol</code></td>
-<td>that will define the protocol type (by default it is UNKNOWN and it will be obtained from the URL)</td>
-</tr>
-<tr>
-<td>debugLog</td>
+<td>debug</td>
 <td><code>boolean</code></td>
-<td>that will set the output of extra logs (by default it is false)</td>
+<td>determine if log information is showed. By default is set to true.</td>
+</tr>
+<tr>
+<td>type_360</td>
+<td><code>string</code></td>
+<td>select the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'.</td>
+</tr>
+<tr>
+<td>autohide</td>
+<td><code>boolean</code></td>
+<td>establish if the UI must hide when the user does not interact with the video. By default is set to true.</td>
+</tr>
+<tr>
+<td>callbacksForPlayer</td>
+<td><code>function</code></td>
+<td>used for retrieving the nexplayer instance and video element. This is necessary for getting the instance and use the NexPlayer API.</td>
+</tr>
+<tr>
+<td>callbackForReturn</td>
+<td><code>function</code></td>
+<td>establish a callback to be executed when the corresponding button is clicked.</td>
+</tr>
+<tr>
+<td>callbackForLogger</td>
+<td><code>function</code></td>
+<td>function to be called when the logger show a log.</td>
+</tr>
+<tr>
+<td>vast</td>
+<td><code>string</code></td>
+<td>advertisement url that is going to be played. VAST, VPAID, VMAP are supported.</td>
+</tr>
+<tr>
+<td>useDynamicThumbnails</td>
+<td><code>boolean</code></td>
+<td>determine if dynamic thumbnails are used. By default this values is set to false.</td>
 </tr>
 </tbody>
 </table>
@@ -995,26 +1035,7 @@
 <h3 id="playergetcurrentaudiostream-&#x21D2;-audiostream">player.getCurrentAudioStream() &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></h3>
 <p>Get the audio stream currently in use.</p>
 <p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>AudioStream</code></a> - the current audio track.<a id="Player_setAudioStream"></a></p>
-<h3 id="playersetaudiostreamstreamid">player.setAudioStream(streamID) <strong>deprecated</strong></h3>
-<p>Set the current audio stream.</p>
-<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>streamID</td>
-<td><code>number</code></td>
-<td>ID of the audio stream to be used</td>
-</tr>
-</tbody>
-</table>
-<h3 id="playersetaudio">player.setAudio(streamID)<a id="Player_setAudio"></a></h3>
+<h3 id="playersetaudiostreamstreamid">player.setAudioStream(streamID)</h3>
 <p>Set the current audio stream.</p>
 <p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
@@ -1322,6 +1343,62 @@ applies to live streams.</p>
 <h3 id="playertogglefullscreen">player.toggleFullScreen()</h3>
 <p>Toggle between full screen and windowed.</p>
 <p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_showStats"></a></p>
+<h3 id="playershowstats">player.showStats()</h3>
+<p>Display basic stream information when typing "nex" on the keyboard.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
+<p><a id="Player_jumpForward"></a></p>
+<h3 id="playerjumpforward">player.jumpForward(value)</h3>
+<p>Jumps forward to the current playback position of the player.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Param</strong>: {number} <strong>value</strong> is the number of seconds to jump forward<br></p>
+
+<p><a id="Player_jumpBackward"></a></p>
+<h3 id="playerjumpbackward">player.jumpBackward(value)</h3>
+<p>Jumps backward to the current playback position of the player.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Param</strong>: {number} <strong>value</strong> is the number of seconds to jump backward<br></p>
+
+<p><a id="#Player_setThumbnailStep"></a></p>
+<h3 id="playerisetthumbnailstep">player.setThumbnailStep(step)</h3>
+<p>Set the step for dynamic thumbnails.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Param</strong>: {number} <strong>step</strong>  is the seconds between two different thumbnails<br></p>
+
+<p><a id="Player_getCurrentLiveLatency"></a></p>
+<h3 id="playergetcurrentlivelatency">player.getCurrentLiveLatency()</h3>
+<p>Returns the live latency value.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: latency number of seconds<br></p>
+
+<p><a id="Player_getCurrentBuffer"></a></p>
+<h3 id="playergetcurrentbuffer">player.getCurrentBuffer()</h3>
+<p>Returns the current buffer level.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
+<p><a id="Player_isControlBarOpen"></a></p>
+<h3 id="playeriscontrolbaropen">player.isControlBarOpen()</h3>
+<p>Returns if the control bar is opened.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>:boolean<br></p>
+
+<p><a id="Player_toogleLanguagesMenu"></a></p>
+<h3 id="playertoogleLanguagesMenu">player.toogleLanguagesMenu()</h3>
+<p>Toogle the subtitles menu options.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
+<p><a id="Player_nextFocus"></a></p>
+<h3 id="playernextFocus">player.nextFocus()</h3>
+<p>Moves along to the next element that can be focused. The possible elements to be focused are:<br> 'nexplayer_play_pause', 'nexplayer_full_volume_div', 'nexplayer_language', 'nexplayer_full_screen', 'nexplayer_return_container'</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
+<p><a id="Player_previousFocus"></a></p>
+<h3 id="playerpreviousFocus">player.previousFocus()</h3>
+<p>Moves along to the previous element that can be focused. The possible elements to be focused are:<br> 'nexplayer_play_pause', 'nexplayer_full_volume_div', 'nexplayer_language', 'nexplayer_full_screen', 'nexplayer_return_container'.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
+<p><a id="Player_clickFocus"></a></p>
+<h3 id="playerclickFocus">player.clickFocus()</h3>
+<p>Click the current focused element.</p>
+<p><strong>Type</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
+
 
 <p><a id="Player_adManager"></a></p>
 <h3 id="playeradmanager">player.adManager()</h3>
