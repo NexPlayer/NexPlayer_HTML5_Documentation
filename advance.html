@@ -1022,10 +1022,16 @@ nexplayer.Setup({
     key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
     div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;playerN&apos;</span>), // Where "N" is the player number
     src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,   
+    callbacksForPlayer: callback(nexplayerInstance, videoElement)
 });
 </code></pre>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the value for the div id in "Setup" is "player", so the div id for the next additional video must start in 2.</p>
 </div></div></p>
+<p>In this example, the function AditionalVideo() has been called once for the extra video.
+<br>For displaying the corresponding players it's necessary to create a div for each new player and its css class.
+In order to use the API in the differents players, it's required to define a function with parameters for the NexPlayer instance and the video element for each additional player. Finally, pass the previously defined function to the callbacksForPlayer property in the  AditionalVideo() parameter. 
+</p>
+<h1 id="" style="text-align:center;"><img src="2PlayersExample.png" alt="Customization Image" width="100%"></h1>
 
 
 <h2 id="cast">Casting </h2>
