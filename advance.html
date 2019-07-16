@@ -981,6 +981,11 @@ nexplayer.Setup({
 </code></pre>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default format is &apos;equirectangular&apos;. To switch the format, simply change the value of <em>type_360</em> to &apos;cubemap&apos; or &apos;topdown&apos;.</p>
 </div></div></p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Since <a href="https://developer.apple.com/documentation/safari_release_notes/safari_12_1_release_notes" target="_blank">iOS version 12.2,</a> Apple Inc. introduced some changes respect to the gyroscope and the accelerometer was introduced because of security and privacy reasons.
+This made the Motion & Orientation options to be disabled by default, so it is necessary to enable these settings Settings -> Safari -> Motion & Orientation, also this new OS only lets you access device orientation events if you’re connecting via https and not through http.</p>
+</div></div></p>
+
+
 <h2 id="mute">Mute </h2>
 <p>This feature tells the player whether to start playback with the volume muted or not. This can be configured in the player by adding the <em>mutedAtStart</em> option:</p>
 <pre><code class="lang-javascript">{
