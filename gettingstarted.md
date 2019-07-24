@@ -1,3 +1,5 @@
+<a id="gettingstarted-top"> </a>
+
 # Getting Started
 
 ## NexPlayer™ Integration

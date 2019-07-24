@@ -1,3 +1,5 @@
+<a id="licenses-top"> </a>
+
 # Third Party Licenses
 
 This is a summary of all third party licenses. NexPlayer licenses will be provided upon purchase.

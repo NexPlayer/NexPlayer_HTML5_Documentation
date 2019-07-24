@@ -1,3 +1,5 @@
+<a id="releases-top"> </a>
+
 # Releases
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
