@@ -508,7 +508,7 @@ The size of the UI adapts according to the size of the player. There are three d
 
 Modifying the .nexplayer_container class will bring the changes to every platform. In order to customize individual or more platforms in a different way, the .nexplayer_container class should be followed by the desired platform class:
 
-```css
+```
 .nexplayer_container .nexplayer_container_normal <class to modify>
 
 .nexplayer_container .nexplayer_container_mobile <class to modify>
