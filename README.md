@@ -12,7 +12,7 @@ NexPlayer™ provides a media player for the Web. It includes support for HLS, D
 
 The default UI is easily customizable to fit the user´s personal preferences (e.g. icons, colors, etc).
 
-<style> .titles{color: #ffffff; width: 250px;}.table{position: absolute; }  .tableFeatures{left: 18rem} .tablePlayback{top: 42.5rem} .tableCasting{top: 49rem} .tableAds{top: 56rem} .tableSubs{left: 37.5em} .tableMetadata{left: 37.5em; top: 43rem;} .tableDRM{left: 37.5em; top: 48rem;} </style>
+<style> .titles{color: #ffffff; width: 250px;}.table{position: absolute; }  .tableFeatures{left: 18rem} .tablePlayback{top: 44.5rem} .tableCasting{top: 51rem} .tableAds{top: 58rem} .tableSubs{left: 37.5em} .tableMetadata{left: 37.5em; top: 45rem;} .tableDRM{left: 37.5em; top: 50rem;} </style>
 
 
 <table class="table table-sm">
