@@ -752,7 +752,7 @@ The player can be configured by adding the useDynamicThumbnails option:
 }
 ```
 
-
+<a id="callbacks"></a>
 
 ## Callbacks
 
