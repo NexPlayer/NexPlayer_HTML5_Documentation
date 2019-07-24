@@ -14,7 +14,7 @@ summary {
     display: block
 }
 .app-sub-sidebar li::before {
-    content: '';    
+    content: '' !important;
 }
 audio,
 canvas,
