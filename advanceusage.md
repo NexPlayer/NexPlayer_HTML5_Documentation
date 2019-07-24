@@ -508,7 +508,7 @@ The size of the UI adapts according to the size of the player. There are three d
 
 Modifying the .nexplayer_container class will bring the changes to every platform. In order to customize individual or more platforms in a different way, the .nexplayer_container class should be followed by the desired platform class:
 
-```
+```css
 .nexplayer_container .nexplayer_container_normal <class to modify>
 
 .nexplayer_container .nexplayer_container_mobile <class to modify>
@@ -521,7 +521,7 @@ Modifying the .nexplayer_container class will bring the changes to every platfor
 
 The font of the player can be customized using the following code:
 
-```
+```css
 .nexplayer_container {
     font-size: 20pt;
     color: blue;
@@ -536,7 +536,7 @@ To overwrite the CSS styles of the default UI, the correct container name has to
 
 #### Button
 
-```
+```css
 .nexplayer_container .nexplayer_container_normal .nexplayer_play_pause {
     background-color: yellow;
 }
@@ -553,7 +553,7 @@ To overwrite the CSS styles of the default UI, the correct container name has to
 
 #### Seekbar
 
-```
+```css
 .nexplayer_container .nexplayer_circleBase {
     background-color: white;
 }
@@ -576,7 +576,7 @@ To overwrite the CSS styles of the default UI, the correct container name has to
 
 To customize the selected language style on the .nexplayer_option_ui menu, the following code should be used:
 
-```
+```css
 .nexplayer_container .nexplayer_option_ui .nexplayer_selected_element {
     color: green;
 }
@@ -586,7 +586,7 @@ To customize the selected language style on the .nexplayer_option_ui menu, the f
 
 To customize the bottom control bar:
 
-```
+```css
 .nexplayer_container .nexplayer_bar {
     background-color: green;
 }
@@ -597,7 +597,7 @@ To customize the bottom control bar:
 
 In order to change the default icons of the player, the following code should be used:
 
-```
+```css
 .nexplayer_container .nexplayer_IconPause {
     background-image: url(replay.svg) !important;
 }
@@ -624,7 +624,7 @@ Any icon has a predefined effect when the user hovers the mouse over or touches 
 
 This behavior can be customized with the hover selector on the .nexplayer_icon CSS class:
 
-```
+```css
 .nexplayer_container .nexplayer_icon:hover {
     filter: drop-shadow(8px 8px 8px red);
 }
