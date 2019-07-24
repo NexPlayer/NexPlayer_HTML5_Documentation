@@ -13,7 +13,9 @@ section,
 summary {
     display: block
 }
-
+.app-sub-sidebar li::before {
+    content: '';    
+}
 audio,
 canvas,
 video {
