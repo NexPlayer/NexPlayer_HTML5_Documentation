@@ -5,14 +5,14 @@
 
 ***
 
-# NexPlayer for Tizen{docsify-ignore-all}
+# NexPlayer HTML5{docsify-ignore-all}
 
 ## Abstract
-NexPlayer™ provides a media player for Smart TVs operating on Tizen. It includes support for HLS, DASH, and progressive download.
+NexPlayer™ provides a media player for the Web. It includes support for HLS, DASH, Microsoft Smooth Streaming, and progressive download.
 
-The default UI is easily customizable to fit the user&#xB4;s personal preferences (e.g. icons, colors, etc).
+The default UI is easily customizable to fit the user´s personal preferences (e.g. icons, colors, etc).
 
-<style> .titles{color: #ffffff; width: 250px;}.table{position: absolute; }  .tableFeatures{left: 18rem} .tablePlayback{top: 41rem} .tableAds{top: 53rem} .tableSubs{left: 37.5em} .tableMetadata{top: 48rem;} .tableDRM{left: 37.5em; top: 45rem;} </style>
+<style> .titles{color: #ffffff; width: 250px;}.table{position: absolute; }  .tableFeatures{left: 18rem} .tablePlayback{top: 44.5rem} .tableCasting{top: 51rem} .tableAds{top: 58rem} .tableSubs{left: 37.5em} .tableMetadata{left: 37.5em; top: 45rem;} .tableDRM{left: 37.5em; top: 50rem;} </style>
 
 
 <table class="table table-sm">
@@ -27,9 +27,9 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     <tr>
       <th  scope="row">DASH </th>      
     </tr>
-    <!--tr>
+    <tr>
       <th scope="row">Microsoft Smooth Streaming </th>      
-    </tr-->
+    </tr>
     <tr>
       <th scope="row">Progressive Download </th>      
     </tr>
@@ -42,17 +42,23 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
       <th colspan="3" class="titles" bgcolor="#C80000" scope="row">FEATURES</th>      
     </tr>
     <tr>
-        <th>Pre-Integrated UI</th>
-    </tr>    
+        <th>Integrated UI</th>
+    </tr>
     <tr>
-        <th>Multiple audio/video tracks</th>
+        <th>360 and VR video player</th>
+    </tr>
+    <tr>
+        <th> Multiple audio/video tracks</th>
     </tr>
     <tr>
         <th>ABR and UHD video (4k and 8k)</th>
     </tr>
     <tr>
         <th>Trick Play</th>
-    </tr>   
+    </tr>
+    <tr>
+        <th>Multiple players at the same time</th>
+    </tr>
     <tr>
         <th>Time-shifting</th>
     </tr>
@@ -62,9 +68,9 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     <tr>
         <th>Picture-in-picture</th>
     </tr>
-    <!--tr>
+    <tr>
         <th>Low latency</th>
-    </tr-->
+    </tr>
     <tr>
         <th>Fully Customizable UI</th>
     </tr>
@@ -89,6 +95,21 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
   </tbody>
   
 </table>
+<table class="table tableCasting">
+ 
+  <tbody >
+    <tr>
+      <th colspan="3" bgcolor="##C80000"  class="titles" scope="column">CASTING</th>      
+    </tr>
+    <tr>
+        <th>AirPlay</th>
+    </tr>
+    <tr>
+        <th>Chromecast</th>
+    </tr>
+  </tbody>
+  
+</table>
 
 <table class="table tableAds">
  
@@ -102,9 +123,6 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     <tr>
         <th>Pre-Roll, Mid-Roll, Post-Roll</th>
     </tr>
-	<tr>
-		<th>Client & Server-Side Ad Insertion</th>
-	</tr>
   </tbody>
   
 </table>
@@ -124,12 +142,9 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
       <tr>
         <th>TTML</th>
     </tr>
-    <tr>
+      <tr>
         <th>SRT</th>
     </tr>
-	<tr>
-		<th>SMPTE-TT (2018+)</th>
-	</tr>	
   </tbody>
   
 </table>
@@ -157,7 +172,10 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     </tr>
     <tr>
         <th>PlayReady DRM</th>
-    </tr>    
+    </tr>
+      <tr>
+        <th>Fairplay DRM</th>
+    </tr>
       <tr>
         <th>AES</th>
     </tr>
@@ -191,3 +209,33 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
 
 
 </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
