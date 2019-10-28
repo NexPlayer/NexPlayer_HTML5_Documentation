@@ -131,7 +131,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     useDynamicThumbnails: true, // Optional
     staticThumbnailsImage: 'URL of the image containing the preview thumbnails', // Optional
     staticThumbnailsVTT: 'URL of the VTT file', // Optional
-    cast: {} //Optional,
+    cast: {}, //Optional
     type_360: '360 visualisation type' // Optional
     autoplay: true, // Optional
     mutedAtStart: true, // Optional
@@ -144,6 +144,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     showingFullUI: true, // Optional
     seekUI: 10, // Seconds for the seek buttons, Optional
     callbacksForReturn: callback, // Optional callback called with the return button
+    disableKeyEvents: false, // Optional 
     ...
     
 ```

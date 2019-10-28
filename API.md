@@ -112,6 +112,8 @@ Creates and initializes the player.
 | callbackForLogger | <code>function</code> | function to be called when the logger show a message. |
 | vast | <code>string</code> | advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 | useDynamicThumbnails | <code>boolean</code> | determine if dynamic thumbnails are used. By default this values is set to false. |
+| showingFullUI | <code>boolean</code> | determine if the UI is hidden or not. |
+| disableKeyEvents | <code>boolean</code> | determine if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
 
 <a id="gettracks"> </a>
    #### player.getTracks() ⇒ Array.< Track >
