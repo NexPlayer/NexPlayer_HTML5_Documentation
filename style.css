@@ -259,4 +259,9 @@ table {
 .hints-container {
     display: table-cell;
 }
+
+td::before{
+    content:' ' !important;
+    position:absolute;
+}
 /*!
