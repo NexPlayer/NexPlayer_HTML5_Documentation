@@ -236,7 +236,7 @@ function licenseRequestReady (event) {
   request.session = session;
   request.addEventListener('load', player.FairPlayNexLicenseRequestLoaded.bind(player), false);
   request.addEventListener('error', player.FairPlayNexLicenseRequestFailed.bind(player), false);
-  var params = 'spc='+base64EncodeUint8Array(message)+'&assetId='+encodeURIComponent(session.contentId);
+  var params = 'spc='+ encodeURIComponent(base64EncodeUint8Array(message));
   request.open('POST', 'URL for the SPC sever (license server)', true); // serverProcessSPCPath
   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   request.setRequestHeader("dt-custom-data", "Optional license token");

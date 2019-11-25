@@ -82,6 +82,9 @@
    - [.addMidpointListener(func)](#playeraddmidpointlistenerfunc)
    - [.addThirdQuartileListener(func)](#playeraddthirdquartilelistenerfunc)
    - [.addCompleteListener(func)](#playeraddcomlpetelistenerfunc)
+   - [.addImpressionListener(func)](#playeraddimpressionlistenerfunc)
+   - [.addErrorListener(func)](#playeradderrorlistenerfunc)
+   - [.addBlockedListener(func)](#playeraddblockedlistenerfunc)
  - static
    - [.NexProtocol](#nexprotocol): enum
    - [.NexEvent](#nexevent): enum
@@ -207,7 +210,8 @@ Set the current subtitle track.
 <a id="islive"> </a>  
    #### player.isLive() ⇒ boolean
 
-Informs whether the video is live or on demand (VOD).
+Informs whether the video is live or on demand (VOD). Needs to be called when the manifest is finally loaded. 
+It is recommended to use within the video "loadeddata" event.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: boolean - true if the video is live, false otherwise.
@@ -801,6 +805,45 @@ Sets a listener function called when the ad finishes.
 | Param | Type | Description |
 | --- | --- | --- |
 | func | <code>function</code> | the function called when the ad finishes | 
+
+<a id="playeraddimpressionlistenerfunc"></a>
+
+#### player.adManager().addImpressionListener(func)
+
+Sets a listener function called when the impression URL has been pinged.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| func | <code>function</code> | the function called when the impression URL has been pinged | 
+
+<a id="playeradderrorlistenerfunc"></a>
+
+#### player.adManager().addErrorListener(func)
+
+Sets a listener function called when the ad fails during loading or playing.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| func | <code>function</code> | the function called when the ad fails during loading or playing | 
+
+<a id="playeraddblockedlistenerfunc"></a>
+
+#### player.adManager().addBlockedListener(func)
+
+Sets a listener function called when the ad is blocked by an external app.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| func | <code>function</code> | the function called when the ad is blocked by an external app | 
 
 <a id="nexprotocol"></a>
 
