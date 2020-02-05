@@ -1,7 +1,7 @@
 <a id="introduction-top"> </a>
 
 
-<img text-align="center" src="./_images/logo4.png" alt="logo of docsify-awesome repository" >
+<img text-align="center" src="./_images/logo5.png" alt="logo of docsify-awesome repository" >
 
 ***
 
