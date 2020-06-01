@@ -28,6 +28,7 @@
    - [.isUTC()](#isutc) ⇒ boolean
    - [.getCurrentTime()](#getcurrenttime) ⇒ number
    - [.getDuration()](#getduration) ⇒ number
+   - [.getDVRWindowSize()](#getDVRWindowSize) ⇒ number
    - [.getURL()](#playergeturl)
    - [.checkFrameDrop()](#playercheckframedrop) ⇒ number
    - [.seek(value)](#playerseekvalue)
@@ -311,6 +312,14 @@ Sets thumbnail resources. This method should be called before Init().
    **Type**: instance method of [<code>Player</code>](#Player)   
    **Returns**: number - the duration of the video.
 
+<a id="getDVRWindowSize"> </a>  
+   #### player.getDVRWindowSize() ⇒ number
+
+   Returns the window of allowable play time behind the live point of a live stream, this value will increase until the buffer is full, with the full content, at that point of time, the value will be constant.
+
+   **Type**: instance method of [<code>Player</code>](#Player)   
+   **Returns**: number - the window of allowable play time behind the live point of a live stream.
+
 #### player.getURL()
 
   Returns the current video URL.
@@ -328,13 +337,21 @@ Sets thumbnail resources. This method should be called before Init().
 
 #### player.seek(value)
 
-   Sets the position of the playback taking into account isUTC (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
+   
+   Set the currentTime property of the attached video element in seconds. If it is a live stream is necessary to combine it with [.getDVRWindowSize()](#getcurrenttime). 
+   (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
 
    **Type**: instance method of [<code>Player</code>](#Player) 
 
   | Param | Type |Description |
   | --- | --- | --- |
-  | event | Event | value that the player will seek to. |
+  | event | Event | value in seconds that the player will seek to. |
+
+  ```js
+   player.seek(120) // It jumps into minute 2:00 in the video (120 secs)
+   player.seek(player.getDVRWindowSize() - 120)) // In jumps back 2 minutes (120 secs) from current live time.
+   ```
+
 
 #### player.sendImpression()
 
