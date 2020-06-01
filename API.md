@@ -338,8 +338,7 @@ Sets thumbnail resources. This method should be called before Init().
 #### player.seek(value)
 
    
-   Set the currentTime property of the attached video element in seconds. If it is a live stream is necessary to combine it with [.getDVRWindowSize()](#getcurrenttime). 
-   (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
+   Set the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
 
    **Type**: instance method of [<code>Player</code>](#Player) 
 
@@ -348,8 +347,10 @@ Sets thumbnail resources. This method should be called before Init().
   | event | Event | value in seconds that the player will seek to. |
 
   ```js
-   player.seek(120) // It jumps into minute 2:00 in the video (120 secs)
-   player.seek(player.getDVRWindowSize() - 120)) // In jumps back 2 minutes (120 secs) from current live time.
+   //Non-live video 
+   player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a positive number ranging from 0 to the full duration of the video in seconds
+   //Live video
+   player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
    ```
 
 
