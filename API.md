@@ -394,7 +394,7 @@ Returns some information about the manifest.
 <a id="gettimeshiftbufferdepth"> </a>  
 #### player.getTimeShiftBufferDepth ⇒ number
 
-Returns the time shift buffer depth in seconds.
+Returns the time shift buffer depth in seconds, this function only works in livestream.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: number - time shift buffer depth
