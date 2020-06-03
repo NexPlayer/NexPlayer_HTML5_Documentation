@@ -32,6 +32,9 @@
    - [.getURL()](#playergeturl)
    - [.checkFrameDrop()](#playercheckframedrop) ⇒ number
    - [.seek(value)](#playerseekvalue)
+   - [.seekLive()](#playerseekLive)
+   - [.getCurrentLiveTime()](#getcurrentlivetime) ⇒ number
+   - [.getTimeUntilLive()](#gettimeuntillive) ⇒ number
    - [.sendImpression()](#playersendimpression)
    - [.getProtocol()](#getprotocol) ⇒ number
    - [.getThumbnailController()](#getthumbnailcontroller) ⇒ ThumbController
@@ -335,6 +338,8 @@ Sets thumbnail resources. This method should be called before Init().
    **Type**: instance method of [<code>Player</code>](#Player)   
    **Returns**: number - number of dropped frames.
 
+   
+
 #### player.seek(value)
 
    
@@ -352,6 +357,29 @@ Sets thumbnail resources. This method should be called before Init().
    //Live video
    player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
    ```
+
+#### player.seekLive()
+   
+   Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
+
+   **Type**: instance method of [<code>Player</code>](#Player) 
+
+
+<a id="getcurrentlivetime"> </a>  
+#### player.getCurrentLiveTime() ⇒ number
+
+Returns the time in which the livestream is at.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: number - time in which the livestream is at.
+
+<a id="gettimeuntillive"> </a>  
+#### player.getTimeUntilLive() ⇒ number
+
+Returns the time difference between the time it's currently found in and the time the livestream is at.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: number - time difference between the time it's currently found in and the time the livestream is at.
 
 
 #### player.sendImpression()
