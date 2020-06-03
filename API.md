@@ -35,6 +35,8 @@
    - [.seekLive()](#playerseekLive)
    - [.getCurrentLiveTime()](#getcurrentlivetime) ⇒ number
    - [.getTimeUntilLive()](#gettimeuntillive) ⇒ number
+   - [.getManifestInfo()](#getmanifestinfo)
+   - [.getTimeShiftBufferDepth()](#gettimeshiftbufferdepth) ⇒ number
    - [.sendImpression()](#playersendimpression)
    - [.getProtocol()](#getprotocol) ⇒ number
    - [.getThumbnailController()](#getthumbnailcontroller) ⇒ ThumbController
@@ -381,6 +383,21 @@ Returns the time difference between the time it's currently found in and the tim
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: number - time difference between the time it's currently found in and the time the livestream is at.
 
+<a id="getmanifestinfo"> </a>  
+#### player.getManifestInfo()
+
+Returns some information about the manifest.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: number - some information about the manifest.
+
+<a id="gettimeshiftbufferdepth"> </a>  
+#### player.getTimeShiftBufferDepth ⇒ number
+
+Returns the time shift buffer depth in seconds.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: number - time shift buffer depth
 
 #### player.sendImpression()
 
