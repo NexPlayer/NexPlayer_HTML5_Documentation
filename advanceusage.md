@@ -303,12 +303,13 @@ Sample VAST links can be found on the <a href =https://developers.google.com/int
 
 ## 360 Player
 
-This feature allows the player to play videos with equirectangular, cubemap or topdown format. The 360 feature can be activated by adding the type_360 option:
+This feature allows the player to play videos with equirectangular, cubemap or topdown format. 
+For all Oculus devices the flat 360 format must be used (see example below). For devices which have gyroscope as the phone, can be moved to get a full 360 view but only using web sites that are using the https protocol. The 360 feature can be activated by adding the type_360 option:
 ```js
 {
   div: document.getElementById('player'), // Mandatory
   src: 'URL video', // Mandatory
-  type_360: 'equirectangular'
+  type_360: 'equirectangular' //cubemap, flat
 }
 
 ```
