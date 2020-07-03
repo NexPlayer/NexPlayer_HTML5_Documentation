@@ -232,13 +232,13 @@ function licenseRequestReady (event) {
   var message = event.message;
   var request = new XMLHttpRequest();
   var sessionId = event.sessionId;
-  request.responseType = 'text';
+  request.responseType = 'text'; // replace 'text' with 'arraybuffer' to use FairPlay Expressplay
   request.session = session;
   request.addEventListener('load', player.FairPlayNexLicenseRequestLoaded.bind(player), false);
   request.addEventListener('error', player.FairPlayNexLicenseRequestFailed.bind(player), false);
-  var params = 'spc='+ encodeURIComponent(base64EncodeUint8Array(message));
+  var params = 'spc='+ encodeURIComponent(base64EncodeUint8Array(message)); // replace this variable with var params = new Uint8Array(message); to use FairPlay Expressplay
   request.open('POST', 'URL for the SPC sever (license server)', true); // serverProcessSPCPath
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // replace "application/x-www-form-urlencoded" with "application/octet-stream" to use FairPlay Expressplay
   request.setRequestHeader("dt-custom-data", "Optional license token");
   request.send(params);
 }
@@ -247,7 +247,7 @@ var callBackWithPlayers = function (nexplayerInstance, videoElement) {
   player = nexplayerInstance;
 }
 
-var nexDRMInformationFairPlay = {NexDRMType:'com.apple.fps.1_0', NexDRMKey: 'DRM key URL (certificate URL)', NexCallback: licenseRequestReady};
+var nexDRMInformationFairPlay = {NexDRMType:'com.apple.fps.1_0', NexDRMKey: 'DRM key URL or Base64 (certificate)', NexCallback: licenseRequestReady};
 
 nexplayer.Setup({
   key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
