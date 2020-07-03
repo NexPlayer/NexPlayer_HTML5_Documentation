@@ -228,33 +228,30 @@ function base64EncodeUint8Array(input) {
 
 // Request the license at the NexPlayer callback
 function licenseRequestReady (event) {
-  var session = event.target;
-  var message = event.message;
-  var request = new XMLHttpRequest();
-  var sessionId = event.sessionId;
-  request.responseType = 'text';
-  request.session = session;
-  request.addEventListener('load', player.FairPlayNexLicenseRequestLoaded.bind(player), false);
-  request.addEventListener('error', player.FairPlayNexLicenseRequestFailed.bind(player), false);
-  var params = 'spc='+ encodeURIComponent(base64EncodeUint8Array(message));
-  request.open('POST', 'URL for the SPC sever (license server)', true); // serverProcessSPCPath
-  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  request.setRequestHeader("dt-custom-data", "Optional license token");
-  request.send(params);
+ var session = event.target;
+ var message = event.message;
+ var request = new XMLHttpRequest();
+ var sessionId = event.sessionId;
+ request.responseType = 'text'; // replace 'text' with 'arraybuffer' to use FairPlay Expressplay
+ request.session = session;
+ request.addEventListener('load', player.FairPlayNexLicenseRequestLoaded.bind(player), false);
+ request.addEventListener('error', player.FairPlayNexLicenseRequestFailed.bind(player), false);
+ var params = 'spc='+ encodeURIComponent(base64EncodeUint8Array(message)); // replace this variable with var params = new Uint8Array(message); to use FairPlay Expressplay
+ request.open('POST', 'URL for the SPC sever (license server)', true); // serverProcessSPCPath
+ request.setRequestHeader(“Content-type”, “application/x-www-form-urlencoded”); // replace “application/x-www-form-urlencoded” with “application/octet-stream” to use FairPlay Expressplay
+ request.setRequestHeader(“dt-custom-data”, “Optional license token”);
+ request.send(params);
 }
-
 var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-  player = nexplayerInstance;
+ player = nexplayerInstance;
 }
-
-var nexDRMInformationFairPlay = {NexDRMType:'com.apple.fps.1_0', NexDRMKey: 'DRM key URL (certificate URL)', NexCallback: licenseRequestReady};
-
+var nexDRMInformationFairPlay = {NexDRMType:'com.apple.fps.1_0', NexDRMKey: 'DRM key URL or Base64 (certificate)', NexCallback: licenseRequestReady};
 nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-  div: document.getElementById('player'),
-  src: 'https://s3.amazonaws.com/shift72-temp/hls_fps_bento4_sintel/master.m3u8',
-  callbacksForPlayer: callBackWithPlayers,
-  drm: [nexDRMInformationFairPlay]
+ key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+ div: document.getElementById('player'),
+ src: 'https://s3.amazonaws.com/shift72-temp/hls_fps_bento4_sintel/master.m3u8',
+ callbacksForPlayer: callBackWithPlayers,
+ drm: [nexDRMInformationFairPlay]
 });
 ```
 Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the FairPlay server used.
@@ -316,8 +313,7 @@ For all Oculus devices the flat 360 format must be used (see example below). For
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default format is 'equirectangular'. To switch the format, simply change the value of <b>type_360</b> to 'cubemap' or 'topdown'.</p>
 </div></div>
 
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Since <a style ="color:#5A5A5A!important" href="https://developer.apple.com/documentation/safari_release_notes/safari_12_1_release_notes" target="_blank">iOS version 12.2,</a> Apple Inc. introduced some changes respect to the gyroscope and the accelerometer.
-This made the Motion &amp; Orientation options to be disabled by default, so it is necessary to enable these settings Settings -&gt; Safari -&gt; Motion &amp; Orientation, also this new OS only lets you access device orientation events if you’re connecting via https and not through http.</p>
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Currently the only form to use the gyroscope is in web sites with https protocol, moreover in IOS devices you need to accept a permission to use this function</p>
 </div></div>
 
 
