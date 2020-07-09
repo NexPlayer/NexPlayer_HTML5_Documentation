@@ -1,5 +1,6 @@
 <a id="advance-top"> </a>
 
+
 # Advance Usage
 
 NexPlayer™ offers more advanced options to control the playback. This section contains several examples of how to use these features.
