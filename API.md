@@ -106,28 +106,28 @@ Creates and initializes the player.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>string</code> | that validates the playback. |
+| key | <code>string</code> | NexPlayer key to validates the playback. |
 | div | <code>HTMLDivElement</code> | the div container of the player. |
-| src | <code>string</code> | of the video to be played. |
-| autoplay | <code>boolean</code> | determine if the video must start playing or paused. By default it's set to true. |
+| src | <code>string</code> | relevant src of the video to be played. |
+| autoplay | <code>boolean</code> | determines if the video must start playing or paused. By default it's set to true. |
 | drm | <code>Array.<NexDRMInformation></code> | contains an array of DRM information. By default it's set to null. |
-| seekUI | <code>number</code> | establish the number of seconds the UI buttons will seek forwards or backwards. By default is set to 10s. |
+| seekUI | <code>number</code> | sets the number of seconds the UI buttons will seek forwards or backwards. By default is set to 10s. |
 | mutedAtStart | <code>boolean</code> | determine if the video will start playing muted or not. By default this value is set to false. |
 | debug	 | <code>boolean</code> | determine if log information is showed. By default is set to true. |
 | type_360 | <code>string</code> | select the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
-| autohide | <code>boolean</code> | establish if the UI must hide when the user does not interact with the video. By default is set to true.. |
+| autohide | <code>boolean</code> | sets if the UI must hide when the user does not interact with the video. By default is set to true.. |
 | callbacksForPlayer | <code>function</code> | used for retrieving the nexplayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
-| callbackForReturn | <code>function</code> | establish a callback to be executed when the corresponding button is clicked. |
-| callbackForLogger | <code>function</code> | function to be called when the logger show a message. |
+| callbackForReturn | <code>function</code> | sets a callback to be executed when the corresponding button is clicked. |
+| callbackForLogger | <code>function</code> | function to be called when the logger shows a message. |
 | vast | <code>string</code> | advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
-| useDynamicThumbnails | <code>boolean</code> | determine if dynamic thumbnails are used. By default this values is set to false. |
-| showingFullUI | <code>boolean</code> | determine if the UI is hidden or not. |
-| disableKeyEvents | <code>boolean</code> | determine if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
+| useDynamicThumbnails | <code>boolean</code> | determines if dynamic thumbnails are used. By default this values is set to false. |
+| showingFullUI | <code>boolean</code> | determines if the UI is hidden or not. |
+| disableKeyEvents | <code>boolean</code> | determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
 
 <a id="gettracks"> </a>
    #### player.getTracks() ⇒ Array.< Track >
 
-Get all the video avaliable tracks (different qualities).
+Gets all of the videoes avaliable tracks (different qualities).
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 **Returns**:: Array.< Track > - all the tracks available.
@@ -142,7 +142,7 @@ Get the current track information.
 
 #### player.setCurrentTrack(trackID)
 
-Set the current track.
+Sets the current track.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Export**:
@@ -153,7 +153,7 @@ Set the current track.
 
 #### player.enableABR()
 
-Enable the ABR to change automatically between tracks.
+Enables the ABR to change automatically between tracks.
 
 **Type**: instance method of [<code>Player</code>](#Player)    
 
@@ -163,7 +163,7 @@ Enable the ABR to change automatically between tracks.
 Get the available audio streams.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
-**Returns**: Array.<AudioStream> - the list of the available audio streams.
+**Returns**: An array<AudioStream> - which contains the available audio streams.
 
 <a id="getcurrentaudiostream"> </a>
    #### player.getCurrentAudioStream() ⇒ AudioStream
@@ -175,7 +175,7 @@ Get the audio stream currently in use.
 
 #### player.setAudioStream(streamID)
 
-Set the current audio stream.
+Sets the current audio stream.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Export**:
@@ -188,22 +188,22 @@ Set the current audio stream.
 <a id="getcurrentsubtitle"> </a>  
    #### player.getCurrentSubtitle() 
 
-Get the current subtitle info.
+Gets the current subtitle info.
 
 **Type**: instance method of [<code>Player</code>](#Player)     
-**Returns**: Current Subtitle - the current subtitle track (undefined if no subs are activated).
+**Returns**: Current Subtitle - the current subtitle track (undefined if no subtitles are activated).
 
 <a id="getsubtitles"> </a>  
    #### player.getSubtitles()
    
-Get all the avaliable subtitle tracks info.
+Gets all the avaliable subtitle tracks info.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array of subtitles - the subtitle tracks of the video.
 
 #### player.setSubtitle(subID)
 
-Set the current subtitle track.
+Sets the current subtitle track.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Export**:
@@ -216,11 +216,11 @@ Set the current subtitle track.
 <a id="islive"> </a>  
    #### player.isLive() ⇒ boolean
 
-Informs whether the video is live or on demand (VOD). Needs to be called when the manifest is finally loaded. 
+Informs whether the video is live or on demand (VOD). This needs to be called when the manifest is finally loaded. 
 It is recommended to use within the video "loadeddata" event.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
-**Returns**: boolean - true if the video is live, false otherwise.
+**Returns**: boolean - true if the video is live, otherwise it returns false.
 
 
 #### player.on(callbackType, functionToBeCalled)
@@ -345,7 +345,7 @@ Sets thumbnail resources. This method should be called before Init().
 #### player.seek(value)
 
    
-   Set the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
+   Sets the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
 
    **Type**: instance method of [<code>Player</code>](#Player) 
 
@@ -355,9 +355,9 @@ Sets thumbnail resources. This method should be called before Init().
 
   ```js
    //Non-live video 
-   player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a positive number ranging from 0 to the full duration of the video in seconds
+   player.seek(120) // This will seek forward 120 seconds (2:00 minutes), must be a positive number ranging from 0 to the full duration of the video in seconds
    //Live video
-   player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
+   player.seek(-120) // It jumps back 120 seconds (2:00 minutes) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
    ```
 
 #### player.seekLive()
@@ -378,7 +378,7 @@ Returns the time in which the livestream is at.
 <a id="gettimeuntillive"> </a>  
 #### player.getTimeUntilLive() ⇒ number
 
-Returns the time difference between the time it's currently found in and the time the livestream is at.
+Returns the time difference between the current video time and the livestream time.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: number - time difference between the time it's currently found in and the time the livestream is at.
@@ -401,7 +401,7 @@ Returns the time shift buffer depth in seconds, this function only works in live
 
 #### player.sendImpression()
 
-Send the impression details to the server (only for internal management).
+Sends the impression details to the server (only for internal management).
 
 **Type**: instance method of [<code>Player</code>](#Player) 
 
@@ -423,7 +423,7 @@ Returns the preview thumbnail controller.
 
 #### player.setThumbnailStep(step)
 
-Set the time interval between frames for dynamic thumbnails.
+Sets the time interval between frames for dynamic thumbnails.
 
 **Type**: instance method of [<code>Player</code>](#Player) 
 
@@ -461,20 +461,20 @@ Get the video quality levels array.
 
 #### player.setTrack(qualityLevel)
 
-Set the video quality level.
+Sets the video quality level.
 
 **Type**: instance method of [<code>Player</code>](#Player) 
 
 #### player.togglePlayPause()
 
-Toggle between play and pause.
+Enables toggle between play and pause.
 
 **Type**: instance method of [<code>Player</code>](#Player) 
 
 
 #### player.toggleFullScreen()
 
-Toggle between full screen and windowed.
+Enables toggle between full screen and window.
 
 **Type**: instance method of [<code>Player</code>](#Player) 
 
@@ -482,7 +482,7 @@ Toggle between full screen and windowed.
 
 #### player.showStats()
 
-Display basic stream information when typing "nex" on the keyboard.
+Displays basic stream information when typing "nex" on the keyboard.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 
@@ -508,7 +508,7 @@ Jumps backward to the current playback position of the player.
 
 #### player.setThumbnailStep(step)
 
-Set the step for dynamic thumbnails.
+Sets the step for dynamic thumbnails.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 **Param**: {number} **step** is the seconds between two different thumbnails
@@ -543,7 +543,7 @@ Returns if the control bar is opened.
 
 #### player.toggleLanguagesMenu()
 
-Toogle the subtitles menu options.
+Toogles the subtitles menu options.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 
