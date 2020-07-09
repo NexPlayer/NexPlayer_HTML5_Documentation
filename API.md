@@ -109,20 +109,20 @@ Creates and initializes the player.
 | key | <code>string</code> | that validates the playback. |
 | div | <code>HTMLDivElement</code> | the div container of the player. |
 | src | <code>string</code> | of the video to be played. |
-| autoplay | <code>boolean</code> | determine if the video must start playing or paused. By default it's set to true. |
+| autoplay | <code>boolean</code> | determines if the video must start playing or paused. By default it's set to true. |
 | drm | <code>Array.<NexDRMInformation></code> | contains an array of DRM information. By default it's set to null. |
 | seekUI | <code>number</code> | establish the number of seconds the UI buttons will seek forwards or backwards. By default is set to 10s. |
-| mutedAtStart | <code>boolean</code> | determine if the video will start playing muted or not. By default this value is set to false. |
-| debug	 | <code>boolean</code> | determine if log information is showed. By default is set to true. |
-| type_360 | <code>string</code> | select the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
-| autohide | <code>boolean</code> | establish if the UI must hide when the user does not interact with the video. By default is set to true.. |
+| mutedAtStart | <code>boolean</code> | determines if the video will start playing muted or not. By default this value is set to false. |
+| debug	 | <code>boolean</code> | determines if log information is showed. By default is set to true. |
+| type_360 | <code>string</code> | selects the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
+| autohide | <code>boolean</code> | establishes if the UI must hide when the user does not interact with the video. By default is set to true.. |
 | callbacksForPlayer | <code>function</code> | used for retrieving the nexplayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
-| callbackForReturn | <code>function</code> | establish a callback to be executed when the corresponding button is clicked. |
+| callbackForReturn | <code>function</code> | establishes a callback to be executed when the corresponding button is clicked. |
 | callbackForLogger | <code>function</code> | function to be called when the logger show a message. |
 | vast | <code>string</code> | advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
-| useDynamicThumbnails | <code>boolean</code> | determine if dynamic thumbnails are used. By default this values is set to false. |
-| showingFullUI | <code>boolean</code> | determine if the UI is hidden or not. |
-| disableKeyEvents | <code>boolean</code> | determine if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
+| useDynamicThumbnails | <code>boolean</code> | determines if dynamic thumbnails are used. By default this values is set to false. |
+| showingFullUI | <code>boolean</code> | determines if the UI is hidden or not. |
+| disableKeyEvents | <code>boolean</code> | determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
 
 <a id="gettracks"> </a>
    #### player.getTracks() ⇒ Array.< Track >
