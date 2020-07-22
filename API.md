@@ -95,6 +95,9 @@
    - [.NexProtocol](#nexprotocol): enum
    - [.NexEvent](#nexevent): enum
    - [.THUMB_TYPE](#thumbtype): enum
+ - vr player
+   - [.getFieldView()](#playergetFieldView)
+   - [.setFieldView()](#playersetFieldView)
 
 
 #### nexplayer.Setup(info)
@@ -1013,3 +1016,24 @@ Called when a FairPlay content needs to request the license.
 | id | <code>number</code> | id of the stream. |
 | language | <code>number</code> | language of the stream. |
 | name | <code>number</code> | name of the stream. |
+
+   ## VR Player
+
+<a id="setFieldView"> </a>  
+   #### player.setFieldView()
+
+Set the field of view.
+
+**Type**: instance method of [<code>Player</code>](#Player) 
+
+ | Param | Type |Description |
+ | --- | --- | --- |
+ | fov | number | the fov value. |
+
+ <a id="getFieldView"> </a>  
+   #### player.getFieldView()
+
+   get the field of view.
+
+   **Type**: instance method of  [<code>Player</code>](#Player)  
+   **Returns**: number
