@@ -121,10 +121,10 @@ Online progressive download (MP4) is supported on any platform. The support for 
 
 NexPlayer™ supports several DRM technologies:
 ### Widevine
-A DRM powered by <a href =https://www.widevine.com target="_blank">Google</a>, available on Chrome and Firefox (on Android and desktop), Opera, MS Edge and IE (on desktop). It can be set by entering the information into the DRM array:
+Is a DRM powered by <a href =https://www.widevine.com target="_blank">Google</a>, available on Chrome and Firefox (on Android and desktop), Opera, MS Edge and IE (on desktop). It can be set by entering the appropriate information into the DRM array:
 
 ```js
-var nexDRMInformationWidevine = {
+const nexDRMInformationWidevine = {
   NexDRMType:'com.widevine.alpha',
   NexDRMKey: 'DRM key URL',
   NexHeaders:[{FieldName: 'Optional field name', //Optional
@@ -142,10 +142,10 @@ nexplayer.Setup({
 Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the Widevine server used.
 ### Playready
 
-A DRM powered by <a href =https://www.microsoft.com/playready/ target="_blank">Microsoft</a>, available on Edge and Internet Explorer (on Windows). It can be used by entering the information into the DRM array:
+A DRM powered by <a href =https://www.microsoft.com/playready/ target="_blank">Microsoft</a>, available on Edge and Internet Explorer (on Windows). It can be used by entering the appropriate information into the DRM array:
 
 ```js
-var nexDRMInformationPlayReady = {
+const nexDRMInformationPlayReady = {
 NexDRMType:'com.microsoft.playready',
  NexDRMKey: 'DRM key URL', 
 NexHeaders:[{FieldName: 'Optional field name',  //Optional
@@ -168,13 +168,13 @@ The Common Encryption Scheme (CENC) specifies the standard to enable decryption 
 
 ```js
 // Widevine
-var nexDRMInformationWidevine = {NexDRMType:'com.widevine.alpha',
+const nexDRMInformationWidevine = {NexDRMType:'com.widevine.alpha',
  NexDRMKey: 'DRM key URL', 
             NexHeaders:[{FieldName: 'Optional field name',  //Optional
             FiledValue: 'Optional field value'}]}; //Optional
 
 // PlayReady
-var nexDRMInformationPlayReady = {NexDRMType:'com.microsoft.playready',
+const nexDRMInformationPlayReady = {NexDRMType:'com.microsoft.playready',
  NexDRMKey: 'DRM key URL', 
             NexHeaders:[{FieldName: 'Optional field name', //Optional
             FiledValue: 'Optional field value'}]}; //Optional
@@ -193,7 +193,7 @@ For example, Widevine and PlayReady can be used with the same DASH manifest and 
 
 ### FairPlay
 
-A DRM powered by <a href =https://developer.apple.com/streaming/fps/ target="_blank">Apple</a>, available on Safari (on macOS and iOS). When using FairPlay the license must be manually requested, adapting it to the specified FairPlay server implementation. It can be used by entering the information into the DRM array:
+<a href =https://developer.apple.com/streaming/fps/ target="_blank">Is a DRM powered by Apple</a>, it's available on Safari (on macOS and iOS). When using FairPlay the license must be manually requested, adapting it to the specified FairPlay server implementation. It can be used by entering the information into the DRM array:
 ```js
 // First get the player instance to call the necessary methods when the license is requested
 var player = null;
@@ -254,7 +254,7 @@ nexplayer.Setup({
  drm: [nexDRMInformationFairPlay]
 });
 ```
-Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the FairPlay server used.
+Please note that the HTTP headers (NexHeaders) are optional, and might be required depending on the implementation of the FairPlay server used.
 
 FairPlay is supported with HLS.
 
@@ -296,12 +296,17 @@ nexplayer.Setup({
     vast: 'VAST / VPAID / VMAP link'
 });
 ```
-Sample VAST links can be found on the <a href =https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags target="_blank">Google Website</a>.
+Sample VAST links can be found on the <a href =https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags target="_blank">Google Interactive Media Ads Website</a>.
 
 ## 360 Player
 
 This feature allows the player to play videos with equirectangular, cubemap or topdown format. 
-For all Oculus devices the flat 360 format must be used (see example below). For devices which have gyroscope as the phone, can be moved to get a full 360 view but only using web sites that are using the https protocol. In order to have the 360 in all devices you should add true and the player automatically set the correct type to the user device. The 360 feature can be activated by adding the type_360 option:
+
+If the device is an Oculus devices the flat 360 format must be used. 
+
+For devices which use gyroscope, they can be moved to get a full 360 view of the video. However this feature  is only available for website that use the https protocol. 
+
+In order to have the 360 in all devices you should add type_360: true and the player automatically set the correct type to the user device. An example of this is shown below:
 ```js
 {
   div: document.getElementById('player'), // Mandatory
@@ -317,7 +322,7 @@ For all Oculus devices the flat 360 format must be used (see example below). For
 </div></div>
 
 
-## Mute
+## Muted at Start
 
 This feature tells the player whether to start playback with the volume muted or not. This can be configured in the player by adding the mutedAtStart option:
 ```js
@@ -362,7 +367,7 @@ This feature enables/disables autoplay. This can be configured in the player by 
 </div></div>
 
 ## Multiple Players
-This feature allows to have multiple players at the same time. In order to create an other player it's necessary to create a new div.
+This feature enablles the use of multiple players at the same time. In order to create an other player it's necessary to create a new div.
 ```js
 nexplayer.AditionalVideo({
     key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
@@ -371,7 +376,7 @@ nexplayer.AditionalVideo({
     callbacksForPlayer: callback(nexplayerInstance, videoElement)
 });
 ```
-In this example, the function AditionaVideo() has been called once for the extra video.<br>
+In this example, the function AditionalVideo() has been called once for the extra video.<br>
 It is necessary to create an aditional div and css class for every new player, also define a new "callbacksforPlayer".
 
 <img width="100%" text-align="center" src="./_images/2PlayersExample.png" alt="logo of docsify-awesome repository" >
@@ -492,9 +497,9 @@ Please take into account that the seekbar and the volume control bar are the sam
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that to overwrite the styles, the JavaScript file should be imported before the desired customizations.</p>
 </div></div>
 
-### Responsive Configuration
+### Responsive User Interface Configuration
 
-The size of the UI adapts according to the size of the player. There are three different css classes that control this behavior:
+The size of the UI adapts according to the size of the player. There are three different CSS classes that control this behavior:
 
 | CSS Class | Description |
 | --- | --- |
@@ -631,7 +636,7 @@ This behavior can be customized with the hover selector on the .nexplayer_icon C
 
 Advanced actions can be performed with a player instance. For the full action list, check <a href="#/API" target="_blank">NexPlayer API</a>
 
-### ABR
+### Adabtive Bitrate (ABR)
 
 HLS and DASH streams contain several video bitrates in order to adjust the quality based on the network conditions. Changes in bitrate are done automatically when ABR (Adaptive Bitrate) is enabled (default behavior).
 
@@ -758,9 +763,9 @@ There are two types of emitted events that can be listened to.
 
 ### Video Element Events
 
-The video element emits the basic event, such as a change of the state of the video (pause/play/buffering), or informs that the current time of the video has changed.
+The video element emits the basic event, such as a change of the state of the video (such as pause/play/buffering), or informs that the current time of the video has changed.
 
-The method <code>addEventListener</code> of the video element needs to be called with any of the available <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events" target="_blank">media events</a>.
+0The method <code>addEventListener</code> of the video element needs to be called with any of the available <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events" target="_blank">media events</a>.
 
 Some of the most important events are "playing", "pause", "waiting", and "timeupdate".
 
@@ -795,7 +800,7 @@ Advanced events such as a track change are available using the <code>on</code> m
 
 ### Fullscreen iOS
 
-If you want to avoid the fullscreen native player in IOS, you should define this 2 callbacks on the setup <b>callbackFullscreenIn</b> and <b>callbackFullscreenOut</b>
+If you want to avoid the fullscreen native player in IOS, you should define this using two callbacks on the setup <b>callbackFullscreenIn</b> and <b>callbackFullscreenOut</b>
 
 ```js
 const callbackwithFullscreenIn = function(){

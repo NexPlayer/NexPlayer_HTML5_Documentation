@@ -7,7 +7,7 @@
 
 # NexPlayer HTML5{docsify-ignore-all}
 
-## Abstract
+## About NexPlayer
 NexPlayer™ provides a media player for the Web. It includes support for HLS, DASH, Microsoft Smooth Streaming, and progressive download.
 
 The default UI is easily customizable to fit the user´s personal preferences (e.g. icons, colors, etc).
