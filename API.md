@@ -59,6 +59,7 @@
    - [.nextFocus()](#playernextfocus)
    - [.previousFocus()](#playerpreviousfocus)
    - [.clickFocus()](#playerclickFocus)
+   - [.toggleBar()](#playertoggleBar)
    - [.adManager()](#playeradmanager)
    - [.getAdObject()](#playergetadobject)
    - [.getId()](#playergetid)
@@ -575,6 +576,14 @@ Moves along to the previous element that can be focused. The possible elements t
 Click the current focused element.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
+
+<a id="playertogglebar"></a>
+
+#### player.toggleBar()
+
+Enables toggle between hide or show the playback bar.
+
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="playeradmanager"></a>
 
