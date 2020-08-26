@@ -9,6 +9,20 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 https://nexplayer.nexplayersdk.com/latest/nexplayer.js
 ```
 
+#### Version 5.1
+
+<!-- <input type="text" value="https://nexplayer.nexplayersdk.com/4.2/nexplayer.js" id="myInput"> -->
+```
+https://nexplayer.nexplayersdk.com/5.1/nexplayer.js 
+```
+
+* **[Added]** Automatic type360
+* **[Added]** support 360 in oculus
+* **[Added]** 360 zoom controls
+* **[Added]** Certificated base64 in fairplay
+* **[Improved]** Fix Dash Live issues
+* **[Improved]** Fix DASH low latency for Mozilla
+
 #### Version 4.2
 
 <!-- <input type="text" value="https://nexplayer.nexplayersdk.com/4.2/nexplayer.js" id="myInput"> -->
