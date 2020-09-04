@@ -20,8 +20,13 @@ https://nexplayer.nexplayersdk.com/5.1/nexplayer.js
 * **[Added]** support 360 in oculus
 * **[Added]** 360 zoom controls
 * **[Added]** Certificated base64 in fairplay
+* **[Added]** Implement watermark
+* **[Improved]** Add event listener for ads start and ads end
+* **[Improved]** Create event listeners for quality and playback rate change
 * **[Improved]** Fix Dash Live issues
 * **[Improved]** Fix DASH low latency for Mozilla
+* **[Improved]** Solve bug related to the spinning wheel 
+* **[Improved]** Solve bug with iphone ads
 
 #### Version 4.2
 
