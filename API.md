@@ -78,6 +78,7 @@
    - [.play()](#playerplay)
    - [.skip()](#playerskip)
    - [.abort()](#playerabort)
+   - [.setVolume()](#playersetvolume)
    - [.addClickListener(func)](#playeraddclicklistenerfunc)
    - [.addVolumeMutedListener(func)](#playeraddvolume)
    - [.addVolumeChangedListener(func)](#playeraddvolumechangedlistenerfunc)
@@ -743,6 +744,20 @@ Closes the ad and starts the video.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 
+<a id="playersetvolume"></a>
+
+#### player.adManager().setVolume(value)
+
+Set the volume for the current ad.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | The volume to set, from 0 (muted) to 1 (loudest). | 
+
+
 <a id="playeraddclicklistenerfunc"></a>
 
 #### player.adManager().addClickListener(func)
@@ -919,17 +934,6 @@ Sets a listener function called when the ad is blocked by an external app.
 | Param | Type | Description |
 | --- | --- | --- |
 | func | <code>function</code> | the function called when the ad is blocked by an external app | 
-
-#### player.adManager().setVolume(value)
-
-Set the volume for the current ad.
-
-**Type**: instance method of  [<code>Player</code>](#Player)  
-
-
-| Param | Type | Description |
-| --- | --- | --- |
-| value | <code>number</code> | The volume to set, from 0 (muted) to 1 (loudest). | 
 
 <a id="nexprotocol"></a>
 
