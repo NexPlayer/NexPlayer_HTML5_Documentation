@@ -144,7 +144,11 @@ There are a substantial number of customizable options for NexPlayer™ includin
     showingFullUI: true, // Optional
     seekUI: 10, // Seconds for the seek buttons, Optional
     callbacksForReturn: callback, // Optional callback called with the return button
-    disableKeyEvents: false, // Optional 
+    disableKeyEvents: false, // Optional
+    watermark:{url:'URL of the image of the water mark'},//Optional
+    position:{top: 'size px', left: 'size px'},//Optional
+    size:{height:'size px', width: 'size px'}//Optional
+},
     ...
     
 ```

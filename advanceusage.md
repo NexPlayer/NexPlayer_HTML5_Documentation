@@ -795,7 +795,8 @@ Sent when the subtitles of the video changes (language change).
 
 Advanced events such as a track change are available using the <code>on</code> method of NexPlayer.
  ```js
- nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, function() { console.log("The current track has changed") });
+nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, function(e) { console.log ("The current track has changed"),e.details()});                 
+nexplayerInstance.on(nexplayer.Player.NexEvent.Speed_Change, function(e) { console.log("The current velocity has changed"),e.details()});
  ```
 
 ### Fullscreen iOS

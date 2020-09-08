@@ -920,6 +920,17 @@ Sets a listener function called when the ad is blocked by an external app.
 | --- | --- | --- |
 | func | <code>function</code> | the function called when the ad is blocked by an external app | 
 
+#### player.adManager().setVolume(value)
+
+Set the volume for the current ad.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | The volume to set, from 0 (muted) to 1 (loudest). | 
+
 <a id="nexprotocol"></a>
 
 #### Player.NexProtocol : <code>enum</code>
