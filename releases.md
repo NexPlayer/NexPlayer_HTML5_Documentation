@@ -15,7 +15,7 @@ https://nexplayer.nexplayersdk.com/latest/nexplayer.js
 ```
 https://nexplayer.nexplayersdk.com/5.1/nexplayer.js 
 ```
-
+* **[Added]** setVolume method
 * **[Added]** Automatic type360
 * **[Added]** support 360 in oculus
 * **[Added]** 360 zoom controls
