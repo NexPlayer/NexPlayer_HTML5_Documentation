@@ -11,7 +11,7 @@ NexPlayer™ provides a media player for the Web. It includes support for HLS, D
 
 The default UI is easily customizable to fit the user´s personal preferences (e.g. icons, colors, etc).
 
-<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/" class="hideText"> Visual documentation </a>
+<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/" class="hideText"> Full documentation </a>
 
 <table class="table table-sm">
  
