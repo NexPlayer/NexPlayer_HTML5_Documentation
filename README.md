@@ -1,37 +1,35 @@
 <a id="introduction-top"> </a>
 
-
-<img text-align="center" src="./_images/logo5.png" alt="logo of docsify-awesome repository" >
+<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/"><img text-align="center" src="./_images/logo5.png" alt="Nexplayer"></a>
 
 ***
 
-# NexPlayer HTML5{docsify-ignore-all}
+# NexPlayer HTML5<!-- {docsify-ignore-all} -->
 
 ## About NexPlayer
 NexPlayer™ provides a media player for the Web. It includes support for HLS, DASH, Microsoft Smooth Streaming, and progressive download.
 
 The default UI is easily customizable to fit the user´s personal preferences (e.g. icons, colors, etc).
 
-<style> .titles{color: #ffffff; width: 250px;}.table{position: absolute; }  .tableFeatures{left: 18rem} .tablePlayback{top: 44.5rem} .tableCasting{top: 51rem} .tableAds{top: 58rem} .tableSubs{left: 37.5em} .tableMetadata{left: 37.5em; top: 45rem;} .tableDRM{left: 37.5em; top: 50rem;} </style>
-
+<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/" class="hideText"> Visual documentation </a>
 
 <table class="table table-sm">
  
   <tbody>
     <tr>
-      <th class="titles" bgcolor="#C80000" scope="row">VIDEO DELIVERY FORMATS </th>      
+      <th class="titles" bgcolor="#C80000" scope="row">&nbsp&nbsp&nbsp VIDEO DELIVERY FORMATS &nbsp&nbsp&nbsp</th>      
     </tr>
     <tr>
-      <th  scope="row">HLS </th>      
+      <td  align="center" scope="row">HLS </td>      
     </tr>
     <tr>
-      <th  scope="row">DASH </th>      
+      <td align="center" scope="row">DASH </td>      
     </tr>
     <tr>
-      <th scope="row">Microsoft Smooth Streaming </th>      
+      <td align="center" scope="row">Microsoft Smooth Streaming </td>      
     </tr>
     <tr>
-      <th scope="row">Progressive Download </th>      
+      <td align="center" scope="row">Progressive Download </td>      
     </tr>
   </tbody>
 
@@ -39,40 +37,40 @@ The default UI is easily customizable to fit the user´s personal preferences (e
  
   <tbody >
     <tr>
-      <th colspan="3" class="titles" bgcolor="#C80000" scope="row">FEATURES</th>      
+      <th colspan="3" class="titles" bgcolor="#C80000" >FEATURES</th>      
     </tr>
     <tr>
-        <th>Integrated UI</th>
+        <td align="center" >Integrated UI</td>
     </tr>
     <tr>
-        <th>360 and VR video player</th>
+        <td align="center" >360 and VR video player</td>
     </tr>
     <tr>
-        <th> Multiple audio/video tracks</th>
+        <td align="center" > Multiple audio/video tracks</td>
     </tr>
     <tr>
-        <th>ABR and UHD video (4k and 8k)</th>
+        <td align="center" >ABR and UHD video (4k and 8k)</td>
     </tr>
     <tr>
-        <th>Trick Play</th>
+        <td align="center" >Trick Play</td>
     </tr>
     <tr>
-        <th>Multiple players at the same time</th>
+        <td align="center" >Multiple players at the same time</td>
     </tr>
     <tr>
-        <th>Time-shifting</th>
+        <td align="center" >Time-shifting</td>
     </tr>
     <tr>
-        <th>DVR Live Streaming</th>
+        <td align="center" >DVR Live Streaming</td>
     </tr>
     <tr>
-        <th>Picture-in-picture</th>
+        <td align="center" >Picture-in-picture</td>
     </tr>
     <tr>
-        <th>Low latency</th>
+        <td align="center" >Low latency</td>
     </tr>
     <tr>
-        <th>Fully Customizable UI</th>
+        <td align="center" >Fully Customizable UI</td>
     </tr>
   </tbody>
   
@@ -84,13 +82,13 @@ The default UI is easily customizable to fit the user´s personal preferences (e
  
   <tbody >
     <tr>
-      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">PLAYBACK</th>      
+      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PLAYBACK &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>      
     </tr>
     <tr>
-        <th>VOD</th>
+        <td align="center" >VOD</td>
     </tr>
     <tr>
-        <th>Live</th>
+        <td align="center" >Live</td>
     </tr>
   </tbody>
   
@@ -99,13 +97,13 @@ The default UI is easily customizable to fit the user´s personal preferences (e
  
   <tbody >
     <tr>
-      <th colspan="3" bgcolor="##C80000"  class="titles" scope="column">CASTING</th>      
+      <th colspan="3" bgcolor="##C80000"  class="titles" scope="column">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CASTING &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>      
     </tr>
     <tr>
-        <th>AirPlay</th>
+        <td align="center" >AirPlay</td>
     </tr>
     <tr>
-        <th>Chromecast</th>
+        <td align="center" >Chromecast</td>
     </tr>
   </tbody>
   
@@ -115,13 +113,13 @@ The default UI is easily customizable to fit the user´s personal preferences (e
  
   <tbody >
     <tr>
-      <th colspan="3" bgcolor="##C80000"  class="titles" scope="column">AD INSERTION</th>      
+      <th colspan="3" bgcolor="##C80000"  class="titles" scope="column">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp AD INSERTION &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>      
     </tr>
     <tr>
-        <th>VAST, VPAID, VMAP</th>
+        <td align="center" >VAST, VPAID, VMAP</td>
     </tr>
     <tr>
-        <th>Pre-Roll, Mid-Roll, Post-Roll</th>
+        <td align="center" >Pre-Roll, Mid-Roll, Post-Roll</td>
     </tr>
   </tbody>
   
@@ -131,19 +129,19 @@ The default UI is easily customizable to fit the user´s personal preferences (e
  
   <tbody >
     <tr>
-      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">SUBTITLES & CC</th>      
+      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp SUBTITLES & CC &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>      
     </tr>
     <tr>
-        <th>WebVTT</th>
+        <td align="center" >WebVTT</td>
     </tr>
     <tr>
-        <th>CEA 608/708</th>
+        <td align="center" >CEA 608/708</td>
     </tr>
       <tr>
-        <th>TTML</th>
+        <td align="center" >TTML</td>
     </tr>
       <tr>
-        <th>SRT</th>
+        <td align="center" >SRT</td>
     </tr>
   </tbody>
   
@@ -153,10 +151,10 @@ The default UI is easily customizable to fit the user´s personal preferences (e
  
   <tbody >
     <tr>
-      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">METADATA</th>      
+      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp METADATA &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>      
     </tr>
     <tr>
-        <th>ID3 Tags</th>
+        <td align="center" >ID3 Tags</td>
     </tr>    
   </tbody>
   
@@ -165,25 +163,25 @@ The default UI is easily customizable to fit the user´s personal preferences (e
  
   <tbody >
     <tr>
-      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">CONTENT PROTECTION</th>      
+      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CONTENT PROTECTION &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>      
     </tr>
     <tr>
-        <th>Widevine DRM</th>
+        <td align="center" >Widevine DRM</td>
     </tr>
     <tr>
-        <th>PlayReady DRM</th>
+        <td align="center" >PlayReady DRM</td>
     </tr>
       <tr>
-        <th>Fairplay DRM</th>
+        <td align="center" >Fairplay DRM</td>
     </tr>
       <tr>
-        <th>AES</th>
+        <td align="center" >AES</td>
     </tr>
        <tr>
-        <th>Custom HTTP headers</th>
+        <td align="center" >Custom HTTP headers</td>
     </tr>
      <tr>
-        <th>CENC</th>
+        <td align="center" >CENC</td>
     </tr>
   </tbody>
   
@@ -208,34 +206,6 @@ The default UI is easily customizable to fit the user´s personal preferences (e
 
 
 
+
+
 </pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
