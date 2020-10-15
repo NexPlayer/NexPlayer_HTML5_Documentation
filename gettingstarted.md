@@ -145,6 +145,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     seekUI: 10, // Seconds for the seek buttons, Optional
     callbacksForReturn: callback, // Optional callback called with the return button
     disableKeyEvents: false, // Optional
+    blockZoom:true, // Optional only available when the 360 is enable
     watermark:{url:'URL of the image of the water mark',//optional
         position:{top: 'size px', left: 'size px'},
         size:{height:'size px', width: 'size px'}

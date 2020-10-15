@@ -127,6 +127,7 @@ Creates and initializes the player.
 | vast | <code>string</code> | advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 | useDynamicThumbnails | <code>boolean</code> | determines if dynamic thumbnails are used. By default this values is set to false. |
 | showingFullUI | <code>boolean</code> | determines if the UI is hidden or not. |
+| blockZoom | <code>boolean</code> | determines if the zoom in 360 videos is available or not. |
 | disableKeyEvents | <code>boolean</code> | determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
 
 <a id="gettracks"> </a>
