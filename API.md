@@ -1030,7 +1030,7 @@ Called when a FairPlay content needs to request the license.
 | bitrate | <code>number</code> | bitrate of the video. |
 | id | <code>number</code> | id of the video. |
 
-* Bitrate value is not available for iOS devices
+* Bitrate value is not available in iOS, mp4 videos and fairplay drm videos in Safari.
 
 <a id="AudioStream"></a>
 
