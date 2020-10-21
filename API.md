@@ -60,6 +60,7 @@
    - [.previousFocus()](#playerpreviousfocus)
    - [.clickFocus()](#playerclickFocus)
    - [.toggleBar()](#playertoggleBar)
+ - Ads
    - [.adManager()](#playeradmanager)
    - [.getAdObject()](#playergetadobject)
    - [.getId()](#playergetid)
@@ -79,6 +80,38 @@
    - [.skip()](#playerskip)
    - [.abort()](#playerabort)
    - [.setVolume()](#playersetvolume)
+   - [.destroy()](#playerdestroy)
+   - [.discardAdBreak()](#playerdiscardadbreak)
+   - [.focus()](#playerfocus)
+   - [.getAdSkippableState()](#playergetadskippablestate)
+   - [.getCuePoints()](#playergetcuepoints)
+   - [.getRemainingTime()](#playergetremainingtime)
+   - [.getVolume()](#playergetvolume)
+   - [.init(width, height, viewMode, videoElement)](#playerinit)
+   - [.isCustomPlaybackUsed()](#playeriscustomplaybackused)
+   - [.resize](#playerresize)
+   - [.getAdSystem](#playergetadsystem)
+   - [.getAdvertiserName](#playergetadvertisername)
+   - [.getApiFramework](#playergetapiframework)
+   - [.getCreativeAdId](#playergetcreativeadId)
+   - [.getCreativeId](#playergetcreativeid)
+   - [.getDealId](#playergetdealid)
+   - [.getHeight](#playergetheight)
+   - [.getMinSuggestedDuration](#playergetminduggestedduration)
+   - [.getTraffickingParameters](#gettraffickingparameters)
+   - [.getTraffickingParametersString](#gettraffickingparametersstring)
+   - [.getUiElements](#getuielements)
+   - [.getUniversalAdIdRegistry](#getuniversaladidregistry)
+   - [.getUniversalAdIds](#getuniversaladids)
+   - [.getUniversalAdIdValue](#getuniversaladidvalue)
+   - [.getVastMediaBitrate](#getvastmediabitrate)
+   - [.getVastMediaHeight](#getvastmediaheight)
+   - [.getVastMediaWidth](#getvastmediawidth)
+   - [.getWidth](#getwidth)
+   - [.getWrapperAdIds](#getwrapperadids)
+   - [.getWrapperAdSystems](#getwrapperadsystems)
+   - [.getWrapperCreativeIds](#getwrappercreativeids)
+   - [.isLinear](#islinear)
    - [.addClickListener(func)](#playeraddclicklistenerfunc)
    - [.addVolumeMutedListener(func)](#playeraddvolume)
    - [.addVolumeChangedListener(func)](#playeraddvolumechangedlistenerfunc)
@@ -758,6 +791,303 @@ Set the volume for the current ad.
 | --- | --- | --- |
 | value | <code>number</code> | The volume to set, from 0 (muted) to 1 (loudest). | 
 
+<a id="playerdestroy"></a>
+
+#### player.adManager().destroy()
+
+Removes ad assets loaded at runtime that need to be properly removed at the time of ad completion and stops the ad and all tracking. 
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playerdiscardadbreak"></a>
+
+#### player.adManager().discardAdBreak()
+
+If an ad break is currently playing, discard it and resume content. Otherwise, ignore the next scheduled ad break. For example, this can be called immediately after the ads manager loads to ignore a preroll without losing future midrolls or postrolls. This is a no-op unless the ad request returned a playlist or VMAP response.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playerfocus"></a>
+
+#### player.adManager().focus()
+
+Puts the focus on the skip button, if present. If not present, focus is put on interactive elements, including icons or interactive creatives.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetadskippablestate"></a>
+
+#### player.adManager().getAdSkippableState()
+
+Returns true if the ad can currently be skipped.
+
+**Return**: <code>boolean</code> True if the ad can currently be skipped, false otherwise.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetcuepoints"></a>
+
+#### player.adManager().getCuePoints()
+
+Returns an array of offsets in seconds indicating when a scheduled ad break will play. A preroll is represented by 0, and a postroll is represented by -1. An empty array indicates the ad or ad pod has no schedule and can be played at any time.
+
+**Return** <code>non-null Array of number</code> List of time offsets in seconds.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetremainingtime"></a>
+
+#### player.adManager().getRemainingTime()
+
+Get the remaining time of the current ad that is playing. If the ad is not loaded yet or has finished playing, the API would return -1.
+
+**Return** <code>number</code> Returns the time remaining for current ad. If the remaining time is undefined for the current ad (for example custom ads), the value returns -1.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetvolume"></a>
+
+#### player.adManager().getVolume()
+
+Get the volume for the current ad.
+
+**Return** <code>number</code> The volume of the current ad, from 0 (muted) to 1 (loudest).
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playerinit"></a>
+
+#### player.adManager().init(width, height, viewMode, videoElement)
+
+Call init to initialize the ad experience on the ads manager.
+
+Get the volume for the current ad.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| width | <code>number</code> | The desired width of the ad. |
+| height | <code>number</code> | The desired height of the ad. |
+| viewMode | <code>viewMode</code> | The desired view mode. Value must not be null. |
+| videoElement | <code>Optional</code> | HTMLVideoElement The video element for custom playback. This video element overrides the one provided in the AdDisplayContainer constructor. Only use this property if absolutely necessary - otherwise we recommend specifying this video element while creating the AdDisplayContainer. Value may be null. | 
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playeriscustomplaybackused"></a>
+
+#### player.adManager().isCustomPlaybackUsed()
+
+Returns true if a custom video element is being used to play the current ad.
+
+**Return** <code>boolean </code> Whether custom playback is used.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playeresize"></a>
+
+#### player.adManager().resize(width, height, viewMode)
+
+Resizes the current ad.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| width | <code>number</code> | New ad slot width. |
+| height | <code>number</code> | New ad slot height. |
+| viewMode | <code>viewMode</code> | The new view mode. Value must not be null. |
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetadsystem"></a>
+
+#### player.adManager().getAdSystem()
+
+The source ad server information included in the ad response.
+
+**Return**: <code>string</code> The source ad server of the ad, or the empty string if this information is unavailable.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetadvertisername"></a>
+
+#### player.adManager().getAdvertiserName()
+
+The advertiser name as defined by the serving party.
+
+**Return**: <code>string</code> The advertiser name, or the empty string if this information is unavailable.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetapiframework"></a>
+
+#### player.adManager().getApiFramework()
+
+Identifies the API needed to execute the ad. This corresponds with the apiFramework specified in vast.
+
+**Return**: <code>nullable string</code> The API framework need to execute the ad, or null if this information is unavailable.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetcreativeadid"></a>
+
+#### player.adManager().getCreativeAdId()
+
+Returns the ISCI (Industry Standard Commercial Identifier) code for an ad, or empty string if the code is unavailable. This is the Ad-ID of the creative in the VAST response.
+
+**Return**: <code>string</code>
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetcreativeid"></a>
+
+#### player.adManager().getCreativeId()
+
+Retrieves the ID of the selected creative for the ad.
+
+**Return**: <code>string</code>The ID of the selected creative for the ad, or the empty string if this information is unavailable.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetdealid"></a>
+
+#### player.adManager().getDealId()
+
+Returns the first deal ID present in the wrapper chain for the current ad, starting from the top. Returns the empty string if unavailable.
+
+**Return**: <code>string</code>
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetheight"></a>
+
+#### player.adManager().getHeight()
+
+Returns the height of the selected non-linear creative.
+
+**Return**: <code>number</code>  The height of the selected non-linear creative or 0 for a linear creative.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergetminsuggestedduration"></a>
+
+#### player.adManager().getMinSuggestedDuration()
+
+Returns the minimum suggested duration in seconds that the nonlinear creative should be displayed. Returns -2 if the minimum suggested duration is unknown. For linear creative it returns the entire duration of the ad.
+
+**Return**: <code>number</code>  The minimum suggested duration in seconds that a creative should be displayed.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="playergettraffickingparameters"></a>
+
+#### player.adManager().getTraffickingParameters()
+
+Gets custom parameters associated with the ad at the time of ad trafficking.
+
+**Return**: <code>non-null Object with string properties</code>  A mapping of trafficking keys to their values, or the empty Object if this information is not available.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="gettraffickingparametersstring"></a>
+
+#### player.adManager().getTraffickingParametersString()
+
+Gets custom parameters associated with the ad at the time of ad trafficking. Returns a raw string version of the parsed parameters from getTraffickingParameters.
+
+**Return**: <code>string</code>  Trafficking parameters, or the empty string if this information is not available.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getuielements"></a>
+
+#### player.adManager().getUiElements()
+
+Returns the UI elements that are being displayed when this ad is played. Refer to UiElements for possible elements of the array returned.
+
+**Return**: <code>non-null Array of string</code> The UI elements being displayed.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getuniversaladidregistry"></a>
+
+#### player.adManager().getUniversalAdIdRegistry()
+
+The registry associated with cataloging the UniversalAdId of the selected creative for the ad.
+
+**Deprecated**: Use ad.getUniversalAdIds() instead.
+
+**Return**: <code>string</code> Returns the registry value, or "unknown" if unavailable.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getuniversaladids"></a>
+
+#### player.adManager().getUniversalAdIds()
+
+The list of UniversalAdIds of the selected creative for the ad.
+
+**Return**: <code>non-null Array of non-null UniversalAdIdInfo</code> Returns the list of universal ad ID information that applies for this ad.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getuniversaladidvalue"></a>
+
+#### player.adManager().getUniversalAdIdValue()
+
+The UniversalAdId of the selected creative for the ad.
+
+**Deprecated**: Use ad.getUniversalAdIds() instead.
+
+**Return**: <code>string</code> Returns the id value or "unknown" if unavailable.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getvastmediabitrate"></a>
+
+#### player.adManager().getVastMediaBitrate()
+
+When both the creative and the media file have been selected by the SDK, this will return the bitrate for the media file as listed in the vast response.
+
+**Return**: <code>number</code> The bitrate for the selected media file or 0.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getvastmediaheight"></a>
+
+#### player.adManager().getVastMediaHeight()
+
+Returns the VAST media height of the selected creative.
+
+**Return**: <code>number</code> The VAST media height of the selected creative or 0 if none is selected.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getvastmediawidth"></a>
+
+#### player.adManager().getVastMediaWidth()
+
+Returns the VAST media width of the selected creative.
+
+**Return**: <code>number</code> The VAST media width of the selected creative or 0 if none is selected.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getwidth"></a>
+
+#### player.adManager().getWidth()
+
+Returns the width of the selected creative.
+
+**Return**: <code>number</code> The width of the selected non-linear creative or 0 for a linear creative.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getwrapperadids"></a>
+
+#### player.adManager().getWrapperAdIds()
+
+Ad IDs used for wrapper ads. The IDs returned starts at the inline ad (innermost) and traverses to the outermost wrapper ad. An empty array is returned if there are no wrapper ads.
+
+**Return**: <code>non-null Array of string</code> The IDs of the ads, starting at the inline ad, or an empty array if there are no wrapper ads.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getwrapperadsystems"></a>
+
+#### player.adManager().getWrapperAdSystems()
+
+Ad systems used for wrapper ads. The ad systems returned starts at the inline ad and traverses to the outermost wrapper ad. An empty array is returned if there are no wrapper ads.
+
+**Return**: <code>non-null Array of string</code> The ad systems of the ads, starting at the inline ad, or an empty array if there are no wrapper ads.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="getwrappercreativeids"></a>
+
+#### player.adManager().getWrapperCreativeIds()
+
+Selected creative IDs used for wrapper ads. The creative IDs returned starts at the inline ad and traverses to the outermost wrapper ad. An empty array is returned if there are no wrapper ads.
+
+**Return**: <code>non-null Array of string</code> The IDs of the ads' creatives, starting at the inline ad, or an empty array if there are no wrapper ads.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+<a id="isLinear"></a>
+
+#### player.adManager().islinear()
+
+Indicates whether the ad’s current mode of operation is linear or non-linear. If the value is true, it indicates that the ad is in linear playback mode; if false, it indicates non-linear mode. The player checks the linear property and updates its state according to the details of the ad placement. While the ad is in linear mode, the player pauses the content video. If linear is true initially, and the ad is a pre-roll (defined externally), the player may choose to delay loading the content video until near the end of the ad playback.
+
+**Return**: <code>boolean</code> True if the ad is linear, false otherwise.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
 
 <a id="playeraddclicklistenerfunc"></a>
 
