@@ -15,11 +15,6 @@ Digital rights management (DRM) is a set of access control technologies for rest
 
 Online progressive download (MP4) is supported on any platform. The support for DASH and HLS, and associated DRMs, changes depending on each browser and platform. The platforms listed below are being continuously tested.
 
-
-<style> .titles{color: #ffffff; width: 250px;}</style>
-
-
-
 ##### DASH
 
 <table class="table table-sm">

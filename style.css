@@ -297,4 +297,8 @@ td::before{
     grid-column: 2;
     grid-row: 3 / 1;
   }
+.titles{
+    color: #ffffff;
+    width: 250px;
+}
 /*!
