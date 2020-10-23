@@ -60,9 +60,9 @@ Playing a video with the integrated UI can be done in an HTML5 page:
     <script src="https://nexplayer.nexplayersdk.com/latest/nexplayer.js"></script>
     <script type="text/javascript">
         nexplayer.Setup({
-            key: "REPLACE THIS WITH YOUR PLAYER KEY",
+            key: "ENTER YOUR LICENSE KEY HERE",
             div: document.getElementById('player'),
-            src: 'https://d7wce5shv28x4.cloudfront.net/nexplayer/master.m3u8',
+            src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
 
         });
 
@@ -104,9 +104,9 @@ To integrate NexPlayer™ into your project you must complete the following step
 - The player should be initialized by entering the previous div to the Setup method:
 ```js
 nexplayer.Setup({
-    key: 'REPLACE THIS WITH YOUR PLAYER KEY',
+    key: 'ENTER YOUR LICENSE KEY HERE',
     div: document.getElementById('player'),
-    src: 'https://d7wce5shv28x4.cloudfront.net/nexplayer/master.m3u8'
+    src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
 });
 ```
 ## NexPlayer™ Configuration
