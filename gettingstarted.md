@@ -72,7 +72,7 @@ Playing a video with the integrated UI can be done in an HTML5 page:
 ```
 
 
-<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the player key is mandatory. You can find the player key in the license section of your dashboard at <a style ="color:#5A5A5A!important" href="https://www.nexplayersdk.com/portal/portal-hub">https://www.nexplayersdk.com/portal/portal-hub</a></p>
+<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the license key is mandatory. License key should have been already sent to your inbox or you can request one from support.madrid@nexplayer.com.</p>
 </div></div>
 
 
