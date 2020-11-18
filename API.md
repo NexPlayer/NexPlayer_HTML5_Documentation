@@ -1292,6 +1292,9 @@ Sets a listener function called when the ad is blocked by an external app.
 | --- | --- | --- |
 | Track_Change | <code>number</code> | <code>0</code> | 
 | Fragment_Loading_Completed | <code>number</code> | <code>1</code> | 
+| Player_Destroyed | <code>number</code> | <code>2</code> | 
+| Speed_Change | <code>number</code> | <code>3</code> | 
+| Error | <code>number</code> | <code>4</code> | 
 
 <a id="thumbtype"></a>
 
