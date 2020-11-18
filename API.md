@@ -60,6 +60,19 @@
    - [.previousFocus()](#playerpreviousfocus)
    - [.clickFocus()](#playerclickFocus)
    - [.toggleBar()](#playertoggleBar)
+   - [.isFullScreen()](#isfullscreen)
+   - [.getConfig()](#getconfig)
+   - [.getPlaybackSpeed()](#getplaybackspeed)
+   - [.getStreamType()](#getstreamtype)
+   - [.hasEnded()](#hasended)
+   - [.isAd()](#isad)
+   - [.isPaused()](#ispaused)
+   - [.isPlaying()](#isplaying)
+   - [.isReady()](#isready)
+   - [.enterPictureInPicture()](#enterpictureinpicture)
+   - [.exitPictureInPicture()](#exitpictureinpicture)
+   - [.isPictureInPicture()](#ispictureinpicture)
+   - [.isPictureInPictureAvailable()](#ispictureinpictureavailable)
  - Ads
    - [.adManager()](#playeradmanager)
    - [.getAdObject()](#playergetadobject)
@@ -619,6 +632,121 @@ Click the current focused element.
 Enables toggle between hide or show the playback bar.
 
 **Type**: instance method of [<code>Player</code>](#Player)
+
+<a id="isfullscreen"></a>
+
+#### player.isFullScreen()
+
+Informs if the video is full screen or not
+
+**Type**: instance method of Player.[<code>Player</code>](#Player)
+
+**Returns**: boolean - true if the video is fullscreen, otherwise it returns false.
+
+<a id="getconfig"></a>
+
+#### player.getConfig()
+
+Returns the parameters defined in the set up, for that video
+
+**Type**: instance method of Player.[<code>Player</code>](#Player)
+
+<a id="getplaybackspeed"></a>
+
+#### player.getPlaybackSpeed()
+
+Returns the play back speed.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: Number
+
+<a id="getstreamtype"></a>
+
+#### player.getStreamType()
+
+Returns the type of video (DASH/ HLS/ mp4 ...)
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: String 
+
+<a id="hasended"></a>
+
+#### player.hasEnded()
+
+Returns true if the video has ended.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: boolean
+
+<a id="isad"></a>
+
+#### player.isAd()
+
+Returns true while an ad is played back or content playback has been paused for ad playback, false otherwise.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: boolean
+
+<a id="ispaused"></a>
+
+#### player.isPaused()
+
+Returns true if the video state is paused, otherwise false
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: boolean
+
+<a id="isplaying"></a>
+
+#### player.isPlaying()
+
+Returns true if the video state is playing, otherwise false
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: boolean
+
+<a id="isready"></a>
+
+#### player.isReady()
+
+Returns true if the player has finished initialization and is ready to use and to handle other API calls.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: boolean
+
+<a id="enterpictureinpicture"></a>
+
+#### player.enterPictureInPicture()
+
+To enter picture in picture mode
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="exitpictureinpicture"></a>
+
+#### player.exitPictureInPicture()
+
+To exit picture in picture mode
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="ispictureinpicture"></a>
+
+#### player.isPictureInPicture()
+
+Returns true if the video is in picture in picture, otherwise false.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: boolean
+
+<a id="ispictureInpictureavailable"></a>
+
+#### player.isPictureInPictureAvailable()
+
+Return true if pictur in pictur mode is supported for the browser, otherwise false.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: boolean
 
 <a id="playeradmanager"></a>
 
