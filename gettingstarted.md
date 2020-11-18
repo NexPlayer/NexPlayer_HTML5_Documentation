@@ -150,6 +150,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
         position:{top: 'size px', left: 'size px'},
         size:{height:'size px', width: 'size px'}
     },
+    pip:true, //Picture in picture
+
     ...
     
 ```
