@@ -8,7 +8,68 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/nexplayer.js
 ```
+#### Version 5.2.3
+```
+https://nexplayer.nexplayersdk.com/5.2.1/nexplayer.js
+```
+* **[Added]** Include new methods from AdsManager
+* **[Improved]** Fix problem in ios when using full screen mode
+* **[Improved]** Fix a minor issu when de audio keeps running in background
+* **[Improved]** Fix pause doesnt work the first time in iOS
+* **[Improved]** Fix controls autohide on first load.
 
+#### Version 5.2.1
+```
+https://nexplayer.nexplayersdk.com/5.2.1/nexplayer.js
+```
+* **[Improved]** possibility of locking the zoom
+* **[Improved]** minor issue related with the double touch in ios
+* **[Improved]** the placement of the controls has been corrected in some cases where the behavior was not correct
+
+
+#### Version 5.2
+```
+https://nexplayer.nexplayersdk.com/5.2/nexplayer.js
+```
+* **[Added]** getConfig
+* **[Added]** getPlaybackSpeed
+* **[Added]** getStreamType -> DASH/ HLS/ mp4 etc
+* **[Added]** hasEnded
+* **[Added]** isAd
+* **[Added]** isPaused
+* **[Added]** isPlaying
+* **[Added]** isReady
+* **[Added]** How to enable autoplay with sound on Chrome
+* **[Improved]** Volume slider
+* **[Improved]** Improve video 360
+* **[Improved]** Full-Screen Mode on iPhone
+
+#### Version 5.1.5
+```
+https://nexplayer.nexplayersdk.com/5.1.5/nexplayer.js
+```
+* **[Improved]** setCurrentTrack()
+* **[Improved]** setThumbnailStep()
+* **[Improved]** .addImpressionListener, .addClickListener, .addBlockedListener
+* **[Improved]** getSurveyURL() and getMediaURL()
+* **[Improved]** Playback bar for live videos
+* **[Improved]** JumpForward(value), jumpBackward(value), seeklive(), getDVRWindowSize()
+* **[Improved]** Change HTML5 spinner
+
+
+
+#### Version 5.1.4
+```
+https://nexplayer.nexplayersdk.com/5.1.4/nexplayer.js
+```
+* **[Improved]** Improve on Safari when playing multiple videos
+
+#### Version 5.1.2
+```
+https://nexplayer.nexplayersdk.com/5.1.1/nexplayer.js
+```
+* **[Improved]** Improve the reproduction in safari
+* **[Improved]** Fix the problem with 360 and fairplay
 #### Version 5.1
 
 <!-- <input type="text" value="https://nexplayer.nexplayersdk.com/4.2/nexplayer.js" id="myInput"> -->
