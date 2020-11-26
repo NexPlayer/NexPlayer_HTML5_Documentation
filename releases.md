@@ -8,9 +8,15 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/nexplayer.js
 ```
+#### Version 5.3
+```
+https://nexplayer.nexplayersdk.com/5.3/nexplayer.js
+```
+* **[Added]** Implement error events
+* **[Added]** isFullscreen()
 #### Version 5.2.3
 ```
-https://nexplayer.nexplayersdk.com/5.2.1/nexplayer.js
+https://nexplayer.nexplayersdk.com/5.2.3/nexplayer.js
 ```
 * **[Added]** Include new methods from AdsManager
 * **[Improved]** Fix problem in ios when using full screen mode
