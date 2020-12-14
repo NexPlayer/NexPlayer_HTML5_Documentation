@@ -1,5 +1,9 @@
 <a id="gettingstarted-top"> </a>
 
+<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
+
+***
+
 # Getting Started
 
 ## NexPlayer™ Integration

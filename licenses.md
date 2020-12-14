@@ -1,5 +1,9 @@
 <a id="licenses-top"> </a>
 
+<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
+
+***
+
 # Third Party Licenses
 
 This is a summary of all third party licenses. NexPlayer licenses will be provided upon purchase.

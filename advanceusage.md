@@ -1,5 +1,9 @@
 <a id="advance-top"> </a>
 
+<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
+
+***
+
 # Advance Usage
 
 NexPlayer™ offers more advanced options to control the playback. This section contains several examples of how to use these features.
