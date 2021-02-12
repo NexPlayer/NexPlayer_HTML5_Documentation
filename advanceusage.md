@@ -897,3 +897,242 @@ function loadModules() {
 NexConviva.cleanupContentSession();
 ```
 This is already called in NexHandshake.js file, but it can be modified and be called whenever it is wanted to clean up the session.
+
+##  MultiView
+
+### Demo
+  You can see the multiview demo <a href="http://nex360.s3.amazonaws.com/MultiView/index.html">here</a>:
+  <img width="100%" text-align="center" src="./_images/multiview.PNG" alt="logo of docsify-awesome repository" >
+
+### Sample
+ Multi-view playback integrated in html5:
+
+ ```html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>NexPlayer</title>
+	<style type="text/css">
+		body {
+			background-color: #1E1F23;
+		}
+		#player_container {
+			width: 90%;
+			margin: auto;
+			padding-top: 50.625%;
+			/* 16:9 Aspect Ratio 56.25 * 0.9 */
+			position: relative;
+			background-color: rgba !important;
+		}
+		#player_container2,
+		#player_container3,
+		#player_container4 {
+			width: 90%;
+			margin: auto;
+			padding-top: 40.625%;
+			/* 16:9 Aspect Ratio 56.25 * 0.9 */
+			position: relative;
+			background-color: rgba !important;
+		}
+		#global_container {
+			display: flex;
+			justify-content: space-around;
+		}
+		#player_container_360 {
+			width: 90%;
+			margin: auto;
+			position: relative;
+			padding-top: 50.625%;
+			/* 16:9 Aspect Ratio 56.25 * 0.9 */
+		}
+		@media (min-width: 75rem) {
+			#player_container {
+				width: 50%;
+				padding-top: 28.125%;
+				/* 16:9 Aspect Ratio 56.25 * 0.5 */
+			}
+			#player_container2,
+			#player_container3,
+			#player_container_360,
+			#player_container4 {
+				width: 25%;
+				padding-top: 22.125%;
+				/* 16:9 Aspect Ratio 56.25 * 0.5 */
+			}
+		}
+		h1 {
+			text-align: center;
+		}
+		#player {
+			background-color: black;
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+		}
+		#player2,
+		#player3,
+		#player4 {
+			background-color: black;
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+		}
+		.box {
+			padding-top: 2%;
+			display: flex;
+			justify-content: space-between;
+		}
+	</style>
+</head>
+<body>
+	<div id="player_container">
+		<div id="player" width="530" height="315"></div>
+	</div>
+	<div id="global_container">
+		<div id="player_container2">
+			<div id="player2" width="530" height="315"></div>
+		</div>
+		<div id="player_container3">
+			<div id="player3" width="530" height="315"></div>
+		</div>
+		<div id="player_container4">
+			<div id="player4" width="530" height="315"></div>
+		</div>
+	</div>
+	<script src="https://nexplayer.nexplayersdk.com/multiview/nexplayer.js"></script>
+	<script>
+		var player = null;
+		var player2 = null;
+		var player3 = null;
+		var player4 = null;
+		var videoElem = null;
+		var videoElem2 = null;
+		var videoElem3 = null;
+		var videoElem4 = null;
+		var multiView = new nexplayer.MultipleView();
+		var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+         player = nexplayerInstance;
+         videoElem = videoElement;
+         multiView.addPlayer(nexplayerInstance);
+         multiView.additionalVideo({
+             key: "ENTER YOUR LICENSE KEY HERE",
+             div: document.getElementById('player2'),
+             src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
+         });
+     };
+     var callBackWithPlayers2 = function (nexplayerInstance, videoElement) {
+         player2 = nexplayerInstance;
+         videoElem2 = videoElement;
+         multiView.addPlayer(nexplayerInstance);
+         multiView.additionalVideo({
+             key: "ENTER YOUR LICENSE KEY HERE",
+             div: document.getElementById('player3'),
+             src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
+         });
+     };
+     var callBackWithPlayers3 = function (nexplayerInstance, videoElement) {
+         player3 = nexplayerInstance;
+         videoElem3 = videoElement;
+         multiView.addPlayer(nexplayerInstance);
+         multiView.additionalVideo({
+             key: "ENTER YOUR LICENSE KEY HERE",
+             div: document.getElementById('player4'),
+             src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
+         });
+     };
+     var callBackWithPlayers4 = function (nexplayerInstance, videoElement) {
+         player4 = nexplayerInstance;
+         videoElem4 = videoElement;
+         multiView.addPlayer(nexplayerInstance);
+     };
+     multiView.additionalVideo({
+         key: "ENTER YOUR LICENSE KEY HERE",
+         div: document.getElementById('player'),
+         src: 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_with_tiled_thumbnails_2.mpd',
+     });
+	</script>
+</body>
+</html>
+```
+### Step-by-Step
+
+To integrate NexPlayer™ multiview into your project you must complete the following steps:
+
+- The NexPlayer™ JavaScript library should be included in the HTML file:
+
+```html
+<script src="https://nexplayer.nexplayersdk.com/multiview/nexplayer.js"></script>
+```
+
+<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. </p>
+</div></div>
+
+- A div that will contain the videos and the UI has to be declared:
+```html
+<body>
+    <div id="player_container">
+       <div id="player" width="530" height="315"></div>
+    </div>
+    <div id="global_container">
+       <div id="player_container2">
+           <div id="player2" width="530" height="315"></div>
+       </div>
+       <div id="player_container3">
+           <div id="player3" width="530" height="315"></div>
+       </div>
+       <div id="player_container4">
+           <div id="player4" width="530" height="315"></div>
+       </div>
+    </div>
+</body>
+```
+- To create the players we need to call multiview. As follows and we can declare the players:
+```js
+ var multiView = new nexplayer.MultipleView();
+
+  var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+           player = nexplayerInstance;
+           videoElem = videoElement;
+           multiView.addPlayer(nexplayerInstance);
+           multiView.additionalVideo({
+               key: "ENTER YOUR LICENSE KEY HERE",
+               div: document.getElementById('player2'),
+               src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
+           });
+       };
+       var callBackWithPlayers2 = function (nexplayerInstance, videoElement) {
+           player2 = nexplayerInstance;
+           videoElem2 = videoElement;
+           multiView.addPlayer(nexplayerInstance);
+           multiView.additionalVideo({
+               key: "ENTER YOUR LICENSE KEY HERE",
+               div: document.getElementById('player3'),
+               src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
+           });
+       };
+       var callBackWithPlayers3 = function (nexplayerInstance, videoElement) {
+           player3 = nexplayerInstance;
+           videoElem3 = videoElement;
+           multiView.addPlayer(nexplayerInstance);
+           multiView.additionalVideo({
+               key: "ENTER YOUR LICENSE KEY HERE",
+               div: document.getElementById('player4'),
+               src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
+           });
+       };
+       var callBackWithPlayers4 = function (nexplayerInstance, videoElement) {
+           player4 = nexplayerInstance;
+           videoElem4 = videoElement;
+           multiView.addPlayer(nexplayerInstance);
+       };
+       multiView.additionalVideo({
+           key: "ENTER YOUR LICENSE KEY HERE",
+           div: document.getElementById('player'),
+           src: 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_with_tiled_thumbnails_2.mpd',
+       });
+```
+- There are some functions available to use, consult the <a href="#/API?id=multiview" target = "_blank" >api</a>

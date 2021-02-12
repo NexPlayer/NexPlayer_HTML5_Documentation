@@ -150,7 +150,10 @@
  - vr player
    - [.getFieldView()](#playergetFieldView)
    - [.setFieldView()](#playersetFieldView)
-
+- multiview
+   - [.togglePlayPause()](#multiviewTogglePlayPause)
+   - [.seek()](#multiviewSeek)
+   - [.seekLive()](#multiviewSeekLive)
 
 #### nexplayer.Setup(info)
 
@@ -1529,3 +1532,28 @@ Set the field of view.
 
    **Type**: instance method of  [<code>Player</code>](#Player)  
    **Returns**: number
+
+## Multiview
+
+#### multiview.togglePlayPause()
+
+Enables toggle between play and pause.
+
+**Type**: instance method of [<code>Player</code>](#Player)
+
+#### multiview.seek(value)
+
+   
+   Sets the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
+
+   **Type**: instance method of [<code>Player</code>](#Player) 
+
+  | Param | Type |Description |
+  | --- | --- | --- |
+  | event | Event | value in seconds that the player will seek to. |
+
+  #### multiview.seekLive()
+   
+   Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
+
+   **Type**: instance method of [<code>Player</code>](#Player) 
