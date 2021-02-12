@@ -901,7 +901,7 @@ This is already called in NexHandshake.js file, but it can be modified and be ca
 ##  MultiView
 
 ### Demo
-  You can see the multiview demo <a href="http://nex360.s3.amazonaws.com/MultiView/index.html">here</a>:
+  You can see the multiview demo <a href="https://nex360.s3.amazonaws.com/MultiView/index.html">here</a>:
   <img width="100%" text-align="center" src="./_images/multiview.PNG" alt="logo of docsify-awesome repository" >
 
 ### Sample
@@ -1021,7 +1021,9 @@ This is already called in NexHandshake.js file, but it can be modified and be ca
          multiView.additionalVideo({
              key: "ENTER YOUR LICENSE KEY HERE",
              div: document.getElementById('player2'),
+             callbacksForPlayer: callBackWithPlayers2,
              src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
+             
          });
      };
      var callBackWithPlayers2 = function (nexplayerInstance, videoElement) {
@@ -1031,6 +1033,7 @@ This is already called in NexHandshake.js file, but it can be modified and be ca
          multiView.additionalVideo({
              key: "ENTER YOUR LICENSE KEY HERE",
              div: document.getElementById('player3'),
+             callbacksForPlayer: callBackWithPlayers3,
              src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
          });
      };
@@ -1041,6 +1044,7 @@ This is already called in NexHandshake.js file, but it can be modified and be ca
          multiView.additionalVideo({
              key: "ENTER YOUR LICENSE KEY HERE",
              div: document.getElementById('player4'),
+             callbacksForPlayer: callBackWithPlayers4,
              src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
          });
      };
@@ -1052,6 +1056,7 @@ This is already called in NexHandshake.js file, but it can be modified and be ca
      multiView.additionalVideo({
          key: "ENTER YOUR LICENSE KEY HERE",
          div: document.getElementById('player'),
+         callbacksForPlayer: callBackWithPlayers,
          src: 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_with_tiled_thumbnails_2.mpd',
      });
 	</script>
@@ -1090,7 +1095,7 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
     </div>
 </body>
 ```
-- To create the players we need to call multiview. As follows and we can declare the players:
+- To create the players we will have to create the multiview.additionalVideo() in the corresponding callBackWithPlayers so that the players are created sequentially:
 ```js
  var multiView = new nexplayer.MultipleView();
 
@@ -1101,6 +1106,7 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
            multiView.additionalVideo({
                key: "ENTER YOUR LICENSE KEY HERE",
                div: document.getElementById('player2'),
+               callbacksForPlayer: callBackWithPlayers2,
                src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
            });
        };
@@ -1111,6 +1117,7 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
            multiView.additionalVideo({
                key: "ENTER YOUR LICENSE KEY HERE",
                div: document.getElementById('player3'),
+               callbacksForPlayer: callBackWithPlayers3,
                src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
            });
        };
@@ -1121,6 +1128,7 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
            multiView.additionalVideo({
                key: "ENTER YOUR LICENSE KEY HERE",
                div: document.getElementById('player4'),
+               callbacksForPlayer: callBackWithPlayers4,
                src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
            });
        };
@@ -1132,6 +1140,7 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
        multiView.additionalVideo({
            key: "ENTER YOUR LICENSE KEY HERE",
            div: document.getElementById('player'),
+           callbacksForPlayer: callBackWithPlayers,
            src: 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_with_tiled_thumbnails_2.mpd',
        });
 ```

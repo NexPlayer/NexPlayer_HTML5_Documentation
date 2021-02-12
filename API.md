@@ -151,6 +151,8 @@
    - [.getFieldView()](#playergetFieldView)
    - [.setFieldView()](#playersetFieldView)
 - multiview
+   - [.additionalVideo(info)](#multiviewAdditionalVideo)
+   - [.addPlayer(player)](#multiviewAddPlayer)
    - [.togglePlayPause()](#multiviewTogglePlayPause)
    - [.seek()](#multiviewSeek)
    - [.seekLive()](#multiviewSeekLive)
@@ -1534,6 +1536,38 @@ Set the field of view.
    **Returns**: number
 
 ## Multiview
+
+#### multiview.additionalVideo(info)
+
+Creates and initializes the player.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Param**: **info** is and object which its values could be:
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | <code>string</code> | NexPlayer key to validates the playback. |
+| div | <code>HTMLDivElement</code> | the div container of the player. |
+| src | <code>string</code> | relevant src of the video to be played. |
+| autoplay | <code>boolean</code> | determines if the video must start playing or paused. By default it's set to true. |
+| drm | <code>Array.<NexDRMInformation></code> | contains an array of DRM information. By default it's set to null. |
+| seekUI | <code>number</code> | sets the number of seconds the UI buttons will seek forwards or backwards. By default is set to 10s. |
+| mutedAtStart | <code>boolean</code> | determine if the video will start playing muted or not. By default this value is set to false. |
+| debug	 | <code>boolean</code> | determine if log information is showed. By default is set to true. |
+| autohide | <code>boolean</code> | sets if the UI must hide when the user does not interact with the video. By default is set to true.. |
+| callbacksForPlayer | <code>function</code> | used for retrieving the nexplayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
+| callbackForReturn | <code>function</code> | sets a callback to be executed when the corresponding button is clicked. |
+| callbackForLogger | <code>function</code> | function to be called when the logger shows a message. |
+| vast | <code>string</code> | advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
+| useDynamicThumbnails | <code>boolean</code> | determines if dynamic thumbnails are used. By default this values is set to false. |
+| showingFullUI | <code>boolean</code> | determines if the UI is hidden or not. |
+| disableKeyEvents | <code>boolean</code> | determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
+
+#### multiview.addPlayer(player)
+
+This method stores each new player which will allow the MultipleView instance to control all the videos.
+
+**Type**: instance method of [<code>Player</code>](#Player)
 
 #### multiview.togglePlayPause()
 
