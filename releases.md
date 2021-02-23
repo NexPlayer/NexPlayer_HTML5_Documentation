@@ -8,16 +8,46 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Latest
+#### Version 5.4.2
 ```
-https://nexplayer.nexplayersdk.com/latest/nexplayer.js
+https://nexplayer.nexplayersdk.com/5.4.2/nexplayer.js
 ```
+* **[Improved]** Volume controller
+* **[Improved]** Cuechange events
+
+Date: Jan 12th 2020
+
+#### Version 5.4.1
+```
+https://nexplayer.nexplayersdk.com/5.4.1/nexplayer.js
+```
+* **[Added]** Error events
+* **[Added]** dashSettings Option
+* **[Added]** Callback to blockAt method
+* **[Improved]** startFullscreen Option
+
+Date: Dic 21th 2020
+
+#### Version 5.4
+```
+https://nexplayer.nexplayersdk.com/5.4/nexplayer.js
+```
+* **[Added]** Picture in Picture Option
+* **[Added]** useiOSFullScreen Option to use the native IOS full screen
+* **[Improved]** Live button
+* **[Improved]** startFullscreen Option
+
+Date: Dic 10th 2020
+
 #### Version 5.3
 ```
 https://nexplayer.nexplayersdk.com/5.3/nexplayer.js
 ```
 * **[Added]** Implement error events
 * **[Added]** isFullscreen()
+
+Date: Nov 25th 2020
+
 #### Version 5.2.3
 ```
 https://nexplayer.nexplayersdk.com/5.2.3/nexplayer.js
@@ -28,6 +58,8 @@ https://nexplayer.nexplayersdk.com/5.2.3/nexplayer.js
 * **[Improved]** Fix pause doesnt work the first time in iOS
 * **[Improved]** Fix controls autohide on first load.
 
+Date: Nov 18th 2020
+
 #### Version 5.2.1
 ```
 https://nexplayer.nexplayersdk.com/5.2.1/nexplayer.js
@@ -36,6 +68,7 @@ https://nexplayer.nexplayersdk.com/5.2.1/nexplayer.js
 * **[Improved]** minor issue related with the double touch in ios
 * **[Improved]** the placement of the controls has been corrected in some cases where the behavior was not correct
 
+Date: Oct 26th 2020
 
 #### Version 5.2
 ```
@@ -54,6 +87,8 @@ https://nexplayer.nexplayersdk.com/5.2/nexplayer.js
 * **[Improved]** Improve video 360
 * **[Improved]** Full-Screen Mode on iPhone
 
+Date: Oct 22nd 2020
+
 #### Version 5.1.5
 ```
 https://nexplayer.nexplayersdk.com/5.1.5/nexplayer.js
@@ -66,7 +101,7 @@ https://nexplayer.nexplayersdk.com/5.1.5/nexplayer.js
 * **[Improved]** JumpForward(value), jumpBackward(value), seeklive(), getDVRWindowSize()
 * **[Improved]** Change HTML5 spinner
 
-
+Date: Sep 25th 2020
 
 #### Version 5.1.4
 ```
@@ -74,12 +109,17 @@ https://nexplayer.nexplayersdk.com/5.1.4/nexplayer.js
 ```
 * **[Improved]** Improve on Safari when playing multiple videos
 
+Date: Sep 21th 2020
+
 #### Version 5.1.2
 ```
-https://nexplayer.nexplayersdk.com/5.1.1/nexplayer.js
+https://nexplayer.nexplayersdk.com/5.1.2/nexplayer.js
 ```
 * **[Improved]** Improve the reproduction in safari
 * **[Improved]** Fix the problem with 360 and fairplay
+
+Date: Sep 16th 2020
+
 #### Version 5.1
 
 <!-- <input type="text" value="https://nexplayer.nexplayersdk.com/4.2/nexplayer.js" id="myInput"> -->
@@ -98,6 +138,8 @@ https://nexplayer.nexplayersdk.com/5.1/nexplayer.js
 * **[Improved]** Fix DASH low latency for Mozilla
 * **[Improved]** Solve bug related to the spinning wheel 
 * **[Improved]** Solve bug with iphone ads
+
+Date: Ago 26th 2020
 
 #### Version 4.2
 
