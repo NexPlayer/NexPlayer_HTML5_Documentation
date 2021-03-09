@@ -1145,3 +1145,115 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
        });
 ```
 - There are some functions available to use, consult the <a href="#/API?id=multiview" target = "_blank" >api</a>
+
+##  YouTube
+
+### Sample
+    
+  YouTube ApI integrated in html5
+
+  ```html
+  <!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>NexPlayer</title>
+	<style type="text/css">
+
+		#player_container {
+			width: 90%;
+			margin: auto;
+			padding-top: 50.625%;
+			/* 16:9 Aspect Ratio 56.25 * 0.9 */
+			position: relative;
+			background-color: rgba !important;
+		}
+
+		#player {
+			background-color: black;
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<div id="player_container">
+		<div id="player" width="530" height="315"></div>
+	</div>
+
+	<script src="https://nexplayer.nexplayersdk.com/5.5.1/nexplayer.js"></script>
+	<script>
+
+		var YouTubePlayer = new nexplayer.YouTubePlayer();
+
+		var player;
+
+		YouTubePlayer.init();
+	
+			function onYouTubeIframeAPIReady() {
+			player = new YT.Player("player", {
+				height: '360',
+				width: '640',
+				startSeconds: 0,
+				videoId: YouTubePlayer.URL('https://www.youtube.com/watch?v=Yelb7w9cjVg'),
+				events: {
+					'onReady': onPlayerReady,
+				}
+			});
+	}
+
+		function onPlayerReady(event) {
+			event.target.playVideo();
+		}
+
+	</script>
+</body>
+</html>
+```
+
+### Step-by-Step
+To integrate NexPlayer™ YouTube into your project you must complete the following steps:
+
+- The NexPlayer™ JavaScript library should be included in the HTML file:
+
+```html
+<script src="NexPlayer Library"></script>
+```
+
+<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. </p>
+</div></div>
+
+A div that will contain the videos and the UI has to be declared:
+
+```html
+<div id="player_container">
+		<div id="player" width="530" height="315"></div>
+	</div>
+```
+To create the youtube player we first need to declare the youtube class. Once created, we declare a <a href="https://developers.google.com/youtube/iframe_api_reference" target="_blank">variable</a>, which is the one that will host all the YouTube methods.
+
+```js
+var YouTubePlayer = new nexplayer.YouTubePlayer();
+var player;
+```
+Once the player is initialized we create a function that will load the content of the video. Using the previous variable, we are going to set the YouTube instance.
+
+```js
+YouTubePlayer.init();
+
+  function onYouTubeIframeAPIReady() {
+		player = new YT.Player("player", {
+		  height: '360',
+			width: '640',
+			startSeconds: 0,
+			videoId: YouTubePlayer.URL('https://www.youtube.com/watch?v=Yelb7w9cjVg'),
+		});
+	}
+```

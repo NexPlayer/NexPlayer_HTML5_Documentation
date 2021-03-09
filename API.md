@@ -77,6 +77,7 @@
    - [.exitPictureInPicture()](#exitpictureinpicture)
    - [.isPictureInPicture()](#ispictureinpicture)
    - [.isPictureInPictureAvailable()](#ispictureinpictureavailable)
+   - [.getVersion()](#getVersion)
  - Ads
    - [.adManager()](#playeradmanager)
    - [.getAdObject()](#playergetadobject)
@@ -156,12 +157,15 @@
    - [.togglePlayPause()](#multiviewTogglePlayPause)
    - [.seek()](#multiviewSeek)
    - [.seekLive()](#multiviewSeekLive)
+- YouTubePlayer
+   - [.init()](#init)
+   - [.URL()](#URL)
 
 #### nexplayer.Setup(info)
 
 Creates and initializes the player.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
 **Param**: **info** is and object which its values could be:
 
 | Param | Type | Description |
@@ -184,6 +188,11 @@ Creates and initializes the player.
 | showingFullUI | <code>boolean</code> | determines if the UI is hidden or not. |
 | blockZoom | <code>boolean</code> | determines if the zoom in 360 videos is available or not. |
 | disableKeyEvents | <code>boolean</code> | determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
+| pip | <code>boolean</code> | Optional Picture in picture. |
+| allowScreenPlayPause | <code>boolean</code> | Optional allow to play and pause the video clicking over it. |
+| hideOptionsUi | <code>Object</code> | Optional hide the setting that you want from the UI. |
+| defaultQuality | <code>number</code> | Optional set the starting track throught his id, by default is -1, this enable the abr. |
+| hideScreenPlay | <code>boolean</code> | Optional hide the play button in the middle of the video, which appears when the video is pausing. |
 
 <a id="gettracks"> </a>
    #### player.getTracks() ⇒ Array.< Track >
@@ -756,6 +765,15 @@ Return true if pictur in pictur mode is supported for the browser, otherwise fal
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: boolean
+
+<a id="getVersion"></a>
+
+#### player.getVersion()
+
+Returns the version of the SDK.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: String
 
 <a id="playeradmanager"></a>
 
@@ -1541,7 +1559,7 @@ Set the field of view.
 
 Creates and initializes the player.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>nexplayer</code>](#nexplayer)   
 **Param**: **info** is and object which its values could be:
 
 | Param | Type | Description |
@@ -1562,6 +1580,11 @@ Creates and initializes the player.
 | useDynamicThumbnails | <code>boolean</code> | determines if dynamic thumbnails are used. By default this values is set to false. |
 | showingFullUI | <code>boolean</code> | determines if the UI is hidden or not. |
 | disableKeyEvents | <code>boolean</code> | determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
+| pip | <code>boolean</code> | Optional Picture in picture. |
+| allowScreenPlayPause | <code>boolean</code> | Optional allow to play and pause the video clicking over it. |
+| hideOptionsUi | <code>Object</code> | Optional hide the setting that you want from the UI. |
+| defaultQuality | <code>number</code> | Optional set the starting track throught his id, by default is -1, this enable the abr. |
+| hideScreenPlay | <code>boolean</code> | Optional hide the play button in the middle of the video, which appears when the video is pausing. |
 
 #### multiview.addPlayer(player)
 
@@ -1589,5 +1612,15 @@ Enables toggle between play and pause.
   #### multiview.seekLive()
    
    Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
+
+   **Type**: instance method of [<code>Player</code>](#Player) 
+
+   #### YouTubePlayer.init()
+   <a id="init"> </a>
+  Initialise the youtube player
+
+  #### YouTubePlayer.URL(url)
+   <a id="URL"> </a>
+  Parse youtube url to extract the id of the video
 
    **Type**: instance method of [<code>Player</code>](#Player) 
