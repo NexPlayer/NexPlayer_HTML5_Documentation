@@ -8,6 +8,34 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 5.5.1
+```
+https://nexplayer.nexplayersdk.com/5.5.1/nexplayer.js
+```
+* **[Added]** hideOptionsUi: feature to hide some settings properties from the ui as the quality, speed ...
+
+Date: Mar 8th 2021
+
+#### Version 5.5.0
+```
+https://nexplayer.nexplayersdk.com/5.5.0/nexplayer.js
+```
+* **[Added]** MultiView, allows to see more than one stream at the same time
+* **[Added]** Function for checking stream compatibility with the current used platform
+* **[Added]** YouTube´s streams support
+* **[Added]** allowScreenPlayPause: feature to disable the play/pause clicking on the screen
+* **[Added]** defaultQuality: feature to start the video using the given default quality
+* **[Added]** hideScreenPlay: feature to hide the play button which appears when the video is pausing
+* **[Added]** Supporting multiple stream source: Selects a playable stream from an array of objects depending on the device and the browser
+* **[Added]** Providing alternate streams as a backup: When a streams fails player is capable of skiping to the next provided stream that works
+* **[Added]** disableAbr() method
+* **[Added]** getVersion() method
+* **[Added]** unMount and detroy for multiView
+* **[Improved]** HLS Performance with low network
+* **[Improved]** toggleBar() makes that the volume bar disappears too, now it has been solved
+
+Date: Mar 8th 2021
+
 #### Version 5.4.2
 ```
 https://nexplayer.nexplayersdk.com/5.4.2/nexplayer.js
@@ -15,7 +43,7 @@ https://nexplayer.nexplayersdk.com/5.4.2/nexplayer.js
 * **[Improved]** Volume controller
 * **[Improved]** Cuechange events
 
-Date: Jan 12th 2020
+Date: Jan 12th 2021
 
 #### Version 5.4.1
 ```

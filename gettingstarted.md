@@ -154,7 +154,16 @@ There are a substantial number of customizable options for NexPlayer™ includin
         position:{top: 'size px', left: 'size px'},
         size:{height:'size px', width: 'size px'}
     },
-    pip:true, //Picture in picture
+    pip:true, //Optional Picture in picture
+    allowScreenPlayPause: true, //Optional allow to play and pause the video clicking over it.
+    hideOptionsUi:{  //Optional hide the setting that you want from the UI
+				quality: false,
+				speed:false,
+				audio:false,
+				subtitles:false
+			},
+    defaultQuality: -1, //Optional set the starting track throught his id, by default is -1, this enable the abr
+    hideScreenPlay: false //Optional hide the play button in the middle of the video, which appears when the video is pausing.
 
     ...
     
