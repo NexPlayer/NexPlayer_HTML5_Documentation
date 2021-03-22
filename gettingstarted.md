@@ -136,6 +136,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     staticThumbnailsImage: 'URL of the image containing the preview thumbnails', // Optional
     staticThumbnailsVTT: 'URL of the VTT file', // Optional
     cast: {}, //Optional
+    chromecastEndImg: 'URL of the image to display on Chromecast after the video has finished', //Optional
     type_360: '360 visualisation type' // Optional
     autoplay: true, // Optional
     mutedAtStart: true, // Optional

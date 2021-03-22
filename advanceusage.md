@@ -398,8 +398,12 @@ nexplayer.Setup({
     div: document.getElementById('player'),
     src: 'VIDEO URL',
     cast: {}
+    chromecastEndImg: 'IMAGE URL'
 });
  ```
+
+It's possible to display an image after the video has finished using the chromecastEndImg parameter. Put the URL of the image you want to display and it'll be shown at the end of the video. Otherwise, a gray screen will be displayed when it finish.
+
 ### AirPlay
 AirPlay displays your video and audio streams directly to your Apple TV. You can enable the AirPlay option as shown below:
 

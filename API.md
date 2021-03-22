@@ -16,6 +16,7 @@
    - [.getCurrentTrack()](#getcurrenttrack) ⇒ [Track](#track-object)
    - [.setCurrentTrack(trackID)](#playersetcurrenttracktrackid)
    - [.enableABR()](#playerenableabr)
+   - [.disableABR()](#playerdisableabr)
    - [.getAudioStreams()](#getaudiostreams) ⇒ [Array.< AudioStream >](#audiostream-object)
    - [.getCurrentAudioStream()](#getcurrentaudiostream) ⇒ [AudioStream](#audiostream-object)
    - [.setAudioStream(streamID)](#playersetaudiostream)
@@ -225,7 +226,13 @@ Sets the current track.
 
 Enables the ABR to change automatically between tracks.
 
-**Type**: instance method of [<code>Player</code>](#Player)    
+**Type**: instance method of [<code>Player</code>](#Player)  
+
+#### player.disableABR()
+
+Disables the ABR to prevent the player from changing tracks regardless of bandwidth.
+
+**Type**: instance method of [<code>Player</code>](#Player) 
 
 <a id="getaudiostreams"> </a>
    #### player.getAudioStreams() ⇒ Array.< AudioStream >
