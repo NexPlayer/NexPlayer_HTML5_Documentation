@@ -1192,7 +1192,7 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
 		<div id="player" width="530" height="315"></div>
 	</div>
 
-	<script src="https://nexplayer.nexplayersdk.com/5.5.1/nexplayer.js"></script>
+	<script src="NexPlayer Library"></script>
 	<script>
 
 		var YouTubePlayer = new nexplayer.YouTubePlayer();
@@ -1260,4 +1260,39 @@ YouTubePlayer.init();
 			videoId: YouTubePlayer.URL('https://www.youtube.com/watch?v=Yelb7w9cjVg'),
 		});
 	}
+```
+## Multiple Sources
+
+This feature, as long as src is undefined, allows the player to choose a playable src from one of the objects contained in the srcSets array depending on the browser and device support. Furthermore, this enhancement will automatically skip those streams that may fail during playback and try to restart it taking any of the following videos provided in the property previously mentioned.
+
+
+
+```js
+nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'video URL',
+    drm: [{
+        NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
+        NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+        NexCallback: // Optional DRM callback for FairPlay
+    }], // Optional: DRM information
+    srcSets:[
+      {
+        src: 'video URL',
+        drm: {
+            NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
+            NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+            NexCallback: // Optional DRM callback for FairPlay
+        } // Optional: DRM information or undefined
+        valid: false // Set always false
+      },
+      {
+        src: 'other video URL',
+        drm: 'undefined',
+        valid: false // Set always false
+      },
+    ...
+  ] // Optional: Objects array containing a stream and an optional DRM.
+});
 ```

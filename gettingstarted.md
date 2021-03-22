@@ -125,46 +125,62 @@ There are a substantial number of customizable options for NexPlayer™ includin
     name: 'Name of the Video', // Optional
     subtitle: 'Subtitle of the video', // Optional
     logosrc: 'URL logo of the company', // Optional
-    callbacksForPlayer: callback, // Optional callback called with the player instances
+    callbacksForPlayer: callback, // Optional: Callback called with the player instances
     drm: [{
-        NexDRMType:'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
+        NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
         NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
-        NexCallback:OptionalDRMCallbackForFairPlay
-    }], // Optional DRM information
+        NexCallback: // Optional DRM callback for FairPlay
+    }], // Optional: DRM information
     vast: 'URL with a VAST/VPAID advertisement', // Optional
     useDynamicThumbnails: true, // Optional
     staticThumbnailsImage: 'URL of the image containing the preview thumbnails', // Optional
     staticThumbnailsVTT: 'URL of the VTT file', // Optional
-    cast: {}, //Optional
-    chromecastEndImg: 'URL of the image to display on Chromecast after the video has finished', //Optional
+    cast: {}, // Optional
     type_360: '360 visualisation type' // Optional
     autoplay: true, // Optional
     mutedAtStart: true, // Optional
     lowLatency: true, // Optional
-    lowLatencyLiveDelay: 5, // Seconds of delay, Optional
+    lowLatencyLiveDelay: 5, // Optional: Seconds of delay
     debug: true, // Optional
-    callbacksForLogger: callback, // Optional callback called with the logger instances
+    callbacksForLogger: callback, // Optional: Callback called along the logger instances
     startFullscreen: true, // Optional
     disableFullscreen: true, // Optional
     showingFullUI: true, // Optional
-    seekUI: 10, // Seconds for the seek buttons, Optional
-    callbacksForReturn: callback, // Optional callback called with the return button
+    seekUI: 10, // Optional: Seconds for the seek buttons
+    callbacksForReturn: callback, // Optional: Callback called along the return button
     disableKeyEvents: false, // Optional
-    blockZoom:true, // Optional only available when the 360 is enable
-    watermark:{url:'URL of the image of the water mark',//optional
+    blockZoom:true, // Optional: Only available when 360 is enabled
+    watermark:{url:'URL of the image of the water mark', // Optional
         position:{top: 'size px', left: 'size px'},
         size:{height:'size px', width: 'size px'}
     },
-    pip:true, //Optional Picture in picture
-    allowScreenPlayPause: true, //Optional allow to play and pause the video clicking over it.
-    hideOptionsUi:{  //Optional hide the setting that you want from the UI
+    pip:true, // Optional: Picture in picture
+    allowScreenPlayPause: true, // Optional: Allow to play and pause the video when clicking over it.
+    hideOptionsUi:{  // Optional: Hide the desired setting from the UI
 				quality: false,
 				speed:false,
 				audio:false,
 				subtitles:false
 			},
-    defaultQuality: -1, //Optional set the starting track throught his id, by default is -1, this enable the abr
-    hideScreenPlay: false //Optional hide the play button in the middle of the video, which appears when the video is pausing.
+    defaultQuality: -1, // Optional: Set the starting track by indicating its id. Default is -1, which will enable the ABR.
+    hideScreenPlay: false // Optional: Hide the play button in the middle of the video, which appears when the video is paused.
+    srcSets: [
+        {
+            src: 'video URL',
+            drm: {
+                NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
+                NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+                NexCallback: // Optional DRM callback for FairPlay
+            } // Optional: DRM information or undefined
+            valid: false // Set always false
+        },
+        {
+            src: 'other video URL',
+            drm: 'undefined',
+            valid: false // Set always false
+        },
+        ...
+    ] // Optional: Objects array containing a stream and an optional DRM.
 
     ...
     

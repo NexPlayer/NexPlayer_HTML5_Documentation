@@ -12,6 +12,7 @@
 - Player
  - instance
    - [.Setup(info)](#nexplayersetupinfo)
+   - [.checkSupportedConfigurations(URL, DRMType)](#nexplayerchecksupportedconfigurations)
    - [.getTracks()](#gettracks) ⇒ [Array.< Track >](#track-object)
    - [.getCurrentTrack()](#getcurrenttrack) ⇒ [Track](#track-object)
    - [.setCurrentTrack(trackID)](#playersetcurrenttracktrackid)
@@ -182,7 +183,7 @@ Creates and initializes the player.
 | type_360 | <code>string</code> | select the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
 | autohide | <code>boolean</code> | sets if the UI must hide when the user does not interact with the video. By default is set to true.. |
 | callbacksForPlayer | <code>function</code> | used for retrieving the nexplayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
-| callbackForReturn | <code>function</code> | sets a callback to be executed when the corresponding button is clicked. |
+| callbackForReturn | <code>function</code> | sets a callback tcheckSupportedConfigurations(URL, DRMType)o be executed when the corresponding button is clicked. |
 | callbackForLogger | <code>function</code> | function to be called when the logger shows a message. |
 | vast | <code>string</code> | advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 | useDynamicThumbnails | <code>boolean</code> | determines if dynamic thumbnails are used. By default this values is set to false. |
@@ -194,6 +195,17 @@ Creates and initializes the player.
 | hideOptionsUi | <code>Object</code> | Optional hide the setting that you want from the UI. |
 | defaultQuality | <code>number</code> | Optional set the starting track throught his id, by default is -1, this enable the abr. |
 | hideScreenPlay | <code>boolean</code> | Optional hide the play button in the middle of the video, which appears when the video is pausing. |
+| srcSets | <code>Array</code> | Optional array of objects containig a stream and an optional DRM.
+
+<a id="nexplayerchecksupportedconfigurations"></a>
+
+#### nexplayer.checkSupportedConfigurations(URL, DRMType)
+
+Check if the audio and video codecs and DRMType, if it is provided, are supported by the device.
+
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Params**: **URL**: manifest url of the video. **DRMType**: optional type of drm (e.g., "com.microsoft.playready" )   
+**Returns**: A Promise. If it is resolved returns a MediaKeySystemAccess object with the supported codecs, and if it is rejected returns a string with the error.
 
 <a id="gettracks"> </a>
    #### player.getTracks() ⇒ Array.< Track >
