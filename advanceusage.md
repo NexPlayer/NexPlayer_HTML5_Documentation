@@ -1199,7 +1199,7 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
 
 		var player;
 
-		YouTubePlayer.init();
+		YouTubePlayer.init("REPLACE THIS WITH YOUR CUSTOMER KEY");
 	
 			function onYouTubeIframeAPIReady() {
 			player = new YT.Player("player", {
@@ -1250,7 +1250,7 @@ var player;
 Once the player is initialized we create a function that will load the content of the video. Using the previous variable, we are going to set the YouTube instance.
 
 ```js
-YouTubePlayer.init();
+YouTubePlayer.init("REPLACE THIS WITH YOUR CUSTOMER KEY");
 
   function onYouTubeIframeAPIReady() {
 		player = new YT.Player("player", {

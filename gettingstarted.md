@@ -163,7 +163,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
 				subtitles:false
 			},
     defaultQuality: -1, // Optional: Set the starting track by indicating its id. Default is -1, which will enable the ABR.
-    hideScreenPlay: false // Optional: Hide the play button in the middle of the video, which appears when the video is paused.
+    hideScreenPlay: false, // Optional: Hide the play button in the middle of the video, which appears when the video is paused.
     srcSets: [
         {
             src: 'video URL',
@@ -183,6 +183,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     ] // Optional: Objects array containing a stream and an optional DRM.
 
     ...
-    
-    
+
+    hideVolumeIcon: true, // Optional: Hide the volume icon for mobile devices. The volume is controlled by the device buttons.
+
 ```

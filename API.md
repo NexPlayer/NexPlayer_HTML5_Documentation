@@ -79,7 +79,9 @@
    - [.exitPictureInPicture()](#exitpictureinpicture)
    - [.isPictureInPicture()](#ispictureinpicture)
    - [.isPictureInPictureAvailable()](#ispictureinpictureavailable)
-   - [.getVersion()](#getVersion)
+   - [.getVersion()](#getversion)
+   - [.hiddenVolumeIcon()](#hiddenvolumeicon)
+   - [.showVolumeIcon()](#showvolumeicon)
  - Ads
    - [.adManager()](#playeradmanager)
    - [.getAdObject()](#playergetadobject)
@@ -776,7 +778,7 @@ Returns true if the video is in picture in picture, otherwise false.
 **Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: boolean
 
-<a id="ispictureInpictureavailable"></a>
+<a id="ispictureinpictureavailable"></a>
 
 #### player.isPictureInPictureAvailable()
 
@@ -785,7 +787,7 @@ Return true if pictur in pictur mode is supported for the browser, otherwise fal
 **Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: boolean
 
-<a id="getVersion"></a>
+<a id="getversion"></a>
 
 #### player.getVersion()
 
@@ -793,6 +795,22 @@ Returns the version of the SDK.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: String
+
+<a id="hiddenvolumeicon"></a>
+
+#### player.hiddenVolumeIcon()
+
+Hides the volume icon.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="showvolumeicon"></a>
+
+#### player.showVolumeIcon()
+
+Shows the volume icon.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playeradmanager"></a>
 

@@ -8,6 +8,16 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 5.5.2
+```
+https://nexplayer.nexplayersdk.com/5.5.2/nexplayer.js
+```
+* **[Added]** hideVolumeIcon: Hide the volume icon for mobile devices. The volume is controlled by the device buttons.
+* **[Added]** hiddenVolumeIcon(): Hides the volume icon.
+* **[Added]** showVolumeIcon(): Shows the volume icon.
+
+Date: Mar 18th 2021
+
 #### Version 5.5.1
 ```
 https://nexplayer.nexplayersdk.com/5.5.1/nexplayer.js
