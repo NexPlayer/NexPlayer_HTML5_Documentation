@@ -15,6 +15,8 @@ https://nexplayer.nexplayersdk.com/5.5.2/nexplayer.js
 * **[Added]** hideVolumeIcon: Hide the volume icon for mobile devices. The volume is controlled by the device buttons.
 * **[Added]** hiddenVolumeIcon(): Hides the volume icon.
 * **[Added]** showVolumeIcon(): Shows the volume icon.
+* **[Added]** Supporting drm with chromecast: dash and hls with Widevine and PlayReady.
+* **[Improved]** Black screen when type_360 is false.
 
 Date: Mar 18th 2021
 
