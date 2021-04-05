@@ -1285,12 +1285,10 @@ nexplayer.Setup({
             NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
             NexCallback: // Optional DRM callback for FairPlay
         } // Optional: DRM information or undefined
-        valid: false // Set always false
       },
       {
         src: 'other video URL',
-        drm: 'undefined',
-        valid: false // Set always false
+        drm: 'undefined'
       },
     ...
   ] // Optional: Objects array containing a stream and an optional DRM.
