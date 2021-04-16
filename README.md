@@ -1,6 +1,6 @@
 <a id="introduction-top"> </a>
 
-<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
+<a href="https://nexplayersdk.com/html5-player/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
 
 ***
 
