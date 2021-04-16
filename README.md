@@ -29,12 +29,17 @@ The default UI is easily customizable to fit the user´s personal preferences (e
       <li>Multiple audio/video tracks </li>      
       <li>ABR and UHD video (4k and 8k) </li>
       <li>Trick Play </li>   
-      <li>Multiple players at the same time </li>   
+      <li>Multiple players at the same time (Multi View) </li>   
       <li>Time-shifting </li>   
       <li>DVR Live Streaming </li>   
       <li>Picture-in-picture </li>   
       <li>Low latency </li>   
-      <li>Fully Customizable UI </li>         
+      <li>Fully Customizable UI </li>      
+      <li>YouTube Player</li>
+      <li>Integration with 3rd Party Analytics </li>
+      <li>Static thumbnails </li>
+      <li>Dynamic thumbnails </li>
+      <li>Multiple streams as backup</li>
   </ul>
 </div>
 <div class="blocks">
@@ -52,10 +57,11 @@ The default UI is easily customizable to fit the user´s personal preferences (e
   </ul>
 </div>
 <div class="blocks">
-<h5 class="titleBlocks">INSERTION</h5>
+<h5 class="titleBlocks">AD INSERTION</h5>
   <ul class="list">  
       <li>VAST, VPAID, VMAP </li>      
-      <li>Pre-Roll, Mid-Roll, Post-Roll </li> 
+      <li>Pre-Roll, Mid-Roll, Post-Roll </li>
+      <li>SSAI using Yospace </li> 
   </ul>
 </div>
 <div class="blocks">
@@ -81,7 +87,8 @@ The default UI is easily customizable to fit the user´s personal preferences (e
       <li>Fairplay DRM </li>      
       <li>AES </li>
       <li>Custom HTTP headers</li>   
-      <li>CENC </li>        
+      <li>CENC </li> 
+      <li>Chromecast with Widevine and PlayReady </li>           
   </ul>
 </div>
 </div>

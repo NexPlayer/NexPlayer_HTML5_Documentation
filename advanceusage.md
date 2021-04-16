@@ -1154,7 +1154,7 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
 
 ### Sample
     
-  YouTube ApI integrated in html5
+  YouTube API integrated in html5
 
   ```html
   <!DOCTYPE html>
