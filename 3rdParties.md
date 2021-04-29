@@ -12,7 +12,7 @@ This is a summary of how to use third parties tools
 
 Agora allow us to give the chance of see a video with your friends
 
-<img width="50%" text-align="center" src="./_images/Agora.png" alt="logo of docsify-awesome repository" >
+<img width="50%" text-align="center" src="./_images/Agora.png" alt="nexAgo" >
 
 ### Using with the player
 
