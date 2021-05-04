@@ -42,7 +42,7 @@ After, all you need to do is add the agoraOptions object to your setup.
 | token | <code>string</code> | The Token of you channel. |
 | appid | <code>string</code> | Your AppId. |
 
-And your setup should looks like this:
+And your setup should look like this:
 
 ```js
 nexplayer.Setup({
