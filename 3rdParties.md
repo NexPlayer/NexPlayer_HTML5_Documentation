@@ -4,21 +4,21 @@
 
 ***
 
-# Third Parties
+# third Party
 
 This is a summary of how to use third parties tools
 
 ## Agora
 
-Agora allow us to give the chance of see a video with your friends
+Agora allows us to give you the chance to see a video with your friends
 
 <img width="50%" text-align="center" src="./_images/agoraimg.png" alt="nexAgo" >
 
 ### Using with the player
 
-To Start you need to have a channel in Agora, you could do that creating an account in the next link: https://www.agora.io/en.
+To start, you need to have a channel set up in Agora. You can do that by creating an account in the following link: https://www.agora.io/en.
 
-In order to use it, first of all you need to create a div with "agoraContainer" id, inside of the player container.
+In order to use it, you need to create a div with the “agoraContainer” id, inside of the player container.
 
 ```html
 <div id="player_container">
@@ -28,7 +28,7 @@ In order to use it, first of all you need to create a div with "agoraContainer" 
 
  ```
 
-After you only need to add the agoraOptions object to your setup.
+After, all you need to do is add the agoraOptions object to your setup.
 
 <a id="agoraOptions"></a>
 
@@ -70,7 +70,7 @@ nexplayer.Setup({
 
    #### player.joinAgora()
 
-   You need to have a previous config given to agora, before calling this function, if all is correct you join to the Agora channel given.
+   You need to have a previous config given to agora before naming this function. If all is correct, you will be able to join the given Agora channel.
 
    **Type**: instance method of [<code>Player</code>](#Player)
 
