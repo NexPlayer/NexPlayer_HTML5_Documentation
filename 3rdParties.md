@@ -6,7 +6,7 @@
 
 # Third Party
 
-This is a summary of how to use third parties tools
+This is a summary of how to use third party tools
 
 ## Agora
 
