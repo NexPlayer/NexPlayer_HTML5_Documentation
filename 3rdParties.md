@@ -4,7 +4,7 @@
 
 ***
 
-# third Party
+# Third Party
 
 This is a summary of how to use third parties tools
 
