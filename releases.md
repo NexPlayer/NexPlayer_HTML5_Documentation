@@ -8,6 +8,25 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 5.5.3.1
+```
+https://nexplayer.nexplayersdk.com/5.5.3.1/nexplayer.js
+```
+* **[Improved]** Solved setMediaKeys error while using ads.
+
+Date: May 6th 2021
+
+#### Version 5.5.3
+```
+https://nexplayer.nexplayersdk.com/5.5.3/nexplayer.js
+```
+* **[Added]** Support for multiple estexternal subtitles.
+* **[Added]** A custom-sized initial buffer can now be set by passing the desired number of seconds to achieve. It can be used through a new property, “startingBufferLength”, in the nexplayer Setup method.
+* **[Improved]** UnMount performance when failed download data.
+* **[Improved]** Bugs when ads are empty.
+
+Date: Apr 30th 2021
+
 #### Version 5.5.2
 ```
 https://nexplayer.nexplayersdk.com/5.5.2/nexplayer.js
