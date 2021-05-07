@@ -4,6 +4,7 @@
 * [Advance Usage](advanceusage.md?id=advance-top)
 * [NexPlayer API](API.md?id=api-top)
 * [Releases](releases.md?id=releases-top)
+* [AWS Media Services](AWSMediaServices.md?id=AWSMediaServices-top)
 * [Third Party](3rdParties.md?id=3rdParties-top) 
 * [Third Party Licenses](licenses.md?id=licenses-top) 
 - [Demo](https://www.nexplayersdk.com/html5demo/)
