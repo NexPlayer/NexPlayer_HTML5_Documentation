@@ -1305,3 +1305,44 @@ nexplayer.Setup({
   ] // Optional: Objects array containing a stream and an optional DRM.
 });
 ```
+
+## IOS WebView
+
+Here is the example code to create a simple application
+
+```swift
+  import UIKit
+  import WebKit
+  class ViewController: UIViewController, WKUIDelegate {
+    
+    var webView: WKWebView!
+    
+    override func loadView() {
+      let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        view = webView
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let myURL = URL(string:"Your url")
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
+    }}
+
+```
+For the video to start playing, you will need to configure the following parameters
+
+```swift
+    override func loadView() {
+      let webConfiguration = WKWebViewConfiguration()
+      webConfiguration.preferences.javaScriptEnabled = true
+      webConfiguration.mediaPlaybackRequiresUserAction = false
+      webConfiguration.allowsInlineMediaPlayback = true
+      webView = WKWebView(frame: .zero, configuration: webConfiguration)
+      webView.uiDelegate = self
+      view = webView
+    }
+
+```
