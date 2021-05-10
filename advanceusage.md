@@ -1009,60 +1009,62 @@ This is already called in NexHandshake.js file, but it can be modified and be ca
 	</div>
 	<script src="https://nexplayer.nexplayersdk.com/multiview/nexplayer.js"></script>
 	<script>
-		var player = null;
-		var player2 = null;
-		var player3 = null;
-		var player4 = null;
-		var videoElem = null;
-		var videoElem2 = null;
-		var videoElem3 = null;
-		var videoElem4 = null;
-		var multiView = new nexplayer.MultipleView();
-		var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-         player = nexplayerInstance;
-         videoElem = videoElement;
-         multiView.addPlayer(nexplayerInstance);
-         multiView.additionalVideo({
-             key: "ENTER YOUR LICENSE KEY HERE",
-             div: document.getElementById('player2'),
-             callbacksForPlayer: callBackWithPlayers2,
-             src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
-             
-         });
-     };
-     var callBackWithPlayers2 = function (nexplayerInstance, videoElement) {
-         player2 = nexplayerInstance;
-         videoElem2 = videoElement;
-         multiView.addPlayer(nexplayerInstance);
-         multiView.additionalVideo({
-             key: "ENTER YOUR LICENSE KEY HERE",
-             div: document.getElementById('player3'),
-             callbacksForPlayer: callBackWithPlayers3,
-             src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
-         });
-     };
-     var callBackWithPlayers3 = function (nexplayerInstance, videoElement) {
-         player3 = nexplayerInstance;
-         videoElem3 = videoElement;
-         multiView.addPlayer(nexplayerInstance);
-         multiView.additionalVideo({
-             key: "ENTER YOUR LICENSE KEY HERE",
-             div: document.getElementById('player4'),
-             callbacksForPlayer: callBackWithPlayers4,
-             src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
-         });
-     };
-     var callBackWithPlayers4 = function (nexplayerInstance, videoElement) {
-         player4 = nexplayerInstance;
-         videoElem4 = videoElement;
-         multiView.addPlayer(nexplayerInstance);
-     };
-     multiView.additionalVideo({
-         key: "ENTER YOUR LICENSE KEY HERE",
-         div: document.getElementById('player'),
-         callbacksForPlayer: callBackWithPlayers,
-         src: 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_with_tiled_thumbnails_2.mpd',
-     });
+		
+    var multiView = new nexplayer.MultipleView();
+
+    var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+
+			multiView.addPlayer(nexplayerInstance);
+
+		};
+
+		multiView.additionalVideo({
+			key: "Your licence key",
+			allowScreenPlayPause: false,
+			callbacksForPlayer: callBackWithPlayers,
+			debug: false,
+			div: document.getElementById('player'),
+			hideScreenPlay: false,
+			lowLatency: true,
+			showingFullUI: false,
+			src: 'Your stream URL',
+		});
+
+		multiView.additionalVideo({
+			key: "Your licence key",
+			allowScreenPlayPause: false,
+			callbacksForPlayer: callBackWithPlayers,
+			debug: false,
+			div: document.getElementById('player2'),
+			hideScreenPlay: false,
+			lowLatency: true,
+			showingFullUI: false,
+			src: 'Your stream URL',
+		});
+
+		multiView.additionalVideo({
+			key: "Your licence key",
+			div: document.getElementById('player3'),
+			callbacksForPlayer: callBackWithPlayers,
+			allowScreenPlayPause: false,
+			showingFullUI: false,
+			hideScreenPlay: false,
+			lowLatency: true,
+			debug: false,
+			src: 'Your stream URL',
+		});
+
+		multiView.additionalVideo({
+			key: "Your licence key",
+			div: document.getElementById('player4'),
+			callbacksForPlayer: callBackWithPlayers,
+			allowScreenPlayPause: false,
+			debug: false,
+			hideScreenPlay: false,
+			showingFullUI: false,
+			lowLatency: true,
+			src: 'Your stream URL',
+		});
 	</script>
 </body>
 </html>
@@ -1103,50 +1105,59 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
 ```js
  var multiView = new nexplayer.MultipleView();
 
-  var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-           player = nexplayerInstance;
-           videoElem = videoElement;
-           multiView.addPlayer(nexplayerInstance);
-           multiView.additionalVideo({
-               key: "ENTER YOUR LICENSE KEY HERE",
-               div: document.getElementById('player2'),
-               callbacksForPlayer: callBackWithPlayers2,
-               src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
-           });
-       };
-       var callBackWithPlayers2 = function (nexplayerInstance, videoElement) {
-           player2 = nexplayerInstance;
-           videoElem2 = videoElement;
-           multiView.addPlayer(nexplayerInstance);
-           multiView.additionalVideo({
-               key: "ENTER YOUR LICENSE KEY HERE",
-               div: document.getElementById('player3'),
-               callbacksForPlayer: callBackWithPlayers3,
-               src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
-           });
-       };
-       var callBackWithPlayers3 = function (nexplayerInstance, videoElement) {
-           player3 = nexplayerInstance;
-           videoElem3 = videoElement;
-           multiView.addPlayer(nexplayerInstance);
-           multiView.additionalVideo({
-               key: "ENTER YOUR LICENSE KEY HERE",
-               div: document.getElementById('player4'),
-               callbacksForPlayer: callBackWithPlayers4,
-               src: 'https://cmafref.akamaized.net/cmaf/live-ull/2006350/akambr/out.mpd',
-           });
-       };
-       var callBackWithPlayers4 = function (nexplayerInstance, videoElement) {
-           player4 = nexplayerInstance;
-           videoElem4 = videoElement;
-           multiView.addPlayer(nexplayerInstance);
-       };
-       multiView.additionalVideo({
-           key: "ENTER YOUR LICENSE KEY HERE",
-           div: document.getElementById('player'),
-           callbacksForPlayer: callBackWithPlayers,
-           src: 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_with_tiled_thumbnails_2.mpd',
-       });
+    var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+
+			multiView.addPlayer(nexplayerInstance);
+      
+		};
+
+		multiView.additionalVideo({
+			key: "Your licence key",
+			allowScreenPlayPause: false,
+			callbacksForPlayer: callBackWithPlayers,
+			debug: false,
+			div: document.getElementById('player'),
+			hideScreenPlay: false,
+			lowLatency: true,
+			showingFullUI: false,
+			src: 'Your stream URL',
+		});
+
+		multiView.additionalVideo({
+			key: "Your licence key",
+			allowScreenPlayPause: false,
+			callbacksForPlayer: callBackWithPlayers,
+			debug: false,
+			div: document.getElementById('player2'),
+			hideScreenPlay: false,
+			lowLatency: true,
+			showingFullUI: false,
+			src: 'Your stream URL',
+		});
+
+		multiView.additionalVideo({
+			key: "Your licence key",
+			div: document.getElementById('player3'),
+			callbacksForPlayer: callBackWithPlayers,
+			allowScreenPlayPause: false,
+			showingFullUI: false,
+			hideScreenPlay: false,
+			lowLatency: true,
+			debug: false,
+			src: 'Your stream URL',
+		});
+
+		multiView.additionalVideo({
+			key: "Your licence key",
+			div: document.getElementById('player4'),
+			callbacksForPlayer: callBackWithPlayers,
+			allowScreenPlayPause: false,
+			debug: false,
+			hideScreenPlay: false,
+			showingFullUI: false,
+			lowLatency: true,
+			src: 'Your stream URL',
+		});
 ```
 - There are some functions available to use, consult the <a href="#/API?id=multiview" target = "_blank" >api</a>
 

@@ -1652,6 +1652,9 @@ Enables toggle between play and pause.
 
    **Type**: instance method of [<code>Player</code>](#Player) 
 
+## Youtube Player
+
+
    #### YouTubePlayer.init()
    <a id="init"> </a>
   Initialise the youtube player
