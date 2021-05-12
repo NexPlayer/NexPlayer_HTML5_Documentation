@@ -102,7 +102,7 @@ There are many configuration options, but let’s get started by making a new Cl
 
     - Highlight the domain name for your new distribution.
         * Now take that domain name and append your video file name.
-        * This will be the URL to put into your Unity project.
+        * This will be the URL to put into your project.
         * https://{cloudfronturl}/{videoname}
 
 
