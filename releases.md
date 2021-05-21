@@ -20,7 +20,7 @@ Date: May 6th 2021
 ```
 https://nexplayer.nexplayersdk.com/5.5.3/nexplayer.js
 ```
-* **[Added]** Support for multiple estexternal subtitles.
+* **[Added]** Support for multiple external subtitles.
 * **[Added]** A custom-sized initial buffer can now be set by passing the desired number of seconds to achieve. It can be used through a new property, “startingBufferLength”, in the nexplayer Setup method.
 * **[Improved]** UnMount performance when failed download data.
 * **[Improved]** Bugs when ads are empty.
