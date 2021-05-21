@@ -670,7 +670,7 @@ Now, Let’s get started with [AWS Elemental MediaLive](https://console.aws.amaz
 
     - Create an Output
         * Chose MediaPackage as the output group
-            1. (If you have not already done so) Go to the [AWS Elemental MediaPackage](https://docs.google.com/document/d/1kINhE2ri1tq8DZ25K8tnH6GGDwwumQlUtRtJyHSxNmA/edit?ts=6093b790#heading=h.h2rc56y1fjlk) section in this guide to create a channel.
+            1. (If you have not already done so) Go to the [AWS Elemental MediaPackage](https://www.google.com/url?q=https://nexplayer.github.io/NexPlayer_HTML5_Documentation/%23/3rdParties?id%3Daws-elemental-mediapackage-1&sa=D&source=hangouts&ust=1621684573481000&usg=AFQjCNHr6hL17Hk0wW4cCfnKmHQL9RPKlA) section in this guide to create a channel.
             2. Select the AWS Elemental MediaPackage channel ID you created within AWS Elemental MediaPackage
             3. Confirm
         * Got to your AWS Elemental MediaPackage group outputs. 
@@ -736,6 +736,7 @@ We will use CloudWatch Event to Create a rule to invoke your Lambda function eve
 
 With the event enabled, you should see a scheduled Scte35 splice insert in the MediaLive channel's Schedule every minute.
 
+<a id="awselementalmedia"></a>
 
 ### AWS Elemental MediaPackage
 
