@@ -670,7 +670,7 @@ Now, Let’s get started with [AWS Elemental MediaLive](https://console.aws.amaz
 
     - Create an Output
         * Chose MediaPackage as the output group
-            1. (If you have not already done so) Go to the [AWS Elemental MediaPackage](https://www.google.com/url?q=https://nexplayer.github.io/NexPlayer_HTML5_Documentation/%23/3rdParties?id%3Daws-elemental-mediapackage-1&sa=D&source=hangouts&ust=1621684573481000&usg=AFQjCNHr6hL17Hk0wW4cCfnKmHQL9RPKlA) section in this guide to create a channel.
+            1. (If you have not already done so) Go to the [AWS Elemental MediaPackage](#awselementalmedia) section in this guide to create a channel.
             2. Select the AWS Elemental MediaPackage channel ID you created within AWS Elemental MediaPackage
             3. Confirm
         * Got to your AWS Elemental MediaPackage group outputs. 
