@@ -240,7 +240,7 @@ To start, you need to import the watermark.min.js file, to get it you should req
 				"logoPos": [ 15, 20, 269, 100 ], // SET COORDINATES FOR THE LOGO IMAGE. FORMAT: [x, y, WIDTH, HEIGHT]
 				"player" : player, // THE OBJECT REPRESENTING VIDEO PLAYER.
 			}
-			WmSdkInitWatermark(wmInfo); // STARTS TO INITIALIZE THE WATERMARK AND SET ITS ESSENTIAL PARAMETERS, WHEN VIDEO PLAYBACK STARTS. THIS IS THE ONLY FUNCTION YOU MUST CALL TO START WATERMARKING.
+			let watermarkContext = WmSdkInitWatermark(wmInfo); // STARTS TO INITIALIZE THE WATERMARK AND SET ITS ESSENTIAL PARAMETERS, WHEN VIDEO PLAYBACK STARTS. THIS IS THE ONLY FUNCTION YOU MUST CALL TO START WATERMARKING.
 		}
 	
 		nexplayer.Setup({
@@ -290,18 +290,35 @@ To start, you need to import the watermark.min.js file, to get it you should req
  changing events.
 
 ```js
+var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+    ...
 
-SINTAX
+	wmInfo.strength = 250;
+	function onFullScreen() {
+		watermarkContext.update(wmInfo);
+	}
+	document.addEventListener('fullscreenchange', onFullScreen);
+
+    ...
+}
 
   ```
 
  ### Watermarking Finish
 
- After the video playback is finished, we can remove the watermark using the method finish(), to call this method it needs the wmInfo object and the only parameter needed is the apiToken.
+ After the video playback is finished, we can remove the watermark using the method finish(), to call the only parameter needed is the apiToken.
 
  ```js
+var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+    ...
 
-SINTAX
+	videoElement.addEventListener('ended', function (event) {
+		console.log("ended");
+		watermarkContext.finish(wmInfo);
+	},true);
+
+    ...
+}
 
   ```
 
