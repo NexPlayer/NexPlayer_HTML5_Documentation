@@ -317,10 +317,10 @@ In order to have the 360 in all devices you should add type_360: true and the pl
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default format is 'equirectangular'. To switch the format, simply change the value of <b>type_360</b> to 'cubemap' or 'topdown'.</p>
 </div></div>
 
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Currently the only form to use the gyroscope is in web sites with https protocol, moreover in IOS devices you need to accept a permission to use this function</p>
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Currently the only form to use the gyroscope is in web sites with https protocol, moreover in iOS devices you need to accept a permission to use this function</p>
 </div></div>
 
-<div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>IOS 14 and IOS 14.1 don't support the 360 feature because there is an error in this versions</p>
+<div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>iOS 14 and iOS 14.1 don't support the 360 feature because there is an error in this versions</p>
 </div></div>
 
 ## Muted at Start
@@ -807,7 +807,7 @@ nexplayerInstance.on(nexplayer.Player.NexEvent.Error, function(e) { console.log(
 
 ### Fullscreen iOS
 
-If you want to avoid the fullscreen native player in IOS, you should define this using two callbacks on the setup <b>callbackFullscreenIn</b> and <b>callbackFullscreenOut</b>
+If you want to avoid the fullscreen native player in iOS, you should define this using two callbacks on the setup <b>callbackFullscreenIn</b> and <b>callbackFullscreenOut</b>
 
 ```js
 const callbackwithFullscreenIn = function(){
@@ -1306,7 +1306,7 @@ nexplayer.Setup({
 });
 ```
 
-## IOS WebView
+## iOS WebView
 
 Here is the example code to create a simple application
 

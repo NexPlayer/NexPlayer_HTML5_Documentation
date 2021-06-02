@@ -182,8 +182,13 @@ There are a substantial number of customizable options for NexPlayer™ includin
         ...
     ] // Optional: Objects array containing a stream and an optional DRM.
 
-    ...
-
     hideVolumeIcon: true, // Optional: Hide the volume icon for mobile devices. The volume is controlled by the device buttons.
+
+   dashSettings: {  // Optional: Allow modifying some dash properties like the following
+        "liveDelay": 20,    // Allow adjusting the live delay
+        "liveCatchUpPlaybackRate": 0.5, // The speed that the player gets in order to keep the live delay
+        "liveCatchUpMaxDrift": 3,   // The maximun delay before to make a seek live
+        "liveCatchupLatencyThreshold": 30,  // The threshold where the synchronization properties works
+    }
 
 ```
