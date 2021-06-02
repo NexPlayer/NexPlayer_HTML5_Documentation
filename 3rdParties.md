@@ -96,7 +96,7 @@ Mux data allows you to monitor your video streaming performance.
 
 To start, you need to have a ENV_KEY from the <a href="https://dashboard.mux.com/environments">Mux environments dashboard</a>. ENV_KEY is a client-side key used for Mux Data monitoring.  These are not to be confused with API tokens which are created in the admin settings dashboard and meant to access the Mux API from a trusted server.
 
-In order to use it, you need to import this three files into the html and set the muxPlayerInitTime.
+In order to use it, you need to import this tw files into the html and set the muxPlayerInitTime.
 
 ```html
 <head>
@@ -105,31 +105,16 @@ In order to use it, you need to import this three files into the html and set th
 </head>
 <body>
 	<script type="text/javascript" src="NexMuxHandShake.js"></script>
-	<script type="text/javascript" src="config.js"></script>
 </body>
 
  ```
 
- You can find <a href="https://github.com/NexPlayer/NexPlayer_HTML5_Mux/blob/main/app/config.js">confing.js</a> and <a href="https://github.com/NexPlayer/NexPlayer_HTML5_Mux/blob/main/app/NexMuxHandShake.js">NexMuxHandShake.js</a> in the following <a href="https://github.com/NexPlayer/NexPlayer_HTML5_Mux">repository</a>.
+ You can find <a href="https://github.com/NexPlayer/NexPlayer_HTML5_Mux/blob/main/app/NexMuxHandShake.js">NexMuxHandShake.js</a> in the following <a href="https://github.com/NexPlayer/NexPlayer_HTML5_Mux">repository</a>.
 
- First you should configure your settings in "config.js".
-
-#### muxConfig : <code>Object</code>
-**Properties**:
-
-| Param | Type | Description |
-| --- | --- | --- |
-| debug | <code>boolean</code> | Enable or disable debug mode |
-| disableCookies | <code>boolean</code> | Disable or enable the cookie that Mux use to track playback across subsequent page views if desired. |
-| respectDoNotTrack | <code>boolean</code> | By default, mux does not respect Do Not Track when set within browsers. This can be enabled or disabled by this property. |
-| automaticErrorTracking | <code>boolean</code> | Enable or disable automatic error tracking completely. |
-| data | <code>Object</code> | Site, player and video metadata. |
-
-
-And your muxConfig should look like this:
+ First you should create your muxConfiguration variable with the following structure:
 
 ```js
-var muxConfig = {
+var muxConfiguration = {
   debug: true,
   disableCookies: true,
   respectDoNotTrack: true,
@@ -157,6 +142,16 @@ var muxConfig = {
   },
 };
  ```
+**Properties**:
+
+| Param | Type | Description |
+| --- | --- | --- |
+| debug | <code>boolean</code> | Enable or disable debug mode |
+| disableCookies | <code>boolean</code> | Disable or enable the cookie that Mux use to track playback across subsequent page views if desired. |
+| respectDoNotTrack | <code>boolean</code> | By default, mux does not respect Do Not Track when set within browsers. This can be enabled or disabled by this property. |
+| automaticErrorTracking | <code>boolean</code> | Enable or disable automatic error tracking completely. |
+| data | <code>Object</code> | Site, player and video metadata. |
+
 
  NexMuxHandshake should be created in the callBackWithPlayers after the event "loadeddata" is fired. This object links Nexplayer and Mux events and functions.
 
@@ -174,21 +169,21 @@ var muxConfig = {
         nexMux = new NexMuxHandShake();
         // To use ad metrics, set useAdMetrics to true, it is set to false by default.
         nexMux.useAdMetrics = true;
-        nexMux.initMuxData();
+        nexMux.initMuxData(muxConfiguration);
       });
     }
  ```
 
-If your application plays multiple videos back-to-back in the same video player, you should modify the muxConfig variable created in config.js an then use the following code.
+If your application plays multiple videos back-to-back in the same video player, you should use the following function and pass a data object with the same structure as the muxConfiguration.data object.
 
 ```js
-nexMux.videoChange(muxConfig);
+nexMux.videoChange(data);
  ```
 
-In some cases, you may have the program change within a stream, and you may want to track each program as a view on its own. To do so you should modify the muxConfig variable created in config.js an then use the following code.
+In some cases, you may have the program change within a stream, and you may want to track each program as a view on its own. To do so you should use the following function and pass a data object with the same structure as the muxConfiguration.data object.
 
 ```js
-nexMux.programChange(muxConfig);
+nexMux.programChange(data);
 ```
 
 
