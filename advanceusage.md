@@ -139,6 +139,12 @@ nexplayer.Setup({
 ```
 
 Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the Widevine server used.
+
+<div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>
+Firefox<br>
+In order for millions of Firefox users to continue viewing Widevine-protected digital video, they must be using version 88 or later. Version 88 is the current Firefox version, released by Mozilla on April 19, 2021. Users on older versions will be unable to stream Widevine-protected video once the older CDM is revoked.</p>
+</div></div>
+
 ### Playready
 
 A DRM powered by <a href =https://www.microsoft.com/playready/ target="_blank">Microsoft</a>, available on Edge and Internet Explorer (on Windows). It can be used by entering the appropriate information into the DRM array:
