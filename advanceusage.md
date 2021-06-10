@@ -1019,9 +1019,6 @@ This is already called in NexHandshake.js file, but it can be modified and be ca
     var multiView = new nexplayer.MultipleView();
 
     var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-
-			multiView.addPlayer(nexplayerInstance);
-
 		};
 
 		multiView.additionalVideo({
@@ -1071,6 +1068,9 @@ This is already called in NexHandshake.js file, but it can be modified and be ca
 			lowLatency: true,
 			src: 'Your stream URL',
 		});
+
+     multiView.Initialize();
+     
 	</script>
 </body>
 </html>
@@ -1084,7 +1084,8 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
 ```html
 <script src="https://nexplayer.nexplayersdk.com/multiview/nexplayer.js"></script>
 ```
-
+<div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>The library above is a test version, the official version will be in the next release.</p>
+</div></div>
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. </p>
 </div></div>
 
@@ -1107,13 +1108,11 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
     </div>
 </body>
 ```
-- To create the players we will have to create the multiview.additionalVideo() in the corresponding callBackWithPlayers so that the players are created sequentially:
+- To create the players we will have to call multiview.additionalVideo() after callBackWithPlayers is created so that the players are initialized sequentially:
 ```js
  var multiView = new nexplayer.MultipleView();
 
     var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-
-			multiView.addPlayer(nexplayerInstance);
       
 		};
 
@@ -1164,6 +1163,9 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
 			lowLatency: true,
 			src: 'Your stream URL',
 		});
+
+     multiView.Initialize();
+     
 ```
 - There are some functions available to use, consult the <a href="#/API?id=multiview" target = "_blank" >api</a>
 

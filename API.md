@@ -158,6 +158,7 @@
 - multiview
    - [.additionalVideo(info)](#multiviewAdditionalVideo)
    - [.addPlayer(player)](#multiviewAddPlayer)
+   - [.Initialize()](#)
    - [.togglePlayPause()](#multiviewTogglePlayPause)
    - [.seek()](#multiviewSeek)
    - [.seekLive()](#multiviewSeekLive)
@@ -1626,6 +1627,12 @@ Creates and initializes the player.
 #### multiview.addPlayer(player)
 
 This method stores each new player which will allow the MultipleView instance to control all the videos.
+
+**Type**: instance method of [<code>Player</code>](#Player)
+
+#### multiview.Initialize()
+
+This method only has to be called once in the index and starts all the videos sequentially. It must be called after all videos are set.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
