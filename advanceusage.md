@@ -1169,6 +1169,30 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
 ```
 - There are some functions available to use, consult the <a href="#/API?id=multiview" target = "_blank" >api</a>
 
+### Synchronization
+
+To be able to use the synchronization we have to configure in the setup the ```lowLatency``` and ```dashSettings```.
+
+```javascript
+  
+   multiView.additionalVideo({
+          key: "Your licence key",
+          div: document.getElementById('player4'),
+          callbacksForPlayer: callBackWithPlayers,
+          lowLatency: true,
+          dashSettings: {  // Optional: Allow modifying some dash properties like the following
+            "liveDelay": 20,    // Allow adjusting the live delay
+            "liveCatchUpPlaybackRate": 0.5, // The speed that the player gets in order to keep the live delay
+            "liveCatchUpMaxDrift": 3,   // The maximun delay before to make a seek live
+            "liveCatchupLatencyThreshold": 30,  // The threshold where the synchronization properties works
+          }
+          src: 'Your stream URL',
+      });
+      
+```
+<div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>Currently, live synchronization is only available for Dash.</p>
+</div></div>
+
 ##  YouTube
 
 ### Sample
