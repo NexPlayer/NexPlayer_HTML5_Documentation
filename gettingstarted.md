@@ -118,52 +118,54 @@ nexplayer.Setup({
 There are a substantial number of customizable options for NexPlayer™ including: the name and subtitle format of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview...
 
 ```js
+
     key: 'Player key to validate the playback', // Mandatory
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
-    poster: 'URL poster', // Optional
-    name: 'Name of the Video', // Optional
-    subtitle: 'Subtitle of the video', // Optional
-    logosrc: 'URL logo of the company', // Optional
+    allowScreenPlayPause: true, // Optional: Allow to play and pause the video when clicking over it.
+    autohide: true, //Optional, sets if the UI must hide when the user does not interact with the video.
+    autoplay: true, // Optional
+    blockZoom:true, // Optional: Only available when 360 is enabled
+    callbacksForLogger: callback, // Optional: Callback called along the logger instances
+    callbacksForReturn: callback, // Optional: Callback called along the return button
     callbacksForPlayer: callback, // Optional: Callback called with the player instances
+    cast: {}, // Optional
+    chromecastEndImg: 'URL image', //Optional
+    chromecastLaunchImg: 'URL image', //Optional
+    dashSettings: {  // Optional: Allow modifying some dash properties like the following
+        "liveDelay": 20,    // Allow adjusting the live delay
+        "liveCatchUpPlaybackRate": 0.5, // The speed that the player gets in order to keep the live delay
+        "liveCatchUpMaxDrift": 3,   // The maximun delay before to make a seek live
+        "liveCatchupLatencyThreshold": 30,  // The threshold where the synchronization properties works
+    },
+    debug: true, // Optional
+    defaultQuality: -1, // Optional: Set the starting track by indicating its id. Default is -1, which will enable the ABR.
+    disableFullscreen: true, // Optional
+    disableKeyEvents: false, // Optional
     drm: [{
         NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
         NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
         NexCallback: // Optional DRM callback for FairPlay
     }], // Optional: DRM information
-    vast: 'URL with a VAST/VPAID advertisement', // Optional
-    useDynamicThumbnails: true, // Optional
-    staticThumbnailsImage: 'URL of the image containing the preview thumbnails', // Optional
-    staticThumbnailsVTT: 'URL of the VTT file', // Optional
-    cast: {}, // Optional
-    type_360: '360 visualisation type' // Optional
-    autoplay: true, // Optional
-    mutedAtStart: true, // Optional
+    externSubtitles: [{"src": "VTT", "language": "eng" },.. }] //Optional
+    hideOptionsUi:{  // Optional: Hide the desired setting from the UI
+        quality: false,
+        speed:false,
+        audio:false,
+        subtitles:false
+	},
+    hideScreenPlay: false, // Optional: Hide the play button in the middle of the video, which appears when the video is paused.
+    hideVolumeIcon: true, // Optional: Hide the volume icon for mobile devices. The volume is controlled by the device buttons.
+    logosrc: 'URL logo of the company', // Optional
     lowLatency: true, // Optional
     lowLatencyLiveDelay: 5, // Optional: Seconds of delay
-    debug: true, // Optional
-    callbacksForLogger: callback, // Optional: Callback called along the logger instances
-    startFullscreen: true, // Optional
-    disableFullscreen: true, // Optional
-    showingFullUI: true, // Optional
+    mutedAtStart: true, // Optional
+    maxFrameDrop:
+    pip: true, // Optional: Picture in picture
+    poster: 'URL poster', // Optional
     seekUI: 10, // Optional: Seconds for the seek buttons
-    callbacksForReturn: callback, // Optional: Callback called along the return button
-    disableKeyEvents: false, // Optional
-    blockZoom:true, // Optional: Only available when 360 is enabled
-    watermark:{url:'URL of the image of the water mark', // Optional
-        position:{top: 'size px', left: 'size px'},
-        size:{height:'size px', width: 'size px'}
-    },
-    pip:true, // Optional: Picture in picture
-    allowScreenPlayPause: true, // Optional: Allow to play and pause the video when clicking over it.
-    hideOptionsUi:{  // Optional: Hide the desired setting from the UI
-				quality: false,
-				speed:false,
-				audio:false,
-				subtitles:false
-			},
-    defaultQuality: -1, // Optional: Set the starting track by indicating its id. Default is -1, which will enable the ABR.
-    hideScreenPlay: false, // Optional: Hide the play button in the middle of the video, which appears when the video is paused.
+    showingFullUI: true, // Optional
+    showUI360: boolean, // Oprional
     srcSets: [
         {
             src: 'video URL',
@@ -181,14 +183,22 @@ There are a substantial number of customizable options for NexPlayer™ includin
         },
         ...
     ] // Optional: Objects array containing a stream and an optional DRM.
-
-    hideVolumeIcon: true, // Optional: Hide the volume icon for mobile devices. The volume is controlled by the device buttons.
-
-   dashSettings: {  // Optional: Allow modifying some dash properties like the following
-        "liveDelay": 20,    // Allow adjusting the live delay
-        "liveCatchUpPlaybackRate": 0.5, // The speed that the player gets in order to keep the live delay
-        "liveCatchUpMaxDrift": 3,   // The maximun delay before to make a seek live
-        "liveCatchupLatencyThreshold": 30,  // The threshold where the synchronization properties works
-    }
+    staticThumbnailsImage: 'URL of the image containing the preview thumbnails', // Optional
+    staticThumbnailsVTT: 'URL of the VTT file', // Optional
+    startingBufferLength: number, // Optional, determines the buffer that the video should have before start.
+    startFullscreen: true, // Optional
+    subtitle: 'Subtitle of the video', // Optional
+    timeUI: boolean, // Optional, determines if the time will be hidden in the UI.
+    title: 'Name of the Video', // Optional
+    type_360: '360 visualisation type' // Optional
+    useDynamicThumbnails: true, // Optional
+    useiOSFullScreen: boolean, // Optional
+    vast: 'URL with a VAST/VPAID advertisement', // Optional
+    watermark: { 
+        url: 'URL of the image of the water mark', // Optional
+        position: { top: 'size px', left: 'size px'},
+        size: { height:'size px', width: 'size px'}
+    },
+    withCredentials: boolean, // Optional, indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates.
 
 ```
