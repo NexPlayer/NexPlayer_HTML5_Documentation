@@ -175,53 +175,52 @@ Creates and initializes the player.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>string</code> | NexPlayer key to validates the playback. |
+| key | <code>string</code> | NexPlayer key to validate the playback. |
 | div | <code>HTMLDivElement</code> | Div container of the player. |
 | src | <code>string</code> | Relevant src of the video to be played. |
-| allowScreenPlayPause | <code>boolean</code> | Optional allow to play and pause the video clicking over it. |
-| autohide | <code>boolean</code> | Sets if the UI must hide when the user does not interact with the video. By default is set to true. |
-| autoplay | <code>boolean</code> | Determines if the video must start playing or paused. By default it's set to true. |
+| allowScreenPlayPause | <code>boolean</code> | Optional, allows to play and pause the video clicking on it. |
+| autohide | <code>boolean</code> | Sets if the UI must hide when the user does not interact with the video. True by default. |
+| autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | blockZoom | <code>boolean</code> | Determines if the zoom in 360 videos is available or not. |
 | callbackForLogger | <code>Function</code> | Function to be called when the logger shows a message. |
-| callbackForReturn | <code>Function</code> | Sets a callback tcheckSupportedConfigurations(URL, DRMType)o be executed when the corresponding button is clicked. |
+| callbackForReturn | <code>Function</code> | Sets a callback checkSupportedConfigurations(URL, DRMType) to be executed when the corresponding button is clicked. |
 | callbacksForPlayer | <code>Function</code> | Used for retrieving the nexplayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
 | cast | <code>boolean</code> | Determines if the cast will be enabled or not. |
 | chromecastEndImg | <code>string</code> | URL of an image to be used as ending. |
 | chromecastLaunchImg | <code>string</code> | URL of an image to be used at launch. |
 | debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
-| defaultQuality | <code>number</code> | Optional set the starting track throught his id, by default is -1, this enable the abr. |
+| defaultQuality | <code>number</code> | Optional set the starting track through his id, by default is -1, this enables the ABR. |
 | disableFullscreen | <code>boolean</code> | Determines if the full screen will be enabled. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
 | drm | <code>Array.<NexDRMInformation></code> | Contains an array of DRM information. By default it's set to null. |
 | externSubtitles | <code>Array</code> | Used to provide a WEBVTT as external subtitles. |
 | hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
-| hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is pausing. |
-| hideVolumeIcon | <code>boolean</code> | Determines if the volume icon will be hidden. |
-| logosrc | <code>string</code> | URL logo of the company. |
-| lowLatency | <code>boolean</code> | Determines if low latency is enabled. |
+| hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
+| hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
+| logosrc | <code>string</code> | Company URL logo. |
+| lowLatency | <code>boolean</code> | Determines if low latency will be enabled. |
 | lowLatencyLiveDelay | <code>number</code> | Determines the low latency maximum delay. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
 | maxFrameDrop | <code>number</code> | Determines the max frame drop. |
-| pip | <code>boolean</code> | Optional Picture in picture. |
-| poster | <code>string</code> | URL of the video poster.  |
-| seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. By default is set to 10s. |
+| pip | <code>boolean</code> | Optional, picture in picture. |
+| poster | <code>string</code> | Video poster URL.  |
+| seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. Set to 10s by default. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | showUI360 | <code>boolean</code> | Determines if the 360UI will be enabled. |
-| srcSets | <code>Array</code> | Optional array of objects containig a stream and an optional DRM.
+| srcSets | <code>Array</code> | Optional, array of objects containig a stream and an optional DRM.
 | staticThumbnailsImage | <code>string</code> | Image to extract thumbnails from. |
 | staticThumbnailsVTT | <code>string</code> | Used to provide the player an external thumbnails VTT file. |
 | startingBufferLength | <code>number</code> | Determines the buffer that the video should have before start. |
-| startFullscreen | <code>boolean</code> | Determines if the video will start full screen. |
-| subtitle | <code>string</code> | Subtitle name of the video. |
-| timeUI | <code>boolean</code> | Determines if the time will be hidden in the UI. |
-| title | <code>string</code> | Name of the video. |
+| startFullscreen | <code>boolean</code> | Determines if the video will start on full screen. |
+| subtitle | <code>string</code> | Video subtitle name. |
+| timeUI | <code>boolean</code> | Determines if the video time will be hidden on the UI. |
+| title | <code>string</code> | Video name. |
 | type_360 | <code>string</code> | Select the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
-| useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
-| useiOSFullScreen | <code>boolean</code> | Determines if the native full screen of iOS will be used. |
-| vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
-| watermark | <code>object</code> | Image URL used for the watermark. |
+| useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this value is set to false. |
+| useiOSFullScreen | <code>boolean</code> | Determines if the iOS native full screen will be used. |
+| vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
+| watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
-
 
 <a id="nexplayerchecksupportedconfigurations"></a>
 
@@ -1625,51 +1624,51 @@ Creates and initializes the player.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>string</code> | NexPlayer key to validates the playback. |
+| key | <code>string</code> | NexPlayer key to validate the playback. |
 | div | <code>HTMLDivElement</code> | Div container of the player. |
 | src | <code>string</code> | Relevant src of the video to be played. |
-| allowScreenPlayPause | <code>boolean</code> | Optional allow to play and pause the video clicking over it. |
-| autohide | <code>boolean</code> | Sets if the UI must hide when the user does not interact with the video. By default is set to true. |
-| autoplay | <code>boolean</code> | Determines if the video must start playing or paused. By default it's set to true. |
+| allowScreenPlayPause | <code>boolean</code> | Optional, allows to play and pause the video clicking on it. |
+| autohide | <code>boolean</code> | Sets if the UI must hide when the user does not interact with the video. True by default. |
+| autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | blockZoom | <code>boolean</code> | Determines if the zoom in 360 videos is available or not. |
 | callbackForLogger | <code>Function</code> | Function to be called when the logger shows a message. |
-| callbackForReturn | <code>Function</code> | Sets a callback tcheckSupportedConfigurations(URL, DRMType)o be executed when the corresponding button is clicked. |
+| callbackForReturn | <code>Function</code> | Sets a callback checkSupportedConfigurations(URL, DRMType) to be executed when the corresponding button is clicked. |
 | callbacksForPlayer | <code>Function</code> | Used for retrieving the nexplayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
 | cast | <code>boolean</code> | Determines if the cast will be enabled or not. |
 | chromecastEndImg | <code>string</code> | URL of an image to be used as ending. |
 | chromecastLaunchImg | <code>string</code> | URL of an image to be used at launch. |
 | debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
-| defaultQuality | <code>number</code> | Optional set the starting track throught his id, by default is -1, this enable the abr. |
+| defaultQuality | <code>number</code> | Optional set the starting track through his id, by default is -1, this enables the ABR. |
 | disableFullscreen | <code>boolean</code> | Determines if the full screen will be enabled. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
 | drm | <code>Array.<NexDRMInformation></code> | Contains an array of DRM information. By default it's set to null. |
 | externSubtitles | <code>Array</code> | Used to provide a WEBVTT as external subtitles. |
 | hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
-| hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is pausing. |
-| hideVolumeIcon | <code>boolean</code> | Determines if the volume icon will be hidden. |
-| logosrc | <code>string</code> | URL logo of the company. |
-| lowLatency | <code>boolean</code> | Determines if low latency is enabled. |
+| hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
+| hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
+| logosrc | <code>string</code> | Company URL logo. |
+| lowLatency | <code>boolean</code> | Determines if low latency will be enabled. |
 | lowLatencyLiveDelay | <code>number</code> | Determines the low latency maximum delay. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
 | maxFrameDrop | <code>number</code> | Determines the max frame drop. |
-| pip | <code>boolean</code> | Optional Picture in picture. |
-| poster | <code>string</code> | URL of the video poster.  |
-| seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. By default is set to 10s. |
+| pip | <code>boolean</code> | Optional, picture in picture. |
+| poster | <code>string</code> | Video poster URL.  |
+| seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. Set to 10s by default. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | showUI360 | <code>boolean</code> | Determines if the 360UI will be enabled. |
-| srcSets | <code>Array</code> | Optional array of objects containig a stream and an optional DRM.
+| srcSets | <code>Array</code> | Optional, array of objects containig a stream and an optional DRM.
 | staticThumbnailsImage | <code>string</code> | Image to extract thumbnails from. |
 | staticThumbnailsVTT | <code>string</code> | Used to provide the player an external thumbnails VTT file. |
 | startingBufferLength | <code>number</code> | Determines the buffer that the video should have before start. |
-| startFullscreen | <code>boolean</code> | Determines if the video will start full screen. |
-| subtitle | <code>string</code> | Subtitle name of the video. |
-| timeUI | <code>boolean</code> | Determines if the time will be hidden in the UI. |
-| title | <code>string</code> | Name of the video. |
+| startFullscreen | <code>boolean</code> | Determines if the video will start on full screen. |
+| subtitle | <code>string</code> | Video subtitle name. |
+| timeUI | <code>boolean</code> | Determines if the video time will be hidden on the UI. |
+| title | <code>string</code> | Video name. |
 | type_360 | <code>string</code> | Select the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
-| useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
-| useiOSFullScreen | <code>boolean</code> | Determines if the native full screen of iOS will be used. |
-| vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
-| watermark | <code>object</code> | Image URL used for the watermark. |
+| useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this value is set to false. |
+| useiOSFullScreen | <code>boolean</code> | Determines if the iOS native full screen will be used. |
+| vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
+| watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
 
 #### multiview.addPlayer(player)

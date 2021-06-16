@@ -61,12 +61,12 @@ Playing a video with the integrated UI can be done in an HTML5 page:
         <div id="player"></div>
     </div>
 
-    <script src="https://nexplayer.nexplayersdk.com/latest/nexplayer.js"></script>
+    <script src="Latest SDK version. Check 'Releases' section"></script>
     <script type="text/javascript">
         nexplayer.Setup({
             key: "ENTER YOUR LICENSE KEY HERE",
             div: document.getElementById('player'),
-            src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+            src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
 
         });
 
@@ -91,7 +91,7 @@ To integrate NexPlayer™ into your project you must complete the following step
 - The NexPlayer™ JavaScript library should be included in the HTML file:
 
 ```html
-<script src="https://nexplayer.nexplayersdk.com/latest/nexplayer.js"></script>
+<script src="Latest SDK version. Check 'Releases' section"></script>
 ```
 
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. </p>
@@ -115,27 +115,26 @@ nexplayer.Setup({
 ```
 ## NexPlayer™ Configuration
 
-There are a substantial number of customizable options for NexPlayer™ including: the name and subtitle format of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview...
+There is a substantial number of customizable options for NexPlayer™ including: the name and subtitle format of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview...
 
 ```js
-
     key: 'Player key to validate the playback', // Mandatory
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
     allowScreenPlayPause: true, // Optional: Allow to play and pause the video when clicking over it.
-    autohide: true, //Optional, sets if the UI must hide when the user does not interact with the video.
+    autohide: true, // Optional, sets if the UI must hide when the user doesn't interact with the video.
     autoplay: true, // Optional
     blockZoom:true, // Optional: Only available when 360 is enabled
     callbacksForLogger: callback, // Optional: Callback called along the logger instances
     callbacksForReturn: callback, // Optional: Callback called along the return button
-    callbacksForPlayer: callback, // Optional: Callback called with the player instances
+    callbacksForPlayer: callback, // Optional: Callback called along the player instances
     cast: {}, // Optional
-    chromecastEndImg: 'URL image', //Optional
-    chromecastLaunchImg: 'URL image', //Optional
+    chromecastEndImg: 'URL image', // Optional
+    chromecastLaunchImg: 'URL image', // Optional
     dashSettings: {  // Optional: Allow modifying some dash properties like the following
         "liveDelay": 20,    // Allow adjusting the live delay
         "liveCatchUpPlaybackRate": 0.5, // The speed that the player gets in order to keep the live delay
-        "liveCatchUpMaxDrift": 3,   // The maximun delay before to make a seek live
+        "liveCatchUpMaxDrift": 3,   // The maximum delay before to make a seek live
         "liveCatchupLatencyThreshold": 30,  // The threshold where the synchronization properties works
     },
     debug: true, // Optional
@@ -147,7 +146,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
         NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
         NexCallback: // Optional DRM callback for FairPlay
     }], // Optional: DRM information
-    externSubtitles: [{"src": "VTT", "language": "eng" },.. }] //Optional
+    externSubtitles: [{"src": "VTT", "language": "eng" },.. }] // Optional
     hideOptionsUi:{  // Optional: Hide the desired setting from the UI
         quality: false,
         speed:false,
@@ -163,7 +162,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     maxFrameDrop:
     pip: true, // Optional: Picture in picture
     poster: 'URL poster', // Optional
-    seekUI: 10, // Optional: Seconds for the seek buttons
+    seekUI: 10, // Optional, sets the number of seconds the UI buttons will seek forwards or backwards.
     showingFullUI: true, // Optional
     showUI360: boolean, // Oprional
     srcSets: [
@@ -184,13 +183,13 @@ There are a substantial number of customizable options for NexPlayer™ includin
         ...
     ] // Optional: Objects array containing a stream and an optional DRM.
     staticThumbnailsImage: 'URL of the image containing the preview thumbnails', // Optional
-    staticThumbnailsVTT: 'URL of the VTT file', // Optional
+    staticThumbnailsVTT: string, // URI of the VTT file containing thumbnails timing and location info (Optional when using static thumbs)
     startingBufferLength: number, // Optional, determines the buffer that the video should have before start.
     startFullscreen: true, // Optional
     subtitle: 'Subtitle of the video', // Optional
     timeUI: boolean, // Optional, determines if the time will be hidden in the UI.
     title: 'Name of the Video', // Optional
-    type_360: '360 visualisation type' // Optional
+    type_360: '360 visualisation type' // Optional, 'equirectangular', 'cubemap' or 'topdown'
     useDynamicThumbnails: true, // Optional
     useiOSFullScreen: boolean, // Optional
     vast: 'URL with a VAST/VPAID advertisement', // Optional
@@ -200,5 +199,4 @@ There are a substantial number of customizable options for NexPlayer™ includin
         size: { height:'size px', width: 'size px'}
     },
     withCredentials: boolean, // Optional, indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates.
-
 ```
