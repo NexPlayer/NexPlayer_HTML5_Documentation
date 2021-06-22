@@ -19,7 +19,7 @@ https://nexplayer.nexplayersdk.com/6.0.0/nexplayer.js
 * **[Improved]** Fixed ABR issue.
 * **[Improved]** Fixed issue when using ad events listener.
 
-Date: June 22th 2021
+Date: June 22nd 2021
 
 #### Version 5.5.3.1
 ```
