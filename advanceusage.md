@@ -426,15 +426,30 @@ The AirPlay and Chromecast cast options don't need input parameters. Just remove
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that AirPlay only works on Safari.</p>
 </div></div>
 
-## ID3 Tags
+## Timed Metadata
 
 NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
+
+The following code is a sample to retrieve the metadata from the streams. It logs the active cues from the TexTrack corrsponding to the metadata.
 ```js
 var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-  videoElement.addEventListener('loadedmetadata', function(event) {
-    if (videoElement.textTracks) showTimedMetadata(videoElement);
-  });
-};
+
+    videoElement.textTracks.onaddtrack = function (e) {
+
+        for (let i = 0; i < e.currentTarget.length; i ++) {      
+
+            if (e.currentTarget[i].kind === "metadata") {  
+
+                e.currentTarget[i].oncuechange = function (cueChangeEvent) {  
+
+                    var activeCues = cueChangeEvent.currentTarget.activeCues;
+                    if (activeCues) 
+                        console.log("active cues: ", activeCues);
+                };
+            }
+        }
+    };
+}
 
 nexplayer.Setup({
   key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
@@ -442,14 +457,16 @@ nexplayer.Setup({
   src: 'VIDEO URL',
   callbacksForPlayer: callBackWithPlayers
 });
-
-var showTimedMetadata = function(videoElement) {
-  videoElement.textTracks[1].addEventListener('cuechange', function (cueChangeEvent) {
-    var activeCues = cueChangeEvent.currentTarget.activeCues[0];
-      if (activeCues) console.log(activeCues['value']['data']);
-  });
-};
 ```
+
+### ID3
+
+ID3 is transported through .ts segments, usually in HLS.
+
+### EMSG
+
+This type of metadata is contained in fMP4 segments (DASH & HLS). You can consult more information <a href="https://aomediacodec.github.io/id3-emsg/" target="_blank">here</a>
+
 ## Access to the player instances
 
 An instance of the player and the video element will be accessible once NexPlayer™ is configured and loaded. The 'callbacksForPlayer' option should be set. The defined function will be called when the player is considered ready. Once the callback is received, the playback can be controlled with the NexPlayer™ instance and the associated video element.
