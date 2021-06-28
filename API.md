@@ -228,6 +228,7 @@ Creates and initializes the player.
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
 | watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
+| liveSettings | <code>Object</code> | Allow modifying some properties like the "liveDelay", "maxDrift", "playbackRate" .|
 
 <a id="nexplayerchecksupportedconfigurations"></a>
 

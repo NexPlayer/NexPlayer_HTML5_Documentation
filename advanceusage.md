@@ -1188,7 +1188,7 @@ To integrate NexPlayer™ multiview into your project you must complete the foll
 
 ### Synchronization
 
-To be able to use the synchronization we have to configure in the setup the ```lowLatency``` and ```dashSettings```.
+To be able to use the synchronization we have to configure in the setup the ```lowLatency``` and ```liveSettings```.
 
 ```javascript
   
@@ -1197,12 +1197,11 @@ To be able to use the synchronization we have to configure in the setup the ```l
           div: document.getElementById('player4'),
           callbacksForPlayer: callBackWithPlayers,
           lowLatency: true,
-          dashSettings: {  // Optional: Allow modifying some dash properties like the following
-            "liveDelay": 20,    // Allow adjusting the live delay
-            "liveCatchUpPlaybackRate": 0.5, // The speed that the player gets in order to keep the live delay
-            "liveCatchUpMaxDrift": 3,   // The maximun delay before to make a seek live
-            "liveCatchupLatencyThreshold": 30,  // The threshold where the synchronization properties works
-          }
+          liveSettings: { // Optional: Allow modifying the following properties
+		      	"liveDelay": 6, // Allow adjusting the live delay
+		      	"maxDrift": 10, // The maximun delay before to make a seek live
+		      	"playbackRate": 0.5, // The speed that the player gets in order to keep the live delay
+		      },
           src: 'Your stream URL',
       });
       

@@ -131,11 +131,10 @@ There is a substantial number of customizable options for NexPlayer™ including
     cast: {}, // Optional
     chromecastEndImg: 'URL image', // Optional
     chromecastLaunchImg: 'URL image', // Optional
-    dashSettings: {  // Optional: Allow modifying some dash properties like the following
+    liveSettings: {  // Optional: Allow modifying the following properties
         "liveDelay": 20,    // Allow adjusting the live delay
-        "liveCatchUpPlaybackRate": 0.5, // The speed that the player gets in order to keep the live delay
-        "liveCatchUpMaxDrift": 3,   // The maximum delay before to make a seek live
-        "liveCatchupLatencyThreshold": 30,  // The threshold where the synchronization properties works
+        "maxDrift": 3,   // The maximum delay before to make a seek live
+        "playbackRate": 0.5, // The speed that the player gets in order to keep the live delay
     },
     debug: true, // Optional
     defaultQuality: -1, // Optional: Set the starting track by indicating its id. Default is -1, which will enable the ABR.
