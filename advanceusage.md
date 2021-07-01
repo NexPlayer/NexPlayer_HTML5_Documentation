@@ -507,6 +507,44 @@ The AirPlay and Chromecast cast options don't need input parameters. Just remove
 
 ***
 
+## Timed Metadata
+
+NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
+
+The following code is a sample to retrieve the metadata from the streams. It logs the active cues from the TexTrack corrsponding to the metadata.
+
+```js
+
+  var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+
+      videoElement.textTracks.onaddtrack = function (e) {
+
+          for (let i = 0; i < e.currentTarget.length; i ++) {      
+
+              if (e.currentTarget[i].kind === "metadata") {  
+
+                  e.currentTarget[i].oncuechange = function (cueChangeEvent) {  
+
+                      var activeCues = cueChangeEvent.currentTarget.activeCues;
+                      if (activeCues) 
+                          console.log("active cues: ", activeCues);
+                  };
+              }
+          }
+      };
+  }
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    callbacksForPlayer: callBackWithPlayers
+  });
+
+```
+
+***
+
 ## ID3 Tags
 
 NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
@@ -534,7 +572,14 @@ NexPlayer™ supports timed metadata for HLS and DASH content. The information i
   };
 
 ```
-***
+
+### ID3
+
+ID3 is transported through .ts segments, usually in HLS.
+
+### EMSG
+
+This type of metadata is contained in fMP4 segments (DASH & HLS). You can consult more information <a href="https://aomediacodec.github.io/id3-emsg/" target="_blank">here</a>
 
 ## Access to the player instances
 

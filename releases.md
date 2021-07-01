@@ -8,6 +8,19 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 6.0.0
+```
+https://nexplayer.nexplayersdk.com/6.0.0/nexplayer.js
+```
+* **[Added]** HLS low latency.
+* **[Added]** Reload method which allows the player to reload.
+* **[Added]** Support for metadata over EMSG boxes for fMP4 segments in HLS.
+* **[Improved]** Fixed issue regarding the duration when using MultiView.
+* **[Improved]** Fixed ABR issue.
+* **[Improved]** Fixed issue when using ad events listener.
+
+Date: June 22nd 2021
+
 #### Version 5.5.3.1
 ```
 https://nexplayer.nexplayersdk.com/5.5.3.1/nexplayer.js
