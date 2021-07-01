@@ -8,6 +8,8 @@
 
 NexPlayer™ offers more advanced options to control the playback. This section contains several examples of how to use these features.
 
+***
+
 ## Security
 
 Digital rights management (DRM) is a set of access control technologies for restricting the use of proprietary hardware and copyrighted works.
@@ -120,21 +122,26 @@ Online progressive download (MP4) is supported on any platform. The support for 
 
 NexPlayer™ supports several DRM technologies:
 ### Widevine
+
 Is a DRM powered by <a href =https://www.widevine.com target="_blank">Google</a>, available on Chrome and Firefox (on Android and desktop), Opera, MS Edge and IE (on desktop). It can be set by entering the appropriate information into the DRM array:
 
 ```js
-const nexDRMInformationWidevine = {
-  NexDRMType:'com.widevine.alpha',
-  NexDRMKey: 'DRM key URL',
-  NexHeaders:[{FieldName: 'Optional field name', //Optional
-               FiledValue: 'Optional field value'}] //Optional
-};
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-    div: document.getElementById('player'),
-    src: 'VIDEO URL',
-    drm: [nexDRMInformationWidevine]
-});
+
+  const nexDRMInformationWidevine = {
+    NexDRMType:'com.widevine.alpha',
+    NexDRMKey: 'DRM key URL',
+    NexHeaders:[{
+      FieldName: 'Optional field name', //Optional
+      FiledValue: 'Optional field value'
+    }] //Optional
+  };
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+      div: document.getElementById('player'),
+      src: 'VIDEO URL',
+      drm: [nexDRMInformationWidevine]
+  });
 
 ```
 
@@ -150,21 +157,26 @@ In order for millions of Firefox users to continue viewing Widevine-protected di
 A DRM powered by <a href =https://www.microsoft.com/playready/ target="_blank">Microsoft</a>, available on Edge and Internet Explorer (on Windows). It can be used by entering the appropriate information into the DRM array:
 
 ```js
-const nexDRMInformationPlayReady = {
-NexDRMType:'com.microsoft.playready',
- NexDRMKey: 'DRM key URL', 
-NexHeaders:[{FieldName: 'Optional field name',  //Optional
-            FiledValue: 'Optional field value'}]}; //Optional
 
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+  const nexDRMInformationPlayReady = {
+    NexDRMType:'com.microsoft.playready',
+    NexDRMKey: 'DRM key URL', 
+    NexHeaders:[{
+      FieldName: 'Optional field name',  //Optional
+      FiledValue: 'Optional field value'
+    }]
+  }; //Optional
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('player'),
     src: 'VIDEO URL',
     drm: [nexDRMInformationPlayReady]
-});
-```
-Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the PlayReady server used.
+  });
 
+```
+
+Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the PlayReady server used.
 
 
 ### CENC
@@ -172,92 +184,111 @@ Please note that the HTTP headers (NexHeaders) are optional, and might depend on
 The Common Encryption Scheme (CENC) specifies the standard to enable decryption of the same file using different DRM systems. It allows the same CENC-encrypted content to be decrypted and played by any client device that interfaces with a DRM system that can serve the associated CENC key information.
 
 ```js
-// Widevine
-const nexDRMInformationWidevine = {NexDRMType:'com.widevine.alpha',
- NexDRMKey: 'DRM key URL', 
-            NexHeaders:[{FieldName: 'Optional field name',  //Optional
-            FiledValue: 'Optional field value'}]}; //Optional
 
-// PlayReady
-const nexDRMInformationPlayReady = {NexDRMType:'com.microsoft.playready',
- NexDRMKey: 'DRM key URL', 
-            NexHeaders:[{FieldName: 'Optional field name', //Optional
-            FiledValue: 'Optional field value'}]}; //Optional
+  // Widevine
+  const nexDRMInformationWidevine = {
+    NexDRMType:'com.widevine.alpha',
+    NexDRMKey: 'DRM key URL', 
+    NexHeaders:[{
+      FieldName: 'Optional field name',  //Optional
+      FiledValue: 'Optional field value'
+    }]
+  }; //Optional
 
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+  // PlayReady
+  const nexDRMInformationPlayReady = {
+    NexDRMType:'com.microsoft.playready',
+    NexDRMKey: 'DRM key URL', 
+    NexHeaders:[{
+      FieldName: 'Optional field name', //Optional
+      FiledValue: 'Optional field value'
+    }]
+  }; //Optional
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('player'),
     src: 'VIDEO URL',
     drm: [nexDRMInformationWidevine, nexDRMInformationPlayReady]
-});
+  });
 
 ```
-For example, Widevine and PlayReady can be used with the same DASH manifest and chunk files:
 
+For example, Widevine and PlayReady can be used with the same DASH manifest and chunk files:
 
 
 ### FairPlay
 
 <a href =https://developer.apple.com/streaming/fps/ target="_blank">Is a DRM powered by Apple</a>, it's available on Safari (on macOS and iOS). When using FairPlay the license must be manually requested, adapting it to the specified FairPlay server implementation. It can be used by entering the information into the DRM array:
+
 ```js
-// First get the player instance to call the necessary methods when the license is requested
-var player = null;
 
-// FairPlay Utility
-function base64EncodeUint8Array(input) {
-  var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-  var output = "";
-  var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
-  var i = 0;
+  // First get the player instance to call the necessary methods when the license is requested
+  var player = null;
 
-  while (i < input.length) {
-      chr1 = input[i++];
-      chr2 = i < input.length ? input[i++] : Number.NaN; // Not sure if the index
-      chr3 = i < input.length ? input[i++] : Number.NaN; // checks are needed here
+  // FairPlay Utility
+  function base64EncodeUint8Array(input) {
+    var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    var output = "";
+    var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+    var i = 0;
 
-      enc1 = chr1 >> 2;
-      enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
-      enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
-      enc4 = chr3 & 63;
+    while (i < input.length) {
+        chr1 = input[i++];
+        chr2 = i < input.length ? input[i++] : Number.NaN; // Not sure if the index
+        chr3 = i < input.length ? input[i++] : Number.NaN; // checks are needed here
 
-      if (isNaN(chr2)) {
-          enc3 = enc4 = 64;
-      } else if (isNaN(chr3)) {
-          enc4 = 64;
-      }
-      output += keyStr.charAt(enc1) + keyStr.charAt(enc2) +
-          keyStr.charAt(enc3) + keyStr.charAt(enc4);
+        enc1 = chr1 >> 2;
+        enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+        enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+        enc4 = chr3 & 63;
+
+        if (isNaN(chr2)) {
+            enc3 = enc4 = 64;
+        } else if (isNaN(chr3)) {
+            enc4 = 64;
+        }
+        output += keyStr.charAt(enc1) + keyStr.charAt(enc2) +
+            keyStr.charAt(enc3) + keyStr.charAt(enc4);
+    }
+    return output;
   }
-  return output;
-}
 
-// Request the license at the NexPlayer callback
-function licenseRequestReady (event) {
- var session = event.target;
- var message = event.message;
- var request = new XMLHttpRequest();
- var sessionId = event.sessionId;
- request.responseType = 'text'; // replace 'text' with 'arraybuffer' to use FairPlay Expressplay
- request.session = session;
- request.addEventListener('load', player.FairPlayNexLicenseRequestLoaded.bind(player), false);
- request.addEventListener('error', player.FairPlayNexLicenseRequestFailed.bind(player), false);
- var params = 'spc='+ encodeURIComponent(base64EncodeUint8Array(message)); // replace this variable with var params = new Uint8Array(message); to use FairPlay Expressplay
- request.open('POST', 'URL for the SPC sever (license server)', true); // serverProcessSPCPath
- request.setRequestHeader(“Content-type”, “application/x-www-form-urlencoded”); // replace “application/x-www-form-urlencoded” with “application/octet-stream” to use FairPlay Expressplay
- request.setRequestHeader(“dt-custom-data”, “Optional license token”);
- request.send(params);
-}
-var callBackWithPlayers = function (nexplayerInstance, videoElement) {
- player = nexplayerInstance;
-}
-var nexDRMInformationFairPlay = {NexDRMType:'com.apple.fps.1_0', NexDRMKey: 'DRM key URL or Base64 (certificate)', NexCallback: licenseRequestReady};
-nexplayer.Setup({
- key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
- div: document.getElementById('player'),
- src: 'https://s3.amazonaws.com/shift72-temp/hls_fps_bento4_sintel/master.m3u8',
- callbacksForPlayer: callBackWithPlayers,
- drm: [nexDRMInformationFairPlay]
-});
+  // Request the license at the NexPlayer callback
+  function licenseRequestReady (event) {
+    var session = event.target;
+    var message = event.message;
+    var request = new XMLHttpRequest();
+    var sessionId = event.sessionId;
+    request.responseType = 'text'; // replace 'text' with 'arraybuffer' to use FairPlay Expressplay
+    request.session = session;
+    request.addEventListener('load', player.FairPlayNexLicenseRequestLoaded.bind(player), false);
+    request.addEventListener('error', player.FairPlayNexLicenseRequestFailed.bind(player), false);
+    var params = 'spc='+ encodeURIComponent(base64EncodeUint8Array(message)); // replace this variable with var params = new Uint8Array(message); to use FairPlay Expressplay
+    request.open('POST', 'URL for the SPC sever (license server)', true); // serverProcessSPCPath
+    request.setRequestHeader(“Content-type”, “application/x-www-form-urlencoded”); // replace “application/x-www-form-urlencoded” with “application/octet-stream” to use FairPlay Expressplay
+    request.setRequestHeader(“dt-custom-data”, “Optional license token”);
+    request.send(params);
+  }
+
+  var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+    player = nexplayerInstance;
+  }
+
+  var nexDRMInformationFairPlay = {
+    NexDRMType:'com.apple.fps.1_0',
+    NexDRMKey: 'DRM key URL or Base64 (certificate)',
+    NexCallback: licenseRequestReady
+  };
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'https://s3.amazonaws.com/shift72-temp/hls_fps_bento4_sintel/master.m3u8',
+    callbacksForPlayer: callBackWithPlayers,
+    drm: [nexDRMInformationFairPlay]
+  });
+
 ```
 Please note that the HTTP headers (NexHeaders) are optional, and might be required depending on the implementation of the FairPlay server used.
 
@@ -270,38 +301,56 @@ NexPlayer™ supports HLS content encrypted with the AES-128 algorithm. If the k
 Please note that this method is not as secure as other DRMs.
 
 AES is supported with HLS
+
 ### Custom Headers
+
 Custom headers can be included in each HTTP petition, even without the use of DRM, to include extra information for the server.
 
 This information can be passed in the DRM array:
 
 ```js
-drmCustomHeaders = {NexHeaders:[{FieldName: 'Optional field name', FiledValue: 'Optional field value'}]};
 
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+  drmCustomHeaders = {
+    NexHeaders:[{
+      FieldName: 'Optional field name',
+      FiledValue: 'Optional field value'
+    }]
+  };
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('player'),
     src: 'VIDEO URL',
     drm: [drmCustomHeaders]
-});
+  });
+
 ```
 Please note that this method is not as secure as other DRMs.
 
 Custom headers are supported with HLS and DASH.
+
+***
+
 ## Ads
 
 NexPlayer supports the VAST, VPAID, and VMAP ad formats.
 
 You can insert any pre/mid/post roll ad by setting up the ad links as shown below:
+
 ```js
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('player'),
     src: 'VIDEO URL',
     vast: 'VAST / VPAID / VMAP link'
-});
+  });
+
 ```
+
 Sample VAST links can be found on the <a href =https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags target="_blank">Google Interactive Media Ads Website</a>.
+
+***
 
 ## 360 Player
 
@@ -312,14 +361,16 @@ If the device is an Oculus devices the flat 360 format must be used.
 For devices which use gyroscope, they can be moved to get a full 360 view of the video. However this feature  is only available for website that use the https protocol. 
 
 In order to have the 360 in all devices you should add type_360: true and the player automatically set the correct type to the user device. An example of this is shown below:
+
 ```js
-{
-  div: document.getElementById('player'), // Mandatory
-  src: 'URL video', // Mandatory
-  type_360: true //'cubemap', 'flat', 'equirectangular' ...
-}
+  {
+    div: document.getElementById('player'), // Mandatory
+    src: 'URL video', // Mandatory
+    type_360: true //'cubemap', 'flat', 'equirectangular' ...
+  }
 
 ```
+
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default format is 'equirectangular'. To switch the format, simply change the value of <b>type_360</b> to 'cubemap' or 'topdown'.</p>
 </div></div>
 
@@ -329,155 +380,190 @@ In order to have the 360 in all devices you should add type_360: true and the pl
 <div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>iOS 14 and iOS 14.1 don't support the 360 feature because there is an error in this versions</p>
 </div></div>
 
+***
+
 ## Muted at Start
 
 This feature tells the player whether to start playback with the volume muted or not. This can be configured in the player by adding the mutedAtStart option:
+
 ```js
-{
-  div: document.getElementById('player'), // Mandatory
-  src: 'URL video', // Mandatory
-  mutedAtStart: true
-}
+  {
+    div: document.getElementById('player'), // Mandatory
+    src: 'URL video', // Mandatory
+    mutedAtStart: true
+  }
+
 ```
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>mutedAtStart</b> parameter is false, so the player will start unmuted if <b>mutedAtStart</b> is not set to true.</p>
 </div></div>
 
+***
+
 ## Low Latency
+
 This feature enables low latency for live streams. This can be configured in the player by adding the lowLatency option. You can also choose the desired latency:
+
 ```js
-{
-  div: document.getElementById('player'), // Mandatory
-  src: 'URL video', // Mandatory
-  lowLatency: true,// toggle on/off low latency apis
-  lowLatencyLiveDelay: 3.2 // The desired latency to maintain
-}
+  {
+    div: document.getElementById('player'), // Mandatory
+    src: 'URL video', // Mandatory
+    lowLatency: true,// toggle on/off low latency apis
+    lowLatencyLiveDelay: 3.2 // The desired latency to maintain
+  }
+
 ```
+
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>lowLatency</b> parameter is false, so the player will start without low latency if <b>lowLatency</b> is not set to true.</p>
 </div></div>
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>lowLatencyLiveDelay</b> parameter will adjust the latency depending on the network conditions.</p>
 </div></div>
 
+***
+
 ## Autoplay
 
 This feature enables/disables autoplay. This can be configured in the player by adding the autoplay option:
 
 ```js
-{
-  div: document.getElementById('player'), // Mandatory
-  src: 'URL video', // Mandatory
-  autoplay: false
-}
+  {
+    div: document.getElementById('player'), // Mandatory
+    src: 'URL video', // Mandatory
+    autoplay: false
+  }
+
 ```
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>autoplay</b> parameter is true, so the player will star without any user action. Note that most of the browsers will not allow autoplay without being muted at start.</p>
 </div></div>
 
+***
+
 ## Multiple Players
+
 This feature enablles the use of multiple players at the same time. In order to create an other player it's necessary to create a new div.
+
 ```js
-nexplayer.AditionalVideo({
+
+  nexplayer.AditionalVideo({
     key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('playerN'), // Where "N" is the player number
     src: 'VIDEO URL',   
     callbacksForPlayer: callback(nexplayerInstance, videoElement)
-});
+  });
+
 ```
+
 In this example, the function AditionalVideo() has been called once for the extra video.<br>
 It is necessary to create an aditional div and css class for every new player, also define a new "callbacksforPlayer".
 
 <img width="100%" text-align="center" src="./_images/2PlayersExample.png" alt="logo of docsify-awesome repository" >
 
-
-
+***
 
 ## Casting
 
 Cast technology allows you to stream your media to any compatible receiver devices.
+
+***
+
 ### Chromecast
 
 Chromecast displays your video and audio streams directly onto any TV connected to you Chromecast receptor. You can enable the Chromecast option as shown below:
  
- ```js
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+```js
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('player'),
     src: 'VIDEO URL',
     cast: {}
     chromecastEndImg: 'IMAGE URL'
-});
- ```
+  });
+
+```
 
 It's possible to display an image after the video has finished using the chromecastEndImg parameter. Put the URL of the image you want to display and it'll be shown at the end of the video. Otherwise, a gray screen will be displayed when it finish.
 
+***
+
 ### AirPlay
+
 AirPlay displays your video and audio streams directly to your Apple TV. You can enable the AirPlay option as shown below:
 
 ```js
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('player'),
     src: 'VIDEO URL',
     cast: {}
-});
+  });
+
 ```
 The AirPlay and Chromecast cast options don't need input parameters. Just remove the cast option to disable these features.
 
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that AirPlay only works on Safari.</p>
 </div></div>
 
+***
+
 ## ID3 Tags
 
 NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
+
 ```js
-var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-  videoElement.addEventListener('loadedmetadata', function(event) {
-    if (videoElement.textTracks) showTimedMetadata(videoElement);
-  });
-};
 
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-  div: document.getElementById('player'),
-  src: 'VIDEO URL',
-  callbacksForPlayer: callBackWithPlayers
-});
+  var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+    videoElement.addEventListener('loadedmetadata', function(event) {
+      if (videoElement.textTracks) showTimedMetadata(videoElement);
+    });
+  };
 
-var showTimedMetadata = function(videoElement) {
-  videoElement.textTracks[1].addEventListener('cuechange', function (cueChangeEvent) {
-    var activeCues = cueChangeEvent.currentTarget.activeCues[0];
-      if (activeCues) console.log(activeCues['value']['data']);
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    callbacksForPlayer: callBackWithPlayers
   });
-};
+
+  var showTimedMetadata = function(videoElement) {
+    videoElement.textTracks[1].addEventListener('cuechange', function (cueChangeEvent) {
+      var activeCues = cueChangeEvent.currentTarget.activeCues[0];
+        if (activeCues) console.log(activeCues['value']['data']);
+    });
+  };
+
 ```
+***
+
 ## Access to the player instances
 
 An instance of the player and the video element will be accessible once NexPlayer™ is configured and loaded. The 'callbacksForPlayer' option should be set. The defined function will be called when the player is considered ready. Once the callback is received, the playback can be controlled with the NexPlayer™ instance and the associated video element.
 
 ```js
-var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-  // Eg. seeking to 30 sec from outside the predefined UI could be done like this
-  nexplayerInstance.seek(30);
-}
 
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-  div: document.getElementById('player'),
-  src: 'VIDEO URL',
-  callbacksForPlayer: callBackWithPlayers
-});
+  var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+    // Eg. seeking to 30 sec from outside the predefined UI could be done like this
+    nexplayerInstance.seek(30);
+  }
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    callbacksForPlayer: callBackWithPlayers
+  });
 
 ```
+
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>We strongly recommend calling the APIs after the player is ready.</p>
 </div></div>
 
-
-
+***
 
 ## CSS Customization
 
 <img width="100%" text-align="center" src="./_images/customUIfin.png"  >
-
 
 ### Player UI CSS Class Reference
 
@@ -535,11 +621,12 @@ Modifying the .nexplayer_container class will bring the changes to every platfor
 The font of the player can be customized using the following code:
 
 ```css
-.nexplayer_container {
+
+  .nexplayer_container {
     font-size: 20pt;
     color: blue;
     font-family: sans-serif;
-}
+  }
 
 ```
 
@@ -550,38 +637,40 @@ To overwrite the CSS styles of the default UI, the correct container name has to
 #### Button
 
 ```css
-.nexplayer_container .nexplayer_container_normal .nexplayer_play_pause {
+
+  .nexplayer_container .nexplayer_container_normal .nexplayer_play_pause {
     background-color: yellow;
-}
+  }
 
-.nexplayer_container .nexplayer_container_mobile .nexplayer_play_pause {
+  .nexplayer_container .nexplayer_container_mobile .nexplayer_play_pause {
     background-color: blue;
-}
+  }
 
-.nexplayer_container .nexplayer_container_tiny .nexplayer_play_pause {
+  .nexplayer_container .nexplayer_container_tiny .nexplayer_play_pause {
     background-color: red;
-}
+  }
 
 ```
 
 #### Seekbar
 
 ```css
-.nexplayer_container .nexplayer_circleBase {
+
+  .nexplayer_container .nexplayer_circleBase {
     background-color: white;
-}
+  }
 
-.nexplayer_container .nexplayer_base_seekbar {
+  .nexplayer_container .nexplayer_base_seekbar {
     background-color: blue;
-}
+  }
 
-.nexplayer_container .nexplayer_bufferlevel_position {
+  .nexplayer_container .nexplayer_bufferlevel_position {
     background-color: yellow;
-}
+  }
 
-.nexplayer_container .nexplayer_playback_position {
+  .nexplayer_container .nexplayer_playback_position {
     background-color: red;
-}
+  }
 
 ```
 
@@ -590,9 +679,11 @@ To overwrite the CSS styles of the default UI, the correct container name has to
 To customize the selected language style on the .nexplayer_option_ui menu, the following code should be used:
 
 ```css
-.nexplayer_container .nexplayer_option_ui .nexplayer_selected_element {
+
+  .nexplayer_container .nexplayer_option_ui .nexplayer_selected_element {
     color: green;
-}
+  }
+
 ```
 
 ### Control Bar Style
@@ -600,9 +691,10 @@ To customize the selected language style on the .nexplayer_option_ui menu, the f
 To customize the bottom control bar:
 
 ```css
-.nexplayer_container .nexplayer_bar {
+
+  .nexplayer_container .nexplayer_bar {
     background-color: green;
-}
+  }
 
 ```
 
@@ -611,9 +703,11 @@ To customize the bottom control bar:
 In order to change the default icons of the player, the following code should be used:
 
 ```css
-.nexplayer_container .nexplayer_IconPause {
+
+  .nexplayer_container .nexplayer_IconPause {
     background-image: url(replay.svg) !important;
-}
+  }
+
 ```
 
 Please note that we recommend using SVG icons. The list of all the CSS classes that defines the icons is:
@@ -638,10 +732,14 @@ Any icon has a predefined effect when the user hovers the mouse over or touches 
 This behavior can be customized with the hover selector on the .nexplayer_icon CSS class:
 
 ```css
-.nexplayer_container .nexplayer_icon:hover {
+
+  .nexplayer_container .nexplayer_icon:hover {
     filter: drop-shadow(8px 8px 8px red);
-}
+  }
+
 ```
+
+***
 
 ## Custom Actions
 
@@ -654,34 +752,35 @@ HLS and DASH streams contain several video bitrates in order to adjust the quali
 The currently selected track can be obtained with the method <code>getCurrentTrack</code>of NexPlayer™. It returns all the track information.
 
 ```js
-nexplayerInstance.getCurrentTrack();
+  nexplayerInstance.getCurrentTrack();
 ```
 All the available tracks can be obtained with the method <code>getTracks </code> of NexPlayer™.
 
 ```js
-nexplayerInstance.getTracks();
+  nexplayerInstance.getTracks();
 ```
 
 Setting a fixed track can be achieved by calling the method <code>setTrack</code> of NexPlayer™.
 
 ```js
-// Sets the first track as the used one
-nexplayerInstance.setTrack(nexplayerInstance.getTracks()[0].id);
+  // Sets the first track as the used one
+  nexplayerInstance.setTrack(nexplayerInstance.getTracks()[0].id);
 ```
 
 A change in the current track can be detected with the NexPlayer™ <a href="#/advanceusage?id=callbacks" >callbacks</a>.
 
 ### Subtitles
 
-
 Information about the available subtitles can be retrieved with the <code>textTracks</code> attribute of the video element.
+
 ```js
-videoElement.textTracks;
+  videoElement.textTracks;
 ```
 
 The active subtitles mode is set to <code>showing</code>. The currently selected subtitle can also be selected by setting the mode to showing. A subtitle can be deselected by setting the mode to <code>hidden</code>.
+
 ```js
-videoElement.textTracks[0].mode = "showing"; //0 -> the id of the textTrack
+  videoElement.textTracks[0].mode = "showing"; //0 -> the id of the textTrack
 ```
 
 ### Audio
@@ -689,20 +788,20 @@ videoElement.textTracks[0].mode = "showing"; //0 -> the id of the textTrack
 Information about the current audio can be retrieved with the method <code>getCurrentAudioStream</code> of NexPlayer™. It returns all the audio information for that stream.
 
 ```js
-nexplayerInstance.getCurrentAudioStream();
+  nexplayerInstance.getCurrentAudioStream();
 ```
 
 All the available audio tracks can be retrieved with the method <code>getAudioStreams</code> of NexPlayer™.
 
 ```js
-nexplayerInstance.getAudioStreams();
+  nexplayerInstance.getAudioStreams();
 ```
 
 The currently used audio stream can be set with the method <code>setAudioStream</code> of NexPlayer™, passing one of the IDs of <code>getAudioStreams</code>.
 
 ```js
-// Sets the first audio stream as the used one
-nexplayerInstance.setAudioStream(nexplayerInstance.getAudioStreams()[0].id);
+  // Sets the first audio stream as the used one
+  nexplayerInstance.setAudioStream(nexplayerInstance.getAudioStreams()[0].id);
 ```
 
 ### Seek
@@ -710,10 +809,13 @@ nexplayerInstance.setAudioStream(nexplayerInstance.getAudioStreams()[0].id);
 Seeking to a certain time can be achieved by calling the method <code>seek</code> of the NexPlayer™ and passing the desired number of seconds.
 
 ```js
-nexplayerInstance.seek(30);
+  nexplayerInstance.seek(30);
 ```
 
+***
+
 ## Thumbnails
+
 NexPlayer™ supports thumbnail previews. Thumbnails are individual frame images of the video that are loaded when a viewer hovers over the seekbar. It permits a quick snapshot of the video. The thumbnails can be loaded in a static or dynamic way.
 
 <img width="100%" text-align="center" src="./_images/thumb_player.png" alt="logo of docsify-awesome repository" >
@@ -741,13 +843,15 @@ WEBVTT
 </div></div>
 
 The player can be configured by adding the <b>staticThumbnailsImage</b> and <b>staticThumbnailsVTT</b> options:
+
 ```js
-{
-  div: document.getElementById('player'), // Mandatory
-  src: 'URL video', // Mandatory
-  staticThumbnailsImage: 'IMAGE SPRITE URL',
-  staticThumbnailsVTT: 'VTT URL'
-}
+  {
+    div: document.getElementById('player'), // Mandatory
+    src: 'URL video', // Mandatory
+    staticThumbnailsImage: 'IMAGE SPRITE URL',
+    staticThumbnailsVTT: 'VTT URL'
+  }
+
 ```
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the time range specified in the .vtt file needs to be in (HH:)MM:SS.MMM format. Only this exact notation will be parsed.</p>
@@ -757,15 +861,19 @@ The player can be configured by adding the <b>staticThumbnailsImage</b> and <b>s
 
 This feature permits the player to dynamically download the frames from the lowest track of the video.
 The player can be configured by adding the useDynamicThumbnails option:
+
 ```js
-{
-  div: document.getElementById('player'), // Mandatory
-  src: 'URL video', // Mandatory
-  useDynamicThumbnails: true
-}
+  {
+    div: document.getElementById('player'), // Mandatory
+    src: 'URL video', // Mandatory
+    useDynamicThumbnails: true
+  }
+
 ```
 
 <a id="callbacks"></a>
+
+***
 
 ## Callbacks
 
@@ -781,14 +889,19 @@ The video element emits the basic event, such as a change of the state of the vi
 Some of the most important events are "playing", "pause", "waiting", and "timeupdate".
 
 ```js
-videoElement.addEventListener("timeupdate", function() { console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) }, true);
+
+  videoElement.addEventListener("timeupdate", function() { 
+    console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) 
+  }, true);
+
 ```
 
 ### Custom Events
 
 We also have custom events to handle some different kind of video events.
+
 ```js
-videoElement.addEventListener("customEvent", function() { console.log("Custom Event") });
+  videoElement.addEventListener("customEvent", function() { console.log("Custom Event") });
 ```
 ##### fakeFSend
 
@@ -805,39 +918,49 @@ Sent when the subtitles of the video changes (language change).
 ### Nexplayer Events
 
 Advanced events such as a track change are available using the <code>on</code> method of NexPlayer.
- ```js
-nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, function(e) { console.log ("The current track has changed"),e.details()});                 
-nexplayerInstance.on(nexplayer.Player.NexEvent.Speed_Change, function(e) { console.log("The current velocity has changed"),e.details()});
-nexplayerInstance.on(nexplayer.Player.NexEvent.Error, function(e) { console.log("An error has occurred"),e.details()});
- ```
+
+```js
+
+  nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, function(e) { console.log ("The current track has changed"),e.details()});                 
+  nexplayerInstance.on(nexplayer.Player.NexEvent.Speed_Change, function(e) { console.log("The current velocity has changed"),e.details()});
+  nexplayerInstance.on(nexplayer.Player.NexEvent.Error, function(e) { console.log("An error has occurred"),e.details()});
+
+```
 
 ### Fullscreen iOS
 
 If you want to avoid the fullscreen native player in iOS, you should define this using two callbacks on the setup <b>callbackFullscreenIn</b> and <b>callbackFullscreenOut</b>
 
 ```js
-const callbackwithFullscreenIn = function(){
-  document.getElementById('player_container').className = 'player_containerfs';
+
+  const callbackwithFullscreenIn = function(){
+    document.getElementById('player_container').className = 'player_containerfs';
   }
-const callbackwithFullscreenOut = function(){
-  document.getElementById('player_container').className = 'player_container';
+
+  const callbackwithFullscreenOut = function(){
+    document.getElementById('player_container').className = 'player_container';
   }
-nexplayer.Setup({
+
+  nexplayer.Setup({
     key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('player'),
     src: 'VIDEO URL',
     callbackFullscreenIn: callbackwithFullscreenIn,
     callbackFullscreenOut: callbackwithFullscreenOut
   });
+
 ```
+
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the code inside the callbacks its a sample, it can change depending the implementation.
 </p>
 </div></div>
 
 ## Closing Container
+
 If you want to reuse the same div for different videos, the container div must be unmounted properly.
+
 ```js
-nexplayer.UnMount(document.getElementById('player');
+  nexplayer.UnMount(document.getElementById('player');
 ```
 ## Decreasing the Size of the Build
 
@@ -859,522 +982,3 @@ More information is available at <a href="https://developer.mozilla.org/en-US/do
 When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. Here you can find the <a href="#/releases?" target = "_blank" >latest release</a>.
 
 Every new release of NexPlayer™ is backwards compatible.
-
-## Integration
-
-### Conviva Analytics
-
- <a href="https://www.nexplayersdk.com/nexplayer-html5/" target = "_blank" >NexPlayer™ HTML5</a> is a multi-screen streaming player that enables HLS and DASH live streaming across all browsers and platforms with the highest video quality. NexPlayer™ HTML5 supports an advanced feature set that includes DRM, Closed Captioning, Time Shifting and 360 video playback among many others.
-
-This repository contains the sample demo code of NexPlayer™ HTML5 with the integration of  <a href="https://www.conviva.com/" target = "_blank" >Conviva</a>.A fully working demo can be downloaded on this github <a href="https://github.com/NexPlayer/NexPlayer_HTML5_Conviva" target = "_blank" >repository</a>.
-
-#### Quick Start
-- The folders "app" and "conviva" include the scripts that should be included in the HTML file:
-```js
-<script type="text/javascript" src="conviva/conviva-core-sdk.min.js"></script>
-<script type="text/javascript" src="conviva/conviva-html5native-impl.js"></script>
-<script type="text/javascript" src="app/configs.js"></script>
-<script type="text/javascript" src="app/NexHandshake.js"></script>
-```
-- Configure your settings in "app/configs.js".
-- NexHandshake should be created after the event "loadeddata" is fired. This object preintegrates the Conviva client and will handle the analytic sessions.
-
-```js
-var NexConviva = null;
-
-...
-videoElement.addEventListener('loadeddata', loadModules, false);
-...
-
-function loadModules() {
-  NexConviva = new NexHandshake(videoElem, url, player.isLive(), true);
-  NexConviva.initConvivaClient();
-  NexConviva.createContentSession();
-  NexConviva.updateBitrateData(player.getCurrentTrack().bitrate / 1000);
-  // Use this in order to update the bitrate data every time a track changes
-  player.on(nexplayer.Player.NexEvent.Track_Change, function() {
-    NexConviva.updateBitrateData(player.getCurrentTrack().bitrate / 1000);
-  });
-  // Example of creating a custom tag
-  NexConviva.createCustomTag("a", "20", false);
-  // It is necessary to call this method to update the metadata on Conviva side
-  NexConviva.updateContentMetadata();
-}
-```
-- To destroy and reset the current Conviva session the following code should be used:
-
-```js
-NexConviva.cleanupContentSession();
-```
-This is already called in NexHandshake.js file, but it can be modified and be called whenever it is wanted to clean up the session.
-
-##  MultiView
-
-### Demo
-  You can see the multiview demo <a href="https://nex360.s3.amazonaws.com/MultiView/index.html">here</a>:
-  <img width="100%" text-align="center" src="./_images/multiview.PNG" alt="logo of docsify-awesome repository" >
-
-### Sample
- Multi-view playback integrated in html5:
-
- ```html
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>NexPlayer</title>
-	<style type="text/css">
-		body {
-			background-color: #1E1F23;
-		}
-		#player_container {
-			width: 90%;
-			margin: auto;
-			padding-top: 50.625%;
-			/* 16:9 Aspect Ratio 56.25 * 0.9 */
-			position: relative;
-			background-color: rgba !important;
-		}
-		#player_container2,
-		#player_container3,
-		#player_container4 {
-			width: 90%;
-			margin: auto;
-			padding-top: 40.625%;
-			/* 16:9 Aspect Ratio 56.25 * 0.9 */
-			position: relative;
-			background-color: rgba !important;
-		}
-		#global_container {
-			display: flex;
-			justify-content: space-around;
-		}
-		#player_container_360 {
-			width: 90%;
-			margin: auto;
-			position: relative;
-			padding-top: 50.625%;
-			/* 16:9 Aspect Ratio 56.25 * 0.9 */
-		}
-		@media (min-width: 75rem) {
-			#player_container {
-				width: 50%;
-				padding-top: 28.125%;
-				/* 16:9 Aspect Ratio 56.25 * 0.5 */
-			}
-			#player_container2,
-			#player_container3,
-			#player_container_360,
-			#player_container4 {
-				width: 25%;
-				padding-top: 22.125%;
-				/* 16:9 Aspect Ratio 56.25 * 0.5 */
-			}
-		}
-		h1 {
-			text-align: center;
-		}
-		#player {
-			background-color: black;
-			position: absolute;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-		}
-		#player2,
-		#player3,
-		#player4 {
-			background-color: black;
-			position: absolute;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-		}
-		.box {
-			padding-top: 2%;
-			display: flex;
-			justify-content: space-between;
-		}
-	</style>
-</head>
-<body>
-	<div id="player_container">
-		<div id="player" width="530" height="315"></div>
-	</div>
-	<div id="global_container">
-		<div id="player_container2">
-			<div id="player2" width="530" height="315"></div>
-		</div>
-		<div id="player_container3">
-			<div id="player3" width="530" height="315"></div>
-		</div>
-		<div id="player_container4">
-			<div id="player4" width="530" height="315"></div>
-		</div>
-	</div>
-	<script src="https://nexplayer.nexplayersdk.com/multiview/nexplayer.js"></script>
-	<script>
-		
-    var multiView = new nexplayer.MultipleView();
-
-    var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-		};
-
-		multiView.additionalVideo({
-			key: "Your licence key",
-			allowScreenPlayPause: false,
-			callbacksForPlayer: callBackWithPlayers,
-			debug: false,
-			div: document.getElementById('player'),
-			hideScreenPlay: false,
-			lowLatency: true,
-			showingFullUI: false,
-			src: 'Your stream URL',
-		});
-
-		multiView.additionalVideo({
-			key: "Your licence key",
-			allowScreenPlayPause: false,
-			callbacksForPlayer: callBackWithPlayers,
-			debug: false,
-			div: document.getElementById('player2'),
-			hideScreenPlay: false,
-			lowLatency: true,
-			showingFullUI: false,
-			src: 'Your stream URL',
-		});
-
-		multiView.additionalVideo({
-			key: "Your licence key",
-			div: document.getElementById('player3'),
-			callbacksForPlayer: callBackWithPlayers,
-			allowScreenPlayPause: false,
-			showingFullUI: false,
-			hideScreenPlay: false,
-			lowLatency: true,
-			debug: false,
-			src: 'Your stream URL',
-		});
-
-		multiView.additionalVideo({
-			key: "Your licence key",
-			div: document.getElementById('player4'),
-			callbacksForPlayer: callBackWithPlayers,
-			allowScreenPlayPause: false,
-			debug: false,
-			hideScreenPlay: false,
-			showingFullUI: false,
-			lowLatency: true,
-			src: 'Your stream URL',
-		});
-
-     multiView.Initialize();
-     
-	</script>
-</body>
-</html>
-```
-### Step-by-Step
-
-To integrate NexPlayer™ multiview into your project you must complete the following steps:
-
-- The NexPlayer™ JavaScript library should be included in the HTML file:
-
-```html
-<script src="https://nexplayer.nexplayersdk.com/multiview/nexplayer.js"></script>
-```
-<div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>The library above is a test version, the official version will be in the next release.</p>
-</div></div>
-<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. </p>
-</div></div>
-
-- A div that will contain the videos and the UI has to be declared:
-```html
-<body>
-    <div id="player_container">
-       <div id="player" width="530" height="315"></div>
-    </div>
-    <div id="global_container">
-       <div id="player_container2">
-           <div id="player2" width="530" height="315"></div>
-       </div>
-       <div id="player_container3">
-           <div id="player3" width="530" height="315"></div>
-       </div>
-       <div id="player_container4">
-           <div id="player4" width="530" height="315"></div>
-       </div>
-    </div>
-</body>
-```
-- To create the players we will have to call multiview.additionalVideo() after callBackWithPlayers is created so that the players are initialized sequentially:
-```js
- var multiView = new nexplayer.MultipleView();
-
-    var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-      
-		};
-
-		multiView.additionalVideo({
-			key: "Your licence key",
-			allowScreenPlayPause: false,
-			callbacksForPlayer: callBackWithPlayers,
-			debug: false,
-			div: document.getElementById('player'),
-			hideScreenPlay: false,
-			lowLatency: true,
-			showingFullUI: false,
-			src: 'Your stream URL',
-		});
-
-		multiView.additionalVideo({
-			key: "Your licence key",
-			allowScreenPlayPause: false,
-			callbacksForPlayer: callBackWithPlayers,
-			debug: false,
-			div: document.getElementById('player2'),
-			hideScreenPlay: false,
-			lowLatency: true,
-			showingFullUI: false,
-			src: 'Your stream URL',
-		});
-
-		multiView.additionalVideo({
-			key: "Your licence key",
-			div: document.getElementById('player3'),
-			callbacksForPlayer: callBackWithPlayers,
-			allowScreenPlayPause: false,
-			showingFullUI: false,
-			hideScreenPlay: false,
-			lowLatency: true,
-			debug: false,
-			src: 'Your stream URL',
-		});
-
-		multiView.additionalVideo({
-			key: "Your licence key",
-			div: document.getElementById('player4'),
-			callbacksForPlayer: callBackWithPlayers,
-			allowScreenPlayPause: false,
-			debug: false,
-			hideScreenPlay: false,
-			showingFullUI: false,
-			lowLatency: true,
-			src: 'Your stream URL',
-		});
-
-     multiView.Initialize();
-     
-```
-- There are some functions available to use, consult the <a href="#/API?id=multiview" target = "_blank" >api</a>
-
-### Synchronization
-
-To be able to use the synchronization we have to configure in the setup the ```lowLatency``` and ```dashSettings```.
-
-```javascript
-  
-   multiView.additionalVideo({
-          key: "Your licence key",
-          div: document.getElementById('player4'),
-          callbacksForPlayer: callBackWithPlayers,
-          lowLatency: true,
-          dashSettings: {  // Optional: Allow modifying some dash properties like the following
-            "liveDelay": 20,    // Allow adjusting the live delay
-            "liveCatchUpPlaybackRate": 0.5, // The speed that the player gets in order to keep the live delay
-            "liveCatchUpMaxDrift": 3,   // The maximun delay before to make a seek live
-            "liveCatchupLatencyThreshold": 30,  // The threshold where the synchronization properties works
-          }
-          src: 'Your stream URL',
-      });
-      
-```
-<div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>Currently, live synchronization is only available for Dash.</p>
-</div></div>
-
-##  YouTube
-
-### Sample
-    
-  YouTube API integrated in html5
-
-  ```html
-  <!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>NexPlayer</title>
-	<style type="text/css">
-
-		#player_container {
-			width: 90%;
-			margin: auto;
-			padding-top: 50.625%;
-			/* 16:9 Aspect Ratio 56.25 * 0.9 */
-			position: relative;
-			background-color: rgba !important;
-		}
-
-		#player {
-			background-color: black;
-			position: absolute;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-		}
-
-	</style>
-
-</head>
-
-<body>
-	<div id="player_container">
-		<div id="player" width="530" height="315"></div>
-	</div>
-
-	<script src="NexPlayer Library"></script>
-	<script>
-
-		var YouTubePlayer = new nexplayer.YouTubePlayer();
-
-		var player;
-
-		YouTubePlayer.init("REPLACE THIS WITH YOUR CUSTOMER KEY");
-	
-			function onYouTubeIframeAPIReady() {
-			player = new YT.Player("player", {
-				height: '360',
-				width: '640',
-				startSeconds: 0,
-				videoId: YouTubePlayer.URL('https://www.youtube.com/watch?v=Yelb7w9cjVg'),
-				events: {
-					'onReady': onPlayerReady,
-				}
-			});
-	}
-
-		function onPlayerReady(event) {
-			event.target.playVideo();
-		}
-
-	</script>
-</body>
-</html>
-```
-
-### Step-by-Step
-To integrate NexPlayer™ YouTube into your project you must complete the following steps:
-
-- The NexPlayer™ JavaScript library should be included in the HTML file:
-
-```html
-<script src="NexPlayer Library"></script>
-```
-
-<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. </p>
-</div></div>
-
-A div that will contain the videos and the UI has to be declared:
-
-```html
-<div id="player_container">
-		<div id="player" width="530" height="315"></div>
-	</div>
-```
-To create the youtube player we first need to declare the youtube class. Once created, we declare a <a href="https://developers.google.com/youtube/iframe_api_reference" target="_blank">variable</a>, which is the one that will host all the YouTube methods.
-
-```js
-var YouTubePlayer = new nexplayer.YouTubePlayer();
-var player;
-```
-Once the player is initialized we create a function that will load the content of the video. Using the previous variable, we are going to set the YouTube instance.
-
-```js
-YouTubePlayer.init("REPLACE THIS WITH YOUR CUSTOMER KEY");
-
-  function onYouTubeIframeAPIReady() {
-		player = new YT.Player("player", {
-		  height: '360',
-			width: '640',
-			startSeconds: 0,
-			videoId: YouTubePlayer.URL('https://www.youtube.com/watch?v=Yelb7w9cjVg'),
-		});
-	}
-```
-## Multiple Sources
-
-This feature, as long as src is undefined, allows the player to choose a playable src from one of the objects contained in the srcSets array depending on the browser and device support. Furthermore, this enhancement will automatically skip those streams that may fail during playback and try to restart it taking any of the following videos provided in the property previously mentioned.
-
-
-
-```js
-nexplayer.Setup({
-    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-    div: document.getElementById('player'),
-    src: 'video URL',
-    drm: [{
-        NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
-        NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
-        NexCallback: // Optional DRM callback for FairPlay
-    }], // Optional: DRM information
-    srcSets:[
-      {
-        src: 'video URL',
-        drm: {
-            NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
-            NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
-            NexCallback: // Optional DRM callback for FairPlay
-        } // Optional: DRM information or undefined
-      },
-      {
-        src: 'other video URL',
-        drm: 'undefined'
-      },
-    ...
-  ] // Optional: Objects array containing a stream and an optional DRM.
-});
-```
-
-## iOS WebView
-
-Here is the example code to create a simple application
-
-```swift
-  import UIKit
-  import WebKit
-  class ViewController: UIViewController, WKUIDelegate {
-    
-    var webView: WKWebView!
-    
-    override func loadView() {
-      let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        view = webView
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let myURL = URL(string:"Your url")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
-    }}
-
-```
-For the video to start playing, you will need to configure the following parameters
-
-```swift
-    override func loadView() {
-      let webConfiguration = WKWebViewConfiguration()
-      webConfiguration.preferences.javaScriptEnabled = true
-      webConfiguration.mediaPlaybackRequiresUserAction = false
-      webConfiguration.allowsInlineMediaPlayback = true
-      webView = WKWebView(frame: .zero, configuration: webConfiguration)
-      webView.uiDelegate = self
-      view = webView
-    }
-
-```
