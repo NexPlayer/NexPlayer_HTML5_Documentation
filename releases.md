@@ -13,10 +13,9 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 https://nexplayer.nexplayersdk.com/6.0.1/nexplayer.js
 ```
 * **[Added]** forceOffset: Allows to select an offset for Live HLS videos.
-* **[Added]** 
 * **[Improved]** Fixed buffering issues with some HLS videos.
 
-Date: June 22nd 2021
+Date: July 12nd 2021
 
 #### Version 6.0.0
 ```
