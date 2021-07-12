@@ -199,4 +199,5 @@ There is a substantial number of customizable options for NexPlayer™ including
         size: { height:'size px', width: 'size px'}
     },
     withCredentials: boolean, // Optional, indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates.
+    forceOffset: number, // Optional, allows to select an offset when looking for the segments on HLS live videos. Player will take EXT-X-MEDIA-SEQUENCE plus the given offset as the starting segment number of the playlist.
 ```
