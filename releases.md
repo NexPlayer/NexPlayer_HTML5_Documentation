@@ -12,7 +12,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/6.0.1/nexplayer.js
 ```
-* **[Added]** forceOffset: Allows to select an offset for Live HLS videos.
+* **[Added]** forceOffset: Allows to select an offset for live HLS videos. The offset is a number which indicates how much segments the player should slide ahead the given segment number (EXT-X-MEDIA-SEQUENCE). This prevents player from stall if the presentation times between audio and video playlists are not perfectly synchronized.
 * **[Improved]** Fixed buffering issues with some HLS videos.
 
 Date: July 12nd 2021
