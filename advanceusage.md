@@ -401,14 +401,18 @@ This feature tells the player whether to start playback with the volume muted or
 
 ## Low Latency
 
-This feature enables low latency for live streams. This can be configured in the player by adding the lowLatency option. You can also choose the desired latency:
+This feature enables low latency for live streams. This can be configured in the player by adding the liveSettings option object. You can also choose the desired latency, maximum drift (time of delay from which the player will try to seek to liveDelay time) and playback rate (player will change video speed to this value to try to reach the liveDelay time in case is behind):
 
 ```js
   {
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
-    lowLatency: true,// toggle on/off low latency apis
-    lowLatencyLiveDelay: 3.2 // The desired latency to maintain
+    liveSettings: {
+      lowLantency: true, // Toggle on/off low latency apis
+      liveDelay: 3.2, // The desired latency to maintain
+      maxDrift: 10, // Time of delay from which the player will try to seek to liveDelay time
+      playbackRate: 0.5 // Player will speed up playback rate to 1 + playbackRate value in case the playback is behind liveDelay
+    },
   }
 
 ```
@@ -416,7 +420,7 @@ This feature enables low latency for live streams. This can be configured in the
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>lowLatency</b> parameter is false, so the player will start without low latency if <b>lowLatency</b> is not set to true.</p>
 </div></div>
 
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>lowLatencyLiveDelay</b> parameter will adjust the latency depending on the network conditions.</p>
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>liveDelay</b> parameter will adjust the latency depending on the network conditions.</p>
 </div></div>
 
 ***

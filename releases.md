@@ -8,6 +8,18 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 6.0.2
+```
+https://nexplayer.nexplayersdk.com/6.0.2/nexplayer.js
+```
+* **[Added]** Events to get info about loaded/buffered fragments on HLS.
+* **[Added]** Unified DASH and HLS live settings into one setup parameter liveSettings (properties: liveDelay, maxDrift, playbackRate).
+* **[Improved]** Changed misspelling of the property *FiledValue* to *FieldValue* in the NexHeaders object.
+* **[Improved]** Fixed error with icons preventing from use 360 when video is stopped.
+* **[Improved]** Fixed errors with some methods for live on VOD.
+
+Date: July 30nd 2021
+
 #### Version 6.0.1
 ```
 https://nexplayer.nexplayersdk.com/6.0.1/nexplayer.js

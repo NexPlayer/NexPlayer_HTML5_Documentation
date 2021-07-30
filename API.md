@@ -199,14 +199,13 @@ Creates and initializes the player.
 | defaultQuality | <code>number</code> | Optional set the starting track through his id, by default is -1, this enables the ABR. |
 | disableFullscreen | <code>boolean</code> | Determines if the full screen will be enabled. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
-| drm | <code>Array.<NexDRMInformation></code> | Contains an array of DRM information. By default it's set to null. |
+| drm | <a href="#/API?id=NexDRMInformation"><code>Array\<NexDRMInformation></code></a> | Contains an array of DRM information. By default it's set to null. |
 | externSubtitles | <code>Array</code> | Used to provide a WEBVTT as external subtitles. |
 | hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
 | hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
 | hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
+| liveSettings | <code>Object</code> | Settings to control live playback. |
 | logosrc | <code>string</code> | Company URL logo. |
-| lowLatency | <code>boolean</code> | Determines if low latency will be enabled. |
-| lowLatencyLiveDelay | <code>number</code> | Determines the low latency maximum delay. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
 | maxFrameDrop | <code>number</code> | Determines the max frame drop. |
 | pip | <code>boolean</code> | Optional, picture in picture. |
@@ -268,14 +267,13 @@ Reloads the player with the given configuration. If the configuration object is 
 | defaultQuality | <code>number</code> | Optional set the starting track through his id, by default is -1, this enables the ABR. |
 | disableFullscreen | <code>boolean</code> | Determines if the full screen will be enabled. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
-| drm | <code>Array.<NexDRMInformation></code> | Contains an array of DRM information. By default it's set to null. |
+| drm | <code>Array<a href="#/API?id=NexDRMInformation">\<NexDRMInformation></a></code> | Contains an array of DRM information. By default it's set to null. |
 | externSubtitles | <code>Array</code> | Used to provide a WEBVTT as external subtitles. |
 | hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
 | hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
 | hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
+| liveSettings | <code>Object</code> | Settings to control live playback. |
 | logosrc | <code>string</code> | Company URL logo. |
-| lowLatency | <code>boolean</code> | Determines if low latency will be enabled. |
-| lowLatencyLiveDelay | <code>number</code> | Determines the low latency maximum delay. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
 | maxFrameDrop | <code>number</code> | Determines the max frame drop. |
 | pip | <code>boolean</code> | Optional, picture in picture. |
@@ -411,7 +409,7 @@ Adds a listener for Events.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| callbackType | <code>NexEvent</code> | Event to listen for |
+| callbackType | <a href="#/API?id=nexevent"><code>NexEvent</code></a> | Event to listen for |
 | functionToBeCalled	 | <code>NexCallbackEvent</code> | 	Function called on each event |
 
 #### player.attachSubtitleRendererDiv(subtitleRendererDiv)
@@ -1575,6 +1573,10 @@ Sets a listener function called when the ad is blocked by an external app.
 | Player_Destroyed | <code>number</code> | <code>2</code> | 
 | Speed_Change | <code>number</code> | <code>3</code> | 
 | Error | <code>number</code> | <code>4</code> | 
+| Cue_Change | <code>number</code> | <code>5</code> | 
+| Fragment_Buffered | <code>number</code> | <code>6</code> | 
+| Playlist_Loading_Completed | <code>number</code> | <code>7</code> | 
+| Fragment_Loading | <code>number</code> | <code>8</code> | 
 
 <a id="thumbtype"></a>
 
@@ -1706,14 +1708,13 @@ Creates and initializes the player.
 | defaultQuality | <code>number</code> | Optional set the starting track through his id, by default is -1, this enables the ABR. |
 | disableFullscreen | <code>boolean</code> | Determines if the full screen will be enabled. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
-| drm | <code>Array.<NexDRMInformation></code> | Contains an array of DRM information. By default it's set to null. |
+| drm | <code>Array<a href="#/API?id=NexDRMInformation">\<NexDRMInformation></a></code> | Contains an array of DRM information. By default it's set to null. |
 | externSubtitles | <code>Array</code> | Used to provide a WEBVTT as external subtitles. |
 | hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
 | hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
 | hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
+| liveSettings | <code>Object</code> | Settings to control live playback. |
 | logosrc | <code>string</code> | Company URL logo. |
-| lowLatency | <code>boolean</code> | Determines if low latency will be enabled. |
-| lowLatencyLiveDelay | <code>number</code> | Determines the low latency maximum delay. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
 | maxFrameDrop | <code>number</code> | Determines the max frame drop. |
 | pip | <code>boolean</code> | Optional, picture in picture. |

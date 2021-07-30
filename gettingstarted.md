@@ -131,12 +131,6 @@ There is a substantial number of customizable options for NexPlayer™ including
     cast: {}, // Optional
     chromecastEndImg: 'URL image', // Optional
     chromecastLaunchImg: 'URL image', // Optional
-    dashSettings: {  // Optional: Allow modifying some dash properties like the following
-        "liveDelay": 20,    // Allow adjusting the live delay
-        "liveCatchUpPlaybackRate": 0.5, // The speed that the player gets in order to keep the live delay
-        "liveCatchUpMaxDrift": 3,   // The maximum delay before to make a seek live
-        "liveCatchupLatencyThreshold": 30,  // The threshold where the synchronization properties works
-    },
     debug: true, // Optional
     defaultQuality: -1, // Optional: Set the starting track by indicating its id. Default is -1, which will enable the ABR.
     disableFullscreen: true, // Optional
@@ -155,9 +149,13 @@ There is a substantial number of customizable options for NexPlayer™ including
 	},
     hideScreenPlay: false, // Optional: Hide the play button in the middle of the video, which appears when the video is paused.
     hideVolumeIcon: true, // Optional: Hide the volume icon for mobile devices. The volume is controlled by the device buttons.
+    liveSettings: {
+        lowLatency: true, // Optional, sets low latency on/off.
+        liveDelay: 5, // Optional, seconds of delay.
+        maxDrift: 1 // Optional, the maximum delay before to make a seek live.
+        playbackRate: 0.5,   // Optional, the speed that the player gets in order to keep the live delay.
+    }, // Optional, settings for live playback.
     logosrc: 'URL logo of the company', // Optional
-    lowLatency: true, // Optional
-    lowLatencyLiveDelay: 5, // Optional: Seconds of delay
     mutedAtStart: true, // Optional
     maxFrameDrop:
     pip: true, // Optional: Picture in picture
