@@ -12,9 +12,9 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/6.0.2/nexplayer.js
 ```
-* **[Added]** Events to get info about loaded/buffered fragments on HLS.
+* **[Added]** Events to get info about loaded/buffered fragments on HLS. More info <a href="#/API?id=nexevent">here</a>.
 * **[Added]** Unified DASH and HLS live settings into one setup parameter liveSettings (properties: liveDelay, maxDrift, playbackRate).
-* **[Improved]** Changed misspelling of the property *FiledValue* to *FieldValue* in the NexHeaders object.
+* **[Improved]** Changed misspelling of the property *FiledValue* to *FieldValue* in the <a href="#/API?id=NexHeaders">NexHeaders</a> object.
 * **[Improved]** Fixed error with icons preventing from use 360 when video is stopped.
 * **[Improved]** Fixed errors with some methods for live on VOD.
 

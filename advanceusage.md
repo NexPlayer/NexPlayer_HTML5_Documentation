@@ -132,7 +132,7 @@ Is a DRM powered by <a href =https://www.widevine.com target="_blank">Google</a>
     NexDRMKey: 'DRM key URL',
     NexHeaders:[{
       FieldName: 'Optional field name', //Optional
-      FiledValue: 'Optional field value'
+      FieldValue: 'Optional field value'
     }] //Optional
   };
 
@@ -163,7 +163,7 @@ A DRM powered by <a href =https://www.microsoft.com/playready/ target="_blank">M
     NexDRMKey: 'DRM key URL', 
     NexHeaders:[{
       FieldName: 'Optional field name',  //Optional
-      FiledValue: 'Optional field value'
+      FieldValue: 'Optional field value'
     }]
   }; //Optional
 
@@ -191,7 +191,7 @@ The Common Encryption Scheme (CENC) specifies the standard to enable decryption 
     NexDRMKey: 'DRM key URL', 
     NexHeaders:[{
       FieldName: 'Optional field name',  //Optional
-      FiledValue: 'Optional field value'
+      FieldValue: 'Optional field value'
     }]
   }; //Optional
 
@@ -201,7 +201,7 @@ The Common Encryption Scheme (CENC) specifies the standard to enable decryption 
     NexDRMKey: 'DRM key URL', 
     NexHeaders:[{
       FieldName: 'Optional field name', //Optional
-      FiledValue: 'Optional field value'
+      FieldValue: 'Optional field value'
     }]
   }; //Optional
 
@@ -313,7 +313,7 @@ This information can be passed in the DRM array:
   drmCustomHeaders = {
     NexHeaders:[{
       FieldName: 'Optional field name',
-      FiledValue: 'Optional field value'
+      FieldValue: 'Optional field value'
     }]
   };
 

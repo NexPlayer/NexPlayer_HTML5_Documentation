@@ -205,7 +205,7 @@ This feature, as long as src is undefined, allows the player to choose a playabl
 		src: 'video URL',
 		drm: [{
 			NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
-			NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+			NexHeaders:[{FieldName: 'Header Field Name', FieldValue: 'Header Field Value'}],
 			NexCallback: // Optional DRM callback for FairPlay
 		}], // Optional: DRM information
 		srcSets:[
@@ -213,7 +213,7 @@ This feature, as long as src is undefined, allows the player to choose a playabl
 				src: 'video URL',
 				drm: {
 					NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
-					NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+					NexHeaders:[{FieldName: 'Header Field Name', FieldValue: 'Header Field Value'}],
 					NexCallback: // Optional DRM callback for FairPlay
 				} // Optional: DRM information or undefined
 			},

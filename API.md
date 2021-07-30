@@ -1617,7 +1617,7 @@ Called when a FairPlay content needs to request the license.
 | Name | Type | Description |
 | --- | --- | --- |
 | FieldName | <code>string</code> | of the HTTPHeaders. |
-| FiledValue | <code>string</code> | of the HTTPHeaders. |
+| FieldValue | <code>string</code> | of the HTTPHeaders. |
 
 <a id="NexDRMInformation"></a>
 

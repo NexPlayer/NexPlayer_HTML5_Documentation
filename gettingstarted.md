@@ -137,7 +137,7 @@ There is a substantial number of customizable options for NexPlayer™ including
     disableKeyEvents: false, // Optional
     drm: [{
         NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
-        NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+        NexHeaders:[{FieldName: 'Header Field Name', FieldValue: 'Header Field Value'}],
         NexCallback: // Optional DRM callback for FairPlay
     }], // Optional: DRM information
     externSubtitles: [{"src": "VTT", "language": "eng" },.. }] // Optional
@@ -168,7 +168,7 @@ There is a substantial number of customizable options for NexPlayer™ including
             src: 'video URL',
             drm: {
                 NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
-                NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+                NexHeaders:[{FieldName: 'Header Field Name', FieldValue: 'Header Field Value'}],
                 NexCallback: // Optional DRM callback for FairPlay
             } // Optional: DRM information or undefined
             valid: false // Set always false
