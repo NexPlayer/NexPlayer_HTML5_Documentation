@@ -12,7 +12,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/7.0.0/nexplayer.js
 ```
-* **[Improved]** Fixed continuos buffering with DASH live streams.
+* **[Improved]** Fixed continuous buffering with DASH live streams.
 * **[Improved]** Improved start time with HLS live streams that use PDT property.
 * **[Improved]** Fixed bug regarding HLS streams quality change.
 * **[Improved]** Fixed bug when reloading the player using HLS-LL streams.
