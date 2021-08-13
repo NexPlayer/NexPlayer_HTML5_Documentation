@@ -8,6 +8,18 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 7.0.0
+```
+https://nexplayer.nexplayersdk.com/7.0.0/nexplayer.js
+```
+* **[Improved]** Fixed continuos buffering with DASH live streams.
+* **[Improved]** Improved start time with HLS live streams that use PDT property.
+* **[Improved]** Fixed bug regarding HLS streams quality change.
+* **[Improved]** Fixed bug when reloading the player using HLS-LL streams.
+* **[Improved]** Fixed error that made the main content play during an advertisement.
+
+Date: August 13th 2021
+
 #### Version 6.0.2
 ```
 https://nexplayer.nexplayersdk.com/6.0.2/nexplayer.js
