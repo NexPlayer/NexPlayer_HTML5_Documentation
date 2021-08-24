@@ -266,8 +266,8 @@ For example, Widevine and PlayReady can be used with the same DASH manifest and 
     request.addEventListener('error', player.FairPlayNexLicenseRequestFailed.bind(player), false);
     var params = 'spc='+ encodeURIComponent(base64EncodeUint8Array(message)); // replace this variable with var params = new Uint8Array(message); to use FairPlay Expressplay
     request.open('POST', 'URL for the SPC sever (license server)', true); // serverProcessSPCPath
-    request.setRequestHeader(“Content-type”, “application/x-www-form-urlencoded”); // replace “application/x-www-form-urlencoded” with “application/octet-stream” to use FairPlay Expressplay
-    request.setRequestHeader(“dt-custom-data”, “Optional license token”);
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // replace "application/x-www-form-urlencoded" with "application/octet-stream" to use FairPlay Expressplay
+    request.setRequestHeader("dt-custom-data", "Optional license token");
     request.send(params);
   }
 
@@ -294,9 +294,9 @@ Please note that the HTTP headers (NexHeaders) are optional, and might be requir
 
 FairPlay is supported with HLS.
 
-#### KeyOS FairPlay integration
+#### FairPlay integration using KeyOS
 
-This is a sample about how to use the KeyOS Fairplay with Nexplayer
+This is a sample about how to use the KeyOS Fairplay with Nexplayer.
 
 ```js
 // First get the player instance to call the necessary methods when the license is requested
@@ -336,27 +336,31 @@ function licenseRequestReady (event) {
  var message = event.message;
  var request = new XMLHttpRequest();
  var sessionId = event.sessionId;
- request.responseType = 'text';
+
+ request.responseType = "text";
  request.session = session;
- request.addEventListener('load', player.FairPlayNexLicenseRequestLoaded.bind(player), false);
- request.addEventListener('error', player.FairPlayNexLicenseRequestFailed.bind(player), false);
+ request.addEventListener("load", player.FairPlayNexLicenseRequestLoaded.bind(player), false);
+ request.addEventListener("error", player.FairPlayNexLicenseRequestFailed.bind(player), false);
  // The spc value should be base64-encoded but NOT url-encoded
  // The spc should go first and then the "assetId" (session.contentId)
- var params = 'spc='+ base64EncodeUint8Array(message) + '&assetId=' + session.contentId;  
+ var params = "spc="+ base64EncodeUint8Array(message) + "&assetId=" + session.contentId;  
  // LA (License Acquistion) URL for FairPlay (serverProcessSPCPath)
- request.open('POST', 'URL for the SPC sever (license server)', true); // serverProcessSPCPath
- request.setRequestHeader(“Content-type”, “text/xml; charset=utf-8”);
- request.setRequestHeader(“x-keyos-authorization”, “Base64-encoded authentication XML”);
+ request.open("POST", "URL for the SPC sever (license server)", true); // serverProcessSPCPath
+ request.setRequestHeader("Content-type", "text/xml; charset=utf-8");
+ request.setRequestHeader("x-keyos-authorization", "Base64-encoded authentication XML");
  request.send(params);
 }
+
 var callBackWithPlayers = function (nexplayerInstance, videoElement) {
  player = nexplayerInstance;
 }
-var nexDRMInformationFairPlay = {NexDRMType:'com.apple.fps.1_0', NexDRMKey: 'DRM key (certificate)', NexCallback: licenseRequestReady};
+
+var nexDRMInformationFairPlay = {NexDRMType:"com.apple.fps.1_0", NexDRMKey: "DRM key (certificate)", NexCallback: licenseRequestReady};
+
 nexplayer.Setup({
- key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
- div: document.getElementById('player'),
- src: 'REPLACE THIS WITH YOUR STREAM SRC',
+ key: "REPLACE THIS WITH YOUR CUSTOMER KEY",
+ div: document.getElementById("player"),
+ src: "REPLACE THIS WITH YOUR STREAM SRC",
  callbacksForPlayer: callBackWithPlayers,
  drm: [nexDRMInformationFairPlay]
 });
