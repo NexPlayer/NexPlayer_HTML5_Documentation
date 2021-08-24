@@ -294,41 +294,6 @@ Please note that the HTTP headers (NexHeaders) are optional, and might be requir
 
 FairPlay is supported with HLS.
 
-### AES
-
-NexPlayer™ supports HLS content encrypted with the AES-128 algorithm. If the key is transported inside the HLS manifest itself, it will automatically work without any modification on the developer's side.
-
-Please note that this method is not as secure as other DRMs.
-
-AES is supported with HLS
-
-### Custom Headers
-
-Custom headers can be included in each HTTP petition, even without the use of DRM, to include extra information for the server.
-
-This information can be passed in the DRM array:
-
-```js
-
-  drmCustomHeaders = {
-    NexHeaders:[{
-      FieldName: 'Optional field name',
-      FieldValue: 'Optional field value'
-    }]
-  };
-
-  nexplayer.Setup({
-    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-    div: document.getElementById('player'),
-    src: 'VIDEO URL',
-    drm: [drmCustomHeaders]
-  });
-
-```
-Please note that this method is not as secure as other DRMs.
-
-Custom headers are supported with HLS and DASH.
-
 #### KeyOS FairPlay integration
 
 This is a sample about how to use the KeyOS Fairplay with Nexplayer
@@ -396,6 +361,43 @@ nexplayer.Setup({
  drm: [nexDRMInformationFairPlay]
 });
 ```
+***
+
+### AES
+
+NexPlayer™ supports HLS content encrypted with the AES-128 algorithm. If the key is transported inside the HLS manifest itself, it will automatically work without any modification on the developer's side.
+
+Please note that this method is not as secure as other DRMs.
+
+AES is supported with HLS
+
+### Custom Headers
+
+Custom headers can be included in each HTTP petition, even without the use of DRM, to include extra information for the server.
+
+This information can be passed in the DRM array:
+
+```js
+
+  drmCustomHeaders = {
+    NexHeaders:[{
+      FieldName: 'Optional field name',
+      FieldValue: 'Optional field value'
+    }]
+  };
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    drm: [drmCustomHeaders]
+  });
+
+```
+Please note that this method is not as secure as other DRMs.
+
+Custom headers are supported with HLS and DASH.
+
 ***
 
 ## Ads
