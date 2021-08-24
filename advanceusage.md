@@ -329,6 +329,73 @@ Please note that this method is not as secure as other DRMs.
 
 Custom headers are supported with HLS and DASH.
 
+#### KeyOS FairPlay integration
+
+This is a sample about how to use the KeyOS Fairplay with Nexplayer
+
+```js
+// First get the player instance to call the necessary methods when the license is requested
+var player = null;
+
+// FairPlay Utility
+function base64EncodeUint8Array(input) {
+  var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+  var output = "";
+  var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+  var i = 0;
+
+  while (i < input.length) {
+      chr1 = input[i++];
+      chr2 = i < input.length ? input[i++] : Number.NaN; // Not sure if the index
+      chr3 = i < input.length ? input[i++] : Number.NaN; // checks are needed here
+
+      enc1 = chr1 >> 2;
+      enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+      enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+      enc4 = chr3 & 63;
+
+      if (isNaN(chr2)) {
+          enc3 = enc4 = 64;
+      } else if (isNaN(chr3)) {
+          enc4 = 64;
+      }
+      output += keyStr.charAt(enc1) + keyStr.charAt(enc2) +
+          keyStr.charAt(enc3) + keyStr.charAt(enc4);
+  }
+  return output;
+}
+
+// Request the license at the NexPlayer callback
+function licenseRequestReady (event) {
+ var session = event.target;
+ var message = event.message;
+ var request = new XMLHttpRequest();
+ var sessionId = event.sessionId;
+ request.responseType = 'text';
+ request.session = session;
+ request.addEventListener('load', player.FairPlayNexLicenseRequestLoaded.bind(player), false);
+ request.addEventListener('error', player.FairPlayNexLicenseRequestFailed.bind(player), false);
+ // The spc value should be base64-encoded but NOT url-encoded
+ // The spc should go first and then the "assetId" (session.contentId)
+ var params = 'spc='+ base64EncodeUint8Array(message) + '&assetId=' + session.contentId;  
+ // LA (License Acquistion) URL for FairPlay (serverProcessSPCPath)
+ request.open('POST', 'URL for the SPC sever (license server)', true); // serverProcessSPCPath
+ request.setRequestHeader(“Content-type”, “text/xml; charset=utf-8”);
+ request.setRequestHeader(“x-keyos-authorization”, “Base64-encoded authentication XML”);
+ request.send(params);
+}
+var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+ player = nexplayerInstance;
+}
+var nexDRMInformationFairPlay = {NexDRMType:'com.apple.fps.1_0', NexDRMKey: 'DRM key (certificate)', NexCallback: licenseRequestReady};
+nexplayer.Setup({
+ key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+ div: document.getElementById('player'),
+ src: 'REPLACE THIS WITH YOUR STREAM SRC',
+ callbacksForPlayer: callBackWithPlayers,
+ drm: [nexDRMInformationFairPlay]
+});
+```
 ***
 
 ## Ads
