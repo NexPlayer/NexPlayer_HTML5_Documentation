@@ -21,9 +21,7 @@ https://nexplayer.nexplayersdk.com/7.0.0/nexplayer.js
 Date: August 13th 2021
 
 #### Version 6.0.2
-```
-https://nexplayer.nexplayersdk.com/6.0.2/nexplayer.js
-```
+
 * **[Added]** Events to get info about loaded/buffered fragments on HLS. More info <a href="#/API?id=nexevent">here</a>.
 * **[Added]** Unified DASH and HLS live settings into one setup parameter liveSettings (properties: liveDelay, maxDrift, playbackRate).
 * **[Improved]** Changed misspelling of the property *FiledValue* to *FieldValue* in the <a href="#/API?id=NexHeaders">NexHeaders</a> object.
@@ -33,18 +31,14 @@ https://nexplayer.nexplayersdk.com/6.0.2/nexplayer.js
 Date: July 30nd 2021
 
 #### Version 6.0.1
-```
-https://nexplayer.nexplayersdk.com/6.0.1/nexplayer.js
-```
+
 * **[Added]** forceOffset: Allows to select an offset for live HLS videos. The offset is a number which indicates how much segments the player should slide ahead the given segment number (EXT-X-MEDIA-SEQUENCE). This prevents player from stall if the presentation times between audio and video playlists are not perfectly synchronized.
 * **[Improved]** Fixed buffering issues with some HLS videos.
 
 Date: July 12nd 2021
 
 #### Version 6.0.0
-```
-https://nexplayer.nexplayersdk.com/6.0.0/nexplayer.js
-```
+
 * **[Added]** HLS low latency.
 * **[Added]** Reload method which allows the player to reload.
 * **[Added]** Support for metadata over EMSG boxes for fMP4 segments in HLS.
@@ -55,17 +49,13 @@ https://nexplayer.nexplayersdk.com/6.0.0/nexplayer.js
 Date: June 22nd 2021
 
 #### Version 5.5.3.1
-```
-https://nexplayer.nexplayersdk.com/5.5.3.1/nexplayer.js
-```
+
 * **[Improved]** Solved setMediaKeys error while using ads.
 
 Date: May 6th 2021
 
 #### Version 5.5.3
-```
-https://nexplayer.nexplayersdk.com/5.5.3/nexplayer.js
-```
+
 * **[Added]** Support for multiple external subtitles.
 * **[Added]** A custom-sized initial buffer can now be set by passing the desired number of seconds to achieve. It can be used through a new property, “startingBufferLength”, in the nexplayer Setup method.
 * **[Improved]** UnMount performance when failed download data.
@@ -74,29 +64,23 @@ https://nexplayer.nexplayersdk.com/5.5.3/nexplayer.js
 Date: Apr 30th 2021
 
 #### Version 5.5.2
-```
-https://nexplayer.nexplayersdk.com/5.5.2/nexplayer.js
-```
+
 * **[Added]** hideVolumeIcon: Hide the volume icon for mobile devices. The volume is controlled by the device buttons.
 * **[Added]** hiddenVolumeIcon(): Hides the volume icon.
 * **[Added]** showVolumeIcon(): Shows the volume icon.
 * **[Added]** Supporting drm with chromecast: dash and hls with Widevine and PlayReady.
 * **[Improved]** Black screen when type_360 is false.
 
-Date: Mar 18th 2021
+Date: March 18th 2021
 
 #### Version 5.5.1
-```
-https://nexplayer.nexplayersdk.com/5.5.1/nexplayer.js
-```
+
 * **[Added]** hideOptionsUi: feature to hide some settings properties from the ui as the quality, speed ...
 
-Date: Mar 8th 2021
+Date: March 8th 2021
 
 #### Version 5.5.0
-```
-https://nexplayer.nexplayersdk.com/5.5.0/nexplayer.js
-```
+
 * **[Added]** MultiView, allows to see more than one stream at the same time
 * **[Added]** Function for checking stream compatibility with the current used platform
 * **[Added]** YouTube´s streams support
@@ -111,74 +95,60 @@ https://nexplayer.nexplayersdk.com/5.5.0/nexplayer.js
 * **[Improved]** HLS Performance with low network
 * **[Improved]** toggleBar() makes that the volume bar disappears too, now it has been solved
 
-Date: Mar 8th 2021
+Date: March 8th 2021
 
 #### Version 5.4.2
-```
-https://nexplayer.nexplayersdk.com/5.4.2/nexplayer.js
-```
+
 * **[Improved]** Volume controller
 * **[Improved]** Cuechange events
 
-Date: Jan 12th 2021
+Date: January 12th 2021
 
 #### Version 5.4.1
-```
-https://nexplayer.nexplayersdk.com/5.4.1/nexplayer.js
-```
+
 * **[Added]** Error events
 * **[Added]** dashSettings Option
 * **[Added]** Callback to blockAt method
 * **[Improved]** startFullscreen Option
 
-Date: Dic 21th 2020
+Date: December 21st 2020
 
 #### Version 5.4
-```
-https://nexplayer.nexplayersdk.com/5.4/nexplayer.js
-```
+
 * **[Added]** Picture in Picture Option
 * **[Added]** useiOSFullScreen Option to use the native IOS full screen
 * **[Improved]** Live button
 * **[Improved]** startFullscreen Option
 
-Date: Dic 10th 2020
+Date: December 10th 2020
 
 #### Version 5.3
-```
-https://nexplayer.nexplayersdk.com/5.3/nexplayer.js
-```
+
 * **[Added]** Implement error events
 * **[Added]** isFullscreen()
 
-Date: Nov 25th 2020
+Date: November 25th 2020
 
 #### Version 5.2.3
-```
-https://nexplayer.nexplayersdk.com/5.2.3/nexplayer.js
-```
+
 * **[Added]** Include new methods from AdsManager
 * **[Improved]** Fix problem in ios when using full screen mode
 * **[Improved]** Fix a minor issu when de audio keeps running in background
 * **[Improved]** Fix pause doesnt work the first time in iOS
 * **[Improved]** Fix controls autohide on first load.
 
-Date: Nov 18th 2020
+Date: November 18th 2020
 
 #### Version 5.2.1
-```
-https://nexplayer.nexplayersdk.com/5.2.1/nexplayer.js
-```
+
 * **[Improved]** possibility of locking the zoom
 * **[Improved]** minor issue related with the double touch in ios
 * **[Improved]** the placement of the controls has been corrected in some cases where the behavior was not correct
 
-Date: Oct 26th 2020
+Date: October 26th 2020
 
 #### Version 5.2
-```
-https://nexplayer.nexplayersdk.com/5.2/nexplayer.js
-```
+
 * **[Added]** getConfig
 * **[Added]** getPlaybackSpeed
 * **[Added]** getStreamType -> DASH/ HLS/ mp4 etc
@@ -192,12 +162,10 @@ https://nexplayer.nexplayersdk.com/5.2/nexplayer.js
 * **[Improved]** Improve video 360
 * **[Improved]** Full-Screen Mode on iPhone
 
-Date: Oct 22nd 2020
+Date: October 22nd 2020
 
 #### Version 5.1.5
-```
-https://nexplayer.nexplayersdk.com/5.1.5/nexplayer.js
-```
+
 * **[Improved]** setCurrentTrack()
 * **[Improved]** setThumbnailStep()
 * **[Improved]** .addImpressionListener, .addClickListener, .addBlockedListener
@@ -206,31 +174,23 @@ https://nexplayer.nexplayersdk.com/5.1.5/nexplayer.js
 * **[Improved]** JumpForward(value), jumpBackward(value), seeklive(), getDVRWindowSize()
 * **[Improved]** Change HTML5 spinner
 
-Date: Sep 25th 2020
+Date: September 25th 2020
 
 #### Version 5.1.4
-```
-https://nexplayer.nexplayersdk.com/5.1.4/nexplayer.js
-```
+
 * **[Improved]** Improve on Safari when playing multiple videos
 
-Date: Sep 21th 2020
+Date: September 21th 2020
 
 #### Version 5.1.2
-```
-https://nexplayer.nexplayersdk.com/5.1.2/nexplayer.js
-```
+
 * **[Improved]** Improve the reproduction in safari
 * **[Improved]** Fix the problem with 360 and fairplay
 
-Date: Sep 16th 2020
+Date: September 16th 2020
 
 #### Version 5.1
 
-<!-- <input type="text" value="https://nexplayer.nexplayersdk.com/4.2/nexplayer.js" id="myInput"> -->
-```
-https://nexplayer.nexplayersdk.com/5.1/nexplayer.js 
-```
 * **[Added]** setVolume method
 * **[Added]** Automatic type360
 * **[Added]** support 360 in oculus
@@ -244,14 +204,9 @@ https://nexplayer.nexplayersdk.com/5.1/nexplayer.js
 * **[Improved]** Solve bug related to the spinning wheel 
 * **[Improved]** Solve bug with iphone ads
 
-Date: Ago 26th 2020
+Date: August 26th 2020
 
 #### Version 4.2
-
-<!-- <input type="text" value="https://nexplayer.nexplayersdk.com/4.2/nexplayer.js" id="myInput"> -->
-```
-https://nexplayer.nexplayersdk.com/4.2/nexplayer.js 
-```
 
 * **[Added]** Multiple players
 * **[Added]** New API calls
@@ -260,9 +215,6 @@ https://nexplayer.nexplayersdk.com/4.2/nexplayer.js
 * **[Improved]** Performance
 
 #### Version 4.1.1
-```
-https://nexplayer.nexplayersdk.com/4.1.1/nexplayer.js
-```
 
 * **[Added]** Option for adding return button
 * **[Added]** Player statistics displayed when writting "nex"
@@ -275,9 +227,6 @@ https://nexplayer.nexplayersdk.com/4.1.1/nexplayer.js
 * **[Improved]** General performance improvement
 
 #### Version 4.0
-```
-https://nexplayer.nexplayersdk.com/4.0/nexplayer.js
-```
 
 * **[Added]** HLS + Widevine support
 * **[Added]** Tizen Support
@@ -297,18 +246,11 @@ https://nexplayer.nexplayersdk.com/4.0/nexplayer.js
 
 
 #### Version 3.6
-```
-https://nexplayer.nexplayersdk.com/3.6/nexplayer.js
-```
 
 * **[Added]** AirPlay support preintegrated.
 * **[Added]** Reactive icons.
 
 #### Version 3.5
-
-```
-https://nexplayer.nexplayersdk.com/3.5/nexplayer.js
-```
 
 * **[Added]** Online license management (setting the customer key is now necessary).
 * **[Added]** SDK hosted in a CDN.
