@@ -8,6 +8,14 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 7.0.1
+```
+https://nexplayer.nexplayersdk.com/7.0.1/nexplayer.js
+```
+* **[Improved]** General improvements.
+
+Date: September 9th 2021
+
 #### Version 7.0.0
 ```
 https://nexplayer.nexplayersdk.com/7.0.0/nexplayer.js
