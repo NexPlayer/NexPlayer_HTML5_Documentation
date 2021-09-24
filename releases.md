@@ -17,9 +17,7 @@ https://nexplayer.nexplayersdk.com/7.0.1/nexplayer.js
 Date: September 9th 2021
 
 #### Version 7.0.0
-```
-https://nexplayer.nexplayersdk.com/7.0.0/nexplayer.js
-```
+
 * **[Improved]** Fixed continuous buffering with DASH live streams.
 * **[Improved]** Improved start time with HLS live streams that use PDT property.
 * **[Improved]** Fixed bug regarding HLS streams quality change.
