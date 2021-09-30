@@ -149,8 +149,8 @@ There is a substantial number of customizable options for NexPlayer™ including
 	},
     hideScreenPlay: false, // Optional: Hide the play button in the middle of the video, which appears when the video is paused.
     hideVolumeIcon: true, // Optional: Hide the volume icon for mobile devices. The volume is controlled by the device buttons.
-    liveSettings: {
-        lowLatency: true, // Optional, sets low latency on/off.
+    lowLatency: true, // // Toggle on/off low latency
+    liveSettings: { //Optional, requires low latency
         liveDelay: 5, // Optional, seconds of delay.
         maxDrift: 1 // Optional, the maximum delay before to make a seek live.
         playbackRate: 0.5,   // Optional, the speed that the player gets in order to keep the live delay.

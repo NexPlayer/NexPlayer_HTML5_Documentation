@@ -474,14 +474,14 @@ This feature tells the player whether to start playback with the volume muted or
 
 ## Low Latency
 
-This feature enables low latency for live streams. This can be configured in the player by adding the liveSettings option object. You can also choose the desired latency, maximum drift (time of delay from which the player will try to seek to liveDelay time) and playback rate (player will change video speed to this value to try to reach the liveDelay time in case is behind):
+This feature enables low latency for live streams. You can also choose the desired latency, maximum drift (time of delay from which the player will try to seek to liveDelay time) and playback rate (player will change video speed to this value to try to reach the liveDelay time in case is behind):
 
 ```js
   {
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
-    liveSettings: {
-      lowLantency: true, // Toggle on/off low latency apis
+    lowLatency: true, // // Toggle on/off low latency
+    liveSettings: { // Optional, requires low latency
       liveDelay: 3.2, // The desired latency to maintain
       maxDrift: 10, // Time of delay from which the player will try to seek to liveDelay time
       playbackRate: 0.5 // Player will speed up playback rate to 1 + playbackRate value in case the playback is behind liveDelay

@@ -204,7 +204,8 @@ Creates and initializes the player.
 | hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
 | hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
 | hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
-| liveSettings | <code>Object</code> | Settings to control live playback. |
+| lowLatency | <code>boolean</code> |  Determines if the low latency will be enable. |
+| liveSettings | <code>Object</code> | Settings to control live playback, requires low latency |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
 | maxFrameDrop | <code>number</code> | Determines the max frame drop. |
@@ -272,6 +273,7 @@ Reloads the player with the given configuration. If the configuration object is 
 | hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
 | hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
 | hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
+| lowLatency | <code>boolean</code> |  Determines if the low latency will be enable. |
 | liveSettings | <code>Object</code> | Settings to control live playback. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
@@ -1713,6 +1715,7 @@ Creates and initializes the player.
 | hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
 | hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
 | hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
+| lowLatency | <code>boolean</code> |  Determines if the low latency will be enable. |
 | liveSettings | <code>Object</code> | Settings to control live playback. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
