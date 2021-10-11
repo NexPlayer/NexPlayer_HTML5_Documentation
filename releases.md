@@ -8,10 +8,20 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 7.1.0
+```
+https://nexplayer.nexplayersdk.com/7.1.0/nexplayer.js
+```
+* **[Improved]** Fixed ABR issues on HLS.
+* **[Improved]** Fixed video playback after an ad starts.
+* **[Improved]** Video plays when autoplay is set to false.
+* **[Add]** Live thumbnail support on HLS streams.
+* **[Add]** Live thumbnail support on DASH streams.
+
+Date: October 11th 2021
+
 #### Version 7.0.1
-```
-https://nexplayer.nexplayersdk.com/7.0.1/nexplayer.js
-```
+
 * **[Improved]** General improvements.
 
 Date: September 9th 2021
