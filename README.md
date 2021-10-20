@@ -77,7 +77,7 @@ The default UI is easily customizable to fit the user´s personal preferences (e
 <h5 class="titleBlocks">METADATA</h5>
   <ul class="list">  
       <li>ID3 Tags </li>
-      <li>EMSG </li>
+      <li>EMSG boxes within fMP4 segments</li>
   </ul>
 </div>
 <div class="blocks">

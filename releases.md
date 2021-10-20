@@ -10,8 +10,14 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 
 #### Version 7.1.0
 ```
-https://nexplayer.nexplayersdk.com/7.1.0/nexplayer.js
+https://nexplayer.nexplayersdk.com/7.1.1/nexplayer.js
 ```
+* **[Improved]** Fixed problem triggering "cuechange" event for EMSG metadata boxes.
+
+Date: October 20th 2021
+
+#### Version 7.1.0
+
 * **[Improved]** Fixed ABR issues on HLS.
 * **[Improved]** Fixed video playback after an ad starts.
 * **[Improved]** Video plays when autoplay is set to false.

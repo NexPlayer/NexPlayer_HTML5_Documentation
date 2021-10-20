@@ -13,6 +13,7 @@
    - [.Setup(configuration)](#nexplayersetupconfiguration)
    - [.checkSupportedConfigurations(URL, DRMType)](#nexplayerchecksupportedconfigurations)
    - [.Reload(configuration)](#nexplayerreloadconfiguration)
+   - [.decodeData(data)](#nexplayerdecodedatadata)
 
 ## Player
 
@@ -297,13 +298,23 @@ Reloads the player with the given configuration. If the configuration object is 
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
 | watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
+
+#### nexplayer.decodeData(data)
+
+Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and NULL (\u0000) unicode characters are cleaned.
+
+**Type**: function of [<code>nexplayer</code>](#Player)
+**Param**: 
+   - **data** is the ArrayBuffer to decode.
+**Returns**: decoded and cleaned string or null if the parameter provided is not an ArrayBuffer.
+
 <a id="gettracks"> </a>
    #### player.getTracks() ⇒ Array.< Track >
 
 Gets all of the videoes avaliable tracks (different qualities).
 
 **Type**: instance method of [<code>Player</code>](#Player)     
-**Returns**:: Array.< Track > - all the tracks available.
+**Returns**: Array.< Track > - all the tracks available.
    
 <a id="getcurrenttrack"> </a>
    #### player.getCurrentTrack() ⇒ Track
