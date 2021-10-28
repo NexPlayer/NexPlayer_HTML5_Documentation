@@ -914,7 +914,7 @@ Shows the volume icon.
 
 **Type**: instance method of  [<code>Player</code>](#Player)
 
-#### <a id="getthumbnailat"></a> player.getThumbnailAt()
+#### <a id="getthumbnailat"></a> player.getThumbnailAt(number)
 
 Get the thumbnail at a specific video time.
 
@@ -924,7 +924,7 @@ Get the thumbnail at a specific video time.
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**: Promise - <a href="#/API?id=frame">Frame</a> Object.
+**Returns**: Promise <Frame, object> - <a href="#/API?id=frame">Frame</a> as resolve, and object which contains details as a reject.
 
 <a id="playeradmanager"></a>
 
