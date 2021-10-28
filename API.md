@@ -89,6 +89,7 @@
    - [.getVersion()](#getversion)
    - [.hiddenVolumeIcon()](#hiddenvolumeicon)
    - [.showVolumeIcon()](#showvolumeicon)
+   - [getThumbnailAt()](#getthumbnailat)
  - Ads
    - [.adManager()](#playeradmanager)
    - [.getAdObject()](#playergetadobject)
@@ -913,6 +914,14 @@ Shows the volume icon.
 
 **Type**: instance method of  [<code>Player</code>](#Player)
 
+#### <a id="getthumbnailat"></a> player.getThumbnailAt()
+
+Get the thumbnail at a specific video time.
+
+**Type**: instance method of [<code>Player</code>](#Player)     
+
+**Returns**: Promise - waits for a specific thumbnail to load.
+
 <a id="playeradmanager"></a>
 
 #### player.adManager()
@@ -1673,6 +1682,20 @@ Called when a FairPlay content needs to request the license.
 | id | <code>number</code> | id of the stream. |
 | language | <code>number</code> | language of the stream. |
 | name | <code>number</code> | name of the stream. |
+
+#### <a id="frame"></a> Frame : <code>Object</code>
+
+**Type**: global typedef     
+**Properties**:  
+
+| Name    | Type                | Description                  |
+| ------- | ------------------- | ---------------------------- |
+| f       | <code>canvas</code> | Thumbnail canvas instance.   |
+| w       | <code>number</code> | Width.                       |
+| h       | <code>number</code> | Height.                      |
+| st      | <code>number</code> | Thumbnail starting time.     |
+| ft      | <code>number</code> | Thumbnail ending time.       |
+
 
    ## VR Player
 

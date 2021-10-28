@@ -21,8 +21,9 @@ Date: October 20th 2021
 * **[Improved]** Fixed ABR issues on HLS.
 * **[Improved]** Fixed video playback after an ad starts.
 * **[Improved]** Video plays when autoplay is set to false.
-* **[Add]** Live thumbnail support on HLS streams.
-* **[Add]** Live thumbnail support on DASH streams.
+* **[Added]** Live thumbnail support on HLS streams.
+* **[Added]** Live thumbnail support on DASH streams.
+* **[Added]** <a href="#/API?id=getthumbnailat">getThumbnailAt()</a> method.
 
 Date: October 11th 2021
 
