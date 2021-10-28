@@ -89,7 +89,7 @@
    - [.getVersion()](#getversion)
    - [.hiddenVolumeIcon()](#hiddenvolumeicon)
    - [.showVolumeIcon()](#showvolumeicon)
-   - [getThumbnailAt()](#getthumbnailat)
+   - [getThumbnailAt(number)](#getthumbnailat)
  - Ads
    - [.adManager()](#playeradmanager)
    - [.getAdObject()](#playergetadobject)
@@ -918,9 +918,13 @@ Shows the volume icon.
 
 Get the thumbnail at a specific video time.
 
+| Param | Type | Description |
+| --- | --- | --- |
+| Time | <code>number</code> | Get thumbnails at the given time. |
+
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**: Promise - waits for a specific thumbnail to load.
+**Returns**: Promise - <a href="#/API?id=frame">Frame</a> Object.
 
 <a id="playeradmanager"></a>
 
