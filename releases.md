@@ -8,6 +8,15 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 7.1.2
+```
+https://nexplayer.nexplayersdk.com/7.1.2/nexplayer.js
+```
+* **[Improved]** Fixed issue causing buffering with different audio/video segment durations.
+* **[Improved]** Fixed content's requests that requires cookies to be played.
+
+Date: January 17th 2022
+
 #### Version 7.1.1
 ```
 https://nexplayer.nexplayersdk.com/7.1.1/nexplayer.js
