@@ -18,9 +18,7 @@ https://nexplayer.nexplayersdk.com/7.1.2/nexplayer.js
 Date: January 17th 2022
 
 #### Version 7.1.1
-```
-https://nexplayer.nexplayersdk.com/7.1.1/nexplayer.js
-```
+
 * **[Improved]** Fixed problem triggering "cuechange" event for EMSG metadata boxes.
 
 Date: October 20th 2021
