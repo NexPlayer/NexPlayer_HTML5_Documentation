@@ -232,132 +232,74 @@ This feature, as long as src is undefined, allows the player to choose a playabl
 
 ## Verimatrix Watermarking
 
-Verimatrix Watermarking allows the customers, the chance to use their own Watermark in order to get more secure in their content, during the playback.
+Verimatrix Watermarking provides additional security into the contents by adding a imperceptible watermark on the video.
 
 ### Using with the player
 
-To start, you need to import the watermark.min.js file, to get it you should request it here https://www.verimatrix.com/products/watermarking/.
+To start, you need to request a watermark.min.js file from Verimatrix here https://www.verimatrix.com/products/watermarking/.
 
 
 ```html
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<title>NexPlayer</title>
-		<style type="text/css">
-				/* "YOUR STYLE" */
-		</style>
-	</head>
-	<body>
-		<div id="player_container">
-			<div id="player" width="560" height="315"></div>
-		</div>
-		<script src="YOUR watermark.min.js FILE URL"></script>
-		<script src="YOUR nexplayer.js FILE"></script>
-		<script>
 
-			var player = null;
-			var videoElem = null;
-			var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-				player = nexplayerInstance;
-				videoElem = videoElement;
-				let FLogoImage = new Image();
-				FLogoImage.src = "YOUR WATERMARK IMG URL";
-				let wmInfo = {
-					"strength" : 255, // WATERMARK STRENGTH (1-255)
-					"transactionId": 12424, // REQUIRED FOR WmSdInitWatermark(). TRANSACTION OR USER IDENTIFIER.
-					"videoParentElement": videoElem.parentElement, // YOUR VIDEO ELEMENT PARENT 
-					"videoElement": videoElem, // YOUR VIDEO ELEMENT ID 
-					"apiToken": 't1EKhe8A', // OPTIONAL. OPAQUE STRING FOR ACTIVATING SUBSEQUENT API ACTIONS
-					"logoImage": FLogoImage, // OPTIONAL. SET A VISIBLE IMAGE TO DRAW IN ADDITION TO THE IMPERCEPTIBLE WATERMARK
-					"logoPos": [ 15, 20, 269, 100 ], // SET COORDINATES FOR THE LOGO IMAGE. FORMAT: [x, y, WIDTH, HEIGHT]
-					"player" : player, // THE OBJECT REPRESENTING VIDEO PLAYER.
-				}
-				let watermarkContext = WmSdkInitWatermark(wmInfo); // STARTS TO INITIALIZE THE WATERMARK AND SET ITS ESSENTIAL PARAMETERS, WHEN VIDEO PLAYBACK STARTS. THIS IS THE ONLY FUNCTION YOU MUST CALL TO START WATERMARKING.
-			}
-		
-			nexplayer.Setup({
-				key: "YOUR LICENSE KEY",
-				div: document.getElementById('player'),
-				autoplay: true,
-				mutedAtStart: true,
-				debug: true,
-				callbacksForPlayer: callBackWithPlayers,
-				src: 'YOUR STREAM SRC',
-			});
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>NexPlayer</title>
+  <link rel="stylesheet" href="your-style.css">
+</head>
 
-		</script>
-	</body>
+<body>
+  <div id="player_container">
+    <div id="player" width="560" height="315"></div>
+  </div>
+  <script src="Your nexplayer.js file."></script>
+  <script>
+
+    var player = null;
+    var videoElem = null;
+    var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+      player = nexplayerInstance;
+      videoElem = videoElement;
+    }
+
+    nexplayer.Setup({
+      key: "LICENSE KEY",
+      div: document.getElementById('player'),
+      autoplay: true,
+      mutedAtStart: true,
+      debug: false,
+      callbacksForPlayer: callBackWithPlayers,
+      src: 'STREAM SRC',
+      wmInfo = {
+        strength: 255,
+        transactionId: 12424,
+        apiToken: 't1EKhe8A',
+        logoImage: "Image URL",
+        logoPos: [5, 5, 340, 90]
+      }
+    });
+
+  </script>
+</body>
+
 </html>
 
 ```
+
 
 ### wmInfo Object
 
 | Param | Type | Description |
 | --- | --- | --- |
-| strength | Integer | Watermark strength. <br/> Valid values: <br/> • 255: Visible watermark for debugging <br/> • 1 - 100: Production watermark strength <br/> (1 = weakest, 100 = strongest/possibly visible) <br/> A stronger watermark is faster to extract. Values of 50 or <br/> less require very long videos to extract.<br/> Default: 80- |
-| transactionId | Unsigned <br/> integer | Required for WmSdInitWatermark(). Transaction or user identifier. <br/> Size: 36 bits <br/> Valid values: 0 - 687194767365 | 
-| operatorId | Unsigned <br/> integer | Operator identifier. You do not need to provide operatorId as it is hard-coded to an operator-specific value in the software. <br/> Size: 12 bits <br/> Valid values: 0 - 4095| 
-| videoParentElement | HTML DOM Element object | Parent node of the HTML element where playback is occuring, typically div. canvasElement (see below) is placed within videoParentElement. If you use custom controls for controlling the video, these are also attached to videoParentElement. <br/> You must provide videoParentElement or videoElement (see below) in order to associate the watermark with correct element. | 
-| videoElement | HTML DOM Element object | Video element where playback is occurring.<br/> If videoElement is not provided, the first video element found on the page is used.| 
-| canvasElement | HTML DOM Element object | Canvas element (OSD) where the watermark is drawn. This element is drawn on top of the video. <br/> If canvasElement is not provided ,Verimatrix Watermarking creates a canvas element and places it into videoParentElement| 
-| player | object | The object representing video player | 
-| allowFullscreen | Boolean | Flag to permit fullscreen video playback. In order for Verimatrix Watermarking to work correctly in fullscreen mode, other properties such as videoParentElement have to be set correctly. <br/> Values:<br/> • true = Allow transition to fullscreen mode <br/> • false = Disallow fullscreen mode <br/> Default: false <br/> Keep reading the guide to see more needed info about it| 
-| afterDraw | function(successflag) | Verimatrix Watermarking executes this function after drawing the watermark. You can use this callback to get feedback on the watermarking process| 
-| strengthMultiplier | Float | Applying the strength multiplier enhances the watermark strength. This capability is intended for debugging purposes: the normal strength scale 1-100 is sufficient for imperceptible watermarks. <br/> Default: undefined (equal to 1)| 
-| debugBorder | Boolean | Draws debug borders around canvasElement and watermark. Used to debug placement of elements in relation to video playback. <br/> Values: <br/> • true = Draw debug borders <br/> • false = Do not draw debug borders <br/> Default: false | 
-| logoImage | Image | Optional. Set a visible image to draw in addition to the imperceptible watermark. The demonstration of Verimatrix Watermarking uses this field to draw Verimatrix logo. <br/> Default: None | 
-| logoPos | Array | Set coordinates for the logo image. <br/> Format: [x, y, width, height]<br/> Default: Upper left corner of the video | 
-| apiToken | String | Optional. Opaque string for activating subsequent API actions. <br/> If you provide apiToken in the arguments for WmSdkInitWatermark(), you must provide the same apiToken in subsequent update() and finish() calls |
-
-### Watermarking Update
-
-Is needed to update the watermarking to be sure that is in the correct position always, for this we can use the update() method which receive the wmInfo Object, You can also use update() to change the watermark parameters.
-
-If you provided apiToken in the argument for WmSdkInitWatermark(), you must 
-provide the same apiToken in update() in order to change any parameters.
-
-You must call update() when the layout of the elements on the browser window may 
-have changed. You must call update() on entering or leaving fullscreen mode. It is best practice to call update() on each known event that may affect layout, and also periodically to handle any other layout 
-changing events.
-
-```js
-
-	var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-		...
-
-		wmInfo.strength = 250;
-		function onFullScreen() {
-			watermarkContext.update(wmInfo);
-		}
-		document.addEventListener('fullscreenchange', onFullScreen);
-
-		...
-	}
-
-```
-
-### Watermarking Finish
-
-After the video playback is finished, we can remove the watermark using the method finish(), to call the only parameter needed is the apiToken.
-
-```js
-	var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-		...
-
-		videoElement.addEventListener('ended', function (event) {
-			console.log("ended");
-			watermarkContext.finish(wmInfo);
-		},true);
-
-		...
-	}
-
-```
+| strength | Integer | Watermark strength.<br/> Valid values:<br/>• 255: Visible watermark for debugging <br/>• 1 to 100: Production watermark strength<br/>(1 = weakest, 100 = strongest/possibly visible) <br/>A stronger watermark is faster to extract.<br/>Values of 50 or less require very long videos to extract.<br/> Default: 80 |
+| transactionId | Unsigned <br/> integer | Transaction or user identifier. <br/> Required for watermarking initialization. <br/> Size: 36 bits <br/> Valid values: 0 to 687194767365 | 
+| operatorId | Unsigned <br/> integer | Operator identifier.<br/> You do not need to provide operatorId as it is hard-coded to an operator-specific value in the software.
+| logoImage | String | Optional.<br/>URL for a visible image to draw in addition to the imperceptible watermark.<br/>Default: None | 
+| logoPos | Array \<number\> | Optional.<br/>Set coordinates for the logo image.<br/>Format: [x, y, width, height]<br/>Valid values for x and y: 0 to 100 <br/> Default: Upper left corner of the video.| 
+| apiToken | String | Optional.<br/>Opaque string for activating subsequent API actions. |
 
 ***
 <a id="youtube-top"> </a>
