@@ -1,19 +1,13 @@
-<a id="introduction-top"> </a>
 
-<a href="https://nexplayersdk.com/html5-player/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
+# NexPlayer™ HTML5 SDK<!-- {docsify-ignore-all} -->
 
-***
-
-# NexPlayer HTML5<!-- {docsify-ignore-all} -->
-
-## About NexPlayer
-NexPlayer™ provides a media player for the Web. It includes support for HLS, DASH, Microsoft Smooth Streaming, and progressive download.
+NexPlayer provides a media player for the Web. It includes support for HLS, DASH, Microsoft Smooth Streaming, and progressive download.
 
 The default UI is easily customizable to fit the user´s personal preferences (e.g. icons, colors, etc).
 <div class="listsContainer">
 <a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/" class="hideText"> Full Documentation </a>
 <div class="blocks">
-<h5 class="titleBlocks">VIDEO DELIVERY FORMATS</h5>
+<h4 class="titleBlocks">VIDEO DELIVERY FORMATS</h5>
   <ul class="list">  
       <li>HLS </li>      
       <li>DASH </li>      
@@ -22,7 +16,7 @@ The default UI is easily customizable to fit the user´s personal preferences (e
   </ul>
 </div>
 <div class="blocks">
-<h5 class="titleBlocks">FEATURES</h5>
+<h4 class="titleBlocks">FEATURES</h5>
   <ul class="list">  
       <li>Integrated UI </li>      
       <li>360 and VR video player </li>      
@@ -43,21 +37,21 @@ The default UI is easily customizable to fit the user´s personal preferences (e
   </ul>
 </div>
 <div class="blocks">
-<h5 class="titleBlocks">PLAYBACK</h5>
+<h4 class="titleBlocks">PLAYBACK</h5>
   <ul class="list">  
       <li>VOD </li>      
       <li>Live </li>             
   </ul>
 </div>
 <div class="blocks">
-<h5 class="titleBlocks">CASTING</h5>
+<h4 class="titleBlocks">CASTING</h5>
   <ul class="list">  
       <li>AirPlay </li>      
       <li>Chromecast </li> 
   </ul>
 </div>
 <div class="blocks">
-<h5 class="titleBlocks">AD INSERTION</h5>
+<h4 class="titleBlocks">AD INSERTION</h5>
   <ul class="list">  
       <li>VAST, VPAID, VMAP </li>      
       <li>Pre-Roll, Mid-Roll, Post-Roll </li>
@@ -65,7 +59,7 @@ The default UI is easily customizable to fit the user´s personal preferences (e
   </ul>
 </div>
 <div class="blocks">
-<h5 class="titleBlocks">SUBTITLES & CC</h5>
+<h4 class="titleBlocks">SUBTITLES & CC</h5>
   <ul class="list">  
       <li>WebVTT </li>      
       <li>CEA 608/708 </li> 
@@ -74,14 +68,14 @@ The default UI is easily customizable to fit the user´s personal preferences (e
   </ul>
 </div>
 <div class="blocks">
-<h5 class="titleBlocks">METADATA</h5>
+<h4 class="titleBlocks">METADATA</h5>
   <ul class="list">  
       <li>ID3 Tags </li>
       <li>EMSG boxes within fMP4 segments</li>
   </ul>
 </div>
 <div class="blocks">
-<h5 class="titleBlocks">CONTENT PROTECTION</h5>
+<h4 class="titleBlocks">CONTENT PROTECTION</h5>
   <ul class="list">  
       <li>Widevine DRM </li>      
       <li>PlayReady DRM </li>      
