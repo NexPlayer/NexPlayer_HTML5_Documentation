@@ -49,7 +49,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
     </tr>
      <tr>
       <td  scope="row">IE </td>      
-      <td  scope="row">Windows <sup><a href="/#/advancedusage?id=fn_1" id="reffn_1">1</a></sup> </td>      
+      <td  scope="row">Windows <sup><a href="#fn_1" id="reffn_1">1</a></sup> </td>
       <td  scope="row">PlayReady, Custom Headers </td>       
     </tr>
   </tbody>
@@ -57,7 +57,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
   
 </table>
 <blockquote id="fn_1">
-<sup>1</sup> IE 11+ is required<a href="#reffn_2" title="Jump back to footnote [1] in the text."> </a>
+<span><sup><a href="#reffn_1" title="Jump back to footnote [1] in the text.">1</a></sup> IE 11+ is required</span>
 </blockquote>
 
 #### HLS
@@ -97,7 +97,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
     </tr>
      <tr>
       <td  scope="row">IE </td>
-      <td  scope="row">Windows <sup><a href="/#/advancedusage?id=fn_2" id="reffn_2">2</a></sup> </td>
+      <td  scope="row">Windows <sup><a href="#fn_2" id="reffn_2">2</a></sup> </td>
       <td  scope="row">AES, PlayReady, Custom Headers </td>
     </tr>
   </tbody>
@@ -106,7 +106,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
 </table>
 
 <blockquote id="fn_2">
-<sup>2</sup> IE 11+ is required<a href="#reffn_2" title="Jump back to footnote [1] in the text."> </a>
+<span><sup><a href="#reffn_2" title="Jump back to footnote [2] in the text.">2</a></sup> IE 11+ is required</span>
 </blockquote>
 
 NexPlayer supports several DRM technologies:
