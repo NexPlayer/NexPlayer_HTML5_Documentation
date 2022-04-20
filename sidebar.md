@@ -12,9 +12,9 @@
     * [Multiview](https://nexplayer.github.io/NexPlayer_Multiview/#/html5)
     * [Mux Data](https://nexplayer.github.io/NexPlayer_Mux/#/)
     * [NexPlayer with AWS Media Services - Integration Guide](https://nexplayer.github.io/NexPlayer_AWS/#/README)
-    * [Verimatrix](Integrations?id=verimatrix-top)
-    * [Youtube](Integrations?id=youtube-top)
-* [Third Party Licenses](licenses?id=licenses-top) 
+    * [Verimatrix](integrations.md?id=verimatrix-top)
+    * [Youtube](integrations.md?id=youtube-top)
+    * [Third Party Licenses](licenses?id=licenses-top) 
 
 **Links**
 - [<img src="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/assets/help.svg">Request Demo](https://nexplayersdk.com/html5demo/)
