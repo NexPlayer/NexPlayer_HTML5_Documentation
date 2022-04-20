@@ -1,13 +1,6 @@
-<a id="releases-top"> </a>
-
-<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
-
-***
-
 # Releases
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
-
 #### Version 7.1.2
 ```
 https://nexplayer.nexplayersdk.com/7.1.2/nexplayer.js
@@ -118,10 +111,10 @@ Date: March 8th 2021
 * **[Added]** defaultQuality: feature to start the video using the given default quality
 * **[Added]** hideScreenPlay: feature to hide the play button which appears when the video is pausing
 * **[Added]** Supporting multiple stream source: Selects a playable stream from an array of objects depending on the device and the browser
-* **[Added]** Providing alternate streams as a backup: When a streams fails player is capable of skiping to the next provided stream that works
+* **[Added]** Providing alternate streams as a backup: When a streams fails player is capable of skipping to the next provided stream that works
 * **[Added]** disableAbr() method
 * **[Added]** getVersion() method
-* **[Added]** unMount and detroy for multiView
+* **[Added]** unMount and destroy for multiView
 * **[Improved]** HLS Performance with low network
 * **[Improved]** toggleBar() makes that the volume bar disappears too, now it has been solved
 
@@ -163,8 +156,8 @@ Date: November 25th 2020
 
 * **[Added]** Include new methods from AdsManager
 * **[Improved]** Fix problem in ios when using full screen mode
-* **[Improved]** Fix a minor issu when de audio keeps running in background
-* **[Improved]** Fix pause doesnt work the first time in iOS
+* **[Improved]** Fix a minor issue when de audio keeps running in background
+* **[Improved]** Fix pause doesn't work the first time in iOS
 * **[Improved]** Fix controls autohide on first load.
 
 Date: November 18th 2020
@@ -277,7 +270,7 @@ Date: August 26th 2020
 
 #### Version 3.6
 
-* **[Added]** AirPlay support preintegrated.
+* **[Added]** AirPlay support pre-integrated.
 * **[Added]** Reactive icons.
 
 #### Version 3.5

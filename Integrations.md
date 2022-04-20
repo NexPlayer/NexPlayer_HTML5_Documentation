@@ -1,9 +1,3 @@
-<a id="integrations-top"> </a>
-
-<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
-
-***
-
 # Integrations<!-- {docsify-ignore-all} -->
 
 This is a summary of how to use third party tools
@@ -15,7 +9,7 @@ This is a summary of how to use third party tools
 
 Agora allows us to give you the chance to see a video with your friends
 
-<img width="50%" text-align="center" src="./_images/agoraimg.png" alt="nexAgo" >
+<img width="50%" text-align="center" src="./assets/agoraimg.png" alt="nexAgo" >
 
 ### Using with the player
 

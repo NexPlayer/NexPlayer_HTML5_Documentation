@@ -120,6 +120,11 @@ img {
     margin: 10px;
 }
 
+img.icon {
+    width:12px;
+    height:auto;
+}
+
 svg:not(:root) {
     overflow: hidden
 }
@@ -300,5 +305,14 @@ td::before{
 .titles{
     color: #ffffff;
     width: 250px;
+}
+.markdown-section h4 {
+    margin: 0px 0 30px 0;
+}
+.markdown-section th {
+    color:white;
+}
+.markdown-section thead {
+    background: #C80000;
 }
 /*!

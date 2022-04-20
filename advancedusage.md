@@ -1,115 +1,104 @@
-<a id="advance-top"> </a>
+# Advanced Usage
 
-<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
+NexPlayer offers more advanced options to control the playback. This section contains several examples of how to use these features.
 
-***
-
-# Advance Usage
-
-NexPlayer™ offers more advanced options to control the playback. This section contains several examples of how to use these features.
-
-***
-
-## Security
+## Content Protection
 
 Digital rights management (DRM) is a set of access control technologies for restricting the use of proprietary hardware and copyrighted works.
 
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Most of the DRMs available won't work without using HTTPS with a certificate. For development purposes, a tool like <a style ="color:#5A5A5A!important" href="https://ngrok.com/" target="_blank">ngrok</a> can be used to test DRM-protected links.</p>
 </div></div>
 
-#### Supported Platforms
+### Supported Platforms
 
 Online progressive download (MP4) is supported on any platform. The support for DASH and HLS, and associated DRMs, changes depending on each browser and platform. The platforms listed below are being continuously tested.
 
-##### DASH
+#### DASH
 
 <table class="table table-sm">
- 
   <tbody>
     <tr>
-      <th class="titles" bgcolor="#C80000" scope="row">BROWSER </th>   
-      <th class="titles" bgcolor="#C80000" scope="row">PLATFORM</th>        
-      <th class="titles" bgcolor="#C80000" scope="row">DRM</th>        
+      <th class="titles" bgcolor="#C80000" color="#FFF" scope="row">BROWSER </th>   
+      <th class="titles" bgcolor="#C80000" color="#FFF" scope="row">PLATFORM</th>        
+      <th class="titles" bgcolor="#C80000" color="#FFF" scope="row">DRM</th>        
     </tr>
     <tr>
-      <th  scope="row">Chrome </th>      
-      <th  scope="row">Windows, Linux, macOS, Android </th>      
-      <th  scope="row">Widevine, Custom Headers </th>      
+      <td  scope="row">Chrome </td>      
+      <td  scope="row">Windows, Linux, macOS, Android </td>      
+      <td  scope="row">Widevine, Custom Headers </td>      
     </tr>
     <tr>
-      <th  scope="row">Safari </th>      
-      <th  scope="row">macOS </th>      
-      <th  scope="row">X </th>       
+      <td  scope="row">Safari </td>      
+      <td  scope="row">macOS </td>      
+      <td  scope="row">X </td>       
     </tr>
     <tr>
-       <th  scope="row">Firefox </th>      
-      <th  scope="row">Windows, Linux, macOS, Android </th>      
-      <th  scope="row">Widevine, Custom Headers </th>            
+      <td  scope="row">Firefox </td>
+      <td  scope="row">Windows, Linux, macOS, Android </td>
+      <td  scope="row">Widevine, Custom Headers </td>
     </tr>
     <tr>
-       <th  scope="row">Opera </th>      
-      <th  scope="row">Windows, Linux, macOS </th>      
-      <th  scope="row">Widevine, Custom Headers </th>       
+      <td  scope="row">Opera </td>
+      <td  scope="row">Windows, Linux, macOS </td>
+      <td  scope="row">Widevine, Custom Headers </td>
     </tr>
      <tr>
-       <th  scope="row">Edge </th>      
-      <th  scope="row">Windows </th>      
-      <th  scope="row">PlayReady, Custom Headers </th>       
+      <td  scope="row">Edge </td>
+      <td  scope="row">Windows </td>
+      <td  scope="row">PlayReady, Custom Headers </td>
     </tr>
      <tr>
-       <th  scope="row">IE </th>      
-      <th  scope="row">Windows <sup><a href="/#/advanceusage?id=fn_1" id="reffn_1">1</a></sup> </th>      
-      <th  scope="row">PlayReady, Custom Headers </th>       
+      <td  scope="row">IE </td>      
+      <td  scope="row">Windows <sup><a href="/#/advancedusage?id=fn_1" id="reffn_1">1</a></sup> </td>      
+      <td  scope="row">PlayReady, Custom Headers </td>       
     </tr>
   </tbody>
 
   
 </table>
-
-
 <blockquote id="fn_1">
-<sup>1</sup>. IE 11+ is required<a href="#reffn_2" title="Jump back to footnote [1] in the text."> </a>
+<sup>1</sup> IE 11+ is required<a href="#reffn_2" title="Jump back to footnote [1] in the text."> </a>
 </blockquote>
 
-##### HLS
+#### HLS
 
 <table class="table table-sm">
  
   <tbody>
     <tr>
-      <th class="titles" bgcolor="#C80000" scope="row">BROWSER </th>   
-      <th class="titles" bgcolor="#C80000" scope="row">PLATFORM</th>        
-      <th class="titles" bgcolor="#C80000" scope="row">DRM</th>        
+      <td class="titles" bgcolor="#C80000" scope="row">BROWSER </td>
+      <td class="titles" bgcolor="#C80000" scope="row">PLATFORM</td>
+      <td class="titles" bgcolor="#C80000" scope="row">DRM</td>
     </tr>
     <tr>
-      <th  scope="row">Chrome </th>      
-      <th  scope="row">Windows, Linux, macOS, Android </th>      
-      <th  scope="row">AES, Widevine, Custom Headers </th>      
+      <td  scope="row">Chrome </td>
+      <td  scope="row">Windows, Linux, macOS, Android </td>
+      <td  scope="row">AES, Widevine, Custom Headers </td>
     </tr>
     <tr>
-      <th  scope="row">Safari </th>      
-      <th  scope="row">macOS, iOS </th>      
-      <th  scope="row">FairPlay, AES, Custom Headers </th>       
+      <td  scope="row">Safari </td>
+      <td  scope="row">macOS, iOS </td>
+      <td  scope="row">FairPlay, AES, Custom Headers </td>
     </tr>
     <tr>
-       <th  scope="row">Firefox </th>      
-      <th  scope="row">Windows, Linux, macOS, Android </th>      
-      <th  scope="row">AES, Widevine, Custom Headers </th>            
+      <td  scope="row">Firefox </td>
+      <td  scope="row">Windows, Linux, macOS, Android </td>
+      <td  scope="row">AES, Widevine, Custom Headers </td>
     </tr>
     <tr>
-       <th  scope="row">Opera </th>      
-      <th  scope="row">Windows, Linux, macOS </th>      
-      <th  scope="row">AES, Widevine, Custom Headers </th>       
+      <td  scope="row">Opera </td>
+      <td  scope="row">Windows, Linux, macOS </td>
+      <td  scope="row">AES, Widevine, Custom Headers </td>
     </tr>
      <tr>
-       <th  scope="row">Edge </th>      
-      <th  scope="row">Windows </th>      
-      <th  scope="row">AES, PlayReady, Custom Headers </th>       
+      <td  scope="row">Edge </td>
+      <td  scope="row">Windows </td>
+      <td  scope="row">AES, PlayReady, Custom Headers </td>
     </tr>
      <tr>
-       <th  scope="row">IE </th>      
-      <th  scope="row">Windows <sup><a href="/#/advanceusage?id=fn_2" id="reffn_2">2</a></sup> </th>      
-      <th  scope="row">AES, PlayReady, Custom Headers </th>       
+      <td  scope="row">IE </td>
+      <td  scope="row">Windows <sup><a href="/#/advancedusage?id=fn_2" id="reffn_2">2</a></sup> </td>
+      <td  scope="row">AES, PlayReady, Custom Headers </td>
     </tr>
   </tbody>
 
@@ -117,16 +106,16 @@ Online progressive download (MP4) is supported on any platform. The support for 
 </table>
 
 <blockquote id="fn_2">
-<sup>2</sup>. IE 11+ is required<a href="#reffn_2" title="Jump back to footnote [1] in the text."> </a>
+<sup>2</sup> IE 11+ is required<a href="#reffn_2" title="Jump back to footnote [1] in the text."> </a>
 </blockquote>
 
-NexPlayer™ supports several DRM technologies:
+NexPlayer supports several DRM technologies:
+
 ### Widevine
 
-Is a DRM powered by <a href =https://www.widevine.com target="_blank">Google</a>, available on Chrome and Firefox (on Android and desktop), Opera, MS Edge and IE (on desktop). It can be set by entering the appropriate information into the DRM array:
+Is a DRM powered by <a href=https://www.widevine.com target="_blank">Google</a>, available on Chrome and Firefox (on Android and desktop), Opera, MS Edge and IE (on desktop). It can be set by entering the appropriate information into the DRM array:
 
 ```js
-
   const nexDRMInformationWidevine = {
     NexDRMType:'com.widevine.alpha',
     NexDRMKey: 'DRM key URL',
@@ -142,7 +131,6 @@ Is a DRM powered by <a href =https://www.widevine.com target="_blank">Google</a>
       src: 'VIDEO URL',
       drm: [nexDRMInformationWidevine]
   });
-
 ```
 
 Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the Widevine server used.
@@ -157,7 +145,6 @@ In order for millions of Firefox users to continue viewing Widevine-protected di
 A DRM powered by <a href =https://www.microsoft.com/playready/ target="_blank">Microsoft</a>, available on Edge and Internet Explorer (on Windows). It can be used by entering the appropriate information into the DRM array:
 
 ```js
-
   const nexDRMInformationPlayReady = {
     NexDRMType:'com.microsoft.playready',
     NexDRMKey: 'DRM key URL', 
@@ -173,11 +160,9 @@ A DRM powered by <a href =https://www.microsoft.com/playready/ target="_blank">M
     src: 'VIDEO URL',
     drm: [nexDRMInformationPlayReady]
   });
-
 ```
 
 Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the PlayReady server used.
-
 
 ### CENC
 
@@ -215,7 +200,6 @@ The Common Encryption Scheme (CENC) specifies the standard to enable decryption 
 ```
 
 For example, Widevine and PlayReady can be used with the same DASH manifest and chunk files:
-
 
 ### FairPlay
 
@@ -290,6 +274,7 @@ For example, Widevine and PlayReady can be used with the same DASH manifest and 
   });
 
 ```
+
 Please note that the HTTP headers (NexHeaders) are optional, and might be required depending on the implementation of the FairPlay server used.
 
 FairPlay is supported with HLS.
@@ -344,7 +329,7 @@ function licenseRequestReady (event) {
  // The spc value should be base64-encoded but NOT url-encoded
  // The spc should go first and then the "assetId" (session.contentId)
  var params = "spc="+ base64EncodeUint8Array(message) + "&assetId=" + session.contentId;  
- // LA (License Acquistion) URL for FairPlay (serverProcessSPCPath)
+ // LA (License Acquisition) URL for FairPlay (serverProcessSPCPath)
  request.open("POST", "URL for the SPC sever (license server)", true); // serverProcessSPCPath
  request.setRequestHeader("Content-type", "text/xml; charset=utf-8");
  request.setRequestHeader("x-keyos-authorization", "Base64-encoded authentication XML");
@@ -365,7 +350,6 @@ nexplayer.Setup({
  drm: [nexDRMInformationFairPlay]
 });
 ```
-***
 
 ### AES
 
@@ -382,7 +366,6 @@ Custom headers can be included in each HTTP petition, even without the use of DR
 This information can be passed in the DRM array:
 
 ```js
-
   drmCustomHeaders = {
     NexHeaders:[{
       FieldName: 'Optional field name',
@@ -396,13 +379,10 @@ This information can be passed in the DRM array:
     src: 'VIDEO URL',
     drm: [drmCustomHeaders]
   });
-
 ```
 Please note that this method is not as secure as other DRMs.
 
 Custom headers are supported with HLS and DASH.
-
-***
 
 ## Ads
 
@@ -411,19 +391,16 @@ NexPlayer supports the VAST, VPAID, and VMAP ad formats.
 You can insert any pre/mid/post roll ad by setting up the ad links as shown below:
 
 ```js
-
   nexplayer.Setup({
     key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('player'),
     src: 'VIDEO URL',
     vast: 'VAST / VPAID / VMAP link'
   });
-
 ```
 
 Sample VAST links can be found on the <a href =https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags target="_blank">Google Interactive Media Ads Website</a>.
 
-***
 
 ## 360 Player
 
@@ -453,8 +430,6 @@ In order to have the 360 in all devices you should add type_360: true and the pl
 <div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>iOS 14 and iOS 14.1 don't support the 360 feature because there is an error in this versions</p>
 </div></div>
 
-***
-
 ## Muted at Start
 
 This feature tells the player whether to start playback with the volume muted or not. This can be configured in the player by adding the mutedAtStart option:
@@ -467,10 +442,9 @@ This feature tells the player whether to start playback with the volume muted or
   }
 
 ```
+
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>mutedAtStart</b> parameter is false, so the player will start unmuted if <b>mutedAtStart</b> is not set to true.</p>
 </div></div>
-
-***
 
 ## Low Latency
 
@@ -487,7 +461,6 @@ This feature enables low latency for live streams. You can also choose the desir
       playbackRate: 0.5 // Player will speed up playback rate to 1 + playbackRate value in case the playback is behind liveDelay
     },
   }
-
 ```
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>lowLatency</b> parameter is false, so the player will start without low latency if <b>lowLatency</b> is not set to true.</p>
@@ -495,8 +468,6 @@ This feature enables low latency for live streams. You can also choose the desir
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>liveDelay</b> parameter will adjust the latency depending on the network conditions.</p>
 </div></div>
-
-***
 
 ## Autoplay
 
@@ -513,8 +484,6 @@ This feature enables/disables autoplay. This can be configured in the player by 
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>autoplay</b> parameter is true, so the player will star without any user action. Note that most of the browsers will not allow autoplay without being muted at start.</p>
 </div></div>
-
-***
 
 ## Multiple Players
 
@@ -534,15 +503,11 @@ This feature enablles the use of multiple players at the same time. In order to 
 In this example, the function AditionalVideo() has been called once for the extra video.<br>
 It is necessary to create an aditional div and css class for every new player, also define a new "callbacksforPlayer".
 
-<img width="100%" text-align="center" src="./_images/2PlayersExample.png" alt="logo of docsify-awesome repository" >
-
-***
+<img width="100%" text-align="center" src="./assets/2PlayersExample.png" alt="logo of docsify-awesome repository" >
 
 ## Casting
 
 Cast technology allows you to stream your media to any compatible receiver devices.
-
-***
 
 ### Chromecast
 
@@ -560,8 +525,6 @@ Chromecast displays your video and audio streams directly onto any TV connected 
 ```
 
 It's possible to display an image after the video has finished using the chromecastEndImg parameter. Put the URL of the image you want to display and it'll be shown at the end of the video. Otherwise, a gray screen will be displayed when it finish.
-
-***
 
 ### AirPlay
 
@@ -582,15 +545,13 @@ The AirPlay and Chromecast cast options don't need input parameters. Just remove
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that AirPlay only works on Safari.</p>
 </div></div>
 
-***
-
 ## Timed Metadata
 
 NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
 
 The following code is a sample to retrieve the metadata from the streams. It logs the active cues from the TexTrack corrsponding to the metadata.
 
-Use <a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/API?id=nexplayerdecodedatadata" target="_blank"> nexplayer.decodeData </a>  function to decode the VTTCue value['data'] property. This property is an ArrayBuffer.
+Use <a href="/NexPlayer_HTML5_Documentation/#/API?id=nexplayerdecodedatadata" target="_blank"> nexplayer.decodeData</a> function to decode the VTTCue value['data'] property. This property is an ArrayBuffer.
 
 ```js
 
@@ -633,12 +594,9 @@ Use <a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/API?id=
 
 ```
 
-***
-
 ### ID3 Tags
 
 NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
-
 
 #### ID3
 
@@ -671,11 +629,9 @@ An instance of the player and the video element will be accessible once NexPlaye
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>We strongly recommend calling the APIs after the player is ready.</p>
 </div></div>
 
-***
-
 ## CSS Customization
 
-<img width="100%" text-align="center" src="./_images/customUIfin.png"  >
+<img width="100%" text-align="center" src="./assets/customUIfin.png"  >
 
 ### Player UI CSS Class Reference
 
@@ -851,13 +807,11 @@ This behavior can be customized with the hover selector on the .nexplayer_icon C
 
 ```
 
-***
-
 ## Custom Actions
 
 Advanced actions can be performed with a player instance. For the full action list, check <a href="#/API" target="_blank">NexPlayer API</a>
 
-### Adabtive Bitrate (ABR)
+### Adaptive Bitrate (ABR)
 
 HLS and DASH streams contain several video bitrates in order to adjust the quality based on the network conditions. Changes in bitrate are done automatically when ABR (Adaptive Bitrate) is enabled (default behavior).
 
@@ -879,7 +833,7 @@ Setting a fixed track can be achieved by calling the method <code>setTrack</code
   nexplayerInstance.setTrack(nexplayerInstance.getTracks()[0].id);
 ```
 
-A change in the current track can be detected with the NexPlayer™ <a href="#/advanceusage?id=callbacks" >callbacks</a>.
+A change in the current track can be detected with the NexPlayer™ <a href="#/advancedusage?id=callbacks" >callbacks</a>.
 
 ### Subtitles
 
@@ -924,24 +878,23 @@ Seeking to a certain time can be achieved by calling the method <code>seek</code
   nexplayerInstance.seek(30);
 ```
 
-***
-
 ## Thumbnails
 
 NexPlayer™ supports thumbnail previews. Thumbnails are individual frame images of the video that are loaded when a viewer hovers over the seekbar. It permits a quick snapshot of the video. The thumbnails can be loaded in a static or dynamic way.
 
-<img width="100%" text-align="center" src="./_images/thumb_player.png" alt="logo of docsify-awesome repository" >
+<img width="100%" text-align="center" src="./assets/thumb_player.png" alt="logo of docsify-awesome repository" >
 
 ###  Static Thumbnails
 
 The player needs two files:
 - The thumbnail sprite, which contains multiple thumbnails stitched together into a single image
-<img width="75%" text-align="center" src="./_images/thumbnails_sprite.png" alt="logo of docsify-awesome repository" >
+<img width="75%" text-align="center" src="./assets/thumbnails_sprite.png" alt="logo of docsify-awesome repository" >
 - A .vtt file that specifies:
  - The range that the thumbnail represents.
  - The coordinates and size (both pixels) corresponding to the position in the previous image file
 
 An example of the .vtt file could be:
+
 ```vtt
 WEBVTT
 
@@ -949,8 +902,8 @@ WEBVTT
 /assets/thumb_image.jpg#xywh=0,0,160,120
 00:00:03.000 --> 00:00:08.000
 /assets/thumb_image.jpg#xywh=162,0,160,120
-
 ```
+
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>For development purposes, the npm package <a style ="color:#5A5A5A!important" href="https://www.npmjs.com/package/thumbnails-webvtt" target="_blank">thumbnails-webvtt</a> can be used to generate the thumbnails sprite and the .vtt file for a specific video.</p>
 </div></div>
 
@@ -963,7 +916,6 @@ The player can be configured by adding the <b>staticThumbnailsImage</b> and <b>s
     staticThumbnailsImage: 'IMAGE SPRITE URL',
     staticThumbnailsVTT: 'VTT URL'
   }
-
 ```
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the time range specified in the .vtt file needs to be in (HH:)MM:SS.MMM format. Only this exact notation will be parsed.</p>
@@ -985,11 +937,9 @@ The player can be configured by adding the useDynamicThumbnails option:
 
 <a id="callbacks"></a>
 
-***
-
 ## Callbacks
 
-References to the <a href="#/advanceusage?id=access-to-the-player-instances">player instances</a> are needed to register callbacks.
+References to the <a href="#/advancedusage?id=access-to-the-player-instances">player instances</a> are needed to register callbacks.
 There are two types of emitted events that can be listened to.
 
 ### Video Element Events
@@ -1015,6 +965,7 @@ We also have custom events to handle some different kind of video events.
 ```js
   videoElement.addEventListener("customEvent", function() { console.log("Custom Event") });
 ```
+
 ##### fakeFSend
 
 Sent when the video exits the fake full screen (useful in case of not using native fs).
@@ -1087,9 +1038,8 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP he
 This means that if a video is hosted in a different domain than the player, a header like <code>Access-Control-Allow-Origin: httрs://foo.mycompany.com </code> should be included in the response in order for it not to be blocked by the browser for security reasons. To allow all domains, set the header to <code>Access-Control-Allow-Origin: *</code>.
 
 More information is available at <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target = "_blank" >MDN Web Docs</a>.
+
 ## Upgrading to a New Version
-
-
 
 When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. Here you can find the <a href="#/releases?" target = "_blank" >latest release</a>.
 

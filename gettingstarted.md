@@ -1,14 +1,6 @@
-<a id="gettingstarted-top"> </a>
-
-<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/"><img text src="./_images/logo5.png" alt="Nexplayer"></a>
-
-***
-
 # Getting Started
 
-## NexPlayer™ Integration
-
-### Sample
+## Sample Integration
 
 Playing a video with the integrated UI can be done in an HTML5 page:
 
@@ -79,14 +71,12 @@ Playing a video with the integrated UI can be done in an HTML5 page:
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the license key is mandatory. License key should have been already sent to your inbox or you can request one from support.madrid@nexplayer.com.</p>
 </div></div>
 
-
-
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that we have built a specific library for Samsung Smart TVs. To enable Tizen support, please change the current library to our Tizen library: </p>
 </div></div>
 
-### Step-by-Step
+## Step-by-Step Integration Guide
 
-To integrate NexPlayer™ into your project you must complete the following steps:
+To integrate NexPlayer into your project you must complete the following steps:
 
 - The NexPlayer™ JavaScript library should be included in the HTML file:
 
@@ -113,7 +103,8 @@ nexplayer.Setup({
     src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
 });
 ```
-## NexPlayer™ Configuration
+
+## NexPlayer Configuration Parameters
 
 There is a substantial number of customizable options for NexPlayer™ including: the name and subtitle format of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview...
 
