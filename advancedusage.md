@@ -456,9 +456,11 @@ This feature enables low latency for live streams. You can also choose the desir
     src: 'URL video', // Mandatory
     lowLatency: true, // // Toggle on/off low latency
     liveSettings: { // Optional, requires low latency
-      liveDelay: 3.2, // The desired latency to maintain
-      maxDrift: 10, // Time of delay from which the player will try to seek to liveDelay time
-      playbackRate: 0.5 // Player will speed up playback rate to 1 + playbackRate value in case the playback is behind liveDelay
+            lowLatency: true, // Optional, sets low latency on/off.
+            liveDelay: 20,    // Allow adjusting the live delay.
+            liveCatchUpPlaybackRate: 0.5, // The speed that the player gets in order to keep the live delay.
+            liveCatchUpMaxDrift: 3,   // The maximun delay before to make a seek live.
+            liveCatchupLatencyThreshold: 30,  // The threshold where the synchronization properties works.
     },
   }
 ```
