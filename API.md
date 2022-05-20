@@ -1,6 +1,6 @@
 # NexPlayer API 
 
-## nexplayer
+## Nexplayer
 
 **Type**: namespace
 - Functions:
@@ -83,6 +83,7 @@
    - [.toggleLanguagesMenu()](#playertogglelanguagesmenu)
    - [.togglePlayPause()](#playertoggleplaypause)
  - Ads
+   - [.adManager()](#playeradmanager)
    - [.abort()](#playerabort)
    - [.addBlockedListener(func)](#playeraddblockedlistenerfunc)
    - [.addClickListener(func)](#playeraddclicklistenerfunc)
@@ -98,45 +99,44 @@
    - [.addThirdQuartileListener(func)](#playeraddthirdquartilelistenerfunc)
    - [.addVolumeChangedListener(func)](#playeraddvolumechangedlistenerfunc)
    - [.addVolumeMutedListener(func)](#playeraddvolume)
-   - [.adManager()](#playeradmanager)
    - [.destroy()](#playerdestroy)
    - [.discardAdBreak()](#playerdiscardadbreak)
    - [.focus()](#playerfocus)
    - [.getAdObject()](#playergetadobject)
    - [.getAdSkippableState()](#playergetadskippablestate)
-   - [.getAdSystem](#playergetadsystem)
-   - [.getAdvertiserName](#playergetadvertisername)
-   - [.getApiFramework](#playergetapiframework)
+   - [.getAdSystem()](#playergetadsystem)
+   - [.getAdvertiserName()](#playergetadvertisername)
+   - [.getApiFramework()](#playergetapiframework)
    - [.getContentType()](#playergetcontenttype)
-   - [.getCreativeAdId](#playergetcreativeadId)
-   - [.getCreativeId](#playergetcreativeid)
+   - [.getCreativeAdId()](#playergetcreativeadId)
+   - [.getCreativeId()](#playergetcreativeid)
    - [.getCuePoints()](#playergetcuepoints)
    - [.getCurrentTime()](#playergetcurrenttime)
-   - [.getDealId](#playergetdealid)
+   - [.getDealId()](#playergetdealid)
    - [.getDescription()](#playergetdescription)
    - [.getDuration()](#playergetduration)
    - [.getHeight](#playergetheight)
    - [.getId()](#playergetid)
    - [.getMediaUrl()](#playergetmediaurl)
-   - [.getMinSuggestedDuration](#playergetminduggestedduration)
+   - [.getMinSuggestedDuration()](#playergetminduggestedduration)
    - [.getRemainingTime()](#playergetremainingtime)
    - [.getSkipTime()](#playergetskiptime)
    - [.getSurveyURL()](#playergetsurveyurl)
    - [.getTitle()](#playergettitle)
-   - [.getTraffickingParameters](#gettraffickingparameters)
-   - [.getTraffickingParametersString](#gettraffickingparametersstring)
-   - [.getUiElements](#getuielements)
-   - [.getUniversalAdIdRegistry](#getuniversaladidregistry)
-   - [.getUniversalAdIds](#getuniversaladids)
-   - [.getUniversalAdIdValue](#getuniversaladidvalue)
-   - [.getVastMediaBitrate](#getvastmediabitrate)
-   - [.getVastMediaHeight](#getvastmediaheight)
-   - [.getVastMediaWidth](#getvastmediawidth)
+   - [.getTraffickingParameters()](#gettraffickingparameters)
+   - [.getTraffickingParametersString()](#gettraffickingparametersstring)
+   - [.getUiElements()](#getuielements)
+   - [.getUniversalAdIdRegistry()](#getuniversaladidregistry)
+   - [.getUniversalAdIds()](#getuniversaladids)
+   - [.getUniversalAdIdValue()](#getuniversaladidvalue)
+   - [.getVastMediaBitrate()](#getvastmediabitrate)
+   - [.getVastMediaHeight()](#getvastmediaheight)
+   - [.getVastMediaWidth()](#getvastmediawidth)
    - [.getVolume()](#playergetvolume)
-   - [.getWidth](#getwidth)
-   - [.getWrapperAdIds](#getwrapperadids)
-   - [.getWrapperAdSystems](#getwrapperadsystems)
-   - [.getWrapperCreativeIds](#getwrappercreativeids)
+   - [.getWidth()](#getwidth)
+   - [.getWrapperAdIds()](#getwrapperadids)
+   - [.getWrapperAdSystems()](#getwrapperadsystems)
+   - [.getWrapperCreativeIds()](#getwrappercreativeids)
    - [.init(width, height, viewMode, videoElement)](#playerinit)
    - [.isCustomPlaybackUsed()](#playeriscustomplaybackused)
    - [.isLinear()](#playerislinear)
@@ -148,16 +148,17 @@
    - [.setVolume()](#playersetvolume)
    - [.skip()](#playerskip)
  - Static
-   - [.NexEvent](#nexevent): enum
-   - [.NexProtocol](#nexprotocol): enum
-   - [.THUMB_TYPE](#thumbtype): enum
+   - [NexEvent](#nexevent): enum
+   - [NexProtocol](#nexprotocol): enum
+   - [THUMB_TYPE](#thumbtype): enum
  - Global Typedefs
-   - [.AudioStream](#audiostream) : object
-   - [.NexCallbackEvent](#nexcallbackevent) : object
-   - [.NexCallback](#nexcallback) : object
-   - [.NexHeaders](#nexheaders) : object
-   - [.NexDRMInformation](#nexdrminformation) : object
-   - [.Track](#track) : object
+   - [AudioStream](#audiostream) : object
+   - [Frame](#frame) : object
+   - [NexCallback](#nexcallback) : object
+   - [NexCallbackEvent](#nexcallbackevent) : object
+   - [NexDRMInformation](#nexdrminformation) : object
+   - [NexHeaders](#nexheaders) : object
+   - [Track](#track) : object
  - VR Player
    - [.getFieldView()](#playergetFieldView)
    - [.setFieldView()](#playersetFieldView)
@@ -223,7 +224,7 @@ Creates and initializes the player.
 | seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. Set to 10s by default. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | showUI360 | <code>boolean</code> | Determines if the 360UI will be enabled. |
-| srcSets | <code>Array</code> | Array of objects containing a stream and an optional DRM.
+| srcSets | <code>Array</code> | Array of objects that contains a stream and an optional DRM.
 | staticThumbnailsImage | <code>string</code> | Image to extract thumbnails from. |
 | staticThumbnailsVTT | <code>string</code> | Used to provide the player an external thumbnails VTT file. |
 | startingBufferLength | <code>number</code> | Determines the buffer that the video should have before start. |
@@ -231,7 +232,7 @@ Creates and initializes the player.
 | subtitle | <code>string</code> | Video subtitle name. |
 | timeUI | <code>boolean</code> | Determines if the video time will be hidden on the UI. |
 | title | <code>string</code> | Video name. |
-| type_360 | <code>string</code> | Select the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
+| type_360 | <code>string</code> | Selects the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this value is set to false. |
 | useiOSFullScreen | <code>boolean</code> | Determines if the iOS native full screen will be used. |
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
@@ -258,12 +259,19 @@ Reloads the player with the given configuration. If the configuration object is 
 **Param**: 
    - **configuration** is an object which its properties values could be:
 
+**Mandatory Parameters:**
+
 | Param | Type | Description |
 | --- | --- | --- |
 | key | <code>string</code> | NexPlayer key to validate the playback. |
 | div | <code>HTMLDivElement</code> | Div container of the player. |
 | src | <code>string</code> | Relevant src of the video to be played. |
-| allowScreenPlayPause | <code>boolean</code> | Optional, allows to play and pause the video clicking on it. |
+
+**Optional Parameters:**
+
+| Param | Type | Description |
+| --- | --- | --- |
+| allowScreenPlayPause | <code>boolean</code> | Allows to play and pause the video clicking on it. |
 | autohide | <code>boolean</code> | Sets if the UI must hide when the user does not interact with the video. True by default. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | blockZoom | <code>boolean</code> | Determines if the zoom in 360 videos is available or not. |
@@ -274,25 +282,25 @@ Reloads the player with the given configuration. If the configuration object is 
 | chromecastEndImg | <code>string</code> | URL of an image to be used as ending. |
 | chromecastLaunchImg | <code>string</code> | URL of an image to be used at launch. |
 | debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
-| defaultQuality | <code>number</code> | Optional set the starting track through his id, by default is -1, this enables the ABR. |
+| defaultQuality | <code>number</code> | Sets the starting track through its id. By default is -1, this enables the ABR. |
 | disableFullscreen | <code>boolean</code> | Determines if the full screen will be enabled. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
-| drm | <code>Array<a href="#/API?id=NexDRMInformation">\<NexDRMInformation></a></code> | Contains an array of DRM information. By default it's set to null. |
-| externSubtitles | <code>Array</code> | Used to provide a WEBVTT as external subtitles. |
-| hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
-| hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
+| drm | <a href="#/API?id=NexDRMInformation"><code>Array\<NexDRMInformation></code></a> | Contains an array of DRM information. By default it's set to null. |
+| externSubtitles | <code>Array</code> | Used to provide subtitle files as external subtitles. |
+| hideOptionsUi | <code>Object</code> | Hides the setting that you choose from the UI. |
+| hideScreenPlay | <code>boolean</code> | Hides the play button in the middle of the video, which appears when the video is paused. |
 | hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
-| lowLatency | <code>boolean</code> |  Determines if the low latency will be enable. |
-| liveSettings | <code>Object</code> | Settings to control live playback. |
+| lowLatency | <code>boolean</code> |  Determines if the low latency will be enabled. |
+| liveSettings | <code>Object</code> | Settings to control live playback. Requires low latency. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
 | maxFrameDrop | <code>number</code> | Determines the max frame drop. |
-| pip | <code>boolean</code> | Optional, picture in picture. |
+| pip | <code>boolean</code> | Determines if picture-in-picture will be enabled. |
 | poster | <code>string</code> | Video poster URL.  |
 | seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. Set to 10s by default. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | showUI360 | <code>boolean</code> | Determines if the 360UI will be enabled. |
-| srcSets | <code>Array</code> | Optional, array of objects containig a stream and an optional DRM.
+| srcSets | <code>Array</code> | Array of objects that contains a stream and an optional DRM.
 | staticThumbnailsImage | <code>string</code> | Image to extract thumbnails from. |
 | staticThumbnailsVTT | <code>string</code> | Used to provide the player an external thumbnails VTT file. |
 | startingBufferLength | <code>number</code> | Determines the buffer that the video should have before start. |
@@ -300,7 +308,7 @@ Reloads the player with the given configuration. If the configuration object is 
 | subtitle | <code>string</code> | Video subtitle name. |
 | timeUI | <code>boolean</code> | Determines if the video time will be hidden on the UI. |
 | title | <code>string</code> | Video name. |
-| type_360 | <code>string</code> | Select the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
+| type_360 | <code>string</code> | Selects the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this value is set to false. |
 | useiOSFullScreen | <code>boolean</code> | Determines if the iOS native full screen will be used. |
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
@@ -1627,14 +1635,14 @@ Sets a listener function called when the ad is blocked by an external app.
 
 ## Global Typedef
 
-<a id="NexCallbackEvent"></a>
+<a id="nexcallbackevent"></a>
 
 #### NexCallbackEvent : <code>function</code>
 Called when a NexEvent happens.
 
 **Type**: global typedef  
 
-<a id="NexCallback"></a>
+<a id="nexcallback"></a>
 
 #### NexCallback : <code>function</code>
 Called when a FairPlay content needs to request the license.
@@ -1645,7 +1653,7 @@ Called when a FairPlay content needs to request the license.
 | --- | --- |
 | event | when the webkitkeymessage event from FairPlay is called. |
 
-<a id="NexHeaders"></a>
+<a id="nexheaders"></a>
 
 #### NexHeaders : <code>Object</code>
 **Type**: global typedef  
@@ -1656,7 +1664,7 @@ Called when a FairPlay content needs to request the license.
 | FieldName | <code>string</code> | of the HTTPHeaders. |
 | FieldValue | <code>string</code> | of the HTTPHeaders. |
 
-<a id="NexDRMInformation"></a>
+<a id="nexdrminformation"></a>
 
 #### NexDRMInformation : <code>Object</code>
 **Type**: global typedef  
@@ -1669,7 +1677,7 @@ Called when a FairPlay content needs to request the license.
 | NexHeaders | [<code>Array.&lt;NexHeaders&gt;</code>](#NexHeaders) | NexHeaders of the video. |
 | NexCallback | [<code>NexCallback</code>](#NexCallback) | NexCallback for FairPlay content. |
 
-<a id="Track"></a>
+<a id="track"></a>
 
 #### Track : <code>Object</code>
 **Type**: global typedef     
@@ -1682,9 +1690,9 @@ Called when a FairPlay content needs to request the license.
 | bitrate | <code>number</code> | bitrate of the video. |
 | id | <code>number</code> | id of the video. |
 
-* Bitrate property is not available in Safari in iOS, mp4 videos neither Fairplay protected videos in Safari in Mac OS.
+* Bitrate property is not available on Safari iOS, Fairplay protected videos on Safari Mac OS or .mp4 videos.
 
-<a id="AudioStream"></a>
+<a id="audiostream"></a>
 
 #### AudioStream : <code>Object</code>
 **Type**: global typedef  
@@ -1737,15 +1745,23 @@ Set the field of view.
 
 Creates and initializes the player.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
-**Param**: **info** is an object which values could be:
+**Type**: function of [<code>nexplayer</code>](#Player)   
+**Param**: 
+   - **configuration** is an object which its properties values could be:
+
+**Mandatory Parameters:**
 
 | Param | Type | Description |
 | --- | --- | --- |
 | key | <code>string</code> | NexPlayer key to validate the playback. |
 | div | <code>HTMLDivElement</code> | Div container of the player. |
 | src | <code>string</code> | Relevant src of the video to be played. |
-| allowScreenPlayPause | <code>boolean</code> | Optional, allows to play and pause the video clicking on it. |
+
+**Optional Parameters:**
+
+| Param | Type | Description |
+| --- | --- | --- |
+| allowScreenPlayPause | <code>boolean</code> | Allows to play and pause the video clicking on it. |
 | autohide | <code>boolean</code> | Sets if the UI must hide when the user does not interact with the video. True by default. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | blockZoom | <code>boolean</code> | Determines if the zoom in 360 videos is available or not. |
@@ -1756,25 +1772,25 @@ Creates and initializes the player.
 | chromecastEndImg | <code>string</code> | URL of an image to be used as ending. |
 | chromecastLaunchImg | <code>string</code> | URL of an image to be used at launch. |
 | debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
-| defaultQuality | <code>number</code> | Optional set the starting track through his id, by default is -1, this enables the ABR. |
+| defaultQuality | <code>number</code> | Sets the starting track through its id. By default is -1, this enables the ABR. |
 | disableFullscreen | <code>boolean</code> | Determines if the full screen will be enabled. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
-| drm | <code>Array<a href="#/API?id=NexDRMInformation">\<NexDRMInformation></a></code> | Contains an array of DRM information. By default it's set to null. |
-| externSubtitles | <code>Array</code> | Used to provide a WEBVTT as external subtitles. |
-| hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
-| hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
+| drm | <a href="#/API?id=NexDRMInformation"><code>Array\<NexDRMInformation></code></a> | Contains an array of DRM information. By default it's set to null. |
+| externSubtitles | <code>Array</code> | Used to provide subtitle files as external subtitles. |
+| hideOptionsUi | <code>Object</code> | Hides the setting that you choose from the UI. |
+| hideScreenPlay | <code>boolean</code> | Hides the play button in the middle of the video, which appears when the video is paused. |
 | hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
-| lowLatency | <code>boolean</code> |  Determines if the low latency will be enable. |
-| liveSettings | <code>Object</code> | Settings to control live playback. |
+| lowLatency | <code>boolean</code> |  Determines if the low latency will be enabled. |
+| liveSettings | <code>Object</code> | Settings to control live playback. Requires low latency. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
 | maxFrameDrop | <code>number</code> | Determines the max frame drop. |
-| pip | <code>boolean</code> | Optional, picture in picture. |
+| pip | <code>boolean</code> | Determines if picture-in-picture will be enabled. |
 | poster | <code>string</code> | Video poster URL.  |
 | seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. Set to 10s by default. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | showUI360 | <code>boolean</code> | Determines if the 360UI will be enabled. |
-| srcSets | <code>Array</code> | Optional, array of objects containig a stream and an optional DRM.
+| srcSets | <code>Array</code> | Array of objects that contains a stream and an optional DRM.
 | staticThumbnailsImage | <code>string</code> | Image to extract thumbnails from. |
 | staticThumbnailsVTT | <code>string</code> | Used to provide the player an external thumbnails VTT file. |
 | startingBufferLength | <code>number</code> | Determines the buffer that the video should have before start. |
@@ -1782,7 +1798,7 @@ Creates and initializes the player.
 | subtitle | <code>string</code> | Video subtitle name. |
 | timeUI | <code>boolean</code> | Determines if the video time will be hidden on the UI. |
 | title | <code>string</code> | Video name. |
-| type_360 | <code>string</code> | Select the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
+| type_360 | <code>string</code> | Selects the 360 video format to play. Possible values are 'equirectangular', 'cubemap' and 'topdown'. |
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this value is set to false. |
 | useiOSFullScreen | <code>boolean</code> | Determines if the iOS native full screen will be used. |
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
