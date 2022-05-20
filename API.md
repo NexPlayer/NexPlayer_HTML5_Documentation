@@ -6,122 +6,123 @@
 - Functions:
    - [.Setup(configuration)](#nexplayersetupconfiguration)
    - [.checkSupportedConfigurations(URL, DRMType)](#nexplayerchecksupportedconfigurations)
-   - [.Reload(configuration)](#nexplayerreloadconfiguration)
    - [.decodeData(data)](#nexplayerdecodedatadata)
+   - [.Reload(configuration)](#nexplayerreloadconfiguration)
 
 ## Player
 
 **Type**: global class
 - Player
- - instance
-   - [.getTracks()](#gettracks) ⇒ [Array.< Track >](#track-object)
-   - [.getCurrentTrack()](#getcurrenttrack) ⇒ [Track](#track-object)
-   - [.setCurrentTrack(trackID)](#playersetcurrenttracktrackid)
-   - [.enableABR()](#playerenableabr)
-   - [.disableABR()](#playerdisableabr)
-   - [.getAudioStreams()](#getaudiostreams) ⇒ [Array.< AudioStream >](#audiostream-object)
-   - [.getCurrentAudioStream()](#getcurrentaudiostream) ⇒ [AudioStream](#audiostream-object)
-   - [.setAudioStream(streamID)](#playersetaudiostream)
-   - [.getCurrentSubtitle()](#getcurrentsubtitle)
-   - [.getSubtitles()](#getsubtitles)
-   - [.setSubtitle(subID)](#playersetsubtitlesubid)
-   - [.isLive()](#islive) ⇒ boolean
-   - [.on(callbackType, functionToBeCalled)](#playeroncallbacktype-functiontobecalled)
+ - Instance
    - [.attachSubtitleRendererDiv(subtitleRendererDiv)](#playerattachsubtitlerendererdivsubtitlerendererdiv)
-   - [.create360View()](#playercreate360view)
-   - [.FairPlayNexLicenseRequestLoaded(event)](#playerfairplaynexlicenserequestloadedevent)
-   - [.FairPlayNexLicenseRequestFailed(event)](#playerfairplaynexlicenserequestfailedevent)
-   - [.setThumbnailResources(callback, vttURl, imageURL)](#playersetthumbnailresourcescallback-vtturl-imageurl)
-   - [.isUTC()](#isutc) ⇒ boolean
-   - [.getCurrentTime()](#getcurrenttime) ⇒ number
-   - [.getDuration()](#getduration) ⇒ number
-   - [.getDVRWindowSize()](#getDVRWindowSize) ⇒ number
-   - [.getURL()](#playergeturl)
    - [.checkFrameDrop()](#playercheckframedrop) ⇒ number
-   - [.seek(value)](#playerseekvalue)
-   - [.seekLive()](#playerseekLive)
-   - [.getCurrentLiveTime()](#getcurrentlivetime) ⇒ number
-   - [.getTimeUntilLive()](#gettimeuntillive) ⇒ number
-   - [.getManifestInfo()](#getmanifestinfo)
-   - [.getTimeShiftBufferDepth()](#gettimeshiftbufferdepth) ⇒ number
-   - [.sendImpression()](#playersendimpression)
-   - [.getProtocol()](#getprotocol) ⇒ number
-   - [.getThumbnailController()](#getthumbnailcontroller) ⇒ ThumbController
-   - [.setThumbnailStep(step)](#playersetthumbnailstepstep)
-   - [.enablePreviewThumbnails(option)](#playerenablepreviewthumbnailsoption)
-   - [.setSpeed(speed)](#playersetspeedspeed)
-   - [.getQualityLevels()](#getqualitylevels) ⇒ array
-   - [.setTrack(qualityLevel)](#playersettrackqualitylevel)
-   - [.togglePlayPause()](#playertoggleplaypause)
-   - [.toggleFullScreen()](#playertogglefullscreen)
-   - [.showStats()](#playershowstats)
-   - [.jumpForward(value)](#playerjumpforward)
-   - [.jumpBackward(value)](#playerjumpbackward)
-   - [.setThumbnailStep(step)](#playersetthumbnailstepstep)
-   - [.getCurrentLiveLatency()](#playergetcurrentlivelatency)
-   - [.getCurrentBuffer()](#playergetcurrentbuffer)
-   - [.toggleControlBar()](#playertogglecontrolbar)
-   - [.isControlBarOpen()](#playeriscontrolbaropen)
-   - [.toggleLanguagesMenu()](#playertogglelanguagesmenu)
-   - [.nextFocus()](#playernextfocus)
-   - [.previousFocus()](#playerpreviousfocus)
    - [.clickFocus()](#playerclickFocus)
-   - [.toggleBar()](#playertoggleBar)
-   - [.isFullScreen()](#isfullscreen)
-   - [.getConfig()](#getconfig)
-   - [.getPlaybackSpeed()](#getplaybackspeed)
-   - [.getStreamType()](#getstreamtype)
-   - [.hasEnded()](#hasended)
-   - [.isAd()](#isad)
-   - [.isPaused()](#ispaused)
-   - [.isPlaying()](#isplaying)
-   - [.isReady()](#isready)
+   - [.create360View()](#playercreate360view)
+   - [.disableABR()](#playerdisableabr)
+   - [.enableABR()](#playerenableabr)
+   - [.enablePreviewThumbnails(option)](#playerenablepreviewthumbnailsoption)
    - [.enterPictureInPicture()](#enterpictureinpicture)
    - [.exitPictureInPicture()](#exitpictureinpicture)
+   - [.FairPlayNexLicenseRequestFailed(event)](#playerfairplaynexlicenserequestfailedevent)
+   - [.FairPlayNexLicenseRequestLoaded(event)](#playerfairplaynexlicenserequestloadedevent)
+   - [.getAudioStreams()](#getaudiostreams) ⇒ [Array.< AudioStream >](#audiostream-object)
+   - [.getConfig()](#getconfig)
+   - [.getBufferLength()](#getbufferlength) ⇒ number
+   - [.getCurrentAudioStream()](#getcurrentaudiostream) ⇒ [AudioStream](#audiostream-object)
+   - [.getCurrentBuffer()](#playergetcurrentbuffer)
+   - [.getCurrentLiveLatency()](#playergetcurrentlivelatency)
+   - [.getCurrentLiveTime()](#getcurrentlivetime) ⇒ number
+   - [.getCurrentSubtitle()](#getcurrentsubtitle)
+   - [.getCurrentTime()](#getcurrenttime) ⇒ number
+   - [.getCurrentTrack()](#getcurrenttrack) ⇒ [Track](#track-object)
+   - [.getDuration()](#getduration) ⇒ number
+   - [.getDVRWindowSize()](#getDVRWindowSize) ⇒ number
+   - [.getManifestInfo()](#getmanifestinfo)
+   - [.getPlaybackSpeed()](#getplaybackspeed)
+   - [.getProtocol()](#getprotocol) ⇒ number
+   - [.getQualityLevels()](#getqualitylevels) ⇒ array
+   - [.getStreamType()](#getstreamtype)
+   - [.getSubtitles()](#getsubtitles)
+   - [.getThumbnailAt(number)](#getthumbnailat)
+   - [.getThumbnailController()](#getthumbnailcontroller) ⇒ ThumbController
+   - [.getTimeShiftBufferDepth()](#gettimeshiftbufferdepth) ⇒ number
+   - [.getTimeUntilLive()](#gettimeuntillive) ⇒ number
+   - [.getTracks()](#gettracks) ⇒ [Array.< Track >](#track-object)
+   - [.getURL()](#playergeturl)
+   - [.getVersion()](#getversion)
+   - [.hasEnded()](#hasended)
+   - [.hiddenVolumeIcon()](#hiddenvolumeicon)
+   - [.isAd()](#isad)
+   - [.isControlBarOpen()](#playeriscontrolbaropen)
+   - [.isFullScreen()](#isfullscreen)
+   - [.isLive()](#islive) ⇒ boolean
+   - [.isPaused()](#ispaused)
    - [.isPictureInPicture()](#ispictureinpicture)
    - [.isPictureInPictureAvailable()](#ispictureinpictureavailable)
-   - [.getVersion()](#getversion)
-   - [.hiddenVolumeIcon()](#hiddenvolumeicon)
+   - [.isPlaying()](#isplaying)
+   - [.isReady()](#isready)
+   - [.isUTC()](#isutc) ⇒ boolean
+   - [.jumpBackward(value)](#playerjumpbackward)
+   - [.jumpForward(value)](#playerjumpforward)
+   - [.nextFocus()](#playernextfocus)
+   - [.on(callbackType, functionToBeCalled)](#playeroncallbacktype-functiontobecalled)
+   - [.previousFocus()](#playerpreviousfocus)
+   - [.seek(value)](#playerseekvalue)
+   - [.seekLive()](#playerseekLive)
+   - [.setAudioStream(streamID)](#playersetaudiostream)
+   - [.setCurrentTrack(trackID)](#playersetcurrenttracktrackid)
+   - [.setSpeed(speed)](#playersetspeedspeed)
+   - [.setSubtitle(subID)](#playersetsubtitlesubid)
+   - [.setThumbnailResources(callback, vttURl, imageURL)](#playersetthumbnailresourcescallback-vtturl-imageurl)
+   - [.setThumbnailStep(step)](#playersetthumbnailstepstep)
+   - [.showStats()](#playershowstats)
    - [.showVolumeIcon()](#showvolumeicon)
-   - [getThumbnailAt(number)](#getthumbnailat)
+   - [.toggleBar()](#playertoggleBar)
+   - [.toggleControlBar()](#playertogglecontrolbar)
+   - [.toggleFullScreen()](#playertogglefullscreen)
+   - [.toggleLanguagesMenu()](#playertogglelanguagesmenu)
+   - [.togglePlayPause()](#playertoggleplaypause)
  - Ads
-   - [.adManager()](#playeradmanager)
-   - [.getAdObject()](#playergetadobject)
-   - [.getId()](#playergetid)
-   - [.getTitle()](#playergettitle)
-   - [.getDescription()](#playergetdescription)
-   - [.getMediaURL()](#playergetmediaurl)
-   - [.getSurveyURL()](#playergetsurveyurl)
-   - [.getDuration()](#playergetduration)
-   - [.getSkipTime()](#playergetskiptime)
-   - [.getCurrentTime()](#playergetcurrenttime)
-   - [.getContentType()](#playergetcontenttype)
-   - [.isSkippable()](#playerisskippable)
-   - [.isLinear()](#playerislinear)
-   - [.isVpaid()](#playerisvpaid)
-   - [.pause()](#playerpause)
-   - [.play()](#playerplay)
-   - [.skip()](#playerskip)
    - [.abort()](#playerabort)
-   - [.setVolume()](#playersetvolume)
+   - [.addBlockedListener(func)](#playeraddblockedlistenerfunc)
+   - [.addClickListener(func)](#playeraddclicklistenerfunc)
+   - [.addCompleteListener(func)](#playeraddcomlpetelistenerfunc)
+   - [.addErrorListener(func)](#playeradderrorlistenerfunc)
+   - [.addFirstQuartileListener(func)](#playeraddfirstquartilelistenerfunc)
+   - [.addImpressionListener(func)](#playeraddimpressionlistenerfunc)
+   - [.addMidpointListener(func)](#playeraddmidpointlistenerfunc)
+   - [.addPausedListener(func)](#playeraddpausedlistenerfunc)
+   - [.addResumedListener(func)](#playeraddresumedlistenerfunc)
+   - [.addSkippedListener(func)](#playeraddskippedlistenerfunc)
+   - [.addStartedListener(func)](#playeraddstartedlistenerfunc)
+   - [.addThirdQuartileListener(func)](#playeraddthirdquartilelistenerfunc)
+   - [.addVolumeChangedListener(func)](#playeraddvolumechangedlistenerfunc)
+   - [.addVolumeMutedListener(func)](#playeraddvolume)
+   - [.adManager()](#playeradmanager)
    - [.destroy()](#playerdestroy)
    - [.discardAdBreak()](#playerdiscardadbreak)
    - [.focus()](#playerfocus)
+   - [.getAdObject()](#playergetadobject)
    - [.getAdSkippableState()](#playergetadskippablestate)
-   - [.getCuePoints()](#playergetcuepoints)
-   - [.getRemainingTime()](#playergetremainingtime)
-   - [.getVolume()](#playergetvolume)
-   - [.init(width, height, viewMode, videoElement)](#playerinit)
-   - [.isCustomPlaybackUsed()](#playeriscustomplaybackused)
-   - [.resize](#playerresize)
    - [.getAdSystem](#playergetadsystem)
    - [.getAdvertiserName](#playergetadvertisername)
    - [.getApiFramework](#playergetapiframework)
+   - [.getContentType()](#playergetcontenttype)
    - [.getCreativeAdId](#playergetcreativeadId)
    - [.getCreativeId](#playergetcreativeid)
+   - [.getCuePoints()](#playergetcuepoints)
+   - [.getCurrentTime()](#playergetcurrenttime)
    - [.getDealId](#playergetdealid)
+   - [.getDescription()](#playergetdescription)
+   - [.getDuration()](#playergetduration)
    - [.getHeight](#playergetheight)
+   - [.getId()](#playergetid)
+   - [.getMediaUrl()](#playergetmediaurl)
    - [.getMinSuggestedDuration](#playergetminduggestedduration)
+   - [.getRemainingTime()](#playergetremainingtime)
+   - [.getSkipTime()](#playergetskiptime)
+   - [.getSurveyURL()](#playergetsurveyurl)
+   - [.getTitle()](#playergettitle)
    - [.getTraffickingParameters](#gettraffickingparameters)
    - [.getTraffickingParametersString](#gettraffickingparametersstring)
    - [.getUiElements](#getuielements)
@@ -131,42 +132,47 @@
    - [.getVastMediaBitrate](#getvastmediabitrate)
    - [.getVastMediaHeight](#getvastmediaheight)
    - [.getVastMediaWidth](#getvastmediawidth)
+   - [.getVolume()](#playergetvolume)
    - [.getWidth](#getwidth)
    - [.getWrapperAdIds](#getwrapperadids)
    - [.getWrapperAdSystems](#getwrapperadsystems)
    - [.getWrapperCreativeIds](#getwrappercreativeids)
-   - [.isLinear](#islinear)
-   - [.addClickListener(func)](#playeraddclicklistenerfunc)
-   - [.addVolumeMutedListener(func)](#playeraddvolume)
-   - [.addVolumeChangedListener(func)](#playeraddvolumechangedlistenerfunc)
-   - [.addSkippedListener(func)](#playeraddskippedlistenerfunc)
-   - [.addPausedListener(func)](#playeraddpausedlistenerfunc)
-   - [.addResumedListener(func)](#playeraddresumedlistenerfunc)
-   - [.addStartedListener(func)](#playeraddstartedlistenerfunc)
-   - [.addFirstQuartileListener(func)](#playeraddfirstquartilelistenerfunc)
-   - [.addMidpointListener(func)](#playeraddmidpointlistenerfunc)
-   - [.addThirdQuartileListener(func)](#playeraddthirdquartilelistenerfunc)
-   - [.addCompleteListener(func)](#playeraddcomlpetelistenerfunc)
-   - [.addImpressionListener(func)](#playeraddimpressionlistenerfunc)
-   - [.addErrorListener(func)](#playeradderrorlistenerfunc)
-   - [.addBlockedListener(func)](#playeraddblockedlistenerfunc)
- - static
-   - [.NexProtocol](#nexprotocol): enum
+   - [.init(width, height, viewMode, videoElement)](#playerinit)
+   - [.isCustomPlaybackUsed()](#playeriscustomplaybackused)
+   - [.isLinear()](#playerislinear)
+   - [.isSkippable()](#playerisskippable)
+   - [.isVpaid()](#playerisvpaid)
+   - [.pause()](#playerpause)
+   - [.play()](#playerplay)
+   - [.resize](#playerresize)
+   - [.setVolume()](#playersetvolume)
+   - [.skip()](#playerskip)
+ - Static
    - [.NexEvent](#nexevent): enum
+   - [.NexProtocol](#nexprotocol): enum
    - [.THUMB_TYPE](#thumbtype): enum
- - vr player
+ - Global Typedefs
+   - [.AudioStream](#audiostream) : object
+   - [.NexCallbackEvent](#nexcallbackevent) : object
+   - [.NexCallback](#nexcallback) : object
+   - [.NexHeaders](#nexheaders) : object
+   - [.NexDRMInformation](#nexdrminformation) : object
+   - [.Track](#track) : object
+ - VR Player
    - [.getFieldView()](#playergetFieldView)
    - [.setFieldView()](#playersetFieldView)
-- multiview
+- Multiview
    - [.additionalVideo(info)](#multiviewAdditionalVideo)
    - [.addPlayer(player)](#multiviewAddPlayer)
    - [.Initialize()](#)
-   - [.togglePlayPause()](#multiviewTogglePlayPause)
    - [.seek()](#multiviewSeek)
    - [.seekLive()](#multiviewSeekLive)
+   - [.togglePlayPause()](#multiviewTogglePlayPause)
 - YouTubePlayer
    - [.init()](#init)
    - [.URL()](#URL)
+
+## Nexplayer methods
 
 #### nexplayer.Setup(configuration)
 
@@ -176,12 +182,19 @@ Creates and initializes the player.
 **Param**: 
    - **configuration** is an object which its properties values could be:
 
+**Mandatory Parameters:**
+
 | Param | Type | Description |
 | --- | --- | --- |
 | key | <code>string</code> | NexPlayer key to validate the playback. |
 | div | <code>HTMLDivElement</code> | Div container of the player. |
 | src | <code>string</code> | Relevant src of the video to be played. |
-| allowScreenPlayPause | <code>boolean</code> | Optional, allows to play and pause the video clicking on it. |
+
+**Optional Parameters:**
+
+| Param | Type | Description |
+| --- | --- | --- |
+| allowScreenPlayPause | <code>boolean</code> | Allows to play and pause the video clicking on it. |
 | autohide | <code>boolean</code> | Sets if the UI must hide when the user does not interact with the video. True by default. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | blockZoom | <code>boolean</code> | Determines if the zoom in 360 videos is available or not. |
@@ -192,25 +205,25 @@ Creates and initializes the player.
 | chromecastEndImg | <code>string</code> | URL of an image to be used as ending. |
 | chromecastLaunchImg | <code>string</code> | URL of an image to be used at launch. |
 | debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
-| defaultQuality | <code>number</code> | Optional set the starting track through his id, by default is -1, this enables the ABR. |
+| defaultQuality | <code>number</code> | Sets the starting track through its id. By default is -1, this enables the ABR. |
 | disableFullscreen | <code>boolean</code> | Determines if the full screen will be enabled. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video (play/pause, forward/backward and volume up/down). |
 | drm | <a href="#/API?id=NexDRMInformation"><code>Array\<NexDRMInformation></code></a> | Contains an array of DRM information. By default it's set to null. |
-| externSubtitles | <code>Array</code> | Used to provide a WEBVTT as external subtitles. |
-| hideOptionsUi | <code>Object</code> | Optional, hide the setting that you want from the UI. |
-| hideScreenPlay | <code>boolean</code> | Optional, hide the play button in the middle of the video, which appears when the video is paused. |
+| externSubtitles | <code>Array</code> | Used to provide subtitle files as external subtitles. |
+| hideOptionsUi | <code>Object</code> | Hides the setting that you choose from the UI. |
+| hideScreenPlay | <code>boolean</code> | Hides the play button in the middle of the video, which appears when the video is paused. |
 | hideVolumeIcon | <code>boolean</code> |  Determines if the volume icon will be hidden for mobile devices. The volume is controlled by the device buttons. |
-| lowLatency | <code>boolean</code> |  Determines if the low latency will be enable. |
-| liveSettings | <code>Object</code> | Settings to control live playback, requires low latency |
+| lowLatency | <code>boolean</code> |  Determines if the low latency will be enabled. |
+| liveSettings | <code>Object</code> | Settings to control live playback. Requires low latency. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
 | maxFrameDrop | <code>number</code> | Determines the max frame drop. |
-| pip | <code>boolean</code> | Optional, picture in picture. |
+| pip | <code>boolean</code> | Determines if picture-in-picture will be enabled. |
 | poster | <code>string</code> | Video poster URL.  |
 | seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. Set to 10s by default. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | showUI360 | <code>boolean</code> | Determines if the 360UI will be enabled. |
-| srcSets | <code>Array</code> | Optional, array of objects containig a stream and an optional DRM.
+| srcSets | <code>Array</code> | Array of objects containing a stream and an optional DRM.
 | staticThumbnailsImage | <code>string</code> | Image to extract thumbnails from. |
 | staticThumbnailsVTT | <code>string</code> | Used to provide the player an external thumbnails VTT file. |
 | startingBufferLength | <code>number</code> | Determines the buffer that the video should have before start. |
@@ -304,6 +317,8 @@ Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and N
    - **data** is the ArrayBuffer to decode.
    
 **Returns**: decoded and cleaned string or null if the parameter provided is not an ArrayBuffer.
+
+## Player methods and objects
 
 <a id="gettracks"> </a>
    #### player.getTracks() ⇒ Array.< Track >
@@ -549,10 +564,17 @@ Sets thumbnail resources. This method should be called before Init().
 
 #### player.seekLive()
    
-   Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
+   Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). Only works on livestreams.
 
    **Type**: instance method of [<code>Player</code>](#Player) 
 
+<a id="getbufferlength"> </a>  
+#### player.getBufferLength() ⇒ number
+
+Returns the seconds of buffer loaded that the player has available to play.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: number - time of buffer length
 
 <a id="getcurrentlivetime"> </a>  
 #### player.getCurrentLiveTime() ⇒ number
@@ -581,16 +603,10 @@ Returns some information about the manifest.
 <a id="gettimeshiftbufferdepth"> </a>  
 #### player.getTimeShiftBufferDepth ⇒ number
 
-Returns the time shift buffer depth in seconds, this function only works in livestream.
+Returns the time shift buffer depth in seconds, this function only works in live streams.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: number - time shift buffer depth
-
-#### player.sendImpression()
-
-Sends the impression details to the server (only for internal management).
-
-**Type**: instance method of [<code>Player</code>](#Player) 
 
 <a id="getprotocol"> </a>  
 #### player.getProtocol() ⇒ number
@@ -616,7 +632,7 @@ Sets the time interval between frames for dynamic thumbnails.
 
   | Param | Type |Description |
   | --- | --- | --- |
-  | step | number | the seconds between two different thumbnails. |
+  | step | number | The seconds between two different thumbnails. |
 
 #### player.enablePreviewThumbnails(option) 
 
@@ -626,7 +642,7 @@ Enable thumbnails preview. This method must be called before Init().
 
  | Param | Type |Description |
  | --- | --- | --- |
- | option | boolean | the value that enable or not the thumbnails. |
+ | option | boolean | The value that enable or not the thumbnails. |
 
 #### player.setSpeed(speed)
 
@@ -636,7 +652,7 @@ Set the video playback speed.
 
  | Param | Type |Description |
  | --- | --- | --- |
- | speed | number | the speed value. |
+ | speed | number | The speed value. |
 
 <a id="getqualitylevels"> </a>  
 #### player.getQualityLevels() ⇒ array
@@ -646,22 +662,15 @@ Get the video quality levels array.
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: array - quality levels array info
 
-#### player.setTrack(qualityLevel)
-
-Sets the video quality level.
-
-**Type**: instance method of [<code>Player</code>](#Player) 
-
 #### player.togglePlayPause()
 
-Enables toggle between play and pause.
+Plays or pauses the playback.
 
 **Type**: instance method of [<code>Player</code>](#Player) 
-
 
 #### player.toggleFullScreen()
 
-Enables toggle between full screen and window.
+Toggles between full screen or window mode.
 
 **Type**: instance method of [<code>Player</code>](#Player) 
 
@@ -730,7 +739,7 @@ Returns if the control bar is opened.
 
 #### player.toggleLanguagesMenu()
 
-Toogles the subtitles menu options.
+Toggles the subtitle menu options.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 
@@ -764,7 +773,7 @@ Click the current focused element.
 
 #### player.toggleBar()
 
-Enables toggle between hide or show the playback bar.
+Hides or shows the playback bar.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
@@ -920,6 +929,8 @@ Get the thumbnail at a specific video time.
 
 **Returns**: Promise <Frame, object> - <a href="#/API?id=frame">Frame</a> as resolve, and object which contains details as a reject.
 
+## Ad methods
+
 <a id="playeradmanager"></a>
 
 #### player.adManager()
@@ -967,7 +978,7 @@ Returns the description of the current ad.
 
 <a id="playergetmediaurl"></a>
 
-#### player.adManager().getMediaURL()
+#### player.adManager().getMediaUrl()
 
 Returns the video ad URL.
 
@@ -1109,16 +1120,16 @@ If an ad break is currently playing, discard it and resume content. Otherwise, i
 
 #### player.adManager().focus()
 
-Puts the focus on the skip button, if present. If not present, focus is put on interactive elements, including icons or interactive creatives.
+Puts the focus on the skip button, if exists. Otherwise, the focus is put on interactive elements, including icons or interactive creatives.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 <a id="playergetadskippablestate"></a>
 
 #### player.adManager().getAdSkippableState()
 
-Returns true if the ad can currently be skipped.
+Returns true if the current ad can be skipped.
 
-**Return**: <code>boolean</code> True if the ad can currently be skipped, false otherwise.
+**Return**: <code>boolean</code> True if the current ad can be skipped, false otherwise.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 <a id="playergetcuepoints"></a>
@@ -1566,6 +1577,8 @@ Sets a listener function called when the ad is blocked by an external app.
 | --- | --- | --- |
 | func | <code>function</code> | the function called when the ad is blocked by an external app | 
 
+## Static
+
 <a id="nexprotocol"></a>
 
 #### Player.NexProtocol : <code>enum</code>
@@ -1611,6 +1624,8 @@ Sets a listener function called when the ad is blocked by an external app.
 | --- | --- | --- |
 | STATIC_THUMBNAILS | <code>number</code> | <code>0</code> | 
 | DYNAMIC_THUMBNAILS | <code>number</code> | <code>1</code> |
+
+## Global Typedef
 
 <a id="NexCallbackEvent"></a>
 
@@ -1695,7 +1710,7 @@ Called when a FairPlay content needs to request the license.
 | ft      | <code>number</code> | Thumbnail ending time.       |
 
 
-   ## VR Player
+## VR Player
 
 <a id="setFieldView"> </a>  
    #### player.setFieldView()
