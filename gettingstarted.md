@@ -74,6 +74,83 @@ Playing a video with the integrated UI can be done in an HTML5 page:
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that we have built a specific library for Samsung Smart TVs. To enable Tizen support, please change the current library to our Tizen library: </p>
 </div></div>
 
+## Sample Integration with React
+
+Integrating NexPlayer into a React Component can also be posible with the next sample:
+
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory.
+
+You can use the React Hook 'useEffect' to load the JavaScript code which loads the player on the component.
+
+On the return we must add the div that will contain the video. </p>
+</div></div>
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/png" href="/src/img/NexPlayer-favicon.png" />
+
+    <title>NexPlayer React Sample</title>
+    <style type="text/css">
+        #player {
+            background-color: #191828;
+            position: absolute;
+            top: 0%;
+            width: 50%;
+            height: 50%;
+        }
+        #warning {
+            background-color: red;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>NexPlayer HTML5</h1>
+    <div id="warning">
+        <h1>Unsupported protocol</h1>
+        <h3>Loading HTML using the file protocol can't be supported. Please use a <a href="https://nexplayer.github.io/getting_started.html#explanation">server</a> (HTTP/HTTPS protocol).</h3>
+    </div>
+    <div id="root"></div>
+        <script src="Latest SDK version. Check 'Releases' section"></script>
+        <script type="module">
+            import React, { useEffect } from "react";
+
+            function App() {
+            useEffect(() => {
+                nexplayer.Setup({
+                key: "ENTER YOUR LICENSE KEY HERE",
+                div: document.getElementById("player"),
+                //  Enter the video source below.
+                src: "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
+                });
+            }, []);
+
+            return (
+                <>
+                <div id="player"></div>
+                </>
+            );
+            }
+
+            export default App;
+        </script>
+
+</body>
+</html>
+```
+
+<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the license key is mandatory. License key should have been already sent to your inbox or you can request one from support.madrid@nexplayer.com.</p>
+</div></div>
+
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that we have built a specific library for Samsung Smart TVs. To enable Tizen support, please change the current library to our Tizen library: </p>
+</div></div>
+
 ## Step-by-Step Integration Guide
 
 To integrate NexPlayer into your project you must complete the following steps:
@@ -131,7 +208,7 @@ There is a substantial number of customizable options for NexPlayer™ including
         NexHeaders:[{FieldName: 'Header Field Name', FieldValue: 'Header Field Value'}],
         NexCallback: // Optional DRM callback for FairPlay
     }], // Optional: DRM information
-    externSubtitles: [{"src": "VTT", "language": "eng" },.. }] // Optional
+    externSubtitles: [{"src": "VTT", "language": "eng" }, ...] // Optional
     hideOptionsUi:{  // Optional: Hide the desired setting from the UI
         quality: false,
         speed:false,
@@ -143,7 +220,7 @@ There is a substantial number of customizable options for NexPlayer™ including
     lowLatency: true, // // Toggle on/off low latency
     liveSettings: { //Optional, requires low latency
         liveDelay: 5, // Optional, seconds of delay.
-        maxDrift: 1 // Optional, the maximum delay before to make a seek live.
+        maxDrift: 10, // Optional, the maximum delay before to make a seek live.
         playbackRate: 0.5,   // Optional, the speed that the player gets in order to keep the live delay.
     }, // Optional, settings for live playback.
     logosrc: 'URL logo of the company', // Optional

@@ -51,7 +51,7 @@ Date: August 13th 2021
 * **[Improved]** Fixed error with icons preventing from use 360 when video is stopped.
 * **[Improved]** Fixed errors with some methods for live on VOD.
 
-Date: July 30nd 2021
+Date: July 30th 2021
 
 #### Version 6.0.1
 
