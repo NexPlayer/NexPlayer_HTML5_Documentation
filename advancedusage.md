@@ -49,7 +49,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
     </tr>
      <tr>
       <td  scope="row">IE </td>      
-      <td  scope="row">Windows <sup><a href="#fn_1" id="reffn_1">1</a></sup> </td>
+      <td  scope="row">Windows <sup><a href="#/advancedusage.md?=fn_1" id="reffn_1">1</a></sup> </td>
       <td  scope="row">PlayReady, Custom Headers </td>       
     </tr>
   </tbody>
@@ -57,7 +57,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
   
 </table>
 <blockquote id="fn_1">
-<span><sup><a href="#reffn_1" title="Jump back to footnote [1] in the text.">1</a></sup> IE 11+ is required</span>
+<span><sup><a href="#/advancedusage.md?=reffn_1" title="Jump back to footnote [1] in the text.">1</a></sup> IE 11+ is required</span>
 </blockquote>
 
 #### HLS
@@ -97,7 +97,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
     </tr>
      <tr>
       <td  scope="row">IE </td>
-      <td  scope="row">Windows <sup><a href="#fn_2" id="reffn_2">2</a></sup> </td>
+      <td  scope="row">Windows <sup><a href="#/advancedusage.md?=fn_2" id="reffn_2">2</a></sup> </td>
       <td  scope="row">AES, PlayReady, Custom Headers </td>
     </tr>
   </tbody>
@@ -106,7 +106,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
 </table>
 
 <blockquote id="fn_2">
-<span><sup><a href="#reffn_2" title="Jump back to footnote [2] in the text.">2</a></sup> IE 11+ is required</span>
+<span><sup><a href="#/advancedusage.md?=reffn_2" title="Jump back to footnote [2] in the text.">2</a></sup> IE 11+ is required</span>
 </blockquote>
 
 NexPlayer supports several DRM technologies:
@@ -484,7 +484,7 @@ This feature enables/disables autoplay. This can be configured in the player by 
 
 ```
 
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>autoplay</b> parameter is true, so the player will star without any user action. Note that most of the browsers will not allow autoplay without being muted at start.</p>
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>autoplay</b> parameter is true, so the player will start without any user action. Note that most of the browsers will not allow autoplay without being muted at start.</p>
 </div></div>
 
 ## Multiple Players
@@ -780,7 +780,7 @@ In order to change the default icons of the player, the following code should be
 
 ```
 
-Please note that we recommend using SVG icons. The list of all the CSS classes that defines the icons is:
+Please note that we recommend using SVG icons. This is a list of all the CSS classes that defines the icons:
 
 | CSS Class | Description |
 | --- | --- |
@@ -1025,7 +1025,7 @@ If you want to avoid the fullscreen native player in iOS, you should define this
 If you want to reuse the same div for different videos, the container div must be unmounted properly.
 
 ```js
-  nexplayer.UnMount(document.getElementById('player');
+  nexplayer.UnMount(document.getElementById('player'));
 ```
 ## Decreasing the Size of the Build
 
