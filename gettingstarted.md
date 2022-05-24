@@ -190,7 +190,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 ```
-## React Sample Deployments
+## React Sample Deployment
 
 For deploying this project first install Node.js
 ```bash
