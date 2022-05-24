@@ -21,9 +21,9 @@ The default UI is easily customizable to fit the user´s personal preferences (e
       <li>Integrated UI </li>      
       <li>360 and VR video player </li>      
       <li>Multiple audio/video tracks </li>      
-      <li>ABR and UHD video (4k and 8k) </li>
+      <li>ABR and UHD video (4K and 8K) </li>
       <li>Trick Play </li>   
-      <li>Multiple players at the same time (Multi View) </li>   
+      <li>Multiple players at the same time (MultiView) </li>   
       <li>Time-shifting </li>   
       <li>DVR Live Streaming </li>   
       <li>Picture-in-picture </li>   
@@ -34,6 +34,7 @@ The default UI is easily customizable to fit the user´s personal preferences (e
       <li>Static thumbnails </li>
       <li>Dynamic thumbnails </li>
       <li>Multiple streams as backup</li>
+      <li>Only audio streams</li>
   </ul>
 </div>
 <div class="blocks">
