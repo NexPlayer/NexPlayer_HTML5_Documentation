@@ -18,19 +18,19 @@ Online progressive download (MP4) is supported on any platform. The support for 
 <table class="table table-sm">
   <tbody>
     <tr>
-      <th class="titles" bgcolor="#C80000" color="#FFF" scope="row">BROWSER </th>   
-      <th class="titles" bgcolor="#C80000" color="#FFF" scope="row">PLATFORM</th>        
-      <th class="titles" bgcolor="#C80000" color="#FFF" scope="row">DRM</th>        
+      <th class="titles" bgcolor="#C80000" color="#FFF" scope="row">BROWSER </th>
+      <th class="titles" bgcolor="#C80000" color="#FFF" scope="row">PLATFORM</th>
+      <th class="titles" bgcolor="#C80000" color="#FFF" scope="row">DRM</th>
     </tr>
     <tr>
-      <td  scope="row">Chrome </td>      
-      <td  scope="row">Windows, Linux, macOS, Android </td>      
-      <td  scope="row">Widevine, Custom Headers </td>      
+      <td  scope="row">Chrome </td>
+      <td  scope="row">Windows, Linux, macOS, Android </td>
+      <td  scope="row">Widevine, Custom Headers </td>
     </tr>
     <tr>
-      <td  scope="row">Safari </td>      
-      <td  scope="row">macOS </td>      
-      <td  scope="row">X </td>       
+      <td  scope="row">Safari </td>
+      <td  scope="row">macOS </td>
+      <td  scope="row">X </td>
     </tr>
     <tr>
       <td  scope="row">Firefox </td>
@@ -48,13 +48,13 @@ Online progressive download (MP4) is supported on any platform. The support for 
       <td  scope="row">PlayReady, Custom Headers </td>
     </tr>
      <tr>
-      <td  scope="row">IE </td>      
+      <td  scope="row">IE </td>
       <td  scope="row">Windows <sup><a href="#/advancedusage.md?=fn_1" id="reffn_1">1</a></sup> </td>
-      <td  scope="row">PlayReady, Custom Headers </td>       
+      <td  scope="row">PlayReady, Custom Headers </td>
     </tr>
   </tbody>
 
-  
+
 </table>
 <blockquote id="fn_1">
 <span><sup><a href="#/advancedusage.md?=reffn_1" title="Jump back to footnote [1] in the text.">1</a></sup> IE 11+ is required</span>
@@ -63,7 +63,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
 #### HLS
 
 <table class="table table-sm">
- 
+
   <tbody>
     <tr>
       <td class="titles" bgcolor="#C80000" scope="row">BROWSER </td>
@@ -102,7 +102,7 @@ Online progressive download (MP4) is supported on any platform. The support for 
     </tr>
   </tbody>
 
-  
+
 </table>
 
 <blockquote id="fn_2">
@@ -147,7 +147,7 @@ A DRM powered by <a href =https://www.microsoft.com/playready/ target="_blank">M
 ```js
   const nexDRMInformationPlayReady = {
     NexDRMType:'com.microsoft.playready',
-    NexDRMKey: 'DRM key URL', 
+    NexDRMKey: 'DRM key URL',
     NexHeaders:[{
       FieldName: 'Optional field name',  //Optional
       FieldValue: 'Optional field value'
@@ -173,7 +173,7 @@ The Common Encryption Scheme (CENC) specifies the standard to enable decryption 
   // Widevine
   const nexDRMInformationWidevine = {
     NexDRMType:'com.widevine.alpha',
-    NexDRMKey: 'DRM key URL', 
+    NexDRMKey: 'DRM key URL',
     NexHeaders:[{
       FieldName: 'Optional field name',  //Optional
       FieldValue: 'Optional field value'
@@ -183,7 +183,7 @@ The Common Encryption Scheme (CENC) specifies the standard to enable decryption 
   // PlayReady
   const nexDRMInformationPlayReady = {
     NexDRMType:'com.microsoft.playready',
-    NexDRMKey: 'DRM key URL', 
+    NexDRMKey: 'DRM key URL',
     NexHeaders:[{
       FieldName: 'Optional field name', //Optional
       FieldValue: 'Optional field value'
@@ -328,7 +328,7 @@ function licenseRequestReady (event) {
  request.addEventListener("error", player.FairPlayNexLicenseRequestFailed.bind(player), false);
  // The spc value should be base64-encoded but NOT url-encoded
  // The spc should go first and then the "assetId" (session.contentId)
- var params = "spc="+ base64EncodeUint8Array(message) + "&assetId=" + session.contentId;  
+ var params = "spc="+ base64EncodeUint8Array(message) + "&assetId=" + session.contentId;
  // LA (License Acquisition) URL for FairPlay (serverProcessSPCPath)
  request.open("POST", "URL for the SPC sever (license server)", true); // serverProcessSPCPath
  request.setRequestHeader("Content-type", "text/xml; charset=utf-8");
@@ -404,11 +404,11 @@ Sample VAST links can be found on the <a href =https://developers.google.com/int
 
 ## 360 Player
 
-This feature allows the player to play videos with equirectangular, cubemap or topdown format. 
+This feature allows the player to play videos with equirectangular, cubemap or topdown format.
 
-If the device is an Oculus devices the flat 360 format must be used. 
+If the device is an Oculus devices the flat 360 format must be used.
 
-For devices which use gyroscope, they can be moved to get a full 360 view of the video. However this feature  is only available for website that use the https protocol. 
+For devices which use gyroscope, they can be moved to get a full 360 view of the video. However this feature  is only available for website that use the https protocol.
 
 In order to have the 360 in all devices you should add type_360: true and the player automatically set the correct type to the user device. An example of this is shown below:
 
@@ -487,6 +487,22 @@ This feature enables/disables autoplay. This can be configured in the player by 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>autoplay</b> parameter is true, so the player will start without any user action. Note that most of the browsers will not allow autoplay without being muted at start.</p>
 </div></div>
 
+## CMCD
+
+This feature enables the Common Media Client Data standard usage, there is two ways to use:
+- As a HTTP query argument: only requires creating an empty object to be used.
+- As a custom HTTP request header: useHeaders: true must be added to the object.
+```js
+  {
+    div: document.getElementById('player'), // Mandatory
+    src: 'URL video', // Mandatory
+    cmcd: { // Optional, Create the object in order to enable the cmcd
+        useHeaders: boolean // Optional Send CMCD data in request headers instead of as query args. Defaults to false.
+    }
+  }
+
+```
+
 ## Multiple Players
 
 This feature enablles the use of multiple players at the same time. In order to create an other player it's necessary to create a new div.
@@ -496,7 +512,7 @@ This feature enablles the use of multiple players at the same time. In order to 
   nexplayer.AditionalVideo({
     key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('playerN'), // Where "N" is the player number
-    src: 'VIDEO URL',   
+    src: 'VIDEO URL',
     callbacksForPlayer: callback(nexplayerInstance, videoElement)
   });
 
@@ -514,7 +530,7 @@ Cast technology allows you to stream your media to any compatible receiver devic
 ### Chromecast
 
 Chromecast displays your video and audio streams directly onto any TV connected to you Chromecast receptor. You can enable the Chromecast option as shown below:
- 
+
 ```js
   nexplayer.Setup({
     key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
@@ -572,10 +588,10 @@ Use <a href="/NexPlayer_HTML5_Documentation/#/API?id=nexplayerdecodedatadata" ta
     callbacksForPlayer: callBackWithPlayers
   });
 
-  var showTimedMetadata = function(videoElement) { 
+  var showTimedMetadata = function(videoElement) {
     videoElement.textTracks.addEventListener("addtrack", function (e) {
       console.log("Add track", e.track);
-      for (let i = 0; i < e.currentTarget.length; i ++) {  
+      for (let i = 0; i < e.currentTarget.length; i ++) {
         if (e.currentTarget[i].kind === "metadata") {
            // If the new TextTrack's kind is metadata change its mode to "hidden".
            // Otherwise, the mode is set to "disabled" and the "cuechange" events won't be received.
@@ -591,7 +607,7 @@ Use <a href="/NexPlayer_HTML5_Documentation/#/API?id=nexplayerdecodedatadata" ta
             });
           }
         }
-    });	
+    });
   };
 
 ```
@@ -657,7 +673,7 @@ This document provides an explanation of the UI and all the related CSS classes 
 | .nexplayer_playback_position | Customize the already played part of the seekbar |
 | .nexplayer_bufferlevel_position | Customize the buffered part of the seekbar |
 | .nexplayer_base_seekbar | Customize the default part of the seekbar |
-| .nexplayer_circleBase | Customize the current postion marker of the seekbar |  
+| .nexplayer_circleBase | Customize the current postion marker of the seekbar |
 
 Please take into account that the seekbar and the volume control bar are the same component. So if you modify the .nexplayer_playback_position, .nexplayer_bufferlevel_position, .nexplayer_base_seekbar, or .nexplayer_circleBase css classes, then the volume control bar will change accordingly.
 
@@ -954,8 +970,8 @@ Some of the most important events are "playing", "pause", "waiting", and "timeup
 
 ```js
 
-  videoElement.addEventListener("timeupdate", function() { 
-    console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) 
+  videoElement.addEventListener("timeupdate", function() {
+    console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration)
   }, true);
 
 ```
@@ -986,7 +1002,7 @@ Advanced events such as a track change are available using the <code>on</code> m
 
 ```js
 
-  nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, function(e) { console.log ("The current track has changed"),e.details()});                 
+  nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, function(e) { console.log ("The current track has changed"),e.details()});
   nexplayerInstance.on(nexplayer.Player.NexEvent.Speed_Change, function(e) { console.log("The current velocity has changed"),e.details()});
   nexplayerInstance.on(nexplayer.Player.NexEvent.Error, function(e) { console.log("An error has occurred"),e.details()});
 

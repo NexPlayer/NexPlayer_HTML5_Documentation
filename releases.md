@@ -1,10 +1,18 @@
 # Releases
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
+
+#### Version 8.0.0
+```
+https://nexplayer.nexplayersdk.com/8.0.0/nexplayer.js
+```
+* **[Improved]** Solved a issue with the fake full screen on iOS.
+* **[Added]** Support for CMCD as custom HTTP request header and as HTTP query argument.
+* **[Added]** Support for Verimatrix watermark.
+
+Date: May 25th 2022
 #### Version 7.1.2
-```
-https://nexplayer.nexplayersdk.com/7.1.2/nexplayer.js
-```
+
 * **[Improved]** Fixed issue causing buffering with different audio/video segment durations.
 * **[Improved]** Fixed content's requests that requires cookies to be played.
 
@@ -224,7 +232,7 @@ Date: September 16th 2020
 * **[Improved]** Create event listeners for quality and playback rate change
 * **[Improved]** Fix Dash Live issues
 * **[Improved]** Fix DASH low latency for Mozilla
-* **[Improved]** Solve bug related to the spinning wheel 
+* **[Improved]** Solve bug related to the spinning wheel
 * **[Improved]** Solve bug with iphone ads
 
 Date: August 26th 2020

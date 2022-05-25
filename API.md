@@ -1,4 +1,4 @@
-# NexPlayer API 
+# NexPlayer API
 
 ## Nexplayer
 
@@ -179,8 +179,8 @@
 
 Creates and initializes the player.
 
-**Type**: function of [<code>nexplayer</code>](#Player)   
-**Param**: 
+**Type**: function of [<code>nexplayer</code>](#Player)
+**Param**:
    - **configuration** is an object which its properties values could be:
 
 **Mandatory Parameters:**
@@ -236,8 +236,9 @@ Creates and initializes the player.
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this value is set to false. |
 | useiOSFullScreen | <code>boolean</code> | Determines if the iOS native full screen will be used. |
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
-| watermark | <code>object</code> | Watermark image URL. |
+| watermark | <code>Object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
+| cmcd | <code>Object</code> |  Enable the Common Media Client Data, Only needs to create an empty object to enable it. |
 
 <a id="nexplayerchecksupportedconfigurations"></a>
 
@@ -245,18 +246,18 @@ Creates and initializes the player.
 
 Check if the audio and video codecs and DRMType, if it is provided, are supported by the device.
 
-**Type**: function of [<code>nexplayer</code>](#Player)   
-**Params**: 
-   - **URL**: manifest url of the video. 
-   - **DRMType**: optional type of drm (e.g., "com.microsoft.playready" )   
+**Type**: function of [<code>nexplayer</code>](#Player)
+**Params**:
+   - **URL**: manifest url of the video.
+   - **DRMType**: optional type of drm (e.g., "com.microsoft.playready" )
 **Returns**: A Promise. If it is resolved returns a MediaKeySystemAccess object with the supported codecs, and if it is rejected returns a string with the error.
 
 #### nexplayer.Reload(configuration)
 
 Reloads the player with the given configuration. If the configuration object is not provided the previous one will be used. If it is provided the properties passed will override the values of the previous configuration object.
 
-**Type**: function of [<code>nexplayer</code>](#Player)   
-**Param**: 
+**Type**: function of [<code>nexplayer</code>](#Player)
+**Param**:
    - **configuration** is an object which its properties values could be:
 
 **Mandatory Parameters:**
@@ -314,6 +315,7 @@ Reloads the player with the given configuration. If the configuration object is 
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
 | watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
+| cmcd | <code>Object</code> |  Enable the Common Media Client Data, Only needs to create an empty object to enable it. |
 
 #### nexplayer.decodeData(data)
 
@@ -321,9 +323,9 @@ Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and N
 
 **Type**: function of [<code>nexplayer</code>](#Player)
 
-**Param**: 
+**Param**:
    - **data** is the ArrayBuffer to decode.
-   
+
 **Returns**: decoded and cleaned string or null if the parameter provided is not an ArrayBuffer.
 
 ## Player methods and objects
@@ -333,22 +335,22 @@ Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and N
 
 Gets all of the videoes avaliable tracks (different qualities).
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: Array.< Track > - all the tracks available.
-   
+
 <a id="getcurrenttrack"> </a>
    #### player.getCurrentTrack() ⇒ Track
 
 Get the current track information.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: Track - the current track.
 
 #### player.setCurrentTrack(trackID)
 
 Sets the current track.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Export**:
 
 | Param | Type | Description |
@@ -359,20 +361,20 @@ Sets the current track.
 
 Enables the ABR to change automatically between tracks.
 
-**Type**: instance method of [<code>Player</code>](#Player)  
+**Type**: instance method of [<code>Player</code>](#Player)
 
 #### player.disableABR()
 
 Disables the ABR to prevent the player from changing tracks regardless of bandwidth.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="getaudiostreams"> </a>
    #### player.getAudioStreams() ⇒ Array.< AudioStream >
 
 Get the available audio streams.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: An array<AudioStream> - which contains the available audio streams.
 
 <a id="getcurrentaudiostream"> </a>
@@ -380,14 +382,14 @@ Get the available audio streams.
 
 Get the audio stream currently in use.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: AudioStream - the current audio track.
 
 #### player.setAudioStream(streamID)
 
 Sets the current audio stream.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Export**:
 
 | Param | Type | Description |
@@ -395,27 +397,27 @@ Sets the current audio stream.
 | streamID | <code>number</code> | ID of the audio stream to be used. |
 
 
-<a id="getcurrentsubtitle"> </a>  
-   #### player.getCurrentSubtitle() 
+<a id="getcurrentsubtitle"> </a>
+   #### player.getCurrentSubtitle()
 
 Gets the current subtitle info.
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: Current Subtitle - the current subtitle track (undefined if no subtitles are activated).
 
-<a id="getsubtitles"> </a>  
+<a id="getsubtitles"> </a>
    #### player.getSubtitles()
-   
+
 Gets all the avaliable subtitle tracks info.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: Array of subtitles - the subtitle tracks of the video.
 
 #### player.setSubtitle(subID)
 
 Sets the current subtitle track.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Export**:
 
 | Param | Type | Description |
@@ -423,13 +425,13 @@ Sets the current subtitle track.
 | subID | <code>number</code> | ID of the subtitle track to be used |
 
 
-<a id="islive"> </a>  
+<a id="islive"> </a>
    #### player.isLive() ⇒ boolean
 
-Informs whether the video is live or on demand (VOD). This needs to be called when the manifest is finally loaded. 
+Informs whether the video is live or on demand (VOD). This needs to be called when the manifest is finally loaded.
 It is recommended to use within the video "loadeddata" event.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: boolean - true if the video is live, otherwise it returns false.
 
 
@@ -437,7 +439,7 @@ It is recommended to use within the video "loadeddata" event.
 
 Adds a listener for Events.
 
-**Type**: instance method of [<code>Player</code>](#Player)      
+**Type**: instance method of [<code>Player</code>](#Player)
 **Export**:
 
 | Param | Type | Description |
@@ -449,7 +451,7 @@ Adds a listener for Events.
 
 Adds a DIV to render certain subtitles in a more precise way. This is optional and the native subtitles of the video element will be used if this is not set.
 
-**Type**: instance method of [<code>Player</code>](#Player)      
+**Type**: instance method of [<code>Player</code>](#Player)
 **Export**:
 
 | Param | Type | Description |
@@ -460,14 +462,14 @@ Adds a DIV to render certain subtitles in a more precise way. This is optional a
 
 Creates the 360 view.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
 
 #### player.FairPlayNexLicenseRequestLoaded(event)
 
 Called when the FairPlay request is done.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Export**:
 
 | Param | Description |
@@ -478,7 +480,7 @@ Called when the FairPlay request is done.
 
 Called if the FairPlay request fails.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Export**:
 
 | Param | Description |
@@ -491,7 +493,7 @@ Called if the FairPlay request fails.
 Sets thumbnail resources. This method should be called before Init().
 
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Export**:
 
 | Param | Type | Description |
@@ -502,151 +504,151 @@ Sets thumbnail resources. This method should be called before Init().
 
 
 
-<a id="isutc"> </a>  
+<a id="isutc"> </a>
    #### player.isUTC() ⇒ boolean
 
    Indicates whether the video information (currentTime, duration, seekable range, etc.) of the video element is based on the present or on an absolute value that starts at midnight UTC, Jan 1, 1970. If this is true, you will need to take this into account when seeking through the currentTime of the video element. Some useful methods (like getCurrentTime, getDuration, and seek) are available to reduce the complexity in these cases. Note that this property only applies to live streams.
 
-   **Type**: instance method of [<code>Player</code>](#Player)   
+   **Type**: instance method of [<code>Player</code>](#Player)
    **Returns**: boolean - true if the video information is using UTC, false otherwise.
- 
 
-<a id="getcurrenttime"> </a>  
+
+<a id="getcurrenttime"> </a>
    #### player.getCurrentTime() ⇒ number
 
    Returns the currentTime taking into account isUTC (if isUTC is true, getCurrentTime's returned value will be different from the time of the video element).
 
-   **Type**: instance method of [<code>Player</code>](#Player)    
+   **Type**: instance method of [<code>Player</code>](#Player)
    **Returns**: number - the current time of the video.
 
-<a id="getduration"> </a>  
+<a id="getduration"> </a>
    #### player.getDuration() ⇒ number
 
    Returns the duration taking into account isUTC (if isUTC is true, getDuration's returned value will be different from the duration of the video element).
 
-   **Type**: instance method of [<code>Player</code>](#Player)   
+   **Type**: instance method of [<code>Player</code>](#Player)
    **Returns**: number - the duration of the video.
 
-<a id="getDVRWindowSize"> </a>  
+<a id="getDVRWindowSize"> </a>
    #### player.getDVRWindowSize() ⇒ number
 
    Returns the window of allowable play time behind the live point of a live stream, this value will increase until the buffer is full, with the full content, at that point of time, the value will be constant.
 
-   **Type**: instance method of [<code>Player</code>](#Player)   
+   **Type**: instance method of [<code>Player</code>](#Player)
    **Returns**: number - the window of allowable play time behind the live point of a live stream.
 
 #### player.getURL()
 
   Returns the current video URL.
 
-  **Type**: instance method of [<code>Player</code>](#Player)   
+  **Type**: instance method of [<code>Player</code>](#Player)
   **Returns**: String
 
-<a id="playercheckframedrop"> </a>  
+<a id="playercheckframedrop"> </a>
    #### player.checkFrameDrop() ⇒ number
 
    Returns the number of dropped frames as proxy for CPU load
 
-   **Type**: instance method of [<code>Player</code>](#Player)   
+   **Type**: instance method of [<code>Player</code>](#Player)
    **Returns**: number - number of dropped frames.
 
-   
+
 
 #### player.seek(value)
 
-   
+
    Sets the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
 
-   **Type**: instance method of [<code>Player</code>](#Player) 
+   **Type**: instance method of [<code>Player</code>](#Player)
 
   | Param | Type |Description |
   | --- | --- | --- |
   | event | Event | value in seconds that the player will seek to. |
 
   ```js
-   //Non-live video 
+   //Non-live video
    player.seek(120) // This will seek forward 120 seconds (2:00 minutes), must be a positive number ranging from 0 to the full duration of the video in seconds
    //Live video
    player.seek(-120) // It jumps back 120 seconds (2:00 minutes) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
    ```
 
 #### player.seekLive()
-   
+
    Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). Only works on livestreams.
 
-   **Type**: instance method of [<code>Player</code>](#Player) 
+   **Type**: instance method of [<code>Player</code>](#Player)
 
-<a id="getbufferlength"> </a>  
+<a id="getbufferlength"> </a>
 #### player.getBufferLength() ⇒ number
 
 Returns the seconds of buffer loaded that the player has available to play.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: number - time of buffer length
 
-<a id="getcurrentlivetime"> </a>  
+<a id="getcurrentlivetime"> </a>
 #### player.getCurrentLiveTime() ⇒ number
 
 Returns the time in which the livestream is at.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: number - time in which the livestream is at.
 
-<a id="gettimeuntillive"> </a>  
+<a id="gettimeuntillive"> </a>
 #### player.getTimeUntilLive() ⇒ number
 
 Returns the time difference between the current video time and the livestream time.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: number - time difference between the time it's currently found in and the time the livestream is at.
 
-<a id="getmanifestinfo"> </a>  
+<a id="getmanifestinfo"> </a>
 #### player.getManifestInfo()
 
 Returns some information about the manifest.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: number - some information about the manifest.
 
-<a id="gettimeshiftbufferdepth"> </a>  
+<a id="gettimeshiftbufferdepth"> </a>
 #### player.getTimeShiftBufferDepth ⇒ number
 
 Returns the time shift buffer depth in seconds, this function only works in live streams.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: number - time shift buffer depth
 
-<a id="getprotocol"> </a>  
+<a id="getprotocol"> </a>
 #### player.getProtocol() ⇒ number
 
 Returns the protocol type.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: number - the protocol type.
 
-<a id="getthumbnailcontroller"> </a>  
+<a id="getthumbnailcontroller"> </a>
 #### player.getThumbnailController() ⇒ ThumbController
 
 Returns the preview thumbnail controller.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: ThumbController - Thumbnail controller
 
 #### player.setThumbnailStep(step)
 
 Sets the time interval between frames for dynamic thumbnails.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
   | Param | Type |Description |
   | --- | --- | --- |
   | step | number | The seconds between two different thumbnails. |
 
-#### player.enablePreviewThumbnails(option) 
+#### player.enablePreviewThumbnails(option)
 
 Enable thumbnails preview. This method must be called before Init().
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
  | Param | Type |Description |
  | --- | --- | --- |
@@ -656,31 +658,31 @@ Enable thumbnails preview. This method must be called before Init().
 
 Set the video playback speed.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
  | Param | Type |Description |
  | --- | --- | --- |
  | speed | number | The speed value. |
 
-<a id="getqualitylevels"> </a>  
+<a id="getqualitylevels"> </a>
 #### player.getQualityLevels() ⇒ array
 
 Get the video quality levels array.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: array - quality levels array info
 
 #### player.togglePlayPause()
 
 Plays or pauses the playback.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
 #### player.toggleFullScreen()
 
 Toggles between full screen or window mode.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="playershowstats"></a>
 
@@ -688,7 +690,7 @@ Toggles between full screen or window mode.
 
 Displays basic stream information when typing "nex" on the keyboard.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playerjumpforwardvalue"></a>
 
@@ -696,7 +698,7 @@ Displays basic stream information when typing "nex" on the keyboard.
 
 Jumps forward to the current playback position of the player.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Param**: {number} **value** is the number of seconds to jump forward
 
 <a id="playerjumpbackwardvalue"></a>
@@ -705,7 +707,7 @@ Jumps forward to the current playback position of the player.
 
 Jumps backward to the current playback position of the player.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Param**: {number} **value** is the number of seconds to jump backward
 
 <a id="playersetthumbnailstepstep"></a>
@@ -714,7 +716,7 @@ Jumps backward to the current playback position of the player.
 
 Sets the step for dynamic thumbnails.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Param**: {number} **step** is the seconds between two different thumbnails
 
 <a id="playergetcurrentlivelatency"></a>
@@ -723,8 +725,8 @@ Sets the step for dynamic thumbnails.
 
 Returns the live latency value.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
-**Returns**: latency number of seconds  
+**Type**: instance method of  [<code>Player</code>](#Player)
+**Returns**: latency number of seconds
 
 <a id="playergetcurrentbuffer"></a>
 
@@ -732,7 +734,7 @@ Returns the live latency value.
 
 Returns the current buffer level.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playeriscontrolbaropen"></a>
 
@@ -740,8 +742,8 @@ Returns the current buffer level.
 
 Returns if the control bar is opened.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
-**Returns**: boolean  
+**Type**: instance method of  [<code>Player</code>](#Player)
+**Returns**: boolean
 
 <a id="playertogglelanguagesmenu"></a>
 
@@ -749,7 +751,7 @@ Returns if the control bar is opened.
 
 Toggles the subtitle menu options.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playernextfocus"></a>
 
@@ -758,7 +760,7 @@ Toggles the subtitle menu options.
 Moves along to the next element that can be focused. The possible elements to be focused are:
 'nexplayer_play_pause', 'nexplayer_full_volume_div', 'nexplayer_language', 'nexplayer_full_screen', 'nexplayer_return_container'
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playerpreviousfocus"></a>
 
@@ -767,7 +769,7 @@ Moves along to the next element that can be focused. The possible elements to be
 Moves along to the previous element that can be focused. The possible elements to be focused are:
 'nexplayer_play_pause', 'nexplayer_full_volume_div', 'nexplayer_language', 'nexplayer_full_screen', 'nexplayer_return_container'.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playerclickfocus"></a>
 
@@ -775,7 +777,7 @@ Moves along to the previous element that can be focused. The possible elements t
 
 Click the current focused element.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playertogglebar"></a>
 
@@ -809,7 +811,7 @@ Returns the parameters defined in the set up, for that video
 
 Returns the play back speed.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: Number
 
 <a id="getstreamtype"></a>
@@ -818,8 +820,8 @@ Returns the play back speed.
 
 Returns the type of video (DASH/ HLS/ mp4 ...)
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
-**Returns**: String 
+**Type**: instance method of  [<code>Player</code>](#Player)
+**Returns**: String
 
 <a id="hasended"></a>
 
@@ -827,7 +829,7 @@ Returns the type of video (DASH/ HLS/ mp4 ...)
 
 Returns true if the video has ended.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="isad"></a>
@@ -836,7 +838,7 @@ Returns true if the video has ended.
 
 Returns true while an ad is played back or content playback has been paused for ad playback, false otherwise.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="ispaused"></a>
@@ -845,7 +847,7 @@ Returns true while an ad is played back or content playback has been paused for 
 
 Returns true if the video state is paused, otherwise false
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="isplaying"></a>
@@ -854,7 +856,7 @@ Returns true if the video state is paused, otherwise false
 
 Returns true if the video state is playing, otherwise false
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="isready"></a>
@@ -863,7 +865,7 @@ Returns true if the video state is playing, otherwise false
 
 Returns true if the player has finished initialization and is ready to use and to handle other API calls.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="enterpictureinpicture"></a>
@@ -888,7 +890,7 @@ To exit picture in picture mode
 
 Returns true if the video is in picture in picture, otherwise false.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="ispictureinpictureavailable"></a>
@@ -897,7 +899,7 @@ Returns true if the video is in picture in picture, otherwise false.
 
 Return true if pictur in pictur mode is supported for the browser, otherwise false.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="getversion"></a>
@@ -906,7 +908,7 @@ Return true if pictur in pictur mode is supported for the browser, otherwise fal
 
 Returns the version of the SDK.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: String
 
 <a id="hiddenvolumeicon"></a>
@@ -933,7 +935,7 @@ Get the thumbnail at a specific video time.
 | --- | --- | --- |
 | Time | <code>number</code> | Get thumbnails at the given time. |
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: Promise <Frame, object> - <a href="#/API?id=frame">Frame</a> as resolve, and object which contains details as a reject.
 
@@ -945,7 +947,7 @@ Get the thumbnail at a specific video time.
 
 Returns the AdManager instance in order to perform actions on ads through the IMA SDK.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: AdManager object
 
 <a id="playergetadobject"></a>
@@ -954,7 +956,7 @@ Returns the AdManager instance in order to perform actions on ads through the IM
 
 Returns the IMA SDK manager object.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: IMAs AdManager object
 
 <a id="playergetid"></a>
@@ -963,7 +965,7 @@ Returns the IMA SDK manager object.
 
 Returns the ID of the current ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: String
 
 <a id="playergettitle"></a>
@@ -972,7 +974,7 @@ Returns the ID of the current ad.
 
 Returns the title of the current ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: String
 
 <a id="playergetdescription"></a>
@@ -981,7 +983,7 @@ Returns the title of the current ad.
 
 Returns the description of the current ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: String
 
 <a id="playergetmediaurl"></a>
@@ -990,7 +992,7 @@ Returns the description of the current ad.
 
 Returns the video ad URL.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: String
 
 <a id="playergetsurveyurl"></a>
@@ -999,7 +1001,7 @@ Returns the video ad URL.
 
 Returns the ad survey URL.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: String
 
 <a id="playergetduration"></a>
@@ -1008,7 +1010,7 @@ Returns the ad survey URL.
 
 Returns the total duration of the current ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: number
 
 <a id="playergetskiptime"></a>
@@ -1017,7 +1019,7 @@ Returns the total duration of the current ad.
 
 Returns how much time is left until the user can skip the ad (only if it is skippable).
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: number
 
 <a id="playergetcurrenttime"></a>
@@ -1026,7 +1028,7 @@ Returns how much time is left until the user can skip the ad (only if it is skip
 
 Returns the current time position of the ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: number
 
 <a id="playergetcontenttype"></a>
@@ -1035,7 +1037,7 @@ Returns the current time position of the ad.
 
 Returns the ad video type (e.g. "video/mp4").
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: String
 
 <a id="playerisskippable"></a>
@@ -1044,7 +1046,7 @@ Returns the ad video type (e.g. "video/mp4").
 
 Returns whether the ad is skippable or not.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="playerislinear"></a>
@@ -1053,7 +1055,7 @@ Returns whether the ad is skippable or not.
 
 Returns whether the ad is linear or not.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="playerisvpaid"></a>
@@ -1062,7 +1064,7 @@ Returns whether the ad is linear or not.
 
 Returns whether the ad is in the VPAID format or not.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 **Returns**: boolean
 
 <a id="playerpause"></a>
@@ -1071,7 +1073,7 @@ Returns whether the ad is in the VPAID format or not.
 
 Pauses the ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playerplay"></a>
 
@@ -1079,7 +1081,7 @@ Pauses the ad.
 
 Plays the ad when it is paused.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playerskip"></a>
 
@@ -1087,7 +1089,7 @@ Plays the ad when it is paused.
 
 Skips the ad (if possible).
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playerabort"></a>
 
@@ -1095,7 +1097,7 @@ Skips the ad (if possible).
 
 Closes the ad and starts the video.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playersetvolume"></a>
 
@@ -1103,34 +1105,34 @@ Closes the ad and starts the video.
 
 Set the volume for the current ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| value | <code>number</code> | The volume to set, from 0 (muted) to 1 (loudest). | 
+| value | <code>number</code> | The volume to set, from 0 (muted) to 1 (loudest). |
 
 <a id="playerdestroy"></a>
 
 #### player.adManager().destroy()
 
-Removes ad assets loaded at runtime that need to be properly removed at the time of ad completion and stops the ad and all tracking. 
+Removes ad assets loaded at runtime that need to be properly removed at the time of ad completion and stops the ad and all tracking.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playerdiscardadbreak"></a>
 
 #### player.adManager().discardAdBreak()
 
 If an ad break is currently playing, discard it and resume content. Otherwise, ignore the next scheduled ad break. For example, this can be called immediately after the ads manager loads to ignore a preroll without losing future midrolls or postrolls. This is a no-op unless the ad request returned a playlist or VMAP response.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playerfocus"></a>
 
 #### player.adManager().focus()
 
 Puts the focus on the skip button, if exists. Otherwise, the focus is put on interactive elements, including icons or interactive creatives.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetadskippablestate"></a>
 
 #### player.adManager().getAdSkippableState()
@@ -1139,7 +1141,7 @@ Returns true if the current ad can be skipped.
 
 **Return**: <code>boolean</code> True if the current ad can be skipped, false otherwise.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetcuepoints"></a>
 
 #### player.adManager().getCuePoints()
@@ -1148,7 +1150,7 @@ Returns an array of offsets in seconds indicating when a scheduled ad break will
 
 **Return** <code>non-null Array of number</code> List of time offsets in seconds.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetremainingtime"></a>
 
 #### player.adManager().getRemainingTime()
@@ -1157,7 +1159,7 @@ Get the remaining time of the current ad that is playing. If the ad is not loade
 
 **Return** <code>number</code> Returns the time remaining for current ad. If the remaining time is undefined for the current ad (for example custom ads), the value returns -1.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetvolume"></a>
 
 #### player.adManager().getVolume()
@@ -1166,7 +1168,7 @@ Get the volume for the current ad.
 
 **Return** <code>number</code> The volume of the current ad, from 0 (muted) to 1 (loudest).
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playerinit"></a>
 
 #### player.adManager().init(width, height, viewMode, videoElement)
@@ -1180,9 +1182,9 @@ Get the volume for the current ad.
 | width | <code>number</code> | The desired width of the ad. |
 | height | <code>number</code> | The desired height of the ad. |
 | viewMode | <code>viewMode</code> | The desired view mode. Value must not be null. |
-| videoElement | <code>Optional</code> | HTMLVideoElement The video element for custom playback. This video element overrides the one provided in the AdDisplayContainer constructor. Only use this property if absolutely necessary - otherwise we recommend specifying this video element while creating the AdDisplayContainer. Value may be null. | 
+| videoElement | <code>Optional</code> | HTMLVideoElement The video element for custom playback. This video element overrides the one provided in the AdDisplayContainer constructor. Only use this property if absolutely necessary - otherwise we recommend specifying this video element while creating the AdDisplayContainer. Value may be null. |
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playeriscustomplaybackused"></a>
 
 #### player.adManager().isCustomPlaybackUsed()
@@ -1191,7 +1193,7 @@ Returns true if a custom video element is being used to play the current ad.
 
 **Return** <code>boolean </code> Whether custom playback is used.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playeresize"></a>
 
 #### player.adManager().resize(width, height, viewMode)
@@ -1204,7 +1206,7 @@ Resizes the current ad.
 | height | <code>number</code> | New ad slot height. |
 | viewMode | <code>viewMode</code> | The new view mode. Value must not be null. |
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetadsystem"></a>
 
 #### player.adManager().getAdSystem()
@@ -1213,7 +1215,7 @@ The source ad server information included in the ad response.
 
 **Return**: <code>string</code> The source ad server of the ad, or the empty string if this information is unavailable.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetadvertisername"></a>
 
 #### player.adManager().getAdvertiserName()
@@ -1222,7 +1224,7 @@ The advertiser name as defined by the serving party.
 
 **Return**: <code>string</code> The advertiser name, or the empty string if this information is unavailable.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetapiframework"></a>
 
 #### player.adManager().getApiFramework()
@@ -1231,7 +1233,7 @@ Identifies the API needed to execute the ad. This corresponds with the apiFramew
 
 **Return**: <code>nullable string</code> The API framework need to execute the ad, or null if this information is unavailable.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetcreativeadid"></a>
 
 #### player.adManager().getCreativeAdId()
@@ -1240,7 +1242,7 @@ Returns the ISCI (Industry Standard Commercial Identifier) code for an ad, or em
 
 **Return**: <code>string</code>
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetcreativeid"></a>
 
 #### player.adManager().getCreativeId()
@@ -1249,7 +1251,7 @@ Retrieves the ID of the selected creative for the ad.
 
 **Return**: <code>string</code>The ID of the selected creative for the ad, or the empty string if this information is unavailable.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetdealid"></a>
 
 #### player.adManager().getDealId()
@@ -1258,7 +1260,7 @@ Returns the first deal ID present in the wrapper chain for the current ad, start
 
 **Return**: <code>string</code>
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetheight"></a>
 
 #### player.adManager().getHeight()
@@ -1267,7 +1269,7 @@ Returns the height of the selected non-linear creative.
 
 **Return**: <code>number</code>  The height of the selected non-linear creative or 0 for a linear creative.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergetminsuggestedduration"></a>
 
 #### player.adManager().getMinSuggestedDuration()
@@ -1276,7 +1278,7 @@ Returns the minimum suggested duration in seconds that the nonlinear creative sh
 
 **Return**: <code>number</code>  The minimum suggested duration in seconds that a creative should be displayed.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="playergettraffickingparameters"></a>
 
 #### player.adManager().getTraffickingParameters()
@@ -1285,7 +1287,7 @@ Gets custom parameters associated with the ad at the time of ad trafficking.
 
 **Return**: <code>non-null Object with string properties</code>  A mapping of trafficking keys to their values, or the empty Object if this information is not available.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="gettraffickingparametersstring"></a>
 
 #### player.adManager().getTraffickingParametersString()
@@ -1294,7 +1296,7 @@ Gets custom parameters associated with the ad at the time of ad trafficking. Ret
 
 **Return**: <code>string</code>  Trafficking parameters, or the empty string if this information is not available.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getuielements"></a>
 
 #### player.adManager().getUiElements()
@@ -1303,7 +1305,7 @@ Returns the UI elements that are being displayed when this ad is played. Refer t
 
 **Return**: <code>non-null Array of string</code> The UI elements being displayed.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getuniversaladidregistry"></a>
 
 #### player.adManager().getUniversalAdIdRegistry()
@@ -1314,7 +1316,7 @@ The registry associated with cataloging the UniversalAdId of the selected creati
 
 **Return**: <code>string</code> Returns the registry value, or "unknown" if unavailable.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getuniversaladids"></a>
 
 #### player.adManager().getUniversalAdIds()
@@ -1323,7 +1325,7 @@ The list of UniversalAdIds of the selected creative for the ad.
 
 **Return**: <code>non-null Array of non-null UniversalAdIdInfo</code> Returns the list of universal ad ID information that applies for this ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getuniversaladidvalue"></a>
 
 #### player.adManager().getUniversalAdIdValue()
@@ -1334,7 +1336,7 @@ The UniversalAdId of the selected creative for the ad.
 
 **Return**: <code>string</code> Returns the id value or "unknown" if unavailable.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getvastmediabitrate"></a>
 
 #### player.adManager().getVastMediaBitrate()
@@ -1343,7 +1345,7 @@ When both the creative and the media file have been selected by the SDK, this wi
 
 **Return**: <code>number</code> The bitrate for the selected media file or 0.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getvastmediaheight"></a>
 
 #### player.adManager().getVastMediaHeight()
@@ -1352,7 +1354,7 @@ Returns the VAST media height of the selected creative.
 
 **Return**: <code>number</code> The VAST media height of the selected creative or 0 if none is selected.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getvastmediawidth"></a>
 
 #### player.adManager().getVastMediaWidth()
@@ -1361,7 +1363,7 @@ Returns the VAST media width of the selected creative.
 
 **Return**: <code>number</code> The VAST media width of the selected creative or 0 if none is selected.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getwidth"></a>
 
 #### player.adManager().getWidth()
@@ -1370,7 +1372,7 @@ Returns the width of the selected creative.
 
 **Return**: <code>number</code> The width of the selected non-linear creative or 0 for a linear creative.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getwrapperadids"></a>
 
 #### player.adManager().getWrapperAdIds()
@@ -1379,7 +1381,7 @@ Ad IDs used for wrapper ads. The IDs returned starts at the inline ad (innermost
 
 **Return**: <code>non-null Array of string</code> The IDs of the ads, starting at the inline ad, or an empty array if there are no wrapper ads.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getwrapperadsystems"></a>
 
 #### player.adManager().getWrapperAdSystems()
@@ -1388,7 +1390,7 @@ Ad systems used for wrapper ads. The ad systems returned starts at the inline ad
 
 **Return**: <code>non-null Array of string</code> The ad systems of the ads, starting at the inline ad, or an empty array if there are no wrapper ads.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="getwrappercreativeids"></a>
 
 #### player.adManager().getWrapperCreativeIds()
@@ -1397,7 +1399,7 @@ Selected creative IDs used for wrapper ads. The creative IDs returned starts at 
 
 **Return**: <code>non-null Array of string</code> The IDs of the ads' creatives, starting at the inline ad, or an empty array if there are no wrapper ads.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 <a id="isLinear"></a>
 
 #### player.adManager().islinear()
@@ -1406,7 +1408,7 @@ Indicates whether the ad’s current mode of operation is linear or non-linear. 
 
 **Return**: <code>boolean</code> True if the ad is linear, false otherwise.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playeraddclicklistenerfunc"></a>
 
@@ -1414,11 +1416,11 @@ Indicates whether the ad’s current mode of operation is linear or non-linear. 
 
 Sets a listener function called each time the user clicks on the ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the user clicks on the ad | 
+| func | <code>function</code> | the function called when the user clicks on the ad |
 
 <a id="playeraddvolume"></a>
 
@@ -1426,11 +1428,11 @@ Sets a listener function called each time the user clicks on the ad.
 
 Sets a listener function called each time the user mutes the ad's volume.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the user mutes the ad | 
+| func | <code>function</code> | the function called when the user mutes the ad |
 
 <a id="playeraddvolumechangedlistenerfunc"></a>
 
@@ -1438,11 +1440,11 @@ Sets a listener function called each time the user mutes the ad's volume.
 
 Sets a listener function called each time the user changes the ad's volume.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the user changes the ad's volume | 
+| func | <code>function</code> | the function called when the user changes the ad's volume |
 
 <a id="playeraddskippedlistenerfunc"></a>
 
@@ -1450,11 +1452,11 @@ Sets a listener function called each time the user changes the ad's volume.
 
 Sets a listener function called each time the user skips the ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the user skips the ad | 
+| func | <code>function</code> | the function called when the user skips the ad |
 
 <a id="playeraddpausedlistenerfunc"></a>
 
@@ -1462,11 +1464,11 @@ Sets a listener function called each time the user skips the ad.
 
 Sets a listener function called each time the user pauses the ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the user pauses the ad | 
+| func | <code>function</code> | the function called when the user pauses the ad |
 
 <a id="playeraddresumedlistenerfunc"></a>
 
@@ -1474,11 +1476,11 @@ Sets a listener function called each time the user pauses the ad.
 
 Sets a listener function called each time the user resumes the ad.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the user resumes the ad | 
+| func | <code>function</code> | the function called when the user resumes the ad |
 
 <a id="playeraddstartedlistenerfunc"></a>
 
@@ -1486,12 +1488,12 @@ Sets a listener function called each time the user resumes the ad.
 
 Sets a listener function called when the ad starts.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the ad starts | 
+| func | <code>function</code> | the function called when the ad starts |
 
 <a id="playeraddfirstquartilelistenerfunc"></a>
 
@@ -1499,12 +1501,12 @@ Sets a listener function called when the ad starts.
 
 Sets a listener function called when the ad reaches the first quartile of the video duration.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the ad reaches the first quartile of the video duration | 
+| func | <code>function</code> | the function called when the ad reaches the first quartile of the video duration |
 
 <a id="playeraddmidpointlistenerfunc"></a>
 
@@ -1512,12 +1514,12 @@ Sets a listener function called when the ad reaches the first quartile of the vi
 
 Sets a listener function called when the ad reaches the middle of the video duration.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the ad reaches the middle of the video duration | 
+| func | <code>function</code> | the function called when the ad reaches the middle of the video duration |
 
 
 <a id="playeraddthirdquartilelistenerfunc"></a>
@@ -1526,12 +1528,12 @@ Sets a listener function called when the ad reaches the middle of the video dura
 
 Sets a listener function called when the ad reaches the third quartile of the video duration.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the ad reaches the third quartile of the video duration | 
+| func | <code>function</code> | the function called when the ad reaches the third quartile of the video duration |
 
 <a id="playeraddcomlpetelistenerfunc"></a>
 
@@ -1539,12 +1541,12 @@ Sets a listener function called when the ad reaches the third quartile of the vi
 
 Sets a listener function called when the ad finishes.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the ad finishes | 
+| func | <code>function</code> | the function called when the ad finishes |
 
 <a id="playeraddimpressionlistenerfunc"></a>
 
@@ -1552,12 +1554,12 @@ Sets a listener function called when the ad finishes.
 
 Sets a listener function called when the impression URL has been pinged.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the impression URL has been pinged | 
+| func | <code>function</code> | the function called when the impression URL has been pinged |
 
 <a id="playeradderrorlistenerfunc"></a>
 
@@ -1565,12 +1567,12 @@ Sets a listener function called when the impression URL has been pinged.
 
 Sets a listener function called when the ad fails during loading or playing.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the ad fails during loading or playing | 
+| func | <code>function</code> | the function called when the ad fails during loading or playing |
 
 <a id="playeraddblockedlistenerfunc"></a>
 
@@ -1578,59 +1580,59 @@ Sets a listener function called when the ad fails during loading or playing.
 
 Sets a listener function called when the ad is blocked by an external app.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| func | <code>function</code> | the function called when the ad is blocked by an external app | 
+| func | <code>function</code> | the function called when the ad is blocked by an external app |
 
 ## Static
 
 <a id="nexprotocol"></a>
 
 #### Player.NexProtocol : <code>enum</code>
-**Type**: static enum of [<code>Player</code>](#Player)  
-**Read only**: true  
+**Type**: static enum of [<code>Player</code>](#Player)
+**Read only**: true
 **Properties**:
 
 | Name | Type | Default |
 | --- | --- | --- |
-| HLS | <code>number</code> | <code>0</code> | 
-| DASH | <code>number</code> | <code>1</code> | 
-| PROGRESSIVE_DOWNLOAD | <code>number</code> | <code>2</code> | 
-| UNKNOWN | <code>number</code> | <code>3</code> | 
-| OTHER | <code>number</code> | <code>4</code> | 
+| HLS | <code>number</code> | <code>0</code> |
+| DASH | <code>number</code> | <code>1</code> |
+| PROGRESSIVE_DOWNLOAD | <code>number</code> | <code>2</code> |
+| UNKNOWN | <code>number</code> | <code>3</code> |
+| OTHER | <code>number</code> | <code>4</code> |
 
 <a id="nexevent"></a>
 
 #### Player.NexEvent : <code>enum</code>
-**Type**: static enum of [<code>Player</code>](#Player)  
-**Read only**: true  
+**Type**: static enum of [<code>Player</code>](#Player)
+**Read only**: true
 **Properties**:
 
 | Name | Type | Default |
 | --- | --- | --- |
-| Track_Change | <code>number</code> | <code>0</code> | 
-| Fragment_Loading_Completed | <code>number</code> | <code>1</code> | 
-| Player_Destroyed | <code>number</code> | <code>2</code> | 
-| Speed_Change | <code>number</code> | <code>3</code> | 
-| Error | <code>number</code> | <code>4</code> | 
-| Cue_Change | <code>number</code> | <code>5</code> | 
-| Fragment_Buffered | <code>number</code> | <code>6</code> | 
-| Playlist_Loading_Completed | <code>number</code> | <code>7</code> | 
-| Fragment_Loading | <code>number</code> | <code>8</code> | 
+| Track_Change | <code>number</code> | <code>0</code> |
+| Fragment_Loading_Completed | <code>number</code> | <code>1</code> |
+| Player_Destroyed | <code>number</code> | <code>2</code> |
+| Speed_Change | <code>number</code> | <code>3</code> |
+| Error | <code>number</code> | <code>4</code> |
+| Cue_Change | <code>number</code> | <code>5</code> |
+| Fragment_Buffered | <code>number</code> | <code>6</code> |
+| Playlist_Loading_Completed | <code>number</code> | <code>7</code> |
+| Fragment_Loading | <code>number</code> | <code>8</code> |
 
 <a id="thumbtype"></a>
 
 #### Player.THUMB_TYPE : <code>enum</code>
-**Type**: static enum of [<code>Player</code>](#Player)  
-**Read only**: true  
+**Type**: static enum of [<code>Player</code>](#Player)
+**Read only**: true
 **Properties**:
 
 | Name | Type | Default |
 | --- | --- | --- |
-| STATIC_THUMBNAILS | <code>number</code> | <code>0</code> | 
+| STATIC_THUMBNAILS | <code>number</code> | <code>0</code> |
 | DYNAMIC_THUMBNAILS | <code>number</code> | <code>1</code> |
 
 ## Global Typedef
@@ -1640,14 +1642,14 @@ Sets a listener function called when the ad is blocked by an external app.
 #### NexCallbackEvent : <code>function</code>
 Called when a NexEvent happens.
 
-**Type**: global typedef  
+**Type**: global typedef
 
 <a id="nexcallback"></a>
 
 #### NexCallback : <code>function</code>
 Called when a FairPlay content needs to request the license.
 
-**Type**: global typedef  
+**Type**: global typedef
 
 | Param | Description |
 | --- | --- |
@@ -1656,7 +1658,7 @@ Called when a FairPlay content needs to request the license.
 <a id="nexheaders"></a>
 
 #### NexHeaders : <code>Object</code>
-**Type**: global typedef  
+**Type**: global typedef
 **Properties**:
 
 | Name | Type | Description |
@@ -1667,7 +1669,7 @@ Called when a FairPlay content needs to request the license.
 <a id="nexdrminformation"></a>
 
 #### NexDRMInformation : <code>Object</code>
-**Type**: global typedef  
+**Type**: global typedef
 **Properties**:
 
 | Name | Type | Description |
@@ -1680,8 +1682,8 @@ Called when a FairPlay content needs to request the license.
 <a id="track"></a>
 
 #### Track : <code>Object</code>
-**Type**: global typedef     
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -1695,8 +1697,8 @@ Called when a FairPlay content needs to request the license.
 <a id="audiostream"></a>
 
 #### AudioStream : <code>Object</code>
-**Type**: global typedef  
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -1706,8 +1708,8 @@ Called when a FairPlay content needs to request the license.
 
 #### <a id="frame"></a> Frame : <code>Object</code>
 
-**Type**: global typedef     
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name    | Type                | Description                  |
 | ------- | ------------------- | ---------------------------- |
@@ -1720,23 +1722,23 @@ Called when a FairPlay content needs to request the license.
 
 ## VR Player
 
-<a id="setFieldView"> </a>  
+<a id="setFieldView"> </a>
    #### player.setFieldView()
 
 Set the field of view.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
  | Param | Type |Description |
  | --- | --- | --- |
  | fov | number | the fov value. |
 
- <a id="getFieldView"> </a>  
+ <a id="getFieldView"> </a>
    #### player.getFieldView()
 
    get the field of view.
 
-   **Type**: instance method of  [<code>Player</code>](#Player)  
+   **Type**: instance method of  [<code>Player</code>](#Player)
    **Returns**: number
 
 ## Multiview
@@ -1745,8 +1747,8 @@ Set the field of view.
 
 Creates and initializes the player.
 
-**Type**: function of [<code>nexplayer</code>](#Player)   
-**Param**: 
+**Type**: function of [<code>nexplayer</code>](#Player)
+**Param**:
    - **configuration** is an object which its properties values could be:
 
 **Mandatory Parameters:**
@@ -1804,7 +1806,7 @@ Creates and initializes the player.
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
 | watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
-
+| cmcd | <code>Object</code> |  Enable the Common Media Client Data, Only needs to create an empty object to enable it. |
 #### multiview.addPlayer(player)
 
 This method stores each new player which will allow the MultipleView instance to control all the videos.
@@ -1825,20 +1827,20 @@ Enables toggle between play and pause.
 
 #### multiview.seek(value)
 
-   
+
    Sets the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
 
-   **Type**: instance method of [<code>Player</code>](#Player) 
+   **Type**: instance method of [<code>Player</code>](#Player)
 
   | Param | Type |Description |
   | --- | --- | --- |
   | event | Event | value in seconds that the player will seek to. |
 
   #### multiview.seekLive()
-   
+
    Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
 
-   **Type**: instance method of [<code>Player</code>](#Player) 
+   **Type**: instance method of [<code>Player</code>](#Player)
 
 ## Youtube Player
 
@@ -1851,4 +1853,4 @@ Enables toggle between play and pause.
    <a id="URL"> </a>
   Parse youtube url to extract the id of the video
 
-   **Type**: instance method of [<code>Player</code>](#Player) 
+   **Type**: instance method of [<code>Player</code>](#Player)
