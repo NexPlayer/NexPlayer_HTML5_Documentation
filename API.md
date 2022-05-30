@@ -1622,6 +1622,7 @@ Sets a listener function called when the ad is blocked by an external app.
 | Fragment_Buffered | <code>number</code> | <code>6</code> |
 | Playlist_Loading_Completed | <code>number</code> | <code>7</code> |
 | Fragment_Loading | <code>number</code> | <code>8</code> |
+| Invalid_License | <code>number</code> | <code>9</code> |
 
 <a id="thumbtype"></a>
 

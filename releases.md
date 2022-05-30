@@ -6,11 +6,14 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/8.0.0/nexplayer.js
 ```
-* **[Improved]** Solved a issue with the fake full screen on iOS.
+* **[Improved]** Solved an issue with the fake full screen on iOS.
+* **[Improved]** Optimize memory usage on Dash.
 * **[Added]** Support for CMCD as custom HTTP request header and as HTTP query argument.
 * **[Added]** Support for Verimatrix watermark.
+* **[Added]** Add a new event Invalid_License in the method <a href="#/API?id=playeroncallbacktype-functiontobecalled">on()</a>.
 
 Date: May 25th 2022
+
 #### Version 7.1.2
 
 * **[Improved]** Fixed issue causing buffering with different audio/video segment durations.
