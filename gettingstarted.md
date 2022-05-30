@@ -295,14 +295,14 @@ There is a substantial number of customizable options for NexPlayer™ including
     },
     withCredentials: boolean, // Optional, indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates.
     forceOffset: number, // Optional, allows to select an offset when looking for the segments on HLS live videos. Player will take EXT-X-MEDIA-SEQUENCE plus the given offset as the starting segment number of the playlist.
-    cmcd: { // Optional, Create the object in order to enable the cmcd
-        useHeaders: boolean // Optional, send the CMCD data in request headers instead of as query args. Defaults to false.
-    }
-    wmInfo: { // Optional, Contact the support. Changes are required for each customer.
-     strength: strength, // WATERMARK STRENGTH (1-100 values for the opacity; 255 for debug)
-     transactionId: number, // REQUIRED FOR INITIALIZE WATERMARK. TRANSACTION OR        USER IDENTIFIER (0 - 687194767365)
-     apiToken: 'apiToken', // OPTIONAL. OPAQUE STRING FOR ACTIVATING SUBSEQUENT API ACTIONS
-     logoImage: Image URL, // OPTIONAL. SET A VISIBLE IMAGE TO DRAW IN ADDITION TO THE IMPERCEPTIBLE WATERMARK
-     logoPos: [x number(0-100), y number(0-100), WIDTH, HEIGHT], //SET COORDINATES FOR THE LOGO IMAGE. X & Y IS A PERCENTAGE RELATED TO THE VIDEO SIZE
+    cmcd: { // Optional, creates the object in order to enable the CMCD.
+        useHeaders: boolean // Optional, sends the CMCD data in request headers instead of as query args. False by default.
+    },
+    wmInfo: { // Optional. Contact the support. Changes are required for each customer.
+     strength: strength, // WATERMARK STRENGTH (1-100 values for the opacity; 255 for debug).
+     transactionId: number, // REQUIRED FOR INITIALIZE WATERMARK. TRANSACTION OR USER IDENTIFIER (0 - 687194767365).
+     apiToken: 'apiToken', // OPTIONAL. OPAQUE STRING FOR ACTIVATING SUBSEQUENT API ACTIONS.
+     logoImage: Image URL, // OPTIONAL. SET A VISIBLE IMAGE TO DRAW IN ADDITION TO THE IMPERCEPTIBLE WATERMARK.
+     logoPos: [x number(0-100), y number(0-100), WIDTH, HEIGHT], //SET COORDINATES FOR THE LOGO IMAGE. X & Y IS A PERCENTAGE RELATED TO THE VIDEO SIZE.
     }
 ```

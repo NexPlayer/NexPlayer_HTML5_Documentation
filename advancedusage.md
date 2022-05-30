@@ -489,26 +489,24 @@ This feature enables/disables autoplay. This can be configured in the player by 
 
 ## CMCD
 
-This feature enables the Common Media Client Data standard usage, there is two ways to use:
-- As a HTTP query argument: only requires creating an empty object to be used.
+This feature enables the Common Media Client Data standard usage. There are two ways to use:
+- As an HTTP query argument: only requires creating an empty object to be used.
 - As a custom HTTP request header: useHeaders: true must be added to the object.
 ```js
   {
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
-    cmcd: { // Optional, Create the object in order to enable the cmcd
-        useHeaders: boolean // Optional Send CMCD data in request headers instead of as query args. Defaults to false.
+    cmcd: { // Optional, creates the object in order to enable the CMCD.
+        useHeaders: boolean // Optional, sends CMCD data in request headers instead of as query args. False by default.
     }
   }
-
 ```
 
 ## Multiple Players
 
-This feature enablles the use of multiple players at the same time. In order to create an other player it's necessary to create a new div.
+This feature enables the use of multiple players at the same time. In order to create an other player it's necessary to create a new div.
 
 ```js
-
   nexplayer.AditionalVideo({
     key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('playerN'), // Where "N" is the player number

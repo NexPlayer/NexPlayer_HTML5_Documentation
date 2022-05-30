@@ -238,7 +238,7 @@ Creates and initializes the player.
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
 | watermark | <code>Object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
-| cmcd | <code>Object</code> |  Enable the Common Media Client Data, Only needs to create an empty object to enable it. |
+| cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
 
 <a id="nexplayerchecksupportedconfigurations"></a>
 
@@ -248,8 +248,8 @@ Check if the audio and video codecs and DRMType, if it is provided, are supporte
 
 **Type**: function of [<code>nexplayer</code>](#Player)
 **Params**:
-   - **URL**: manifest url of the video.
-   - **DRMType**: optional type of drm (e.g., "com.microsoft.playready" )
+   - **URL**: manifest URL of the video.
+   - **DRMType**: optional type of DRM (e.g., "com.microsoft.playready" )
 **Returns**: A Promise. If it is resolved returns a MediaKeySystemAccess object with the supported codecs, and if it is rejected returns a string with the error.
 
 #### nexplayer.Reload(configuration)
@@ -315,7 +315,7 @@ Reloads the player with the given configuration. If the configuration object is 
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
 | watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
-| cmcd | <code>Object</code> |  Enable the Common Media Client Data, Only needs to create an empty object to enable it. |
+| cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
 
 #### nexplayer.decodeData(data)
 
@@ -1807,7 +1807,7 @@ Creates and initializes the player.
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID and VMAP are supported. |
 | watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
-| cmcd | <code>Object</code> |  Enable the Common Media Client Data, Only needs to create an empty object to enable it. |
+| cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
 #### multiview.addPlayer(player)
 
 This method stores each new player which will allow the MultipleView instance to control all the videos.
