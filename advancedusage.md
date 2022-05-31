@@ -492,6 +492,7 @@ This feature enables/disables autoplay. This can be configured in the player by 
 This feature enables the Common Media Client Data standard usage. There are two ways to use:
 - As an HTTP query argument: only requires creating an empty object to be used.
 - As a custom HTTP request header: useHeaders: true must be added to the object.
+
 ```js
   {
     div: document.getElementById('player'), // Mandatory
@@ -501,6 +502,9 @@ This feature enables the Common Media Client Data standard usage. There are two 
     }
   }
 ```
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>
+You could check all the allowed parameters on page 10, in section 3.3 Reserved keys in their <a target = "_blank" href = "https://cdn.cta.tech/cta/media/media/resources/standards/pdfs/cta-5004-final.pdf?_ga=2.131535631.1870612908.1654009818-1771552662.1650612839"> documentation </a>.</p>
+</div></div>
 
 ## Multiple Players
 
