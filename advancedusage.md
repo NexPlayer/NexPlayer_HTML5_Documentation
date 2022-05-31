@@ -504,7 +504,7 @@ This feature enables the Common Media Client Data standard usage. There are two 
 
 ## Multiple Players
 
-This feature enables the use of multiple players at the same time. In order to create an other player it's necessary to create a new div.
+This feature enables the use of multiple players at the same time. In order to create another player, it's necessary to create a new div.
 
 ```js
   nexplayer.AditionalVideo({
@@ -671,7 +671,7 @@ This document provides an explanation of the UI and all the related CSS classes 
 | .nexplayer_playback_position | Customize the already played part of the seekbar |
 | .nexplayer_bufferlevel_position | Customize the buffered part of the seekbar |
 | .nexplayer_base_seekbar | Customize the default part of the seekbar |
-| .nexplayer_circleBase | Customize the current postion marker of the seekbar |
+| .nexplayer_circleBase | Customize the current marker position of the seekbar |
 
 Please take into account that the seekbar and the volume control bar are the same component. So if you modify the .nexplayer_playback_position, .nexplayer_bufferlevel_position, .nexplayer_base_seekbar, or .nexplayer_circleBase css classes, then the volume control bar will change accordingly.
 
