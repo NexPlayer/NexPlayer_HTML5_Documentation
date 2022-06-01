@@ -502,7 +502,7 @@ This feature enables the Common Media Client Data standard usage. There are two 
   }
 ```
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>
-You could check all the allowed parameters on page 10, in section 3.3 Reserved keys in their <a target = "_blank" href = "https://cdn.cta.tech/cta/media/media/resources/standards/pdfs/cta-5004-final.pdf?_ga=2.131535631.1870612908.1654009818-1771552662.1650612839"> documentation </a>.</p>
+All the reserved keys of the data sent to the server are available on page 10, section 3.3, <a target = "_blank" href = "https://cdn.cta.tech/cta/media/media/resources/standards/pdfs/cta-5004-final.pdf?_ga=2.131535631.1870612908.1654009818-1771552662.1650612839"> in the CMCD standard. </a></p>
 </div></div>
 
 ## Multiple Players
