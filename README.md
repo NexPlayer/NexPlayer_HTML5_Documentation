@@ -1,7 +1,7 @@
 
 # NexPlayer™ HTML5 SDK<!-- {docsify-ignore-all} -->
 
-NexPlayer provides a media player for the Web. It includes support for HLS, DASH, Microsoft Smooth Streaming, and progressive download.
+NexPlayer provides a media player for the Web. It includes support for HLS, DASH, and progressive download.
 
 The default UI is easily customizable to fit the user´s personal preferences (e.g. icons, colors, etc).
 <div class="listsContainer">
@@ -10,8 +10,7 @@ The default UI is easily customizable to fit the user´s personal preferences (e
 <h4 class="titleBlocks">VIDEO DELIVERY FORMATS</h5>
   <ul class="list">  
       <li>HLS </li>      
-      <li>DASH </li>      
-      <li>Microsoft Smooth Streaming </li>      
+      <li>DASH </li>   
       <li>Progressive Download </li>      
   </ul>
 </div>
