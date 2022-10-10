@@ -1,11 +1,21 @@
 # Releases
 
-Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 8.1.0
+
+* **[Improved]** Solved an issue with embedded subtitles.
+* **[Improved]** Fixed the playback with some fairplay streams work.
+* **[Improved]** Solved an issue with DRM headers.
+* **[Improved]** Fixed problem when video didn't pause the first time with live videos.
+* **[Improved]** Solved the problem with dash streams not working.
+* **[Improved]** Fixed buffer spinner shown when showingFullUI property is true.
+* **[Added]** Add new method to change the current stream <a href="#/API?id=playerloadsource">loadSource(url)</a>
+* **[Added]** Add new property in the Setup <a href="#/API?id=nexplayer-methods">maxFrameDrop</a> and <a href="#/API?id=playerloadsource">event.</a>
+* **[Added]** Add new property in the Setup <a href="#/API?id=nexplayer-methods">licenseWithCredentials.</a>
+
+Date: October 3rd 2022
 #### Version 8.0.0
-```
-https://nexplayer.nexplayersdk.com/8.0.0/nexplayer.js
-```
+
 * **[Improved]** Solved an issue with the fake full screen on iOS.
 * **[Improved]** Optimize memory usage on Dash.
 * **[Added]** Support for CMCD as custom HTTP request header and as HTTP query argument.
