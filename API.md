@@ -64,6 +64,7 @@
    - [.isUTC()](#isutc) ⇒ boolean
    - [.jumpBackward(value)](#playerjumpbackward)
    - [.jumpForward(value)](#playerjumpforward)
+   - [.loadSource(url)](#playerloadsource)
    - [.nextFocus()](#playernextfocus)
    - [.on(callbackType, functionToBeCalled)](#playeroncallbacktype-functiontobecalled)
    - [.previousFocus()](#playerpreviousfocus)
@@ -239,6 +240,8 @@ Creates and initializes the player.
 | watermark | <code>Object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
 | cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
+|licenseWithCredentials| <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.|
+| maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1.We have added a new event that is triggered whenever the percentage of frames dropped is higher than the threshold established in the nexplayer.|
 
 <a id="nexplayerchecksupportedconfigurations"></a>
 
@@ -316,6 +319,8 @@ Reloads the player with the given configuration. If the configuration object is 
 | watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
 | cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
+|licenseWithCredentials| <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.|
+| maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1.We have added a new event that is triggered whenever the percentage of frames dropped is higher than the threshold established in the nexplayer.|
 
 #### nexplayer.decodeData(data)
 
@@ -754,6 +759,14 @@ Toggles the subtitle menu options.
 **Type**: instance method of  [<code>Player</code>](#Player)
 
 <a id="playernextfocus"></a>
+
+#### player.loadSource(url)
+
+Change the url of the content without changing the instance.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="playerloadsource"></a>
 
 #### player.nextFocus()
 
@@ -1623,6 +1636,7 @@ Sets a listener function called when the ad is blocked by an external app.
 | Playlist_Loading_Completed | <code>number</code> | <code>7</code> |
 | Fragment_Loading | <code>number</code> | <code>8</code> |
 | Invalid_License | <code>number</code> | <code>9</code> |
+| Frames_Drop_Capping | <code>number</code> | <code>10</code> |
 
 <a id="thumbtype"></a>
 
@@ -1808,6 +1822,8 @@ Creates and initializes the player.
 | watermark | <code>object</code> | Watermark image URL. |
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
 | cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
+|licenseWithCredentials| <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.|
+| maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1.We have added a new event that is triggered whenever the percentage of frames dropped is higher than the threshold established in the nexplayer.|
 #### multiview.addPlayer(player)
 
 This method stores each new player which will allow the MultipleView instance to control all the videos.
