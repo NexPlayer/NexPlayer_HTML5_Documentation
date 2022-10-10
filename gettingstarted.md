@@ -304,5 +304,7 @@ There is a substantial number of customizable options for NexPlayer™ including
      apiToken: 'apiToken', // OPTIONAL. OPAQUE STRING FOR ACTIVATING SUBSEQUENT API ACTIONS.
      logoImage: Image URL, // OPTIONAL. SET A VISIBLE IMAGE TO DRAW IN ADDITION TO THE IMPERCEPTIBLE WATERMARK.
      logoPos: [x number(0-100), y number(0-100), WIDTH, HEIGHT], //SET COORDINATES FOR THE LOGO IMAGE. X & Y IS A PERCENTAGE RELATED TO THE VIDEO SIZE.
-    }
+    },
+    licenseWithCredentials: boolean, // Optional, indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.
+    maxFrameDrop: number //The value of this property should be within the range 0 - 1.We have added a new event that is triggered whenever the percentage of frames dropped is higher than the threshold established in the nexplayer.
 ```
