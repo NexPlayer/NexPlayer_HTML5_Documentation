@@ -1,16 +1,26 @@
 # Releases
 
-Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 8.1.0
+
+* **[Improved]** Solved an issue with embedded subtitles.
+* **[Improved]** Fixed the playback with some Fairplay streams work.
+* **[Improved]** Solved an issue with DRM headers.
+* **[Improved]** Fixed autoplay issue when it was deactivated and live streams were used. Now live stream won't start automatically if autoplay is set to false.
+* **[Improved]** Solved issue with Dash streams.
+* **[Improved]** Fixed buffer spinner shown when showingFullUI property is true.
+* **[Added]** Add new method to change the current stream <a href="#/API?id=playerloadsource">loadSource(url)</a>
+* **[Added]** Add new property in the Setup <a href="#/API?id=nexplayer-methods">maxFrameDrop</a> and new event <a href="#/API?id=nexevent">Frames_Drop_Capping.</a>
+* **[Added]** Add new property in the Setup <a href="#/API?id=nexplayer-methods">licenseWithCredentials.</a>
+
+Date: October 3rd 2022
 #### Version 8.0.0
-```
-https://nexplayer.nexplayersdk.com/8.0.0/nexplayer.js
-```
+
 * **[Improved]** Solved an issue with the fake full screen on iOS.
 * **[Improved]** Optimize memory usage on Dash.
 * **[Added]** Support for CMCD as custom HTTP request header and as HTTP query argument.
 * **[Added]** Support for Verimatrix watermark.
-* **[Added]** Add a new event Invalid_License in the method <a href="#/API?id=playeroncallbacktype-functiontobecalled">on()</a>.
+* **[Added]** Add a new event <a href="#/API?id=nexevent">Invalid_License</a> in the method <a href="#/API?id=playeroncallbacktype-functiontobecalled">on()</a>.
 
 Date: May 25th 2022
 
@@ -229,7 +239,7 @@ Date: September 16th 2020
 * **[Added]** Automatic type360
 * **[Added]** support 360 in oculus
 * **[Added]** 360 zoom controls
-* **[Added]** Certificated base64 in fairplay
+* **[Added]** Certificated base64 in Fairplay
 * **[Added]** Implement watermark
 * **[Improved]** Add event listener for ads start and ads end
 * **[Improved]** Create event listeners for quality and playback rate change
