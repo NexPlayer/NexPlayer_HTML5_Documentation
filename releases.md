@@ -6,7 +6,7 @@
 * **[Improved]** Solved an issue with embedded subtitles.
 * **[Improved]** Fixed the playback with some Fairplay streams work.
 * **[Improved]** Solved an issue with DRM headers.
-* **[Improved]** Fixed problem when video didn't pause the first time with live videos.
+* **[Improved]** Fixed autoplay issue when it was deactivated and live streams were used. Now live stream won't start automatically if autoplay is set to false.
 * **[Improved]** Solved issue with Dash streams.
 * **[Improved]** Fixed buffer spinner shown when showingFullUI property is true.
 * **[Added]** Add new method to change the current stream <a href="#/API?id=playerloadsource">loadSource(url)</a>
