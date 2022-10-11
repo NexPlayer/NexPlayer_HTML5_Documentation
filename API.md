@@ -219,7 +219,6 @@ Creates and initializes the player.
 | liveSettings | <code>Object</code> | Settings to control live playback. Requires low latency. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
-| maxFrameDrop | <code>number</code> | Determines the max frame drop. |
 | pip | <code>boolean</code> | Determines if picture-in-picture will be enabled. |
 | poster | <code>string</code> | Video poster URL.  |
 | seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. Set to 10s by default. |
@@ -241,7 +240,7 @@ Creates and initializes the player.
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
 | cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
 |licenseWithCredentials| <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.|
-| maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1.We have added a new event that is triggered whenever the percentage of frames dropped is higher than the threshold established in the nexplayer.|
+| maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1. A Frames_Drop_Capping event will be triggered whenever the percentage of frames dropped is higher than this threshold.|
 
 <a id="nexplayerchecksupportedconfigurations"></a>
 
@@ -298,7 +297,6 @@ Reloads the player with the given configuration. If the configuration object is 
 | liveSettings | <code>Object</code> | Settings to control live playback. Requires low latency. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
-| maxFrameDrop | <code>number</code> | Determines the max frame drop. |
 | pip | <code>boolean</code> | Determines if picture-in-picture will be enabled. |
 | poster | <code>string</code> | Video poster URL.  |
 | seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. Set to 10s by default. |
@@ -320,7 +318,7 @@ Reloads the player with the given configuration. If the configuration object is 
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
 | cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
 |licenseWithCredentials| <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.|
-| maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1.We have added a new event that is triggered whenever the percentage of frames dropped is higher than the threshold established in the nexplayer.|
+| maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1. A Frames_Drop_Capping event will be triggered whenever the percentage of frames dropped is higher than this threshold.|
 
 #### nexplayer.decodeData(data)
 
@@ -758,15 +756,15 @@ Toggles the subtitle menu options.
 
 **Type**: instance method of  [<code>Player</code>](#Player)
 
-<a id="playernextfocus"></a>
+<a id="playerloadsource"></a>
 
 #### player.loadSource(url)
 
-Change the url of the content without changing the instance.
+Change the URL of the content without changing the instance.
 
 **Type**: instance method of  [<code>Player</code>](#Player)
 
-<a id="playerloadsource"></a>
+<a id="playernextfocus"></a>
 
 #### player.nextFocus()
 
@@ -1801,7 +1799,6 @@ Creates and initializes the player.
 | liveSettings | <code>Object</code> | Settings to control live playback. Requires low latency. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
-| maxFrameDrop | <code>number</code> | Determines the max frame drop. |
 | pip | <code>boolean</code> | Determines if picture-in-picture will be enabled. |
 | poster | <code>string</code> | Video poster URL.  |
 | seekUI | <code>number</code> | Sets the number of seconds the UI buttons will seek forwards or backwards. Set to 10s by default. |
@@ -1823,7 +1820,8 @@ Creates and initializes the player.
 | withCredentials | <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates. |
 | cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
 |licenseWithCredentials| <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.|
-| maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1.We have added a new event that is triggered whenever the percentage of frames dropped is higher than the threshold established in the nexplayer.|
+| maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1. A Frames_Drop_Capping event will be triggered whenever the percentage of frames dropped is higher than this threshold.|
+
 #### multiview.addPlayer(player)
 
 This method stores each new player which will allow the MultipleView instance to control all the videos.
