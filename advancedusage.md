@@ -382,7 +382,20 @@ This information can be passed in the DRM array:
 ```
 Please note that this method is not as secure as other DRMs.
 
-Custom headers are supported with HLS and DASH.
+To pass headers for the URL
+```js
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    xhrSetHeader: [{FieldName: 'Optional field name', FieldValue: 'Optional field value'}],
+
+  });
+
+```
+
+Custom headers for video URL and DRM are supported with HLS and DASH.
 
 ## Ads
 
