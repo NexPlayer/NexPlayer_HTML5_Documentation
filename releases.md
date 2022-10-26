@@ -12,6 +12,8 @@
 * **[Added]** Add new method to change the current stream <a href="#/API?id=playerloadsource">loadSource(url)</a>
 * **[Added]** Add new property in the Setup <a href="#/API?id=nexplayer-methods">maxFrameDrop</a> and new event <a href="#/API?id=nexevent">Frames_Drop_Capping.</a>
 * **[Added]** Add new property in the Setup <a href="#/API?id=nexplayer-methods">licenseWithCredentials.</a>
+* **[Added]** Add new property in the Setup <a href="#/API?id=nexplayer-methods">xhrSetHeader.</a>
+
 
 Date: October 3rd 2022
 #### Version 8.0.0
