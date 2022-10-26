@@ -306,4 +306,4 @@ There is a substantial number of customizable options for NexPlayer™ including
     },
     licenseWithCredentials: boolean, // Optional, indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.
     maxFrameDrop: number //The value of this property should be within the range 0 - 1. A Frames_Drop_Capping event will be triggered whenever the percentage of frames dropped is higher than this threshold.
-```
+    xhrSetHeader: [{FieldName: 'Header Field Name', FieldValue: 'Header Field Value'}],//You can configure the headers that are necessary for the URL request.
