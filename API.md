@@ -241,6 +241,7 @@ Creates and initializes the player.
 | cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
 |licenseWithCredentials| <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.|
 | maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1. A <a href="#/API?id=nexevent">Frames_Drop_Capping</a> event will be triggered whenever the percentage of frames dropped is higher than this threshold.|
+| xhrSetHeader | <code>Array</code> | You can configure the headers that are necessary for the URL request.|
 
 <a id="nexplayerchecksupportedconfigurations"></a>
 
@@ -319,6 +320,7 @@ Reloads the player with the given configuration. If the configuration object is 
 | cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
 |licenseWithCredentials| <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.|
 | maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1. A <a href="#/API?id=nexevent">Frames_Drop_Capping</a> event will be triggered whenever the percentage of frames dropped is higher than this threshold.|
+| xhrSetHeader | <code>Array</code> | You can configure the headers that are necessary for the URL request.|
 
 #### nexplayer.decodeData(data)
 
@@ -1821,6 +1823,7 @@ Creates and initializes the player.
 | cmcd | <code>Object</code> |  Enables the Common Media Client Data. Only needs to create an empty object to enable it. |
 |licenseWithCredentials| <code>boolean</code> | Indicates whether or not cross-site Access-Control requests should be made using credentials such as cookies, authorization headers or TLS client certificates with DRM.|
 | maxFrameDrop | <code>number</code> | The value of this property should be within the range 0 - 1. A <a href="#/API?id=nexevent">Frames_Drop_Capping</a> event will be triggered whenever the percentage of frames dropped is higher than this threshold.|
+| xhrSetHeader | <code>Array</code> | You can configure the headers that are necessary for the URL request.|
 
 #### multiview.addPlayer(player)
 
