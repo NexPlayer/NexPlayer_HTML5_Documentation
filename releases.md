@@ -1,5 +1,10 @@
 # Releases
 
+#### Version 8.1.0.1
+
+* **[Improved]** Fixed problem with Fairplay DRM with ExpressPlay licence.
+
+Date: November 3rd 2022
 
 #### Version 8.1.0
 
